@@ -385,7 +385,7 @@
 </li>
 </ul>
 <h3 id="cocoapods"><a name="cocoapods" class="plugin-anchor" href="#cocoapods"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://guides.cocoapods.org/using/using-cocoapods.html" target="_blank">CocoaPods</a></h3>
-<p><strong>Tested with <code>pod --version</code>: <code>1.1.1</code></strong></p>
+<p>&#x5DF2;&#x901A;&#x8FC7;&#x6D4B;&#x8BD5;<strong> </strong><code>pod --version</code><strong>: </strong><code>1.1.1</code></p>
 <pre><code class="lang-ruby"><span class="hljs-comment"># Podfile</span>
 use_frameworks!
 
@@ -393,24 +393,18 @@ target <span class="hljs-string">&apos;YOUR_TARGET_NAME&apos;</span> <span class
     pod <span class="hljs-string">&apos;RxSwift&apos;</span>,    <span class="hljs-string">&apos;~&gt; 3.0&apos;</span>
     pod <span class="hljs-string">&apos;RxCocoa&apos;</span>,    <span class="hljs-string">&apos;~&gt; 3.0&apos;</span>
 <span class="hljs-keyword">end</span>
-
-<span class="hljs-comment"># RxTests and RxBlocking make the most sense in the context of unit/integration tests</span>
-target <span class="hljs-string">&apos;YOUR_TESTING_TARGET&apos;</span> <span class="hljs-keyword">do</span>
-    pod <span class="hljs-string">&apos;RxBlocking&apos;</span>, <span class="hljs-string">&apos;~&gt; 3.0&apos;</span>
-    pod <span class="hljs-string">&apos;RxTest&apos;</span>,     <span class="hljs-string">&apos;~&gt; 3.0&apos;</span>
-<span class="hljs-keyword">end</span>
 </code></pre>
-<p>Replace <code>YOUR_TARGET_NAME</code> and then, in the <code>Podfile</code> directory, type:</p>
+<p>&#x66FF;&#x6362; <code>YOUR_TARGET_NAME</code> &#x7136;&#x540E;&#x5728; <code>Podfile</code> &#x76EE;&#x5F55;&#x4E0B;, &#x7EC8;&#x7AEF;&#x8F93;&#x5165;&#xFF1A;</p>
 <pre><code class="lang-bash">$ pod install
 </code></pre>
 <h3 id="carthage"><a name="carthage" class="plugin-anchor" href="#carthage"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/Carthage/Carthage" target="_blank">Carthage</a></h3>
-<p><strong>Tested with <code>carthage version</code>: <code>0.18.1</code></strong></p>
-<p>Add this to <code>Cartfile</code></p>
+<p>&#x5DF2;&#x901A;&#x8FC7;&#x6D4B;&#x8BD5;<strong> </strong><code>carthage version</code><strong>: </strong><code>0.18.1</code></p>
+<p>&#x6DFB;&#x52A0;&#x5230; <code>Cartfile</code></p>
 <pre><code>github &quot;ReactiveX/RxSwift&quot; ~&gt; 3.0
 </code></pre><pre><code class="lang-bash">$ carthage update
 </code></pre>
 <h3 id="swift-package-manager"><a name="swift-package-manager" class="plugin-anchor" href="#swift-package-manager"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://github.com/apple/swift-package-manager" target="_blank">Swift Package Manager</a></h3>
-<p><strong>Tested with <code>swift build --version</code>: <code>3.0.0 (swiftpm-19)</code></strong></p>
+<p><strong>Tested with </strong><code>swift build --version</code><strong>: </strong><code>3.0.0 (swiftpm-19)</code></p>
 <p>Create a <code>Package.swift</code> file.</p>
 <pre><code class="lang-swift"><span class="hljs-keyword">import</span> PackageDescription
 
@@ -480,7 +474,7 @@ target <span class="hljs-string">&apos;YOUR_TESTING_TARGET&apos;</span> <span cl
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. 开始使用 RxSwift","level":"1.2","depth":1,"next":{"title":"3. 我的第一个 RxSwift 应用程序","level":"1.3","depth":1,"path":"3.md","ref":"3.md","articles":[]},"previous":{"title":"1. 为什么要使用 RxSwift ？","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","include-codeblock","splitter","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","gitbook":"*","description":null},"file":{"path":"1.md","mtime":"2017-07-24T06:43:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-24T02:33:01.668Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2. 开始使用 RxSwift","level":"1.2","depth":1,"next":{"title":"3. 我的第一个 RxSwift 应用程序","level":"1.3","depth":1,"path":"3.md","ref":"3.md","articles":[]},"previous":{"title":"1. 为什么要使用 RxSwift ？","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","include-codeblock","splitter","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","gitbook":"*","description":null},"file":{"path":"1.md","mtime":"2017-07-24T06:51:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-24T02:33:01.668Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

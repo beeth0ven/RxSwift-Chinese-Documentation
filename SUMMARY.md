@@ -8,10 +8,10 @@
   * 5.1 Observable - 被监听者
   * 5.2 Observer - 监听者
   * 5.3 Operator - 操作符
-* [6. RxSwift 常用架构](9.md)
+* [6. RxSwift 常用架构](architecture.md)
   * 6.1 MVVM - 数据绑定 UI
   * 6.2 RxFeedback - 反馈循环
-  * [6.3 ReactorKit - 单向响应式](9/63-reactorkit.md)
+  * [6.3 ReactorKit - 单向响应式](architecture/reactorkit.md)
 * [7. 更多 Demo](66.md)
 * [8. 为什么要继续使用 RxSwift?](10.md)
 * [9. 学习资源](11.md)

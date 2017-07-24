@@ -2,7 +2,7 @@
 
 * [1. 为什么要使用 RxSwift ？](README.md)
 * [2. 开始使用 RxSwift](get_start.md)
-* [3. 我的第一个 RxSwift 应用程序](3.md)
+* [3. 我的第一个 RxSwift 应用程序](first_app.md)
 * [4. 响应式的思维方式](6.md)
 * [5. RxSwift 核心概念](5.md)
   * 5.1 Observable - 被监听者

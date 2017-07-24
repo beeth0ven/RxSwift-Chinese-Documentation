@@ -1,0 +1,32 @@
+{
+    "generator": "site",
+    "title": "RxSwift 中文文档",
+    "description": null,
+    "plugins": [
+        "jsbin",
+        "anchors",
+        "video",
+        "ga",
+        "toggle-chapters",
+        "include-codeblock",
+        "splitter",
+        "chart",
+        "todo",
+        "quiz",
+        "include-highlight",
+        "tonic"
+    ],
+    "theme": "theme",
+    "pluginsConfig": {
+        "fontSettings": {
+            "theme": "white",
+            "family": "sans"
+        },
+        "ga": {
+            "token": "UA-63403975-1"
+        }
+    },
+    "variables": {
+        "isPdf": false
+    }
+}

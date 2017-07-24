@@ -26,7 +26,7 @@ $ pod install
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
-已通过测试** **`carthage version`**: **`0.18.1`
+** **`carthage version`**: **`0.18.1` 已通过测试
 
 添加到 `Cartfile`
 
@@ -40,7 +40,7 @@ $ carthage update
 
 ### [Swift Package Manager](https://github.com/apple/swift-package-manager)
 
-已通过测试**  **`swift build --version`**: **`3.0.0 (swiftpm-19)`
+**  **`swift build --version`**: **`3.0.0 (swiftpm-19)` 已通过测试
 
 创建`Package.swift` 文件。
 

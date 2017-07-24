@@ -2,6 +2,7 @@
     "generator": "site",
     "title": "RxSwift 中文文档",
     "description": null,
+    "language": "zh",
     "plugins": [
         "jsbin",
         "anchors",

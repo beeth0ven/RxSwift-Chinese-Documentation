@@ -8,6 +8,8 @@
   * 5.1 Observable - 被监听者
   * 5.2 Observer - 监听者
   * 5.3 Operator - 操作符
+  * 5.4 Schedulers - 调度程序
+  * 5.5 Error Handling - 错误处理
 * [6. RxSwift 常用架构](content/architecture.md)
   * 6.1 MVVM - 数据绑定 UI
   * 6.2 RxFeedback - 反馈循环

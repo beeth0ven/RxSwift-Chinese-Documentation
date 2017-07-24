@@ -6,7 +6,7 @@
 
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
-已通过测试** **`pod --version`**: **`1.1.1`
+** **`pod --version`**: **`1.1.1` 已通过测试
 
 ```ruby
 # Podfile

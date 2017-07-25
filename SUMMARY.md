@@ -10,11 +10,11 @@
   * 5.3 Operator - 操作符
   * 5.4 Schedulers - 计划
   * 5.5 Error Handling - 错误处理
-* [6. RxSwift 常用架构](content/architecture.md)
-  * 6.1 MVVM - 数据绑定 UI
-  * 6.2 RxFeedback - 反馈循环
-  * [6.3 ReactorKit - 结合Flux和响应式编程](content/architecture/reactorkit.md)
-* [7. 更多 Demo](content/more_demo.md)
+* [6. 更多 Demo](content/more_demo.md)
+* [7. RxSwift 常用架构](content/architecture.md)
+  * 7.1 MVVM - 数据绑定 UI
+  * 7.2 RxFeedback - 反馈循环
+  * [7.3 ReactorKit - 结合Flux和响应式编程](content/architecture/reactorkit.md)
 * [8. 为什么要继续使用 RxSwift?](content/why_rxswift_again.md)
 * [9. 学习资源](content/resource.md)
 * [10. 关于本书](content/about.md)

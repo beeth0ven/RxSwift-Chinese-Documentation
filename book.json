@@ -2,6 +2,9 @@
     "generator": "site",
     "title": "RxSwift 中文文档",
     "description": null,
+    "structure": {
+        "readme": "readme.md"
+    },
     "language": "zh",
     "plugins": [
         "jsbin",

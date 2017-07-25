@@ -1,6 +1,6 @@
 # Summary
 
-* [1. 为什么要使用 RxSwift?](README.md)
+* [1. 为什么要使用 RxSwift?](content/why_rxswift.md)
 * [2. 开始使用 RxSwift](content/get_start.md)
 * [3. 我的第一个 RxSwift 应用程序](content/first_app.md)
 * [4. 响应式的思维方式](content/think_reactive.md)
@@ -17,5 +17,4 @@
   * [7.3 ReactorKit - 结合Flux和响应式编程](content/architecture/reactorkit.md)
 * [8. 为什么要继续使用 RxSwift?](content/why_rxswift_again.md)
 * [9. 学习资源](content/resource.md)
-* [10. 关于本书](content/about.md)
-
+* [10. 关于本文档](content/about.md)

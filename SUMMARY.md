@@ -13,7 +13,7 @@
 * [6. RxSwift 常用架构](content/architecture.md)
   * 6.1 MVVM - 数据绑定 UI
   * 6.2 RxFeedback - 反馈循环
-  * [6.3 ReactorKit - 单向响应式](content/architecture/reactorkit.md)
+  * [6.3 ReactorKit - 结合Flux和响应式编程](content/architecture/reactorkit.md)
 * [7. 更多 Demo](content/more_demo.md)
 * [8. 为什么要继续使用 RxSwift?](content/why_rxswift_again.md)
 * [9. 学习资源](content/resource.md)

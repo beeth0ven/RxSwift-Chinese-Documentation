@@ -1,9 +1,9 @@
 # Summary
 
 * [1. 为什么要使用 RxSwift?](content/why_rxswift.md)
-* [2. 开始使用 RxSwift](content/get_start.md)
+* [2. 集成 RxSwift](content/get_start.md)
 * [3. 我的第一个 RxSwift 应用程序](content/first_app.md)
-* [4. 响应式的思维方式](content/think_reactive.md)
+* [4. 函数响应式编程](content/think_reactive.md)
 * [5. RxSwift 核心概念](content/rxswift_core.md)
   * 5.1 Observable - 被监听者
   * 5.2 Observer - 监听者

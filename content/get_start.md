@@ -1,3 +1,5 @@
+# 集成 RxSwift
+
 ## 必备条件
 
 * Xcode 8.0
@@ -69,7 +71,4 @@ $ git submodule add git@github.com:ReactiveX/RxSwift.git
 ```
 
 * 拖拽 `Rx.xcodeproj` 到项目中
-* 前往 `Project > Targets > Build Phases > Link Binary With Libraries`, 点击 `+` 并且选中 `RxSwift-[Platform]` 和 `RxCocoa-[Platform]` 
-
-
-
+* 前往 `Project > Targets > Build Phases > Link Binary With Libraries`, 点击 `+` 并且选中 `RxSwift-[Platform]` 和 `RxCocoa-[Platform]`

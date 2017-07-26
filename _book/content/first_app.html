@@ -416,10 +416,199 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <ol>
-<li>&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A; RxSwift &#x5E94;&#x7528;&#x7A0B;&#x5E8F;</li>
-<li>&#x5355;&#x4E00;&#x8F93;&#x5165;&#x9A8C;&#x8BC1;</li>
+                                <h1 id="&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;-rxswift-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><a name="&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;-rxswift-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;" class="plugin-anchor" href="#&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;-rxswift-&#x5E94;&#x7528;&#x7A0B;&#x5E8F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A; RxSwift &#x5E94;&#x7528;&#x7A0B;&#x5E8F;</h1>
+<h2 id="&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x5C31;&#x7528;-rxswift-&#x6765;&#x5199;&#x4E00;&#x4E2A;&#x5C0F;&#x7A0B;&#x5E8F;---&#x8F93;&#x5165;&#x9A8C;&#x8BC1;&#xFF1A;"><a name="&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x5C31;&#x7528;-rxswift-&#x6765;&#x5199;&#x4E00;&#x4E2A;&#x5C0F;&#x7A0B;&#x5E8F;---&#x8F93;&#x5165;&#x9A8C;&#x8BC1;&#xFF1A;" class="plugin-anchor" href="#&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x5C31;&#x7528;-rxswift-&#x6765;&#x5199;&#x4E00;&#x4E2A;&#x5C0F;&#x7A0B;&#x5E8F;---&#x8F93;&#x5165;&#x9A8C;&#x8BC1;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x5C31;&#x7528; RxSwift &#x6765;&#x5199;&#x4E00;&#x4E2A;&#x5C0F;&#x7A0B;&#x5E8F; - &#x8F93;&#x5165;&#x9A8C;&#x8BC1;&#xFF1A;</h2>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x4E2A;<a href="https://github.com/ReactiveX/RxSwift/tree/master/RxExample/RxExample/Examples/SimpleValidation" target="_blank">&#x6587;&#x4EF6;&#x5939;</a>&#x627E;&#x5230;&#x8BE5;&#x4F8B;&#x5B50;&#x3002;</p>
+<p><img src="../assets/SimpleValid/SimpleValidationFull.png" alt=""></p>
+<h3 id="&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#x4E3B;&#x8981;&#x7531;-5-&#x5404;&#x5143;&#x7D20;&#x7EC4;&#x6210;&#xFF1A;"><a name="&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#x4E3B;&#x8981;&#x7531;-5-&#x5404;&#x5143;&#x7D20;&#x7EC4;&#x6210;&#xFF1A;" class="plugin-anchor" href="#&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#x4E3B;&#x8981;&#x7531;-5-&#x5404;&#x5143;&#x7D20;&#x7EC4;&#x6210;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#x4E3B;&#x8981;&#x7531; 5 &#x5404;&#x5143;&#x7D20;&#x7EC4;&#x6210;&#xFF1A;</h3>
+<ol>
+<li>&#x7528;&#x6237;&#x540D;&#x8F93;&#x5165;&#x6846;</li>
+<li>&#x7528;&#x6237;&#x540D;&#x63D0;&#x793A;&#x8BED;&#xFF08;&#x7EA2;&#x8272;&#xFF09;</li>
+<li>&#x5BC6;&#x7801;&#x8F93;&#x5165;&#x6846;</li>
+<li>&#x5BC6;&#x7801;&#x63D0;&#x793A;&#x8BED;&#xFF08;&#x7EA2;&#x8272;&#xFF09;</li>
+<li>&#x64CD;&#x4F5C;&#x6309;&#x94AE;&#xFF08;&#x7EFF;&#x8272;&#xFF09;</li>
 </ol>
+<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SimpleValidationViewController</span> : <span class="hljs-title">ViewController</span> </span>{
+
+    <span class="hljs-meta">@IBOutlet</span> <span class="hljs-keyword">weak</span> <span class="hljs-keyword">var</span> usernameOutlet: <span class="hljs-type">UITextField</span>!
+    <span class="hljs-meta">@IBOutlet</span> <span class="hljs-keyword">weak</span> <span class="hljs-keyword">var</span> usernameValidOutlet: <span class="hljs-type">UILabel</span>!
+
+    <span class="hljs-meta">@IBOutlet</span> <span class="hljs-keyword">weak</span> <span class="hljs-keyword">var</span> passwordOutlet: <span class="hljs-type">UITextField</span>!
+    <span class="hljs-meta">@IBOutlet</span> <span class="hljs-keyword">weak</span> <span class="hljs-keyword">var</span> passwordValidOutlet: <span class="hljs-type">UILabel</span>!
+
+    <span class="hljs-meta">@IBOutlet</span> <span class="hljs-keyword">weak</span> <span class="hljs-keyword">var</span> doSomethingOutlet: <span class="hljs-type">UIButton</span>!
+    ...
+}
+</code></pre>
+<h3 id="&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x5B8C;&#x6210;-4-&#x4E2A;&#x4EA4;&#x4E92;&#xFF1A;"><a name="&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x5B8C;&#x6210;-4-&#x4E2A;&#x4EA4;&#x4E92;&#xFF1A;" class="plugin-anchor" href="#&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x5B8C;&#x6210;-4-&#x4E2A;&#x4EA4;&#x4E92;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x5B8C;&#x6210; 4 &#x4E2A;&#x4EA4;&#x4E92;&#xFF1A;</h3>
+<ul>
+<li><p>&#x5F53;&#x7528;&#x6237;&#x540D;&#x8F93;&#x5165;&#x4E0D;&#x5230; 5 &#x4E2A;&#x5B57;&#x65F6;&#x663E;&#x793A;&#x63D0;&#x793A;&#x8BED;&#xFF0C;&#x5E76;&#x4E14;&#x65E0;&#x6CD5;&#x8F93;&#x5165;&#x5BC6;&#x7801;</p>
+<p><img src="../assets/SimpleValid/UsernameValid.png" alt=""></p>
+<pre><code class="lang-swift"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">super</span>.viewDidLoad()
+
+    ...
+
+    <span class="hljs-comment">// &#x7528;&#x6237;&#x540D;&#x662F;&#x5426;&#x6709;&#x6548;</span>
+    <span class="hljs-keyword">let</span> usernameValid = usernameOutlet.rx.text.orEmpty
+        <span class="hljs-comment">// &#x7528;&#x6237;&#x540D; -&gt; &#x7528;&#x6237;&#x540D;&#x662F;&#x5426;&#x6709;&#x6548;</span>
+        .<span class="hljs-built_in">map</span> { $<span class="hljs-number">0</span>.characters.<span class="hljs-built_in">count</span> &gt;= minimalUsernameLength }
+        .shareReplay(<span class="hljs-number">1</span>)
+
+    ...
+
+    <span class="hljs-comment">// &#x7528;&#x6237;&#x540D;&#x662F;&#x5426;&#x6709;&#x6548; -&gt; &#x5BC6;&#x7801;&#x8F93;&#x5165;&#x6846;&#x662F;&#x5426;&#x53EF;&#x7528;</span>
+    usernameValid
+        .bind(to: passwordOutlet.rx.isEnabled)  
+        .disposed(by: disposeBag)
+
+    <span class="hljs-comment">// &#x7528;&#x6237;&#x540D;&#x662F;&#x5426;&#x6709;&#x6548; -&gt; &#x7528;&#x6237;&#x540D;&#x63D0;&#x793A;&#x8BED;&#x662F;&#x5426;&#x9690;&#x85CF;</span>
+    usernameValid
+        .bind(to: usernameValidOutlet.rx.isHidden)
+        .disposed(by: disposeBag)
+
+    ...
+}
+</code></pre>
+</li>
+<li><p>&#x5F53;&#x5BC6;&#x7801;&#x8F93;&#x5165;&#x4E0D;&#x5230; 5 &#x4E2A;&#x5B57;&#x65F6;&#x7ED9;&#x51FA;&#x63D0;&#x793A;&#x6587;&#x5B57;</p>
+<p><img src="../assets/SimpleValid/PasswordValid.png" alt=""></p>
+<pre><code class="lang-swift"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">super</span>.viewDidLoad()
+
+    ...
+
+    <span class="hljs-comment">// &#x5BC6;&#x7801;&#x662F;&#x5426;&#x6709;&#x6548;</span>
+    <span class="hljs-keyword">let</span> passwordValid = passwordOutlet.rx.text.orEmpty
+        <span class="hljs-comment">// &#x5BC6;&#x7801; -&gt; &#x5BC6;&#x7801;&#x662F;&#x5426;&#x6709;&#x6548;</span>
+        .<span class="hljs-built_in">map</span> { $<span class="hljs-number">0</span>.characters.<span class="hljs-built_in">count</span> &gt;= minimalPasswordLength }
+        .shareReplay(<span class="hljs-number">1</span>)
+
+    ...
+
+    <span class="hljs-comment">// &#x5BC6;&#x7801;&#x662F;&#x5426;&#x6709;&#x6548; -&gt; &#x5BC6;&#x7801;&#x63D0;&#x793A;&#x8BED;&#x662F;&#x5426;&#x9690;&#x85CF;</span>
+    passwordValid
+        .bind(to: passwordValidOutlet.rx.isHidden)
+        .disposed(by: disposeBag)
+
+    ...
+}
+</code></pre>
+</li>
+<li><p>&#x5F53;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x90FD;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x65F6;&#xFF0C;&#x7EFF;&#x8272;&#x6309;&#x94AE;&#x624D;&#x53EF;&#x70B9;&#x51FB;</p>
+<p><img src="../assets/SimpleValid/LoginButtonValid.png" alt=""></p>
+<pre><code class="lang-swift"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">super</span>.viewDidLoad()
+
+    ...
+
+    <span class="hljs-comment">// &#x7528;&#x6237;&#x540D;&#x662F;&#x5426;&#x6709;&#x6548;</span>
+    <span class="hljs-keyword">let</span> usernameValid = ...
+
+    <span class="hljs-comment">// &#x5BC6;&#x7801;&#x662F;&#x5426;&#x6709;&#x6548;</span>
+    <span class="hljs-keyword">let</span> passwordValid = ...
+
+    ...
+
+    <span class="hljs-comment">// &#x6240;&#x6709;&#x8F93;&#x5165;&#x662F;&#x5426;&#x6709;&#x6548;</span>
+    <span class="hljs-keyword">let</span> everythingValid = <span class="hljs-type">Observable</span>.combineLatest(
+          usernameValid,
+          passwordValid
+        ) { $<span class="hljs-number">0</span> &amp;&amp; $<span class="hljs-number">1</span> } <span class="hljs-comment">// &#x53D6;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x540C;&#x65F6;&#x6709;&#x6548;</span>
+        .shareReplay(<span class="hljs-number">1</span>)
+
+    ...
+
+    <span class="hljs-comment">// &#x6240;&#x6709;&#x8F93;&#x5165;&#x662F;&#x5426;&#x6709;&#x6548; -&gt; &#x7EFF;&#x8272;&#x6309;&#x94AE;&#x662F;&#x5426;&#x53EF;&#x70B9;&#x51FB;</span>
+    everythingValid
+        .bind(to: doSomethingOutlet.rx.isEnabled)
+        .disposed(by: disposeBag)
+
+    ...
+}
+</code></pre>
+</li>
+<li><p>&#x70B9;&#x51FB;&#x7EFF;&#x8272;&#x6309;&#x94AE;&#x540E;&#xFF0C;&#x5F39;&#x51FA;&#x4E00;&#x4E2A;&#x63D0;&#x793A;&#x6846;</p>
+<p><img src="../assets/SimpleValid/LoginAction.png" alt=""></p>
+<pre><code class="lang-swift"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">super</span>.viewDidLoad()
+
+    ...
+
+    <span class="hljs-comment">// &#x70B9;&#x51FB;&#x7EFF;&#x8272;&#x6309;&#x94AE; -&gt; &#x5F39;&#x51FA;&#x63D0;&#x793A;&#x6846;</span>
+    doSomethingOutlet.rx.tap
+        .subscribe(onNext: { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] <span class="hljs-keyword">in</span> <span class="hljs-keyword">self</span>?.showAlert() })
+        .disposed(by: disposeBag)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">showAlert</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">let</span> alertView = <span class="hljs-type">UIAlertView</span>(
+        title: <span class="hljs-string">&quot;RxExample&quot;</span>,
+        message: <span class="hljs-string">&quot;This is wonderful&quot;</span>,
+        delegate: <span class="hljs-literal">nil</span>,
+        cancelButtonTitle: <span class="hljs-string">&quot;OK&quot;</span>
+    )
+
+    alertView.show()
+}
+</code></pre>
+</li>
+</ul>
+<p>&#x8FD9;&#x6837; 4 &#x4E2A;&#x4EA4;&#x4E92;&#x90FD;&#x5B8C;&#x6210;&#x4E86;&#xFF0C;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x7EB5;&#x89C2;&#x5168;&#x5C40;&#x770B;&#x4E0B;&#x5230;&#x5E95;&#x662F;&#x4E00;&#x4E2A;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x7ED3;&#x6784;:</p>
+<p>  <img src="../assets/SimpleValid/All.png" alt=""></p>
+<p>&#x7136;&#x540E;&#x770B;&#x4E00;&#x4E0B;&#x5B8C;&#x6574;&#x7684;&#x4EE3;&#x7801;:</p>
+<pre><code class="lang-swift">  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
+      <span class="hljs-keyword">super</span>.viewDidLoad()
+
+      usernameValidOutlet.text = <span class="hljs-string">&quot;Username has to be at least <span class="hljs-subst">\(minimalUsernameLength)</span> characters&quot;</span>
+      passwordValidOutlet.text = <span class="hljs-string">&quot;Password has to be at least <span class="hljs-subst">\(minimalPasswordLength)</span> characters&quot;</span>
+
+      <span class="hljs-keyword">let</span> usernameValid = usernameOutlet.rx.text.orEmpty
+          .<span class="hljs-built_in">map</span> { $<span class="hljs-number">0</span>.characters.<span class="hljs-built_in">count</span> &gt;= minimalUsernameLength }
+          .shareReplay(<span class="hljs-number">1</span>)
+
+      <span class="hljs-keyword">let</span> passwordValid = passwordOutlet.rx.text.orEmpty
+          .<span class="hljs-built_in">map</span> { $<span class="hljs-number">0</span>.characters.<span class="hljs-built_in">count</span> &gt;= minimalPasswordLength }
+          .shareReplay(<span class="hljs-number">1</span>)
+
+      <span class="hljs-keyword">let</span> everythingValid = <span class="hljs-type">Observable</span>.combineLatest(
+            usernameValid,
+            passwordValid
+          ) { $<span class="hljs-number">0</span> &amp;&amp; $<span class="hljs-number">1</span> }
+          .shareReplay(<span class="hljs-number">1</span>)
+
+      usernameValid
+          .bind(to: passwordOutlet.rx.isEnabled)
+          .disposed(by: disposeBag)
+
+      usernameValid
+          .bind(to: usernameValidOutlet.rx.isHidden)
+          .disposed(by: disposeBag)
+
+      passwordValid
+          .bind(to: passwordValidOutlet.rx.isHidden)
+          .disposed(by: disposeBag)
+
+      everythingValid
+          .bind(to: doSomethingOutlet.rx.isEnabled)
+          .disposed(by: disposeBag)
+
+      doSomethingOutlet.rx.tap
+          .subscribe(onNext: { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] <span class="hljs-keyword">in</span> <span class="hljs-keyword">self</span>?.showAlert() })
+          .disposed(by: disposeBag)
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">showAlert</span><span class="hljs-params">()</span></span> {
+      <span class="hljs-keyword">let</span> alertView = <span class="hljs-type">UIAlertView</span>(
+          title: <span class="hljs-string">&quot;RxExample&quot;</span>,
+          message: <span class="hljs-string">&quot;This is wonderful&quot;</span>,
+          delegate: <span class="hljs-literal">nil</span>,
+          cancelButtonTitle: <span class="hljs-string">&quot;OK&quot;</span>
+      )
+
+      alertView.show()
+  }
+</code></pre>
 
                                 
                                 </section>
@@ -463,7 +652,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3. 我的第一个 RxSwift 应用程序","level":"1.4","depth":1,"next":{"title":"4. 函数响应式编程","level":"1.5","depth":1,"path":"content/think_reactive.md","ref":"content/think_reactive.md","articles":[]},"previous":{"title":"2. 集成 RxSwift","level":"1.3","depth":1,"path":"content/get_start.md","ref":"content/get_start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","include-codeblock","splitter","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/first_app.md","mtime":"2017-07-25T05:56:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T04:39:54.503Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3. 我的第一个 RxSwift 应用程序","level":"1.4","depth":1,"next":{"title":"4. 函数响应式编程","level":"1.5","depth":1,"path":"content/think_reactive.md","ref":"content/think_reactive.md","articles":[]},"previous":{"title":"2. 集成 RxSwift","level":"1.3","depth":1,"path":"content/get_start.md","ref":"content/get_start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","include-codeblock","splitter","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/first_app.md","mtime":"2017-07-26T08:59:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T06:24:37.294Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

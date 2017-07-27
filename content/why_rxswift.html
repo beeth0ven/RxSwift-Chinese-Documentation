@@ -66,6 +66,7 @@
     
     
     
+    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -74,7 +75,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="get_start.html" />
+    <link rel="next" href="first_app.html" />
     
     
     <link rel="prev" href="../" />
@@ -85,6 +86,17 @@
     <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
     <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
     
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"};
+    </script>
 
     </head>
     <body>
@@ -117,7 +129,7 @@
                 <a href="../">
             
                     
-                    Introduction
+                    RxSwift 简介
             
                 </a>
             
@@ -138,25 +150,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="get_start.html">
-            
-                <a href="get_start.html">
-            
-                    
-                    2. 集成 RxSwift
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="first_app.html">
+        <li class="chapter " data-level="1.3" data-path="first_app.html">
             
                 <a href="first_app.html">
             
                     
-                    3. 我的第一个 RxSwift 应用程序
+                    2. 我的第一个 RxSwift 应用程序
             
                 </a>
             
@@ -164,12 +163,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="think_reactive.html">
+        <li class="chapter " data-level="1.4" data-path="think_reactive.html">
             
                 <a href="think_reactive.html">
             
                     
-                    4. 函数响应式编程
+                    3. 函数响应式编程
             
                 </a>
             
@@ -177,12 +176,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="rxswift_core.html">
+        <li class="chapter " data-level="1.5" data-path="rxswift_core.html">
             
                 <a href="rxswift_core.html">
             
                     
-                    5. RxSwift 核心概念
+                    4. RxSwift 核心概念
             
                 </a>
             
@@ -191,12 +190,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" >
+        <li class="chapter " data-level="1.5.1" >
             
                 <span>
             
                     
-                    5.1 Observable - 被监听者
+                    4.1 Observable - 被监听者
             
                 </span>
             
@@ -204,12 +203,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" >
+        <li class="chapter " data-level="1.5.2" >
             
                 <span>
             
                     
-                    5.2 Observer - 监听者
+                    4.2 Observer - 监听者
             
                 </span>
             
@@ -217,12 +216,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" >
+        <li class="chapter " data-level="1.5.3" >
             
                 <span>
             
                     
-                    5.3 Operator - 操作符
+                    4.3 Operator - 操作符
             
                 </span>
             
@@ -230,12 +229,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.4" >
+        <li class="chapter " data-level="1.5.4" >
             
                 <span>
             
                     
-                    5.4 Schedulers - 计划
+                    4.4 Schedulers - 计划
             
                 </span>
             
@@ -243,12 +242,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.5" >
+        <li class="chapter " data-level="1.5.5" >
             
                 <span>
             
                     
-                    5.5 Error Handling - 错误处理
+                    4.5 Error Handling - 错误处理
             
                 </span>
             
@@ -261,12 +260,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="more_demo.html">
+        <li class="chapter " data-level="1.6" data-path="more_demo.html">
             
                 <a href="more_demo.html">
             
                     
-                    6. 更多例子
+                    5. 更多例子
             
                 </a>
             
@@ -274,12 +273,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="architecture.html">
+        <li class="chapter " data-level="1.7" data-path="architecture.html">
             
                 <a href="architecture.html">
             
                     
-                    7. RxSwift 常用架构
+                    6. RxSwift 常用架构
             
                 </a>
             
@@ -288,12 +287,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" >
+        <li class="chapter " data-level="1.7.1" >
             
                 <span>
             
                     
-                    7.1 MVVM - 数据绑定 UI
+                    6.1 MVVM - 数据绑定 UI
             
                 </span>
             
@@ -301,12 +300,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" >
+        <li class="chapter " data-level="1.7.2" >
             
                 <span>
             
                     
-                    7.2 RxFeedback - 反馈循环
+                    6.2 RxFeedback - 反馈循环
             
                 </span>
             
@@ -314,12 +313,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8.3" data-path="architecture/reactorkit.html">
+        <li class="chapter " data-level="1.7.3" data-path="architecture/reactorkit.html">
             
                 <a href="architecture/reactorkit.html">
             
                     
-                    7.3 ReactorKit - 结合Flux和响应式编程
+                    6.3 ReactorKit - 结合Flux和响应式编程
             
                 </a>
             
@@ -332,12 +331,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9" data-path="why_rxswift_again.html">
+        <li class="chapter " data-level="1.8" data-path="why_rxswift_again.html">
             
                 <a href="why_rxswift_again.html">
             
                     
-                    8. 为什么要继续使用 RxSwift?
+                    7. 为什么要继续使用 RxSwift?
             
                 </a>
             
@@ -345,12 +344,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="resource.html">
+        <li class="chapter " data-level="1.9" data-path="resource.html">
             
                 <a href="resource.html">
             
                     
-                    9. 学习资源
+                    8. 学习资源
             
                 </a>
             
@@ -358,12 +357,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.11" data-path="about.html">
+        <li class="chapter " data-level="1.10" data-path="about.html">
             
                 <a href="about.html">
             
                     
-                    10. 关于本文档
+                    9. 关于本文档
             
                 </a>
             
@@ -465,7 +464,7 @@
 }
 </code></pre>
 <p>&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x4E66;&#x5199;&#x4EE3;&#x7406;&#x7684;&#x914D;&#x7F6E;&#x4EE3;&#x7801;&#xFF0C;&#x5C31;&#x80FD;&#x83B7;&#x5F97;&#x60F3;&#x8981;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
-<h2 id="&#x56DE;&#x8C03;"><a name="&#x56DE;&#x8C03;" class="plugin-anchor" href="#&#x56DE;&#x8C03;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DE;&#x8C03;</h2>
+<h2 id="&#x95ED;&#x5305;&#x56DE;&#x8C03;"><a name="&#x95ED;&#x5305;&#x56DE;&#x8C03;" class="plugin-anchor" href="#&#x95ED;&#x5305;&#x56DE;&#x8C03;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x95ED;&#x5305;&#x56DE;&#x8C03;</h2>
 <p>&#x4F20;&#x7EDF;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;</p>
 <pre><code class="lang-swift"><span class="hljs-type">URLSession</span>.shared.dataTask(with: <span class="hljs-type">URLRequest</span>(url: url)) {
     (data, response, error) <span class="hljs-keyword">in</span>
@@ -524,7 +523,7 @@
         .disposed(by: disposeBag)
 }
 </code></pre>
-<p>&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x53BB;&#x7BA1;&#x7406;&#x8BA2;&#x9605;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x8FD9;&#x6837;&#x4F60;&#x5C31;&#x6709;&#x66F4;&#x591A;&#x7CBE;&#x529B;&#x53BB;&#x5173;&#x6CE8;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;</p>
+<p>&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x53BB;&#x7BA1;&#x7406;&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x8FD9;&#x6837;&#x4F60;&#x5C31;&#x6709;&#x66F4;&#x591A;&#x7CBE;&#x529B;&#x53BB;&#x5173;&#x6CE8;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;</p>
 <h2 id="kvo"><a name="kvo" class="plugin-anchor" href="#kvo"><i class="fa fa-link" aria-hidden="true"></i></a>KVO</h2>
 <p>&#x4F20;&#x7EDF;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;</p>
 <pre><code class="lang-swift"><span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> observerContext = <span class="hljs-number">0</span>
@@ -559,7 +558,7 @@
 }
 </code></pre>
 <p>&#x8FD9;&#x6837;&#x5B9E;&#x73B0; KVO &#x7684;&#x4EE3;&#x7801;&#x66F4;&#x6E05;&#x6670;&#xFF0C;&#x66F4;&#x7B80;&#x6D01;&#x5E76;&#x4E14;&#x66F4;&#x51C6;&#x786E;&#x3002;</p>
-<h2 id="&#x4EFB;&#x52A1;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;"><a name="&#x4EFB;&#x52A1;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;" class="plugin-anchor" href="#&#x4EFB;&#x52A1;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EFB;&#x52A1;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;</h2>
+<h2 id="&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;"><a name="&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;" class="plugin-anchor" href="#&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;</h2>
 <p>&#x4F8B;&#x5982;&#xFF0C;&#x5148;&#x901A;&#x8FC7;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x53D6;&#x5F97; Token &#x7136;&#x540E;&#x901A;&#x8FC7; Token &#x53D6;&#x5F97;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;</p>
 <p>&#x4F20;&#x7EDF;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;</p>
 <pre><code class="lang-swift"><span class="hljs-comment">/// &#x7528;&#x56DE;&#x8C03;&#x7684;&#x65B9;&#x5F0F;&#x5C01;&#x88C5;&#x63A5;&#x53E3;</span>
@@ -615,7 +614,7 @@
     .disposed(by: disposeBag)
 </code></pre>
 <p>&#x8FD9;&#x6837;&#x4F60;&#x65E0;&#x9700;&#x5D4C;&#x5957;&#x592A;&#x591A;&#x5C42;&#xFF0C;&#x4F7F;&#x5F97;&#x4EE3;&#x7801;&#x6613;&#x8BFB;&#xFF0C;&#x6613;&#x7EF4;&#x62A4;&#x3002;</p>
-<h2 id="&#x5904;&#x7406;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x679C;"><a name="&#x5904;&#x7406;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x679C;" class="plugin-anchor" href="#&#x5904;&#x7406;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5904;&#x7406;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x679C;</h2>
+<h2 id="&#x7B49;&#x5F85;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x5904;&#x7406;&#x7ED3;&#x679C;"><a name="&#x7B49;&#x5F85;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x5904;&#x7406;&#x7ED3;&#x679C;" class="plugin-anchor" href="#&#x7B49;&#x5F85;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x5904;&#x7406;&#x7ED3;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B49;&#x5F85;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x5904;&#x7406;&#x7ED3;&#x679C;</h2>
 <p>&#x4F8B;&#x5982;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x4E24;&#x4E2A;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#xFF0C;</p>
 <p>&#x901A;&#x8FC7; Rx &#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
 <pre><code class="lang-swift"><span class="hljs-comment">/// &#x7528; Rx &#x5C01;&#x88C5;&#x63A5;&#x53E3;</span>
@@ -678,12 +677,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: RxSwift 简介">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="get_start.html" class="navigation navigation-next " aria-label="Next page: 2. 集成 RxSwift">
+                <a href="first_app.html" class="navigation navigation-next " aria-label="Next page: 2. 我的第一个 RxSwift 应用程序">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -694,7 +693,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1. 为什么要使用 RxSwift?","level":"1.2","depth":1,"next":{"title":"2. 集成 RxSwift","level":"1.3","depth":1,"path":"content/get_start.md","ref":"content/get_start.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","include-codeblock","splitter","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/why_rxswift.md","mtime":"2017-07-26T06:02:08.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T06:24:37.294Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1. 为什么要使用 RxSwift?","level":"1.2","depth":1,"next":{"title":"2. 我的第一个 RxSwift 应用程序","level":"1.3","depth":1,"path":"content/first_app.md","ref":"content/first_app.md","articles":[]},"previous":{"title":"RxSwift 简介","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/why_rxswift.md","mtime":"2017-07-27T03:11:44.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-27T00:53:39.610Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -716,7 +715,15 @@
         
     
         
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
         
     
         

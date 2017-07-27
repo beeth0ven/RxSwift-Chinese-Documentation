@@ -180,61 +180,61 @@ class SimpleValidationViewController : ViewController {
 
 然后看一下完整的代码:
 
-  ```swift
-  override func viewDidLoad() {
-      super.viewDidLoad()
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
 
-      usernameValidOutlet.text = "Username has to be at least \(minimalUsernameLength) characters"
-      passwordValidOutlet.text = "Password has to be at least \(minimalPasswordLength) characters"
+    usernameValidOutlet.text = "Username has to be at least \(minimalUsernameLength) characters"
+    passwordValidOutlet.text = "Password has to be at least \(minimalPasswordLength) characters"
 
-      let usernameValid = usernameOutlet.rx.text.orEmpty
-          .map { $0.characters.count >= minimalUsernameLength }
-          .shareReplay(1)
+    let usernameValid = usernameOutlet.rx.text.orEmpty
+        .map { $0.characters.count >= minimalUsernameLength }
+        .shareReplay(1)
 
-      let passwordValid = passwordOutlet.rx.text.orEmpty
-          .map { $0.characters.count >= minimalPasswordLength }
-          .shareReplay(1)
+    let passwordValid = passwordOutlet.rx.text.orEmpty
+        .map { $0.characters.count >= minimalPasswordLength }
+        .shareReplay(1)
 
-      let everythingValid = Observable.combineLatest(
-            usernameValid,
-            passwordValid
-          ) { $0 && $1 }
-          .shareReplay(1)
+    let everythingValid = Observable.combineLatest(
+          usernameValid,
+          passwordValid
+        ) { $0 && $1 }
+        .shareReplay(1)
 
-      usernameValid
-          .bind(to: passwordOutlet.rx.isEnabled)
-          .disposed(by: disposeBag)
+    usernameValid
+        .bind(to: passwordOutlet.rx.isEnabled)
+        .disposed(by: disposeBag)
 
-      usernameValid
-          .bind(to: usernameValidOutlet.rx.isHidden)
-          .disposed(by: disposeBag)
+    usernameValid
+        .bind(to: usernameValidOutlet.rx.isHidden)
+        .disposed(by: disposeBag)
 
-      passwordValid
-          .bind(to: passwordValidOutlet.rx.isHidden)
-          .disposed(by: disposeBag)
+    passwordValid
+        .bind(to: passwordValidOutlet.rx.isHidden)
+        .disposed(by: disposeBag)
 
-      everythingValid
-          .bind(to: doSomethingOutlet.rx.isEnabled)
-          .disposed(by: disposeBag)
+    everythingValid
+        .bind(to: doSomethingOutlet.rx.isEnabled)
+        .disposed(by: disposeBag)
 
-      doSomethingOutlet.rx.tap
-          .subscribe(onNext: { [weak self] in self?.showAlert() })
-          .disposed(by: disposeBag)
-  }
+    doSomethingOutlet.rx.tap
+        .subscribe(onNext: { [weak self] in self?.showAlert() })
+        .disposed(by: disposeBag)
+}
 
-  func showAlert() {
-      let alertView = UIAlertView(
-          title: "RxExample",
-          message: "This is wonderful",
-          delegate: nil,
-          cancelButtonTitle: "OK"
-      )
+func showAlert() {
+    let alertView = UIAlertView(
+        title: "RxExample",
+        message: "This is wonderful",
+        delegate: nil,
+        cancelButtonTitle: "OK"
+    )
 
-      alertView.show()
-  }
-  ```
+    alertView.show()
+}
+```
 
-  你会发现你可以用几行代码完成如此复杂的交互。这可以大大提升我们的开发效率。
+你会发现你可以用几行代码完成如此复杂的交互。这可以大大提升我们的开发效率。
 
 ### 更多疑问
 
@@ -244,4 +244,4 @@ class SimpleValidationViewController : ViewController {
 
 * `disposed(by: disposeBag)` 是用来做什么的？
 
-  和我们所熟悉的对象一样，每一个绑定也是有生命周期的。并且这个绑定是可以被清除的。`disposed(by: disposeBag)`就是将绑定的生命周期交给 `disposeBag` 来管理，使之与 `disposeBag` 的生命周期保持一致。当 `disposeBag` 被释放的时候，那么相应的绑定也就被清除了。这就相当于是在用 [ARC](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID48) 来管理绑定的生命周期。 这个内容会在 disposable 章节详细介绍。
+  和我们所熟悉的对象一样，每一个绑定也是有生命周期的。并且这个绑定是可以被清除的。`disposed(by: disposeBag)`就是将绑定的生命周期交给 `disposeBag` 来管理。当 `disposeBag` 被释放的时候，那么里面尚未清除的绑定也就被清除了。这就相当于是在用 [ARC](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID48) 来管理绑定的生命周期。 这个内容会在 disposable 章节详细介绍。

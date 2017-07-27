@@ -253,7 +253,7 @@ Api.token(username: "beeth0ven", password: "987654321")
     .disposed(by: disposeBag)
 ```
 
-这样你无需嵌套太多层，使得代码易读，易维护。
+这样你无需嵌套太多层，从而使得代码易读，易维护。
 
 ## 等待多个并发任务完成后处理结果
 

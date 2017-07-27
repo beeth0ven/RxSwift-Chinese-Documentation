@@ -1,10 +1,25 @@
 # 我的第一个 RxSwift 应用程序
 
-## 我们现在就用 RxSwift 来写一个小程序 - 输入验证：
+## 输入验证：
+这是一个模拟用户登录的程序。当用户输入用户名时，如果用户名不足 5 个字就给出红色提示语，并且无法输入密码，当用户名符合要求时才可以输入密码。同样的当用户输入的密码不到 5 个字时也给出红色提示语。当用户名和密码有一个不符合要求时底部的绿色按钮不可点击，只有当用户名和密码同时有效时按钮才可点击。当点击绿色按钮后弹出一个提示框，这个提示框只是用来做演示而已。
 
-你可以在这个[文件夹](https://github.com/ReactiveX/RxSwift/tree/master/RxExample/RxExample/Examples/SimpleValidation)找到该例子。
+你可以下载[这个例子](https://github.com/ReactiveX/RxSwift/tree/master/RxExample/RxExample/Examples/SimpleValidation)并在模拟器上运行，这样可以帮助于你理解整个程序的交互：
 
-![](/assets/SimpleValid/SimpleValidationFull.png)
+* 初始状态
+
+  ![1](/assets/SimpleValid/SimpleValidationFull.png)
+
+* 输入有效的用户名后，用户名提示语消失，并且可以输入密码
+
+  ![2](/assets/SimpleValid/SimpleValidationFull2.png)
+
+* 输入有效的密码后，密码提示语消失，并且按钮可点击
+
+  ![3](/assets/SimpleValid/SimpleValidationFull3.png)
+
+* 点击绿色的按钮后，弹出提示框
+
+  ![4](/assets/SimpleValid/SimpleValidationFull4.png)
 
 ### 这个页面主要由 5 各元素组成：
 
@@ -62,7 +77,9 @@ class SimpleValidationViewController : ViewController {
   }
   ```
 
-* 当密码输入不到 5 个字时给出提示文字
+  当用户修改用户名输入框的内容时就会产生一个新的用户名, 然后通过 `map` 方法将它转化成用户名是否有效, 最后通过 `bind(to: ...)` 来决定密码输入框是否可用以及提示语是否隐藏。
+
+* 当密码输入不到 5 个字时显示提示文字
 
   ![](/assets/SimpleValid/PasswordValid.png)
 
@@ -88,6 +105,7 @@ class SimpleValidationViewController : ViewController {
       ...
   }
   ```
+  这个和用用户名来控制提示语的逻辑是一样的。
 
 * 当用户名和密码都符合要求时，绿色按钮才可点击
 
@@ -124,6 +142,7 @@ class SimpleValidationViewController : ViewController {
       ...
   }
   ```
+  通过 `Observable.combineLatest(...) { ... }` 来将`用户名是否有效`以及`密码是都有效`合并出`两者是否同时有效`,然后用它来控制绿色按钮是否可点击。
 
 * 点击绿色按钮后，弹出一个提示框
 
@@ -153,7 +172,9 @@ class SimpleValidationViewController : ViewController {
   }
   ```
 
-这样 4 个交互都完成了，现在我们纵观全局看下到底是一个什么样的结构:
+  在点击绿色按钮后，弹出一个提示框
+
+这样 4 个交互都完成了，现在我们纵观全局看下这个程序是一个什么样的结构:
 
   ![](/assets/SimpleValid/All.png)
 
@@ -212,3 +233,15 @@ class SimpleValidationViewController : ViewController {
       alertView.show()
   }
   ```
+
+  你会发现你可以用几行代码完成如此复杂的交互。这可以大大提升我们的开发效率。
+
+### 更多疑问
+
+* `shareReplay(1)` 是用来做什么的？
+
+  我们用 `usernameValid` 来控制用户名提示语是否隐藏以及密码输入框是否可用。`shareReplay` 就是让他们共享这一个源，而不是为他们单独创建新的源。这样可以减少不必要的开支。
+
+* `disposed(by: disposeBag)` 是用来做什么的？
+
+  和我们所熟悉的对象一样，每一个绑定也是有生命周期的。并且这个绑定是可以被清除的。`disposed(by: disposeBag)`就是将绑定的生命周期交给 `disposeBag` 来管理，使之与 `disposeBag` 的生命周期保持一致。当 `disposeBag` 被释放的时候，那么相应的绑定也就被清除了。这就相当于是在用 [ARC](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID48) 来管理绑定的生命周期。 这个内容会在 disposable 章节详细介绍。

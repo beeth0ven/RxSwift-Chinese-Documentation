@@ -12,8 +12,10 @@
         "video",
         "ga",
         "toggle-chapters",
+        "editlink",
         "include-codeblock",
         "splitter",
+        "github-buttons",
         "chart",
         "todo",
         "quiz",
@@ -28,6 +30,17 @@
         },
         "ga": {
             "token": "UA-63403975-1"
+        },
+        "editlink": {
+            "base": "https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master",
+            "label": "编辑页面"
+        },
+        "github-buttons": {
+            "repo": "beeth0ven/RxSwift-Chinese-Documention",
+            "types": [
+                "star"
+            ],
+            "size": "small"
         }
     },
     "variables": {

@@ -5,8 +5,8 @@
 * [2. 我的第一个 RxSwift 应用程序](content/first_app.md)
 * [3. 函数响应式编程](content/think_reactive.md)
 * [4. RxSwift 核心概念](content/rxswift_core.md)
-  * 4.1 Observable - 被监听者
-  * 4.2 Observer - 监听者
+  * 4.1 Observable - 可被监听的序列
+  * 4.2 Observer - 观察者
   * 4.3 Operator - 操作符
   * 4.4 Schedulers - 计划
   * 4.5 Error Handling - 错误处理

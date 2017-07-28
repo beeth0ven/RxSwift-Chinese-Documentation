@@ -10,23 +10,44 @@
 * [4. RxSwift 核心概念](content/rxswift_core.md)
   * 4.3 Event - 操作符
   * [4.1 Observable - 可被监听的序列](content/rxswift_core/observable.md)
-    * 4.1.1 Observable - 可被监听的序列
-    * 4.1.4 Driver - 可被监听的序列
-    * 4.1.4 ControlEvent - 可被监听的序列
-    * 4.1.2 Single - 可被监听的序列
-    * 4.1.3 Completeable - 可被监听的序列
-    * 4.1.4 Maybe - 可被监听的序列
+    * Observable - 可被监听的序列
+    * Single - 可被监听的序列
+    * Completeable - 可被监听的序列
+    * Maybe - 可被监听的序列
+    * Driver - 可被监听的序列
+    * ControlEvent - 可被监听的序列
   * [4.2 Observer - 观察者](content/rxswift_core/observer.md)  
-    * 4.1.1 AnyObserver - 可被监听的序列
-    * 4.1.4 UIBindingObserver - 可被监听的序列
+    * AnyObserver - 可被监听的序列
+    * UIBindingObserver - 可被监听的序列
   * [4.3 Observable & Observer 既是可被监听的序列也是观察者](content/rxswift_core/observable_and_observer.md)
-    * 4.1.5 AsyncSubject - 可被监听的序列
-    * 4.1.5 PublishSubject - 可被监听的序列
-    * 4.1.3 ReplaySubject - 可被监听的序列
-    * 4.1.4 BehaviorSubject - 可被监听的序列
-    * 4.1.4 Variable - 可被监听的序列
-    * 4.1.4 ControlProperty - 可被监听的序列
-  * 4.3 Operator - 操作符
+    * AsyncSubject - 可被监听的序列
+    * PublishSubject - 可被监听的序列
+    * ReplaySubject - 可被监听的序列
+    * BehaviorSubject - 可被监听的序列
+    * Variable - 可被监听的序列
+    * ControlProperty - 可被监听的序列
+  * [4.3 Operator - 操作符](content/rxswift_core/operator.md)
+    * combineLatest
+    * delay
+    * debounce
+    * distinctUntilChanged
+    * do
+    * filter
+    * flatMap
+    * map
+    * merge
+    * observeOn
+    * retry
+    * scan
+    * shareReplay
+    * skip
+    * skipUntil
+    * startWith
+    * subscribeOn
+    * takeUntil
+    * timeout
+    * withLatestFrom
+    * zip
   * 4.4 Schedulers - 计划
   * 4.5 Error Handling - 错误处理
 * [5. 更多例子](content/more_demo.md)

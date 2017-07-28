@@ -1,6 +1,6 @@
 # RxSwift 核心概念
 
-这一章主要介绍 **RxSwift** 的核心概念： 
+这一章主要介绍 **RxSwift** 的核心概念：
 
 * Observable - 可被监听的序列
 * Operator - 操作符

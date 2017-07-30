@@ -57,3 +57,6 @@ gradeThreeClassTwoStudents
 * 简洁
 * 易维护
 * 适应各种需求变化
+
+
+如果想了解更多有关于**函数式编程**的知识。可以参考这本书籍 [《函数式 Swift》](https://www.objccn.io/products/functional-swift/)。

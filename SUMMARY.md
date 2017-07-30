@@ -2,13 +2,12 @@
 
 * [RxSwift 中文文档](README.md)
 * [1. 为什么要使用 RxSwift?](content/why_rxswift.md)
-* [2. 我的第一个 RxSwift 应用程序](content/first_app.md)
+* [2. 你好 RxSwift！](content/first_app.md)
 * [3. 函数响应式编程](content/think_reactive.md)
   * [3.1 函数式编程](content/think_reactive/funtional_programming.md)
   * [3.2 函数式编程 -> 函数响应式编程](content/think_reactive/functional_reactive_progaramming.md)
   * [3.3 数据绑定](content/think_reactive/data_binding.md)
 * [4. RxSwift 核心概念](content/rxswift_core.md)
-  * 4.3 Event - 操作符
   * [4.1 Observable - 可被监听的序列](content/rxswift_core/observable.md)
     * Observable - 可被监听的序列
     * Single - 可被监听的序列

@@ -6,21 +6,7 @@
 
 你可以下载[这个例子](https://github.com/ReactiveX/RxSwift/tree/master/RxExample/RxExample/Examples/SimpleValidation)并在模拟器上运行，这样可以帮助于你理解整个程序的交互：
 
-* 初始状态
-
-  ![1](/assets/SimpleValid/SimpleValidationFull.png)
-
-* 输入有效的用户名后，用户名提示语消失，并且可以输入密码
-
-  ![2](/assets/SimpleValid/SimpleValidationFull2.png)
-
-* 输入有效的密码后，密码提示语消失，并且按钮可点击
-
-  ![3](/assets/SimpleValid/SimpleValidationFull3.png)
-
-* 点击绿色的按钮后，弹出提示框
-
-  ![4](/assets/SimpleValid/SimpleValidationFull4.png)
+  ![1](/assets/SimpleValid/SimpleValidationFull.gif)
 
 ### 这个页面主要由 5 各元素组成：
 

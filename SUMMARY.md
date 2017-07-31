@@ -7,24 +7,24 @@
   * [3.1 函数式编程](content/think_reactive/funtional_programming.md)
   * [3.2 函数式编程 -> 函数响应式编程](content/think_reactive/functional_reactive_progaramming.md)
   * [3.3 数据绑定](content/think_reactive/data_binding.md)
-* [4. RxSwift 核心概念](content/rxswift_core.md)
+* [4. RxSwift 的核心组件](content/rxswift_core.md)
   * [4.1 Observable - 可被监听的序列](content/rxswift_core/observable.md)
-    * Observable - 可被监听的序列
-    * Single - 可被监听的序列
-    * Completeable - 可被监听的序列
-    * Maybe - 可被监听的序列
-    * Driver - 可被监听的序列
-    * ControlEvent - 可被监听的序列
+    * Observable
+    * Single
+    * Completeable
+    * Maybe
+    * Driver
+    * ControlEvent
   * [4.2 Observer - 观察者](content/rxswift_core/observer.md)  
-    * AnyObserver - 可被监听的序列
-    * UIBindingObserver - 可被监听的序列
-  * [4.3 Observable & Observer 既是可被监听的序列也是观察者](content/rxswift_core/observable_and_observer.md)
-    * AsyncSubject - 可被监听的序列
-    * PublishSubject - 可被监听的序列
-    * ReplaySubject - 可被监听的序列
-    * BehaviorSubject - 可被监听的序列
-    * Variable - 可被监听的序列
-    * ControlProperty - 可被监听的序列
+    * AnyObserver
+    * UIBindingObserver
+  * [4.3 Observable & Observer 同时是可被监听的序列和观察者](content/rxswift_core/observable_and_observer.md)
+    * AsyncSubject
+    * PublishSubject
+    * ReplaySubject
+    * BehaviorSubject
+    * Variable
+    * ControlProperty
   * [4.3 Operator - 操作符](content/rxswift_core/operator.md)
     * combineLatest
     * delay
@@ -47,7 +47,8 @@
     * timeout
     * withLatestFrom
     * zip
-  * 4.4 Schedulers - 计划
+  * [4.4 Disposable - 可被清除的绑定](content/rxswift_core/disposable.md)
+  * [4.4 Schedulers - 计划](content/rxswift_core/schedulers.md)
   * 4.5 Error Handling - 错误处理
 * [5. 更多例子](content/more_demo.md)
 * [6. RxSwift 常用架构](content/architecture.md)

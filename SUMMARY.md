@@ -50,11 +50,12 @@
   * [4.4 Disposable - 可被清除的](content/rxswift_core/disposable.md)
   * [4.4 Schedulers - 调度器](content/rxswift_core/schedulers.md)
   * [4.5 Error Handling - 错误处理](content/rxswift_core/error_handling.md)
-* [5. 更多例子](content/more_demo.md)
-* [6. RxSwift 常用架构](content/architecture.md)
+* [5. 如何选择操作符？](content/decision_tree.md)
+* [6. 更多例子](content/more_demo.md)
+* [7. RxSwift 常用架构](content/architecture.md)
   * 6.1 MVVM
   * 6.2 RxFeedback - 反馈循环
   * [6.3 ReactorKit - 反应器](content/architecture/reactorkit.md)
-* [7. 为什么要继续使用 RxSwift?](content/why_rxswift_again.md)
-* [8. 学习资源](content/resource.md)
-* [9. 关于本文档](content/about.md)
+* [8. 为什么要继续使用 RxSwift?](content/why_rxswift_again.md)
+* [9. 学习资源](content/resource.md)
+* [10. 关于本文档](content/about.md)

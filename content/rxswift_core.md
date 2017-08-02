@@ -8,7 +8,7 @@
 * [Observer](rxswift_core/observer.md) - 响应事件
 * [Operator](rxswift_core/operator.md) - 变化组合事件
 * [Disposable](rxswift_core/disposable.md) - 管理绑定（订阅）的生命周期
-* [Schedulers](rxswift_core/schedulers.md) - 线程调配
+* [Schedulers](rxswift_core/schedulers.md) - 线程队列调配
 
 ```swift
 // Observable<String>
@@ -24,11 +24,11 @@ let observer = passwordValidOutlet.rx.isHidden
 
 // Disposable
 let disposable = passwordValid
-    // Scheduler 用于控制任务在那个线程运行
+    // Scheduler 用于控制任务在那个线程队列运行
     .subscribeOn(MainScheduler.instance)
     .observeOn(MainScheduler.instance)
     .bind(to: observer)
-    
+
 
 ...
 

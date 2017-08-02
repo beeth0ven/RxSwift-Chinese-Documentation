@@ -46,6 +46,10 @@ searchResults
     .disposed(by: disposeBag)
 ```
 
+## 安装
+
+安装 **RxSwift** 不需要任何第三方依赖。
+
 ## 必备条件
 
 * Xcode 8.0

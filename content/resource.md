@@ -8,11 +8,16 @@
 
 * [Learning Path: RxSwift from Start to Finish](https://academy.realm.io/posts/learning-path-rxswift-from-start-to-finish/)
 
+
+* [RxSwift in Practice](https://www.youtube.com/watch?v=W3zGx4TUaCE&t=401s)
+
 ## 博客
 
 * [Marin Todorov](http://rx-marin.com)
 
-[]()
+* [Adam](http://adamborek.com)
+
+* []()
 
 
 ## 教程
@@ -27,12 +32,16 @@
 * [RxSwift by Examples #3 – Networking.](https://www.thedroidsonroids.com/blog/ios/rxswift-examples-3-networking/)
 
 
-[]()
+* [ViewModel in RxSwift world](https://medium.com/@SergDort/viewmodel-in-rxswift-world-13d39faa2cf5)
 
-[]()
+* []()
 
 ## 开源项目
 
-[]()
+* [CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
 
-[]()
+* [RxTodo](https://github.com/devxoul/RxTodo)
+
+* [Drrrible](https://github.com/devxoul/Drrrible)
+
+* [RxMarbles](https://github.com/RxSwiftCommunity/RxMarbles)

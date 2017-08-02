@@ -1,4 +1,7 @@
 ## 函数式编程
+
+![](/assets/FunctionalReactiveProgramming/FunctionalProgrammingBanner.png)
+
 **函数式编程**是种编程范式，它需要我们将函数作为参数传递，或者作为返回值返还。我们可以通过组合不同的函数来得到想要的结果。
 
 我们来看一下这几个例子：

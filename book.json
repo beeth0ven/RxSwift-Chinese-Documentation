@@ -3,7 +3,7 @@
     "title": "RxSwift 中文文档",
     "description": null,
     "structure": {
-        "readme": "readme.md"
+        "readme": "introduction.md"
     },
     "language": "zh",
     "plugins": [

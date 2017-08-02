@@ -1,6 +1,6 @@
 # Summary
 
-* [RxSwift 中文文档](README.md)
+* [RxSwift 中文文档](introduction.md)
 * [1. 为什么要使用 RxSwift?](content/why_rxswift.md)
 * [2. 你好 RxSwift！](content/first_app.md)
 * [3. 函数响应式编程](content/think_reactive.md)

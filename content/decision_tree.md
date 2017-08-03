@@ -18,7 +18,7 @@
 * 一个任何事件都没有产生的序列：**never**
 
 
-**我想要创建一个 `Observable` 组合其他的 `Observables`**
+**我想要创建一个 `Observable` 通过组合其他的 `Observables`**
 
 * 任意一个 `Observable` 产生了元素，就发出这个元素：**merge**
 * 让这些 `Observables` 一个接一个的发出元素，当上一个 `Observable` 元素发送完毕后，下一个  `Observable` 才能开始发出元素：**concat**
@@ -62,6 +62,6 @@
 
 * 将有共同特征的元素分为一组：**groupBy**
 
-**我想从 `Observable` 只接收特定的元素
+**我想从 `Observable` 只接收特定的元素**
 
 * 发出唯一的元素：**single**

@@ -18,13 +18,13 @@
   * [4.2 Observer - 观察者](content/rxswift_core/observer.md)  
     * [AnyObserver](content/rxswift_core/observer/any_observer.md)
     * [UIBindingObserver](content/rxswift_core/observer/uibinding_observer.md)
-  * [4.3 Observable & Observer 同时是可被监听的序列和观察者](content/rxswift_core/observable_and_observer.md)
-    * AsyncSubject
-    * PublishSubject
-    * ReplaySubject
-    * BehaviorSubject
-    * Variable
-    * ControlProperty
+  * [4.3 Observable & Observer 既是可被监听的序列也是观察者](content/rxswift_core/observable_and_observer.md)
+    * [AsyncSubject](content/rxswift_core/observable_and_observer/async_subject.md)
+    * [PublishSubject](content/rxswift_core/observable_and_observer/publish_subject.md)
+    * [ReplaySubject](content/rxswift_core/observable_and_observer/replay_subject.md)
+    * [BehaviorSubject](content/rxswift_core/observable_and_observer/behavior_subject.md)
+    * [Variable](content/rxswift_core/observable_and_observer/variable.md)
+    * [ControlProperty](content/rxswift_core/observable_and_observer/control_property.md)
   * [4.3 Operator - 操作符](content/rxswift_core/operator.md)
     * combineLatest
     * delay

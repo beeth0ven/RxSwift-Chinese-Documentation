@@ -59,6 +59,6 @@ tap.subscribe(
 
 ### 特征观察者
 
-和 [Observable](observable.md) 一样，观察者也存特征**观察者**：
+和 [Observable](observable.md) 一样，观察者也存特征**观察者**，例如：
 
 * [UIBindingObserver](observer/uibinding_observer.md)

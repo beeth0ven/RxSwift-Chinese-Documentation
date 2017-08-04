@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>4.3 Observable & Observer 同时是可被监听的序列和观察者 · RxSwift 中文文档</title>
+        <title>4.3 Observable & Observer 既是可被监听的序列也是观察者 · RxSwift 中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -74,6 +74,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="observable_and_observer/async_subject.html" />
     
     
     <link rel="prev" href="observer/uibinding_observer.html" />
@@ -380,7 +382,7 @@
                 <a href="observable_and_observer.html">
             
                     
-                    4.3 Observable & Observer 同时是可被监听的序列和观察者
+                    4.3 Observable & Observer 既是可被监听的序列也是观察者
             
                 </a>
             
@@ -389,79 +391,79 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.3.1" >
+        <li class="chapter " data-level="1.5.3.1" data-path="observable_and_observer/async_subject.html">
             
-                <span>
+                <a href="observable_and_observer/async_subject.html">
             
                     
                     AsyncSubject
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.5.3.2" >
+        <li class="chapter " data-level="1.5.3.2" data-path="observable_and_observer/publish_subject.html">
             
-                <span>
+                <a href="observable_and_observer/publish_subject.html">
             
                     
                     PublishSubject
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.5.3.3" >
+        <li class="chapter " data-level="1.5.3.3" data-path="observable_and_observer/replay_subject.html">
             
-                <span>
+                <a href="observable_and_observer/replay_subject.html">
             
                     
                     ReplaySubject
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.5.3.4" >
+        <li class="chapter " data-level="1.5.3.4" data-path="observable_and_observer/behavior_subject.html">
             
-                <span>
+                <a href="observable_and_observer/behavior_subject.html">
             
                     
                     BehaviorSubject
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.5.3.5" >
+        <li class="chapter " data-level="1.5.3.5" data-path="observable_and_observer/variable.html">
             
-                <span>
+                <a href="observable_and_observer/variable.html">
             
                     
                     Variable
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.5.3.6" >
+        <li class="chapter " data-level="1.5.3.6" data-path="observable_and_observer/control_property.html">
             
-                <span>
+                <a href="observable_and_observer/control_property.html">
             
                     
                     ControlProperty
             
-                </span>
+                </a>
             
 
             
@@ -961,7 +963,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >4.3 Observable & Observer 同时是可被监听的序列和观察者</a>
+        <a href="../.." >4.3 Observable & Observer 既是可被监听的序列也是观察者</a>
     </h1>
 </div>
 
@@ -976,7 +978,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="observable--observer-&#x65E2;&#x662F;&#x53EF;&#x88AB;&#x76D1;&#x542C;&#x7684;&#x5E8F;&#x5217;&#x4E5F;&#x662F;&#x89C2;&#x5BDF;&#x8005;"><a name="observable--observer-&#x65E2;&#x662F;&#x53EF;&#x88AB;&#x76D1;&#x542C;&#x7684;&#x5E8F;&#x5217;&#x4E5F;&#x662F;&#x89C2;&#x5BDF;&#x8005;" class="plugin-anchor" href="#observable--observer-&#x65E2;&#x662F;&#x53EF;&#x88AB;&#x76D1;&#x542C;&#x7684;&#x5E8F;&#x5217;&#x4E5F;&#x662F;&#x89C2;&#x5BDF;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>Observable &amp; Observer &#x65E2;&#x662F;&#x53EF;&#x88AB;&#x76D1;&#x542C;&#x7684;&#x5E8F;&#x5217;&#x4E5F;&#x662F;&#x89C2;&#x5BDF;&#x8005;</h1>
+                                <h2 id="observable--observer-&#x65E2;&#x662F;&#x53EF;&#x88AB;&#x76D1;&#x542C;&#x7684;&#x5E8F;&#x5217;&#x4E5F;&#x662F;&#x89C2;&#x5BDF;&#x8005;"><a name="observable--observer-&#x65E2;&#x662F;&#x53EF;&#x88AB;&#x76D1;&#x542C;&#x7684;&#x5E8F;&#x5217;&#x4E5F;&#x662F;&#x89C2;&#x5BDF;&#x8005;" class="plugin-anchor" href="#observable--observer-&#x65E2;&#x662F;&#x53EF;&#x88AB;&#x76D1;&#x542C;&#x7684;&#x5E8F;&#x5217;&#x4E5F;&#x662F;&#x89C2;&#x5BDF;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>Observable &amp; Observer &#x65E2;&#x662F;&#x53EF;&#x88AB;&#x76D1;&#x542C;&#x7684;&#x5E8F;&#x5217;&#x4E5F;&#x662F;&#x89C2;&#x5BDF;&#x8005;</h2>
+<p><img src="../../assets/ObservableAndObserver/ObservableAndObserver.png" alt=""></p>
+<p>&#x5728;&#x6211;&#x4EEC;&#x6240;&#x9047;&#x5230;&#x7684;&#x4E8B;&#x52A1;&#x4E2D;&#xFF0C;&#x6709;&#x4E00;&#x90E8;&#x5206;&#x975E;&#x5E38;&#x7279;&#x522B;&#x3002;&#x5B83;&#x4EEC;&#x65E2;&#x662F;<strong>&#x53EF;&#x88AB;&#x76D1;&#x542C;&#x7684;&#x5E8F;&#x5217;</strong>&#x4E5F;&#x662F;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;<code>textField</code>&#x7684;&#x5F53;&#x524D;&#x6587;&#x672C;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x662F;&#x7531;&#x7528;&#x6237;&#x8F93;&#x5165;&#xFF0C;&#x800C;&#x4EA7;&#x751F;&#x7684;&#x4E00;&#x4E2A;<strong>&#x6587;&#x672C;&#x5E8F;&#x5217;</strong>&#x3002;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x7531;&#x5916;&#x90E8;&#x6587;&#x672C;&#x5E8F;&#x5217;&#xFF0C;&#x6765;&#x63A7;&#x5236;&#x5F53;&#x524D;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;&#x7684;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-comment">// &#x4F5C;&#x4E3A;&#x53EF;&#x88AB;&#x76D1;&#x542C;&#x7684;&#x5E8F;&#x5217;</span>
+<span class="hljs-keyword">let</span> observable = textField.rx.text
+observable.subscribe(onNext: { text <span class="hljs-keyword">in</span> show(text: text) })
+</code></pre>
+<pre><code class="lang-swift"><span class="hljs-comment">// &#x4F5C;&#x4E3A;&#x89C2;&#x5BDF;&#x8005;</span>
+<span class="hljs-keyword">let</span> observer = textField.rx.text
+<span class="hljs-keyword">let</span> text: <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">String</span>?&gt; = ...
+text.bind(to: observer)
+</code></pre>
+<p>&#x6709;&#x8BB8;&#x591A; UI &#x63A7;&#x4EF6;&#x90FD;&#x5B58;&#x5728;&#x8FD9;&#x79CD;&#x7279;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>switch</code>&#x7684;&#x5F00;&#x5173;&#x72B6;&#x6001;&#xFF0C;<code>segmentedControl</code>&#x7684;&#x9009;&#x4E2D;&#x7D22;&#x5F15;&#x53F7;&#xFF0C;<code>datePicker</code>&#x7684;&#x9009;&#x4E2D;&#x65E5;&#x671F;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x6846;&#x67B6;&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x4E86;&#x8BB8;&#x591A;&#x7C7B;&#x578B;&#xFF0C;&#x90FD;&#x5177;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x7279;&#x5F81;&#x3002;&#x5B83;&#x4EEC;&#x5206;&#x522B;&#x662F;&#xFF1A;</p>
+<ul>
+<li><a href="observable_and_observer/async_subject.html">AsyncSubject</a></li>
+<li><a href="observable_and_observer/publish_subject.html">PublishSubject</a></li>
+<li><a href="observable_and_observer/replay_subject.html">ReplaySubject</a></li>
+<li><a href="observable_and_observer/behavior_subject.html">BehaviorSubject</a></li>
+<li><a href="observable_and_observer/variable.html">Variable</a></li>
+<li><a href="observable_and_observer/control_property.html">ControlProperty</a></li>
+</ul>
 
                                 
                                 </section>
@@ -1004,10 +1028,14 @@
 
             
                 
-                <a href="observer/uibinding_observer.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: UIBindingObserver">
+                <a href="observer/uibinding_observer.html" class="navigation navigation-prev " aria-label="Previous page: UIBindingObserver">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="observable_and_observer/async_subject.html" class="navigation navigation-next " aria-label="Next page: AsyncSubject">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1016,7 +1044,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3 Observable & Observer 同时是可被监听的序列和观察者","level":"1.5.3","depth":2,"next":{"title":"AsyncSubject","level":"1.5.3.1","depth":3,"ref":"","articles":[]},"previous":{"title":"UIBindingObserver","level":"1.5.2.2","depth":3,"path":"content/rxswift_core/observer/uibinding_observer.md","ref":"content/rxswift_core/observer/uibinding_observer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observable_and_observer.md","mtime":"2017-08-03T09:20:13.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-03T09:20:26.588Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3 Observable & Observer 既是可被监听的序列也是观察者","level":"1.5.3","depth":2,"next":{"title":"AsyncSubject","level":"1.5.3.1","depth":3,"path":"content/rxswift_core/observable_and_observer/async_subject.md","ref":"content/rxswift_core/observable_and_observer/async_subject.md","articles":[]},"previous":{"title":"UIBindingObserver","level":"1.5.2.2","depth":3,"path":"content/rxswift_core/observer/uibinding_observer.md","ref":"content/rxswift_core/observer/uibinding_observer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observable_and_observer.md","mtime":"2017-08-04T05:15:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-04T02:58:13.484Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

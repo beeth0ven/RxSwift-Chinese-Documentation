@@ -1,6 +1,6 @@
 # 关于本文档
 
-* 作者：[Luo Jie (Beeth0ven)](https://github.com/beeth0ven)
+* 作者：[罗杰 (Beeth0ven)](https://github.com/beeth0ven)
 * 版本：**0.0.1**
 * 首发日期：**17 年 9 月 1 日**
 * 更新日期：**17 年 9 月 1 日**

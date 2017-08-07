@@ -979,6 +979,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5982;&#x4F55;&#x9009;&#x62E9;&#x64CD;&#x4F5C;&#x7B26;&#xFF1F;"><a name="&#x5982;&#x4F55;&#x9009;&#x62E9;&#x64CD;&#x4F5C;&#x7B26;&#xFF1F;" class="plugin-anchor" href="#&#x5982;&#x4F55;&#x9009;&#x62E9;&#x64CD;&#x4F5C;&#x7B26;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5982;&#x4F55;&#x9009;&#x62E9;&#x64CD;&#x4F5C;&#x7B26;&#xFF1F;</h1>
+<p><img src="../assets/WhichOperator.png" alt=""></p>
 <p>&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;<strong>&#x51B3;&#x7B56;&#x6811;</strong>&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4F60;&#x627E;&#x5230;&#x9700;&#x8981;&#x7684;&#x64CD;&#x4F5C;&#x7B26;&#x3002;</p>
 <p><strong>&#x6211;&#x60F3;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Observable</code></strong></p>
 <ul>
@@ -1025,7 +1026,7 @@
 <p><strong>&#x6211;&#x60F3;&#x8981;&#x5C06;&#x4EA7;&#x751F;&#x7684;&#x4E8B;&#x4EF6;&#x5C01;&#x88C5;&#x6210;&#x5143;&#x7D20;&#x53D1;&#x9001;&#x51FA;&#x6765;</strong></p>
 <ul>
 <li>&#x5C06;&#x4ED6;&#x4EEC;&#x5C01;&#x88C5;&#x6210; <code>Event&lt;Element&gt;</code>&#xFF1A;<strong>materialize</strong><ul>
-<li>&#x7136;&#x540E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x89E3;&#x5C01;&#x51FA;&#x6765;&#xFF1A;<strong>dematerialize</strong></li>
+<li>&#x7136;&#x540E;&#x89E3;&#x5C01;&#x51FA;&#x6765;&#xFF1A;<strong>dematerialize</strong></li>
 </ul>
 </li>
 </ul>
@@ -1041,7 +1042,7 @@
 <ul>
 <li>&#xFF1A;<strong>buffer</strong></li>
 </ul>
-<p><strong>&#x6211;&#x60F3;&#x5C06; <code>Observable</code> &#x62C6;&#x5206;&#x6210;&#x591A;&#x4E2A; <code>Observables</code>&#xFF1A; </strong>window**</p>
+<p><strong>&#x6211;&#x60F3;&#x5C06; <code>Observable</code> &#x62C6;&#x5206;&#x6210;&#x591A;&#x4E2A; <code>Observables</code>&#xFF1A;window</strong></p>
 <ul>
 <li>&#x57FA;&#x4E8E;&#x5143;&#x7D20;&#x7684;&#x5171;&#x540C;&#x7279;&#x5F81;&#xFF1A;<strong>groupBy</strong></li>
 </ul>
@@ -1051,50 +1052,53 @@
 </ul>
 <p><strong>&#x6211;&#x60F3;&#x91CD;&#x65B0;&#x4ECE; <code>Observable</code> &#x4E2D;&#x53D1;&#x51FA;&#x67D0;&#x4E9B;&#x5143;&#x7D20;</strong></p>
 <ul>
-<li><p>&#x901A;&#x8FC7;&#x5224;&#x5B9A;&#x6761;&#x4EF6;&#x8FC7;&#x6EE4;&#x51FA;&#x4E00;&#x4E9B;&#x5143;&#x7D20;&#xFF1A;<strong>filter</strong></p>
-</li>
-<li><p>&#x4EC5;&#x4EC5;&#x53D1;&#x51FA;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>take</strong>  </p>
-</li>
-<li><p>&#x4EC5;&#x4EC5;&#x53D1;&#x51FA;&#x5C3E;&#x90E8;&#x7684;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>takeLast</strong>  </p>
-</li>
-<li><p>&#x4EC5;&#x4EC5;&#x53D1;&#x51FA;&#x7B2C; n &#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>elementAt</strong>  </p>
-</li>
-<li><p>&#x8DF3;&#x8FC7;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;  </p>
-<ul>
-<li><p>&#x8DF3;&#x8FC7;&#x5934; n &#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>skip</strong></p>
-</li>
-<li><p>&#x8DF3;&#x8FC7;&#x5934;&#x51E0;&#x4E2A;&#x6EE1;&#x8DB3;&#x5224;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#xFF1A;<strong>skipWhile</strong>&#xFF0C;<strong>skipWhileWithIndex</strong></p>
-</li>
-<li><p>&#x8DF3;&#x8FC7;&#x67D0;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x4EA7;&#x751F;&#x7684;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>skip</strong></p>
-</li>
-<li><p>&#x8DF3;&#x8FC7;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#x76F4;&#x5230;&#x53E6;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>skipUntil</strong></p>
-</li>
+<li>&#x901A;&#x8FC7;&#x5224;&#x5B9A;&#x6761;&#x4EF6;&#x8FC7;&#x6EE4;&#x51FA;&#x4E00;&#x4E9B;&#x5143;&#x7D20;&#xFF1A;<strong>filter</strong></li>
+<li>&#x4EC5;&#x4EC5;&#x53D1;&#x51FA;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>take</strong>  </li>
+<li>&#x4EC5;&#x4EC5;&#x53D1;&#x51FA;&#x5C3E;&#x90E8;&#x7684;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>takeLast</strong>  </li>
+<li>&#x4EC5;&#x4EC5;&#x53D1;&#x51FA;&#x7B2C; n &#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>elementAt</strong>  </li>
+<li>&#x8DF3;&#x8FC7;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;  <ul>
+<li>&#x8DF3;&#x8FC7;&#x5934; n &#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>skip</strong></li>
+<li>&#x8DF3;&#x8FC7;&#x5934;&#x51E0;&#x4E2A;&#x6EE1;&#x8DB3;&#x5224;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#xFF1A;<strong>skipWhile</strong>&#xFF0C;<strong>skipWhileWithIndex</strong></li>
+<li>&#x8DF3;&#x8FC7;&#x67D0;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x4EA7;&#x751F;&#x7684;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>skip</strong></li>
+<li>&#x8DF3;&#x8FC7;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#x76F4;&#x5230;&#x53E6;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>skipUntil</strong></li>
 </ul>
 </li>
-<li><p>&#x53EA;&#x53D6;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;  </p>
-<ul>
-<li><p>&#x53EA;&#x53D6;&#x5934;&#x51E0;&#x4E2A;&#x6EE1;&#x8DB3;&#x5224;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#xFF1A;<strong>takeWhile</strong>&#xFF0C;<strong>takeWhileWithIndex</strong></p>
-</li>
-<li><p>&#x53EA;&#x53D6;&#x67D0;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x4EA7;&#x751F;&#x7684;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>take</strong></p>
-</li>
-<li><p>&#x53EA;&#x53D6;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#x76F4;&#x5230;&#x53E6;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>takeUntil</strong></p>
-</li>
+<li>&#x53EA;&#x53D6;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;  <ul>
+<li>&#x53EA;&#x53D6;&#x5934;&#x51E0;&#x4E2A;&#x6EE1;&#x8DB3;&#x5224;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#xFF1A;<strong>takeWhile</strong>&#xFF0C;<strong>takeWhileWithIndex</strong></li>
+<li>&#x53EA;&#x53D6;&#x67D0;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x4EA7;&#x751F;&#x7684;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>take</strong></li>
+<li>&#x53EA;&#x53D6;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#x76F4;&#x5230;&#x53E6;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF1A;<strong>takeUntil</strong></li>
 </ul>
 </li>
-<li><p>&#x5468;&#x671F;&#x6027;&#x7684;&#x5BF9; <code>Observable</code> &#x62BD;&#x6837;&#xFF1A;<strong>sample</strong></p>
-</li>
-<li><p>&#x53D1;&#x51FA;&#x90A3;&#x4E9B;&#x5143;&#x7D20;&#xFF0C;&#x8FD9;&#x4E9B;&#x5143;&#x7D20;&#x4EA7;&#x751F;&#x540E;&#x7684;&#x7279;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x5185;&#xFF0C;&#x6CA1;&#x6709;&#x65B0;&#x7684;&#x5143;&#x7D20;&#x4EA7;&#x751F;&#xFF1A;<strong>debounce</strong></p>
-</li>
-<li><p>&#x76F4;&#x5230;&#x5143;&#x7D20;&#x7684;&#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x624D;&#x53D1;&#x51FA;&#x65B0;&#x7684;&#x5143;&#x7D20;&#xFF1A;<strong>distinctUntilChanged</strong></p>
-<ul>
+<li>&#x5468;&#x671F;&#x6027;&#x7684;&#x5BF9; <code>Observable</code> &#x62BD;&#x6837;&#xFF1A;<strong>sample</strong></li>
+<li>&#x53D1;&#x51FA;&#x90A3;&#x4E9B;&#x5143;&#x7D20;&#xFF0C;&#x8FD9;&#x4E9B;&#x5143;&#x7D20;&#x4EA7;&#x751F;&#x540E;&#x7684;&#x7279;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x5185;&#xFF0C;&#x6CA1;&#x6709;&#x65B0;&#x7684;&#x5143;&#x7D20;&#x4EA7;&#x751F;&#xFF1A;<strong>debounce</strong></li>
+<li>&#x76F4;&#x5230;&#x5143;&#x7D20;&#x7684;&#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x624D;&#x53D1;&#x51FA;&#x65B0;&#x7684;&#x5143;&#x7D20;&#xFF1A;<strong>distinctUntilChanged</strong><ul>
 <li>&#x5E76;&#x63D0;&#x4F9B;&#x5143;&#x7D20;&#x662F;&#x5426;&#x76F8;&#x7B49;&#x7684;&#x5224;&#x5B9A;&#x51FD;&#x6570;&#xFF1A;<strong>distinctUntilChanged</strong></li>
 </ul>
 </li>
-<li><p>&#x5728;&#x5F00;&#x59CB;&#x53D1;&#x51FA;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x5EF6;&#x65F6;&#x540E;&#x8FDB;&#x884C;&#x8BA2;&#x9605;&#xFF1A;<strong>delaySubscription</strong></p>
-</li>
+<li>&#x5728;&#x5F00;&#x59CB;&#x53D1;&#x51FA;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x5EF6;&#x65F6;&#x540E;&#x8FDB;&#x884C;&#x8BA2;&#x9605;&#xFF1A;<strong>delaySubscription</strong></li>
 </ul>
-<p>*</p>
-<p>*</p>
+<p><strong>&#x6211;&#x60F3;&#x8981;&#x4ECE;&#x4E00;&#x4E9B; <code>Observables</code> &#x4E2D;&#xFF0C;&#x53EA;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x4EA7;&#x751F;&#x5143;&#x7D20;&#x7684; <code>Observable</code></strong></p>
+<ul>
+<li>&#xFF1A;<strong>amb</strong></li>
+</ul>
+<p><strong>&#x6211;&#x60F3;&#x8BC4;&#x4F30; <code>Observable</code> &#x7684;&#x5168;&#x90E8;&#x5143;&#x7D20;</strong></p>
+<ul>
+<li>&#x5E76;&#x4E14;&#x5BF9;&#x6CA1;&#x4E2A;&#x5143;&#x7D20;&#x5E94;&#x7528;&#x805A;&#x5408;&#x65B9;&#x6CD5;&#xFF0C;&#x5F85;&#x6240;&#x6709;&#x5143;&#x7D20;&#x90FD;&#x5E94;&#x7528;&#x805A;&#x5408;&#x65B9;&#x6CD5;&#x540E;&#xFF0C;&#x53D1;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;<strong>deduce</strong></li>
+<li>&#x5E76;&#x4E14;&#x5BF9;&#x6CA1;&#x4E2A;&#x5143;&#x7D20;&#x5E94;&#x7528;&#x805A;&#x5408;&#x65B9;&#x6CD5;&#xFF0C;&#x6BCF;&#x6B21;&#x5E94;&#x7528;&#x805A;&#x5408;&#x65B9;&#x6CD5;&#x540E;&#xFF0C;&#x53D1;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;<strong>scan</strong></li>
+</ul>
+<p><strong>&#x6211;&#x60F3;&#x628A; <code>Observable</code> &#x8F6C;&#x6362;&#x4E3A;&#x5176;&#x4ED6;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;</strong></p>
+<ul>
+<li>&#xFF1A;<strong>as...</strong></li>
+</ul>
+<p><strong>&#x6211;&#x60F3;&#x5728;&#x67D0;&#x4E2A; <a href="rxswift_core/schedulers.html">Scheduler</a> &#x5E94;&#x7528;&#x64CD;&#x4F5C;&#x7B26;&#xFF1A;subscribeOn</strong></p>
+<ul>
+<li>&#x5728;&#x67D0;&#x4E2A; <a href="rxswift_core/schedulers.html">Scheduler</a> &#x76D1;&#x542C;&#xFF1A;<strong>observeOn</strong></li>
+</ul>
+<p><strong>&#x6211;&#x60F3;&#x8981; <code>Observable</code> &#x53D1;&#x751F;&#x67D0;&#x4E2A;&#x4E8B;&#x4EF6;&#x65F6;, &#x91C7;&#x53D6;&#x67D0;&#x4E2A;&#x884C;&#x52A8;&#xFF1A;do</strong></p>
+<p><strong>&#x6211;&#x60F3;&#x8981; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A; <code>error</code> &#x4E8B;&#x4EF6;&#xFF1A;error</strong></p>
+<ul>
+<li>&#x5982;&#x679C;&#x89C4;&#x5B9A;&#x65F6;&#x95F4;&#x5185;&#x6CA1;&#x6709;&#x4EA7;&#x751F;&#x5143;&#x7D20;&#xFF1A;<strong>timeout</strong></li>
+</ul>
 
                                 
                                 </section>
@@ -1138,7 +1142,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"5. 如何选择操作符？","level":"1.6","depth":1,"next":{"title":"6. 更多例子","level":"1.7","depth":1,"path":"content/more_demo.md","ref":"content/more_demo.md","articles":[]},"previous":{"title":"4.5 Error Handling - 错误处理","level":"1.5.7","depth":2,"path":"content/rxswift_core/error_handling.md","ref":"content/rxswift_core/error_handling.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/decision_tree.md","mtime":"2017-08-04T02:28:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-04T02:58:13.484Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"5. 如何选择操作符？","level":"1.6","depth":1,"next":{"title":"6. 更多例子","level":"1.7","depth":1,"path":"content/more_demo.md","ref":"content/more_demo.md","articles":[]},"previous":{"title":"4.5 Error Handling - 错误处理","level":"1.5.7","depth":2,"path":"content/rxswift_core/error_handling.md","ref":"content/rxswift_core/error_handling.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/decision_tree.md","mtime":"2017-08-07T01:51:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-04T05:20:06.460Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

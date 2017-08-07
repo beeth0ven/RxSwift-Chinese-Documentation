@@ -13,6 +13,12 @@
 
 你可以在这里找到跨平台文档 [ReactiveX.io](http://reactivex.io/)。
 
+------
+
+[RxSwift](https://github.com/ReactiveX/RxSwift) **QQ** 交流群: **424180219**
+
+------
+
 ## 用例
 
 Github 搜索...
@@ -45,6 +51,8 @@ searchResults
     }
     .disposed(by: disposeBag)
 ```
+
+------
 
 ## 安装
 

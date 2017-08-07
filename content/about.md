@@ -15,4 +15,4 @@
 如果你发现文档存在问题，可以通过以下任意一种方式将问题反馈给作者：
   * 在存在问题页面，点击左上方的编辑页面按钮来对文档进行修正，最后提交 [Pull Request](https://help.github.com/articles/about-pull-requests/)
   * 前往 [文档库](https://github.com/beeth0ven/RxSwift-Chinese-Documention) 提 [issues](https://github.com/beeth0ven/RxSwift-Chinese-Documention/issues)， 并注明文档哪些地方存在问题
-  * 加入到 **RxSwift** 交流 QQ 群: **424180219**，将问题反馈给作者
+  * 加入到 **RxSwift** QQ 交流群: **424180219**，将问题反馈给作者

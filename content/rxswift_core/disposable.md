@@ -1,5 +1,1 @@
-ImagePicker
-
-SimpleTableViewExample
-
-Calculator
+## Disposable - 可被清除的

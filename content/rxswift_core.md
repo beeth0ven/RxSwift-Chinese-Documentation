@@ -6,7 +6,7 @@
 
 * [Observable](rxswift_core/observable.md) - 产生事件
 * [Observer](rxswift_core/observer.md) - 响应事件
-* [Operator](rxswift_core/operator.md) - 变化组合事件
+* [Operator](rxswift_core/operator.md) - 创建变化组合事件
 * [Disposable](rxswift_core/disposable.md) - 管理绑定（订阅）的生命周期
 * [Schedulers](rxswift_core/schedulers.md) - 线程队列调配
 

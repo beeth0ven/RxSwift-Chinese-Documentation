@@ -83,7 +83,7 @@
     * [window](content/rxswift_core/operator/window.md)
     * [withLatestFrom](content/rxswift_core/operator/withLatestFrom.md)
     * [zip](content/rxswift_core/operator/zip.md)
-  * [4.5 Disposable - 可被清除的](content/rxswift_core/disposable.md)
+  * [4.5 Disposable - 可被清除的资源](content/rxswift_core/disposable.md)
   * [4.6 Schedulers - 调度器](content/rxswift_core/schedulers.md)
   * [4.7 Error Handling - 错误处理](content/rxswift_core/error_handling.md)
 * [5. 如何选择操作符？](content/decision_tree.md)

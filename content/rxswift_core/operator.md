@@ -100,6 +100,7 @@
 * [do](operator/do.md)
 * [elementAt](operator/elementAt.md)
 * [empty](operator/empty.md)
+* [error](operator/error.md)
 * [filter](operator/filter.md)
 * [flatMap](operator/flatMap.md)
 * [flatMapLatest](operator/flatMapLatest.md)

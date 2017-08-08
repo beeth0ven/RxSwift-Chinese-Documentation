@@ -1,1 +1,11 @@
-1
+## map
+
+**通过一个转换函数，将 `Observable` 的每个元素转换一遍**
+
+![](/assets/Operator/Operators/map.png)
+
+**map** 操作符将源 `Observable` 的每个元素应用你提供的转换方法，然后返回含有转换结果的  `Observable`。
+
+### 参考
+
+* [flatMap](flatMap.md)

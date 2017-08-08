@@ -57,11 +57,11 @@
 * 仅仅发出第 n 个元素：[elementAt](rxswift_core/operator/elementAt.md)
 * 跳过头几个元素  
   * 跳过头 n 个元素：[skip](rxswift_core/operator/skip.md)
-  * 跳过头几个满足判定的元素：[skipWhile](rxswift_core/operator/skipWhile.md)，**skipWhileWithIndex**
+  * 跳过头几个满足判定的元素：[skipWhile](rxswift_core/operator/skipWhile.md)，[skipWhileWithIndex](rxswift_core/operator/skipWhile.md)
   * 跳过某段时间内产生的头几个元素：[skip](rxswift_core/operator/skip.md)
   * 跳过头几个元素直到另一个 `Observable` 发出一个元素：[skipUntil](rxswift_core/operator/skipUntil.md)
-* 只取头几个元素  
-  * 只取头几个满足判定的元素：[takeWhile](rxswift_core/operator/takeWhile.md)，**takeWhileWithIndex**
+* 只取头几个元素
+  * 只取头几个满足判定的元素：[takeWhile](rxswift_core/operator/takeWhile.md)，[takeWhileWithIndex](rxswift_core/operator/takeWhile.md)
   * 只取某段时间内产生的头几个元素：[take](rxswift_core/operator/take.md)
   * 只取头几个元素直到另一个 `Observable` 发出一个元素：[takeUntil](rxswift_core/operator/takeUntil.md)
 * 周期性的对 `Observable` 抽样：[sample](rxswift_core/operator/sample.md)
@@ -83,7 +83,7 @@
 
 **我想要 `Observable` 发生某个事件时, 采取某个行动：[do](rxswift_core/operator/do.md)**
 
-**我想要 `Observable` 发出一个 `error` 事件：error**
+**我想要 `Observable` 发出一个 `error` 事件：[error](rxswift_core/operator/error.md)**
 * 如果规定时间内没有产生元素：[timeout](rxswift_core/operator/timeout.md)
 
 **我想要 `Observable` 发生错误时，优雅的恢复**

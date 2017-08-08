@@ -25,7 +25,7 @@
     * [BehaviorSubject](content/rxswift_core/observable_and_observer/behavior_subject.md)
     * [Variable](content/rxswift_core/observable_and_observer/variable.md)
     * [ControlProperty](content/rxswift_core/observable_and_observer/control_property.md)
-  * [4.3 Operator - 操作符](content/rxswift_core/operator.md)
+  * [4.4 Operator - 操作符](content/rxswift_core/operator.md)
     * [amb](content/rxswift_core/operator/amb.md)
     * [buffer](content/rxswift_core/operator/buffer.md)
     * [catchError](content/rxswift_core/operator/catchError.md)
@@ -44,6 +44,7 @@
     * [do](content/rxswift_core/operator/do.md)
     * [elementAt](content/rxswift_core/operator/elementAt.md)
     * [empty](content/rxswift_core/operator/empty.md)
+    * [error](content/rxswift_core/operator/error.md)
     * [filter](content/rxswift_core/operator/filter.md)
     * [flatMap](content/rxswift_core/operator/flatMap.md)
     * [flatMapLatest](content/rxswift_core/operator/flatMapLatest.md)
@@ -82,15 +83,15 @@
     * [window](content/rxswift_core/operator/window.md)
     * [withLatestFrom](content/rxswift_core/operator/withLatestFrom.md)
     * [zip](content/rxswift_core/operator/zip.md)
-  * [4.4 Disposable - 可被清除的](content/rxswift_core/disposable.md)
-  * [4.4 Schedulers - 调度器](content/rxswift_core/schedulers.md)
-  * [4.5 Error Handling - 错误处理](content/rxswift_core/error_handling.md)
+  * [4.5 Disposable - 可被清除的](content/rxswift_core/disposable.md)
+  * [4.6 Schedulers - 调度器](content/rxswift_core/schedulers.md)
+  * [4.7 Error Handling - 错误处理](content/rxswift_core/error_handling.md)
 * [5. 如何选择操作符？](content/decision_tree.md)
 * [6. 更多例子](content/more_demo.md)
 * [7. RxSwift 常用架构](content/architecture.md)
-  * 6.1 MVVM
-  * 6.2 RxFeedback - 反馈循环
-  * [6.3 ReactorKit - 反应器](content/architecture/reactorkit.md)
+  * 7.1 MVVM
+  * 7.2 RxFeedback - 反馈循环
+  * [7.3 ReactorKit - 反应器](content/architecture/reactorkit.md)
 * [8. 为什么要继续使用 RxSwift?](content/why_rxswift_again.md)
 * [9. 学习资源](content/resource.md)
 * [10. 关于本文档](content/about.md)

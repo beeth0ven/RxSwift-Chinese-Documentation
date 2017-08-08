@@ -36,7 +36,7 @@ rxData
 我们用 `subscribeOn` 来决定数据序列的构建函数在哪个 **Scheduler** 上运行。以上例子中，由于获取 `Data` 需要花很长的时间，所以用 `subscribeOn` 切换到 **后台 Scheduler** 来产生 `Data`。
 
 ### 使用 observeOn
-我们用 `observeOn` 来决定在哪个 **Scheduler** 响应这个数据序列。以上例子中，通过使用 `observeOn` 方法切换到主线程来处理结果。
+我们用 `observeOn` 来决定在哪个 **Scheduler** 监听这个数据序列。以上例子中，通过使用 `observeOn` 方法切换到主线程来处理结果。
 
 一个比较典型的例子就是，在后台发起网络请求，然后解析数据，最后在主线程刷新页面。你就可以先用 `subscribeOn` 切到后台去发送请求并解析数据，最后用 `observeOn` 切换到主线程更新页面。
 

@@ -76,7 +76,7 @@
 
 ### 决策树
 
-[Rx](https://github.com/Reactive-Extensions/Rx.NET) 提供了充分的**操作符**来帮我们创建序列。当然如果内置操作符无法满足你的需求，你还可以创建自定义的操作符。
+[Rx](https://github.com/Reactive-Extensions/Rx.NET) 提供了充分的**操作符**来帮我们创建序列。当然如果内置操作符无法满足你的需求时，你还可以创建自定义的操作符。
 
 如果你不确定该如何选择操作符，可以参考 [决策树](/content/decision_tree.md)。它会引导你找出合适的操作符。
 

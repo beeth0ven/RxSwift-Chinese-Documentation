@@ -1,40 +1,48 @@
+## Maybe
 
+**Maybe** 是 `Observable` 的变体。它介于 [Single](single.md) 和 [Completable](completable.md) 之间，它要么只能发出一个元素，要么产生一个 `completed` 事件，要么产生一个 `error` 事件。
 
-* **Single**
+* 发出一个元素或者一个 `completed` 事件或者一个 `error` 事件
+* 不会共享状态变化
 
-  * 序列要么产生一个元素，要么产生一个错误，二选一
+如果你遇到那种可能需要发出一个元素，又可能不需要发出时，就可以使用 **Maybe**。
 
-* **Completable**
+### 如何创建 Maybe
+创建 **Maybe** 和创建 **Observable** 非常相似：
 
-  * 序列要么产生一个完成事件，要么产生一个错误，二选一
+```swift
+func generateString() -> Maybe<String> {
+    return Maybe<String>.create { maybe in
+        maybe(.success("RxSwift"))
 
-* **Maybe**
+        // OR
 
-  * 序列要么产生一个元素，要么产生一个完成事件，要么产生一个错误，三选一
+        maybe(.completed)
 
-* **Driver**
+        // OR
 
-  * 不会产生错误
+        maybe(.error(error))
 
-  * 观察者一定是在主线程监听
+        return Disposables.create {}
+    }
+}
+```
 
-  * 共享状态变化
+之后，你可以这样使用 **Completable**：
 
-* **ControlEvent**
+```swift
+generateString()
+    .subscribe(
+       onSuccess: { element in
+           print("Completed with element \(element)")
+       },
+       onError: { error in
+           print("Completed with an error \(error.localizedDescription)")
+       },
+       onCompleted: {
+           print("Completed with no element")
+     })
+    .disposed(by: disposeBag)
+```
 
-  * 不会产生错误
-
-  * 一定在主线程执行绑定（订阅）
-
-  * 观察者一定是在主线程监听
-
-  * 共享状态变化
-
-
-
-
-
-
-  * 无法响应 `error` 事件
-
-  * 确保绑定在主线程完成
+你同样可以对 `Observable` 调用 `.asMaybe()` 方法，将它转换为 **Single**。

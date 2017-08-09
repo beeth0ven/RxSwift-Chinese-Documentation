@@ -6,25 +6,25 @@
 
 之前我们提到，`Observable` 可以用于描述元素异步产生的序列。这样我们生活中许多事物都可以通过它来表示，例如：
 
-* `Observable<Double>` 温度
+* **`Observable<Double>` 温度**
 
   你可以将温度看作是一个序列，然后监测这个温度值，最后对这个值做出响应。例如：当室温高于 33 度时，打开空调降温。
 
   ![1](/assets/Observable/Temperature.png)
 
-* `Observable<OnePieceEpisode>` 《海贼王》动漫
+* **`Observable<OnePieceEpisode>` 《海贼王》动漫**
 
   你也可以把《海贼王》的动漫看作是一个序列。然后当《海贼王》更新一集时，我们就立即观看这一集。
 
   ![1](/assets/Observable/OnePiece.png)
 
-* `Observable<JSON>` JSON
+* **`Observable<JSON>` JSON**
 
   你可以把网络请求的返回的 JSON 看作是一个序列。然后当取到 JSON 时，将它打印出来。
 
   ![1](/assets/Observable/JSON.png)
 
-* `Observable<Void>` 任务回调
+* **`Observable<Void>` 任务回调**
 
   你可以把任务回调看作是一个序列。当任务结束后，提示用户任务已完成。
 
@@ -95,7 +95,7 @@ let json: Observable<JSON> = Observable.create { (observer) -> Disposable in
 }
 ```
 
-在闭包回调中，如果任务失败，就用 `observer.onError(error!)` 来表示。如果获取到目标元素，就用 `observer.onNext(jsonObject)` 来表示。由于我们的这个序列只有一个元素，所以在成功获取到元素后，就直接调用 `observer.onCompleted()` 来表示任务结束。最后 `Disposables.create { task.cancel() }` 表示如果数据绑定被清除（订阅被取消）的话，就取消网络请求。
+在闭包回调中，如果任务失败，就调用 `observer.onError(error!)`。如果获取到目标元素，就调用 `observer.onNext(jsonObject)`。由于我们的这个序列只有一个元素，所以在成功获取到元素后，就直接调用 `observer.onCompleted()` 来表示任务结束。最后 `Disposables.create { task.cancel() }` 说明如果数据绑定被清除（订阅被取消）的话，就取消网络请求。
 
 这样一来我们就将传统的闭包回调转换成序列了。然后可以用 `subscribe` 方法来响应这个请求的结果：
 
@@ -114,7 +114,9 @@ json
     .disposed(by: disposeBag)
 ```
 
-这里`subscribe`后面的`onNext`,`onError`, `onCompleted` 分别响应我们创建 json 时，构建函数里面的`onNext`,`onError`, `onCompleted` 事件。我们称这些事件为 `Event`:
+这里`subscribe`后面的`onNext`,`onError`, `onCompleted` 分别响应我们创建 json 时，构建函数里面的`onNext`,`onError`, `onCompleted` 事件。我们称这些事件为 **Event**:
+
+### Event - 事件
 
 ```swift
 public enum Event<Element> {

@@ -21,7 +21,9 @@ text.bind(to: observer)
 
 有许多 UI 控件都存在这种特性，例如：`switch`的开关状态，`segmentedControl`的选中索引号，`datePicker`的选中日期等等。
 
-另外，框架里面定义了一些辅助类型，它们既是**可被监听的序列**也是**观察者**。这些类型可以帮助你简化业务逻辑：
+## 参考
+
+另外，框架里面定义了一些辅助类型，它们既是**可被监听的序列**也是**观察者**。如果你能合适的应用这些辅助类型，它们就可以帮助你简化业务逻辑：
 
 * [AsyncSubject](observable_and_observer/async_subject.md)
 * [PublishSubject](observable_and_observer/publish_subject.md)

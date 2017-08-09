@@ -1,40 +1,69 @@
+## Single
 
+**Single** 是 `Observable` 的变体。不像 `Observable` 可以发出多个元素，它要么只能发出一个元素，要么产生一个 `error` 事件。
 
-* **Single**
+* 发出一个元素，或一个 `error` 事件
+* 不会共享状态变化
 
-  * 序列要么产生一个元素，要么产生一个错误，二选一
+一个比较常见的例子就是执行 HTTP 请求，然后返回一个**应答**或**错误**。不过你也可以用 **Single** 来描述任何只有一个元素的序列。
 
-* **Completable**
+### 如何创建 Single
+创建 **Single** 和创建 **Observable** 非常相似：
 
-  * 序列要么产生一个完成事件，要么产生一个错误，二选一
+```swift
+func getRepo(_ repo: String) -> Single<[String: Any]> {
 
-* **Maybe**
+    return Single<[String: Any]>.create { single in
+        let url = URL(string: "https://api.github.com/repos/\(repo)")!
+        let task = URLSession.shared.dataTask(with: url) {
+            data, _, error in
 
-  * 序列要么产生一个元素，要么产生一个完成事件，要么产生一个错误，三选一
+            if let error = error {
+                single(.error(error))
+                return
+            }
 
-* **Driver**
+            guard let data = data,
+                  let json = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves),
+                  let result = json as? [String: Any] else {
+                single(.error(DataError.cantParseJSON))
+                return
+            }
 
-  * 不会产生错误
+            single(.success(result))
+        }
 
-  * 观察者一定是在主线程监听
+        task.resume()
 
-  * 共享状态变化
+        return Disposables.create { task.cancel() }
+    }
+}
+```
 
-* **ControlEvent**
+之后，你可以这样使用 **Single**：
 
-  * 不会产生错误
+```swift
+getRepo("ReactiveX/RxSwift")
+    .subscribe(
+        onSuccess: { json in
+           print("JSON: ", json)
+        },
+        onError: { error in
+           print("Error: ", error)
+     })
+    .disposed(by: disposeBag)
+```
 
-  * 一定在主线程执行绑定（订阅）
+订阅提供一个 `SingleEvent` 的枚举：
 
-  * 观察者一定是在主线程监听
+```swift
+public enum SingleEvent<Element> {
+    case success(Element)
+    case error(Swift.Error)
+}
+```
 
-  * 共享状态变化
+* success - 产生一个单独的元素
+* error - 产生一个错误
 
-
-
-
-
-
-  * 无法响应 `error` 事件
-
-  * 确保绑定在主线程完成
+你同样可以对 `Observable` 调用 `.asSingle()` 方法，将它转换为 **Single**。

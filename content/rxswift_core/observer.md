@@ -2,29 +2,31 @@
 
 ![](/assets/Observer/Observer.png)
 
+**观察者** 是用来监听事件，然后它需要这个事件做出响应。例如：**弹出提示框**就是**观察者**，它对**点击按钮**这个事件做出响应。
+
 ### 响应事件的都是观察者
 
 在 [Observable](observable.md) 章节，我们举了个几个例子来介绍什么是**可被监听的序列**。那么我们还是用这几个例子来解释一下什么是**观察者**：
 
-* 当室温高于 33 度时，打开空调降温。
+* **当室温高于 33 度时，打开空调降温**
 
   ![1](/assets/Observer/Temperature.png)
 
   打开空调降温就是**观察者** `Observer<Double>`。
 
-* 当《海贼王》更新一集时，我们就立即观看这一集。
+* **当《海贼王》更新一集时，我们就立即观看这一集**
 
   ![1](/assets/Observer/OnePiece.png)
 
   观看这一集就是**观察者** `Observer<OnePieceEpisode>`。
 
-* 当取到 JSON 时，将它打印出来。
+* **当取到 JSON 时，将它打印出来**
 
   ![1](/assets/Observer/JSON.png)
 
   将它打印出来就是**观察者** `Observer<JSON>`
 
-*  当任务结束后，提示用户任务已完成。
+* **当任务结束后，提示用户任务已完成**
 
   ![1](/assets/Observer/Callback.png)
 

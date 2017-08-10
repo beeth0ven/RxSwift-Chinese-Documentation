@@ -1,6 +1,6 @@
 ## Single
 
-**Single** 是 `Observable` 的变体。不像 `Observable` 可以发出多个元素，它要么只能发出一个元素，要么产生一个 `error` 事件。
+**Single** 是 `Observable` 的另外一个版本。不像 `Observable` 可以发出多个元素，它要么只能发出一个元素，要么产生一个 `error` 事件。
 
 * 发出一个元素，或一个 `error` 事件
 * 不会共享状态变化

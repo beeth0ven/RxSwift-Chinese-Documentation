@@ -29,7 +29,6 @@
     * [amb](content/rxswift_core/operator/amb.md)
     * [buffer](content/rxswift_core/operator/buffer.md)
     * [catchError](content/rxswift_core/operator/catchError.md)
-    * [catchErrorJustReturn](content/rxswift_core/operator/catchErrorJustReturn.md)
     * [combineLatest](content/rxswift_core/operator/combineLatest.md)
     * [concat](content/rxswift_core/operator/concat.md)
     * [concatMap](content/rxswift_core/operator/concatMap.md)

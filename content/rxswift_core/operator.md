@@ -82,10 +82,13 @@
 
 ### 操作符列表
 
+>26个英文字母我都认识，可是连成一个句子我就不怎么认得了...
+
+这里提供一个操作符列表，它们就好比是**26个英文字母**。你如果要将它们的作用全部都发挥出来，是需要学习如何将它们**连成一个句子**的：
+
 * [amb](operator/amb.md)
 * [buffer](operator/buffer.md)
 * [catchError](operator/catchError.md)
-* [catchErrorJustReturn](operator/catchErrorJustReturn.md)
 * [combineLatest](operator/combineLatest.md)
 * [concat](operator/concat.md)
 * [concatMap](operator/concatMap.md)

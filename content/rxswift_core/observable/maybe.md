@@ -1,6 +1,6 @@
 ## Maybe
 
-**Maybe** 是 `Observable` 的变体。它介于 [Single](single.md) 和 [Completable](completable.md) 之间，它要么只能发出一个元素，要么产生一个 `completed` 事件，要么产生一个 `error` 事件。
+**Maybe** 是 `Observable` 的另外一个版本。它介于 [Single](single.md) 和 [Completable](completable.md) 之间，它要么只能发出一个元素，要么产生一个 `completed` 事件，要么产生一个 `error` 事件。
 
 * 发出一个元素或者一个 `completed` 事件或者一个 `error` 事件
 * 不会共享状态变化

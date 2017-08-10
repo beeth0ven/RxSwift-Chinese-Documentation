@@ -1,6 +1,6 @@
 ## Completable
 
-**Completable** 是 `Observable` 的变体。不像 `Observable` 可以发出多个元素，它要么只能产生一个 `completed` 事件，要么产生一个 `error` 事件。
+**Completable** 是 `Observable` 的另外一个版本。不像 `Observable` 可以发出多个元素，它要么只能产生一个 `completed` 事件，要么产生一个 `error` 事件。
 
 * 发出零个元素
 * 发出一个 `completed` 事件或者一个 `error` 事件

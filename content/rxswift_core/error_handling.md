@@ -2,15 +2,15 @@
 
 一旦序列里面产出了一个 `error` 事件，整个序列将被终止。[RxSwift](https://github.com/ReactiveX/RxSwift) 主要有两种错误处理机制：
 
-* retry - 当发生错误时重试
-* catch - 当发生错误时，将错误替换成其他的元素或者一组元素
+* retry - 重试
+* catch - 恢复
 
 ### retry - 重试
 
 [retry](operator/retry.md) 可以让序列在发生错误后重试：
 
 ```swift
-// 请求 JSON 失败后，立即重试，
+// 请求 JSON 失败时，立即重试，
 // 重试 3 次后仍然失败，就将错误抛出
 
 let rxJson: Observable<JSON> = ...
@@ -27,27 +27,20 @@ rxJson
     .disposed(by: disposeBag)
 ```
 
-以上的代码非常直接 `retry(3)` 就是最多重试 3 次。
+以上的代码非常直接 `retry(3)` 就是当发生错误时，就进行重试操作，并且最多重试 3 次。
 
 ### retryWhen
 
 如果我们需要在发生错误时，经过一段延时后重试，那可以这样实现：
 
 ```swift
-// 请求 JSON 失败后，等待 5 秒然后重试，
-// 重试 4 次后仍然失败，就将错误抛出
+// 请求 JSON 失败时，等待 5 秒后重试，
 
-let maxRetryCount = 4       // 重试次数
-let retryDelay: Double = 5  // 重试延时
+let retryDelay: Double = 5  // 重试延时 5 秒
 
 rxJson
     .retryWhen { (rxError: Observable<Error>) -> Observable<Int> in
-        rxError.flatMapWithIndex { (error, index) -> Observable<Int> in
-            guard index < maxRetryCount else {
-                return Observable.error(error)
-            }
-            return Observable<Int>.timer(retryDelay, scheduler: MainScheduler.instance)
-        }
+        return Observable.timer(retryDelay, scheduler: MainScheduler.instance)
     }
     .subscribe(...)
     .disposed(by: disposeBag)
@@ -61,7 +54,31 @@ rxJson
 }
 ```
 
-闭包里面的参数是 `Observable<Error>` 也就是所产生错误的序列，然后返回值一个 `Observable`。当这个返回的 `Observable` 发出一个元素时，就进行重试操作。当它发出一个 `error` 或者 `completed` 事件时，就将这个事件抛出给到后面的观察者。而我们这里要实现的是，错误在 4 次以内时就等待 5 秒后重试。如果超过 4 次，就将错误抛出：
+闭包里面的参数是 `Observable<Error>` 也就是所产生错误的序列，然后返回值是一个 `Observable`。当这个返回的 `Observable` 发出一个元素时，就进行重试操作。当它发出一个 `error` 或者 `completed` 事件时，就不会重试，并且将这个事件传递给到后面的观察者。
+
+如果需要加上一个最大重试次数的限制：
+
+```swift
+// 请求 JSON 失败时，等待 5 秒后重试，
+// 重试 4 次后仍然失败，就将错误抛出
+
+let maxRetryCount = 4       // 最多重试 4 次
+let retryDelay: Double = 5  // 重试延时 5 秒
+
+rxJson
+    .retryWhen { (rxError: Observable<Error>) -> Observable<Int> in
+        return rxError.flatMapWithIndex { (error, index) -> Observable<Int> in
+            guard index < maxRetryCount else {
+                return Observable.error(error)
+            }
+            return Observable<Int>.timer(retryDelay, scheduler: MainScheduler.instance)
+        }
+    }
+    .subscribe(...)
+    .disposed(by: disposeBag)
+```
+
+我们这里要实现的是，如果重试超过 4 次，就将错误抛出。如果错误在 4 次以内时，就等待 5 秒后重试：
 
 ```swift
 ...
@@ -141,10 +158,10 @@ updateUserInfoButton.rx.tap
 
 这样实现是非常直接的。但是一旦网络请求操作失败了，序列就会终止。整个订阅将被取消。如果用户再次点击更新按钮，就无法再次发起网络请求进行更新操作了。
 
-为了解决这个问题，我们需要选择合适的方案来进行错误处理，例如使用枚举 **Result**：
+为了解决这个问题，我们需要选择合适的方案来进行错误处理。例如使用枚举 **Result**：
 
 ```swift
-// 自定义一个枚举 Result
+// 自定义一个枚举类型 Result
 public enum Result<T> {
     case success(T)
     case failure(Swift.Error)
@@ -158,12 +175,12 @@ updateUserInfoButton.rx.tap
     .withLatestFrom(rxUserInfo)
     .flatMapLatest { userInfo -> Observable<Result<Void>> in
         return update(userInfo)
-            .map(Result.success)
+            .map(Result.success)  // 软换成 Result
             .catchError { error in Observable.just(Result.failure(error)) }
     }
     .observeOn(MainScheduler.instance)
     .subscribe(onNext: { result in
-        switch result {
+        switch result {           // 处理 Result
         case .success:
             print("用户信息更新成功")
         case .failure(let error):

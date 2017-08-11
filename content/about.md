@@ -1,12 +1,13 @@
 # 关于本文档
 
-* 作者：[罗杰 (Beeth0ven)](https://github.com/beeth0ven)
 * 版本：**0.0.1**
+* 文档作者：[罗杰 (Beeth0ven)](https://github.com/beeth0ven)
 * 首发日期：**17 年 9 月 1 日**
 * 更新日期：**17 年 9 月 1 日**
 * 对应 **RxSwift** 版本：**3.6.1**
 * 使用工具：[GitBook](https://www.gitbook.com)
 * 托管方式：[Github Pages](https://pages.github.com)
+* 作者邮箱：<m13477051442@gmail.com>
 * 文档库地址：https://github.com/beeth0ven/RxSwift-Chinese-Documention
 * **RxSwift** 地址：https://github.com/ReactiveX/RxSwift
 

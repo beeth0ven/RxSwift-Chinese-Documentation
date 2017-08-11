@@ -87,10 +87,13 @@
   * [4.7 Error Handling - 错误处理](content/rxswift_core/error_handling.md)
 * [5. 如何选择操作符？](content/decision_tree.md)
 * [6. 更多例子](content/more_demo.md)
+  * [ImagePicker - 图片选择器](content/more_demo/image_picker.md)
+  * [TableViewSectionedViewController - 多层级的列表页](content/more_demo/tableView_sectioned_viewController.md)
+  * [Calculator - 计算器](content/more_demo/calculator.md)
 * [7. RxSwift 常用架构](content/architecture.md)
-  * 7.1 MVVM
-  * 7.2 RxFeedback - 反馈循环
-  * [7.3 ReactorKit - 反应器](content/architecture/reactorkit.md)
+  * [7.2 MVVM](content/architecture/mvvm.md)
+  * [7.3 RxFeedback](content/architecture/rxfeedback.md)
+  * [7.3 ReactorKit](content/architecture/reactorkit.md)
 * [8. 为什么要继续使用 RxSwift?](content/why_rxswift_again.md)
 * [9. 学习资源](content/resource.md)
 * [10. 关于本文档](content/about.md)

@@ -8,10 +8,11 @@
 
 这里存在其他版本的 `timer` 操作符。
 
-
 ----
 
 ## timer
+
+![](/assets/Operator/Operators/timer1.png)
 
 **创建一个 `Observable` 在一段延时后，每隔一段时间产生一个元素**
 

@@ -16,7 +16,7 @@ DispatchQueue.global(qos: .userInitiated).async {
 }
 ```
 
-如果用 **RxSwift** 来实现的话，大概是这样的：
+如果用 **RxSwift** 来实现，大概是这样的：
 
 ```swift
 let rxData: Observable<Data> = ...

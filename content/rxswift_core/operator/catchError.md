@@ -8,4 +8,8 @@
 
 这里存在其他版本的 `catchError` 操作符。
 
+----
+
+## catchErrorJustReturn
+
 **catchErrorJustReturn** 操作符会将`error` 事件替换成其他的一个元素，然后传递给观察者。

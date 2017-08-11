@@ -1289,6 +1289,51 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../more_demo/image_picker.html">
+            
+                <a href="../more_demo/image_picker.html">
+            
+                    
+                    ImagePicker - 图片选择器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../more_demo/tableView_sectioned_viewController.html">
+            
+                <a href="../more_demo/tableView_sectioned_viewController.html">
+            
+                    
+                    TableViewSectionedViewController - 多层级的列表页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../more_demo/calculator.html">
+            
+                <a href="../more_demo/calculator.html">
+            
+                    
+                    Calculator - 计算器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.8" data-path="../architecture.html">
@@ -1305,27 +1350,27 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.8.1" >
+        <li class="chapter " data-level="1.8.1" data-path="../architecture/mvvm.html">
             
-                <span>
+                <a href="../architecture/mvvm.html">
             
                     
-                    7.1 MVVM
+                    7.2 MVVM
             
-                </span>
+                </a>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.8.2" >
+        <li class="chapter " data-level="1.8.2" data-path="../architecture/rxfeedback.html">
             
-                <span>
+                <a href="../architecture/rxfeedback.html">
             
                     
-                    7.2 RxFeedback - 反馈循环
+                    7.3 RxFeedback
             
-                </span>
+                </a>
             
 
             
@@ -1336,7 +1381,7 @@
                 <a href="../architecture/reactorkit.html">
             
                     
-                    7.3 ReactorKit - 反应器
+                    7.3 ReactorKit
             
                 </a>
             
@@ -1436,12 +1481,12 @@
                                 <h2 id="error-handling---&#x9519;&#x8BEF;&#x5904;&#x7406;"><a name="error-handling---&#x9519;&#x8BEF;&#x5904;&#x7406;" class="plugin-anchor" href="#error-handling---&#x9519;&#x8BEF;&#x5904;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>Error Handling - &#x9519;&#x8BEF;&#x5904;&#x7406;</h2>
 <p>&#x4E00;&#x65E6;&#x5E8F;&#x5217;&#x91CC;&#x9762;&#x4EA7;&#x51FA;&#x4E86;&#x4E00;&#x4E2A; <code>error</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x6574;&#x4E2A;&#x5E8F;&#x5217;&#x5C06;&#x88AB;&#x7EC8;&#x6B62;&#x3002;<a href="https://github.com/ReactiveX/RxSwift" target="_blank">RxSwift</a> &#x4E3B;&#x8981;&#x6709;&#x4E24;&#x79CD;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF1A;</p>
 <ul>
-<li>retry - &#x5F53;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#x91CD;&#x8BD5;</li>
-<li>catch - &#x5F53;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x5C06;&#x9519;&#x8BEF;&#x66FF;&#x6362;&#x6210;&#x5176;&#x4ED6;&#x7684;&#x5143;&#x7D20;&#x6216;&#x8005;&#x4E00;&#x7EC4;&#x5143;&#x7D20;</li>
+<li>retry - &#x91CD;&#x8BD5;</li>
+<li>catch - &#x6062;&#x590D;</li>
 </ul>
 <h3 id="retry---&#x91CD;&#x8BD5;"><a name="retry---&#x91CD;&#x8BD5;" class="plugin-anchor" href="#retry---&#x91CD;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>retry - &#x91CD;&#x8BD5;</h3>
 <p><a href="operator/retry.html">retry</a> &#x53EF;&#x4EE5;&#x8BA9;&#x5E8F;&#x5217;&#x5728;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x540E;&#x91CD;&#x8BD5;&#xFF1A;</p>
-<pre><code class="lang-swift"><span class="hljs-comment">// &#x8BF7;&#x6C42; JSON &#x5931;&#x8D25;&#x540E;&#xFF0C;&#x7ACB;&#x5373;&#x91CD;&#x8BD5;&#xFF0C;</span>
+<pre><code class="lang-swift"><span class="hljs-comment">// &#x8BF7;&#x6C42; JSON &#x5931;&#x8D25;&#x65F6;&#xFF0C;&#x7ACB;&#x5373;&#x91CD;&#x8BD5;&#xFF0C;</span>
 <span class="hljs-comment">// &#x91CD;&#x8BD5; 3 &#x6B21;&#x540E;&#x4ECD;&#x7136;&#x5931;&#x8D25;&#xFF0C;&#x5C31;&#x5C06;&#x9519;&#x8BEF;&#x629B;&#x51FA;</span>
 
 <span class="hljs-keyword">let</span> rxJson: <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">JSON</span>&gt; = ...
@@ -1457,23 +1502,16 @@ rxJson
     })
     .disposed(by: disposeBag)
 </code></pre>
-<p>&#x4EE5;&#x4E0A;&#x7684;&#x4EE3;&#x7801;&#x975E;&#x5E38;&#x76F4;&#x63A5; <code>retry(3)</code> &#x5C31;&#x662F;&#x6700;&#x591A;&#x91CD;&#x8BD5; 3 &#x6B21;&#x3002;</p>
+<p>&#x4EE5;&#x4E0A;&#x7684;&#x4EE3;&#x7801;&#x975E;&#x5E38;&#x76F4;&#x63A5; <code>retry(3)</code> &#x5C31;&#x662F;&#x5F53;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x5C31;&#x8FDB;&#x884C;&#x91CD;&#x8BD5;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x4E14;&#x6700;&#x591A;&#x91CD;&#x8BD5; 3 &#x6B21;&#x3002;</p>
 <h3 id="retrywhen"><a name="retrywhen" class="plugin-anchor" href="#retrywhen"><i class="fa fa-link" aria-hidden="true"></i></a>retryWhen</h3>
 <p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x7ECF;&#x8FC7;&#x4E00;&#x6BB5;&#x5EF6;&#x65F6;&#x540E;&#x91CD;&#x8BD5;&#xFF0C;&#x90A3;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5B9E;&#x73B0;&#xFF1A;</p>
-<pre><code class="lang-swift"><span class="hljs-comment">// &#x8BF7;&#x6C42; JSON &#x5931;&#x8D25;&#x540E;&#xFF0C;&#x7B49;&#x5F85; 5 &#x79D2;&#x7136;&#x540E;&#x91CD;&#x8BD5;&#xFF0C;</span>
-<span class="hljs-comment">// &#x91CD;&#x8BD5; 4 &#x6B21;&#x540E;&#x4ECD;&#x7136;&#x5931;&#x8D25;&#xFF0C;&#x5C31;&#x5C06;&#x9519;&#x8BEF;&#x629B;&#x51FA;</span>
+<pre><code class="lang-swift"><span class="hljs-comment">// &#x8BF7;&#x6C42; JSON &#x5931;&#x8D25;&#x65F6;&#xFF0C;&#x7B49;&#x5F85; 5 &#x79D2;&#x540E;&#x91CD;&#x8BD5;&#xFF0C;</span>
 
-<span class="hljs-keyword">let</span> maxRetryCount = <span class="hljs-number">4</span>       <span class="hljs-comment">// &#x91CD;&#x8BD5;&#x6B21;&#x6570;</span>
-<span class="hljs-keyword">let</span> retryDelay: <span class="hljs-type">Double</span> = <span class="hljs-number">5</span>  <span class="hljs-comment">// &#x91CD;&#x8BD5;&#x5EF6;&#x65F6;</span>
+<span class="hljs-keyword">let</span> retryDelay: <span class="hljs-type">Double</span> = <span class="hljs-number">5</span>  <span class="hljs-comment">// &#x91CD;&#x8BD5;&#x5EF6;&#x65F6; 5 &#x79D2;</span>
 
 rxJson
     .retryWhen { (rxError: <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Error</span>&gt;) -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt; <span class="hljs-keyword">in</span>
-        rxError.flatMapWithIndex { (error, index) -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt; <span class="hljs-keyword">in</span>
-            <span class="hljs-keyword">guard</span> index &lt; maxRetryCount <span class="hljs-keyword">else</span> {
-                <span class="hljs-keyword">return</span> <span class="hljs-type">Observable</span>.error(error)
-            }
-            <span class="hljs-keyword">return</span> <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.timer(retryDelay, scheduler: <span class="hljs-type">MainScheduler</span>.instance)
-        }
+        <span class="hljs-keyword">return</span> <span class="hljs-type">Observable</span>.timer(retryDelay, scheduler: <span class="hljs-type">MainScheduler</span>.instance)
     }
     .subscribe(...)
     .disposed(by: disposeBag)
@@ -1483,7 +1521,27 @@ rxJson
     ...
 }
 </code></pre>
-<p>&#x95ED;&#x5305;&#x91CC;&#x9762;&#x7684;&#x53C2;&#x6570;&#x662F; <code>Observable&lt;Error&gt;</code> &#x4E5F;&#x5C31;&#x662F;&#x6240;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x503C;&#x4E00;&#x4E2A; <code>Observable</code>&#x3002;&#x5F53;&#x8FD9;&#x4E2A;&#x8FD4;&#x56DE;&#x7684; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x5C31;&#x8FDB;&#x884C;&#x91CD;&#x8BD5;&#x64CD;&#x4F5C;&#x3002;&#x5F53;&#x5B83;&#x53D1;&#x51FA;&#x4E00;&#x4E2A; <code>error</code> &#x6216;&#x8005; <code>completed</code> &#x4E8B;&#x4EF6;&#x65F6;&#xFF0C;&#x5C31;&#x5C06;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x629B;&#x51FA;&#x7ED9;&#x5230;&#x540E;&#x9762;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x3002;&#x800C;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x662F;&#xFF0C;&#x9519;&#x8BEF;&#x5728; 4 &#x6B21;&#x4EE5;&#x5185;&#x65F6;&#x5C31;&#x7B49;&#x5F85; 5 &#x79D2;&#x540E;&#x91CD;&#x8BD5;&#x3002;&#x5982;&#x679C;&#x8D85;&#x8FC7; 4 &#x6B21;&#xFF0C;&#x5C31;&#x5C06;&#x9519;&#x8BEF;&#x629B;&#x51FA;&#xFF1A;</p>
+<p>&#x95ED;&#x5305;&#x91CC;&#x9762;&#x7684;&#x53C2;&#x6570;&#x662F; <code>Observable&lt;Error&gt;</code> &#x4E5F;&#x5C31;&#x662F;&#x6240;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E00;&#x4E2A; <code>Observable</code>&#x3002;&#x5F53;&#x8FD9;&#x4E2A;&#x8FD4;&#x56DE;&#x7684; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x5C31;&#x8FDB;&#x884C;&#x91CD;&#x8BD5;&#x64CD;&#x4F5C;&#x3002;&#x5F53;&#x5B83;&#x53D1;&#x51FA;&#x4E00;&#x4E2A; <code>error</code> &#x6216;&#x8005; <code>completed</code> &#x4E8B;&#x4EF6;&#x65F6;&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x91CD;&#x8BD5;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x4F20;&#x9012;&#x7ED9;&#x5230;&#x540E;&#x9762;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x52A0;&#x4E0A;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x91CD;&#x8BD5;&#x6B21;&#x6570;&#x7684;&#x9650;&#x5236;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-comment">// &#x8BF7;&#x6C42; JSON &#x5931;&#x8D25;&#x65F6;&#xFF0C;&#x7B49;&#x5F85; 5 &#x79D2;&#x540E;&#x91CD;&#x8BD5;&#xFF0C;</span>
+<span class="hljs-comment">// &#x91CD;&#x8BD5; 4 &#x6B21;&#x540E;&#x4ECD;&#x7136;&#x5931;&#x8D25;&#xFF0C;&#x5C31;&#x5C06;&#x9519;&#x8BEF;&#x629B;&#x51FA;</span>
+
+<span class="hljs-keyword">let</span> maxRetryCount = <span class="hljs-number">4</span>       <span class="hljs-comment">// &#x6700;&#x591A;&#x91CD;&#x8BD5; 4 &#x6B21;</span>
+<span class="hljs-keyword">let</span> retryDelay: <span class="hljs-type">Double</span> = <span class="hljs-number">5</span>  <span class="hljs-comment">// &#x91CD;&#x8BD5;&#x5EF6;&#x65F6; 5 &#x79D2;</span>
+
+rxJson
+    .retryWhen { (rxError: <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Error</span>&gt;) -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt; <span class="hljs-keyword">in</span>
+        <span class="hljs-keyword">return</span> rxError.flatMapWithIndex { (error, index) -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt; <span class="hljs-keyword">in</span>
+            <span class="hljs-keyword">guard</span> index &lt; maxRetryCount <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">return</span> <span class="hljs-type">Observable</span>.error(error)
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.timer(retryDelay, scheduler: <span class="hljs-type">MainScheduler</span>.instance)
+        }
+    }
+    .subscribe(...)
+    .disposed(by: disposeBag)
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x91CD;&#x8BD5;&#x8D85;&#x8FC7; 4 &#x6B21;&#xFF0C;&#x5C31;&#x5C06;&#x9519;&#x8BEF;&#x629B;&#x51FA;&#x3002;&#x5982;&#x679C;&#x9519;&#x8BEF;&#x5728; 4 &#x6B21;&#x4EE5;&#x5185;&#x65F6;&#xFF0C;&#x5C31;&#x7B49;&#x5F85; 5 &#x79D2;&#x540E;&#x91CD;&#x8BD5;&#xFF1A;</p>
 <pre><code class="lang-swift">...
 rxError.flatMapWithIndex { (error, index) -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt; <span class="hljs-keyword">in</span>
     <span class="hljs-keyword">guard</span> index &lt; maxRetryCount <span class="hljs-keyword">else</span> {
@@ -1545,8 +1603,8 @@ updateUserInfoButton.rx.tap
     .disposed(by: disposeBag)
 </code></pre>
 <p>&#x8FD9;&#x6837;&#x5B9E;&#x73B0;&#x662F;&#x975E;&#x5E38;&#x76F4;&#x63A5;&#x7684;&#x3002;&#x4F46;&#x662F;&#x4E00;&#x65E6;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4E86;&#xFF0C;&#x5E8F;&#x5217;&#x5C31;&#x4F1A;&#x7EC8;&#x6B62;&#x3002;&#x6574;&#x4E2A;&#x8BA2;&#x9605;&#x5C06;&#x88AB;&#x53D6;&#x6D88;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x518D;&#x6B21;&#x70B9;&#x51FB;&#x66F4;&#x65B0;&#x6309;&#x94AE;&#xFF0C;&#x5C31;&#x65E0;&#x6CD5;&#x518D;&#x6B21;&#x53D1;&#x8D77;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x8FDB;&#x884C;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x4E86;&#x3002;</p>
-<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x65B9;&#x6848;&#x6765;&#x8FDB;&#x884C;&#x9519;&#x8BEF;&#x5904;&#x7406;&#xFF0C;&#x4F8B;&#x5982;&#x4F7F;&#x7528;&#x679A;&#x4E3E; <strong>Result</strong>&#xFF1A;</p>
-<pre><code class="lang-swift"><span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x679A;&#x4E3E; Result</span>
+<p>&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x65B9;&#x6848;&#x6765;&#x8FDB;&#x884C;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x3002;&#x4F8B;&#x5982;&#x4F7F;&#x7528;&#x679A;&#x4E3E; <strong>Result</strong>&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x679A;&#x4E3E;&#x7C7B;&#x578B; Result</span>
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Result</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
     <span class="hljs-keyword">case</span> success(<span class="hljs-type">T</span>)
     <span class="hljs-keyword">case</span> failure(<span class="hljs-type">Swift</span>.<span class="hljs-type">Error</span>)
@@ -1557,12 +1615,12 @@ updateUserInfoButton.rx.tap
     .withLatestFrom(rxUserInfo)
     .flatMapLatest { userInfo -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Result</span>&lt;<span class="hljs-type">Void</span>&gt;&gt; <span class="hljs-keyword">in</span>
         <span class="hljs-keyword">return</span> update(userInfo)
-            .<span class="hljs-built_in">map</span>(<span class="hljs-type">Result</span>.success)
+            .<span class="hljs-built_in">map</span>(<span class="hljs-type">Result</span>.success)  <span class="hljs-comment">// &#x8F6F;&#x6362;&#x6210; Result</span>
             .catchError { error <span class="hljs-keyword">in</span> <span class="hljs-type">Observable</span>.just(<span class="hljs-type">Result</span>.failure(error)) }
     }
     .observeOn(<span class="hljs-type">MainScheduler</span>.instance)
     .subscribe(onNext: { result <span class="hljs-keyword">in</span>
-        <span class="hljs-keyword">switch</span> result {
+        <span class="hljs-keyword">switch</span> result {           <span class="hljs-comment">// &#x5904;&#x7406; Result</span>
         <span class="hljs-keyword">case</span> .success:
             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x66F4;&#x65B0;&#x6210;&#x529F;&quot;</span>)
         <span class="hljs-keyword">case</span> .failure(<span class="hljs-keyword">let</span> error):
@@ -1616,7 +1674,7 @@ updateUserInfoButton.rx.tap
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.7 Error Handling - 错误处理","level":"1.5.7","depth":2,"next":{"title":"5. 如何选择操作符？","level":"1.6","depth":1,"path":"content/decision_tree.md","ref":"content/decision_tree.md","articles":[]},"previous":{"title":"4.6 Schedulers - 调度器","level":"1.5.6","depth":2,"path":"content/rxswift_core/schedulers.md","ref":"content/rxswift_core/schedulers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/error_handling.md","mtime":"2017-08-10T09:08:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-10T07:20:06.322Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.7 Error Handling - 错误处理","level":"1.5.7","depth":2,"next":{"title":"5. 如何选择操作符？","level":"1.6","depth":1,"path":"content/decision_tree.md","ref":"content/decision_tree.md","articles":[]},"previous":{"title":"4.6 Schedulers - 调度器","level":"1.5.6","depth":2,"path":"content/rxswift_core/schedulers.md","ref":"content/rxswift_core/schedulers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/error_handling.md","mtime":"2017-08-11T01:22:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-11T07:33:34.696Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

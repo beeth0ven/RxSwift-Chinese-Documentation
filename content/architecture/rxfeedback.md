@@ -359,6 +359,7 @@ class GithubPaginatedSearchViewController: UIViewController {
 ```
 
 ---
+
 ### 优势
 
 这就是 [RxFeedback](https://github.com/kzaher/RxFeedback) 架构，它的优势是：
@@ -369,4 +370,4 @@ class GithubPaginatedSearchViewController: UIViewController {
 * 能被应用到任何级别
 * 完美支持依赖注入
 * 支持循环依赖
-* 完全将业务逻辑分离
+* 完全将业务逻辑分离（跨平台）

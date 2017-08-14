@@ -1,5 +1,3 @@
-* materialize
-* dematerialize
 * flatMap
 * flatMapLatest
 * concatMap

@@ -83,6 +83,8 @@ override func viewDidLoad() {
 
 ## [takeUntil](operator/takeUntil.md)
 
+![](/assets/Disposable/TakeUntil.png)
+
 另外一种实现自动取消订阅的方法就是使用 [takeUntil](operator/takeUntil.md) 操作符，上面那个[输入验证](/content/first_app.md)的演示代码也可以通过使用  [takeUntil](operator/takeUntil.md) 来实现：
 
 ```swift

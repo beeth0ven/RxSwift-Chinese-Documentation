@@ -1374,6 +1374,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../../architecture/rxfeedback/github_search.html">
+            
+                <a href="../../architecture/rxfeedback/github_search.html">
+            
+                    
+                    Github Search（示例）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.8.3" data-path="../../architecture/reactorkit.html">
@@ -1386,6 +1405,25 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../../architecture/reactorkit/github_search.html">
+            
+                <a href="../../architecture/reactorkit/github_search.html">
+            
+                    
+                    Github Search（示例）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -1478,7 +1516,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>1</p>
+                                <h2 id="observeon"><a name="observeon" class="plugin-anchor" href="#observeon"><i class="fa fa-link" aria-hidden="true"></i></a>observeOn</h2>
+<p><strong>&#x6307;&#x5B9A; <code>Observable</code> &#x5728;&#x90A3;&#x4E2A; <code>Scheduler</code> &#x53D1;&#x51FA;&#x901A;&#x77E5;</strong></p>
+<p><img src="../../../assets/Operator/Operators/observeOn.png" alt=""></p>
+<p><strong>ReactiveX</strong> &#x4F7F;&#x7528; <a href="../schedulers.html">Scheduler</a> &#x6765;&#x8BA9; <code>Observable</code> &#x652F;&#x6301;&#x591A;&#x7EBF;&#x7A0B;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>observeOn</strong> &#x64CD;&#x4F5C;&#x7B26;&#xFF0C;&#x6765;&#x6307;&#x793A; <code>Observable</code> &#x5728;&#x54EA;&#x4E2A; <a href="../schedulers.html">Scheduler</a> &#x53D1;&#x51FA;&#x901A;&#x77E5;&#x3002;</p>
+<p><img src="../../../assets/Operator/Operators/observeOn1.png" alt=""></p>
+<p>&#x6CE8;&#x610F;&#x26A0;&#xFE0F;&#xFF1A;&#x4E00;&#x65E6;&#x4EA7;&#x751F;&#x4E86; <code>onError</code> &#x4E8B;&#x4EF6;&#xFF0C; <strong>observeOn</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x7ACB;&#x5373;&#x8F6C;&#x53D1;&#x3002;&#x4ED6;&#x4E0D;&#x4F1A;&#x7B49;&#x5F85; <code>onError</code> &#x4E4B;&#x524D;&#x7684;&#x4E8B;&#x4EF6;&#x5168;&#x90E8;&#x88AB;&#x6536;&#x5230;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740; <code>onError</code> &#x4E8B;&#x4EF6;&#x53EF;&#x80FD;&#x4F1A;&#x8DF3;&#x8FC7;&#x4E00;&#x4E9B;&#x5143;&#x7D20;&#x63D0;&#x524D;&#x53D1;&#x9001;&#x51FA;&#x53BB;&#xFF0C;&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
+<p><img src="../../../assets/Operator/Operators/schedulers.png" alt=""></p>
+<p><a href="subscribeOn.html">subscribeOn</a> &#x64CD;&#x4F5C;&#x7B26;&#x975E;&#x5E38;&#x76F8;&#x4F3C;&#x3002;&#x5B83;&#x6307;&#x793A; <code>Observable</code> &#x5728;&#x54EA;&#x4E2A; <a href="../schedulers.html">Scheduler</a> &#x53D1;&#x51FA;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>Observable</code> &#x521B;&#x5EFA;&#xFF0C;&#x5E94;&#x7528;&#x64CD;&#x4F5C;&#x7B26;&#x4EE5;&#x53CA;&#x53D1;&#x51FA;&#x901A;&#x77E5;&#x90FD;&#x4F1A;&#x5728; <code>Subscribe</code> &#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7684; <a href="../schedulers.html">Scheduler</a> &#x6267;&#x884C;&#x3002;<a href="subscribeOn.html">subscribeOn</a> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x6539;&#x53D8;&#x8FD9;&#x79CD;&#x884C;&#x4E3A;&#xFF0C;&#x5B83;&#x4F1A;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684; <a href="../schedulers.html">Scheduler</a> &#x6765;&#x8BA9; <code>Observable</code> <strong>&#x6267;&#x884C;&#xFF0C;observeOn</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684; <a href="../schedulers.html">Scheduler</a> &#x6765;&#x8BA9; <code>Observable</code> &#x901A;&#x77E5;&#x89C2;&#x5BDF;&#x8005;&#x3002;</p>
+<p>&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF0C;<a href="subscribeOn.html">subscribeOn</a> &#x64CD;&#x4F5C;&#x7B26;&#x6307;&#x5B9A; <code>Observable</code> &#x5728;&#x90A3;&#x4E2A; <a href="../schedulers.html">Scheduler</a> &#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x65E0;&#x8BBA;&#x5B83;&#x5904;&#x4E8E;&#x94FE;&#x7684;&#x90A3;&#x4E2A;&#x4F4D;&#x7F6E;&#x3002; &#x53E6;&#x4E00;&#x65B9;&#x9762; <strong>observeOn</strong> &#x5C06;&#x51B3;&#x5B9A;&#x540E;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x5728;&#x54EA;&#x4E2A; <a href="../schedulers.html">Scheduler</a> &#x8FD0;&#x884C;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x4F1A;&#x591A;&#x6B21;&#x8C03;&#x7528; <strong>observeOn</strong> &#x6765;&#x51B3;&#x5B9A;&#x67D0;&#x4E9B;&#x64CD;&#x4F5C;&#x7B26;&#x5728;&#x54EA;&#x4E2A;&#x7EBF;&#x7A0B;&#x8FD0;&#x884C;&#x3002;</p>
 
                                 
                                 </section>
@@ -1522,7 +1569,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"observeOn","level":"1.5.4.31","depth":3,"next":{"title":"publish","level":"1.5.4.32","depth":3,"path":"content/rxswift_core/operator/publish.md","ref":"content/rxswift_core/operator/publish.md","articles":[]},"previous":{"title":"never","level":"1.5.4.30","depth":3,"path":"content/rxswift_core/operator/never.md","ref":"content/rxswift_core/operator/never.md","articles":[]},"dir":"neutral"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/operator/observeOn.md","mtime":"2017-08-11T08:03:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-14T08:48:41.211Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"observeOn","level":"1.5.4.31","depth":3,"next":{"title":"publish","level":"1.5.4.32","depth":3,"path":"content/rxswift_core/operator/publish.md","ref":"content/rxswift_core/operator/publish.md","articles":[]},"previous":{"title":"never","level":"1.5.4.30","depth":3,"path":"content/rxswift_core/operator/never.md","ref":"content/rxswift_core/operator/never.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/operator/observeOn.md","mtime":"2017-08-15T09:02:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-15T09:02:14.068Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

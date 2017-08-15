@@ -75,10 +75,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../why_rxswift_again.html" />
+    <link rel="next" href="reactorkit/github_search.html" />
     
     
-    <link rel="prev" href="rxfeedback.html" />
+    <link rel="prev" href="rxfeedback/github_search.html" />
     
 
     
@@ -1374,6 +1374,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="rxfeedback/github_search.html">
+            
+                <a href="rxfeedback/github_search.html">
+            
+                    
+                    Github Search（示例）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter active" data-level="1.8.3" data-path="reactorkit.html">
@@ -1386,6 +1405,25 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="reactorkit/github_search.html">
+            
+                <a href="reactorkit/github_search.html">
+            
+                    
+                    Github Search（示例）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -1479,6 +1517,108 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="reactorkit"><a name="reactorkit" class="plugin-anchor" href="#reactorkit"><i class="fa fa-link" aria-hidden="true"></i></a>ReactorKit</h2>
+<p><img src="../../assets/Architecture/ReactorKit/ReactorKit.png" alt=""></p>
+<h3 id="&#x4F5C;&#x8005;"><a name="&#x4F5C;&#x8005;" class="plugin-anchor" href="#&#x4F5C;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F5C;&#x8005;</h3>
+<p><a href="https://github.com/devxoul" target="_blank">Jeon Suyeol</a> &#x662F; <a href="https://github.com/ReactorKit/ReactorKit" target="_blank">ReactorKit</a> &#x7684;&#x4F5C;&#x8005;&#x3002;&#x4ED6;&#x4E5F;&#x53D1;&#x5E03;&#x4E86;&#x4E00;&#x4E9B;&#x5BCC;&#x6709;&#x521B;&#x9020;&#x6027;&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x5982; <a href="https://github.com/devxoul/Then" target="_blank">Then</a>&#xFF0C;<a href="https://github.com/devxoul/URLNavigator" target="_blank">URLNavigator</a>&#xFF0C;<a href="https://github.com/devxoul/SwiftyImage" target="_blank">SwiftyImage</a> &#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x5F00;&#x6E90;&#x9879;&#x76EE; <a href="https://github.com/devxoul/RxTodo" target="_blank">RxTodo</a>&#xFF0C;<a href="https://github.com/devxoul/Drrrible" target="_blank">Drrrible</a>&#x3002;&#x4ED6;&#x4E5F;&#x662F;&#x591A;&#x4E2A;&#x7EC4;&#x7EC7;&#x7684;&#x6210;&#x5458; <a href="https://github.com/RxSwiftCommunity" target="_blank">RxSwiftCommunity</a>&#xFF0C;<a href="https://github.com/Moya" target="_blank">Moya</a>&#xFF0C;<a href="https://github.com/SwiftKorea" target="_blank">SwiftKorea</a>&#x3002;</p>
+<h3 id="&#x4ECB;&#x7ECD;"><a name="&#x4ECB;&#x7ECD;" class="plugin-anchor" href="#&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4ECB;&#x7ECD;</h3>
+<p><a href="https://github.com/ReactorKit/ReactorKit" target="_blank">ReactorKit</a> &#x7ED3;&#x5408;&#x4E86; <a href="https://facebook.github.io/flux/" target="_blank">Flux</a> &#x548C;<a href="https://zh.wikipedia.org/wiki/&#x54CD;&#x5E94;&#x5F0F;&#x7F16;&#x7A0B;" target="_blank">&#x54CD;&#x5E94;&#x5F0F;&#x7F16;&#x7A0B;</a>&#x3002;&#x7528;&#x6237;&#x884C;&#x4E3A;&#x548C;&#x9875;&#x9762;&#x72B6;&#x6001;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x5E8F;&#x5217;&#x76F8;&#x4E92;&#x4F20;&#x9012;&#x3002;&#x8FD9;&#x4E9B;&#x5E8F;&#x5217;&#x90FD;&#x662F;&#x5355;&#x5411;&#x7684;&#xFF1A;&#x9875;&#x9762;&#x53EA;&#x80FD;&#x53D1;&#x51FA;&#x7528;&#x6237;&#x884C;&#x4E3A;&#xFF0C;&#x7136;&#x800C;&#x53CD;&#x5E94;&#x5668;&#xFF08;Reactor&#xFF09;&#x53EA;&#x80FD;&#x53D1;&#x51FA;&#x72B6;&#x6001;&#x3002;</p>
+<p><img src="../../assets/Architecture/ReactorKit/BasicConcept.png" alt=""></p>
+<h3 id="view"><a name="view" class="plugin-anchor" href="#view"><i class="fa fa-link" aria-hidden="true"></i></a>View</h3>
+<p><strong>View</strong> &#x7528;&#x4E8E;&#x5C55;&#x793A;&#x6570;&#x636E;&#x3002;<code>ViewController</code> &#x548C; <code>Cell</code> &#x90FD;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F; <strong>View</strong>&#x3002;<strong>View</strong> &#x5C06;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7ED1;&#x5B9A;&#x5230; <strong>Action</strong> &#x7684;&#x5E8F;&#x5217;&#x4E0A;&#xFF0C;&#x540C;&#x65F6;&#x5C06;&#x9875;&#x9762;&#x72B6;&#x6001;&#x7ED1;&#x5B9A;&#x5230; UI &#x7EC4;&#x4EF6;&#x4E0A;&#x3002;</p>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; <strong>View</strong> &#x53EA;&#x9700;&#x8981;&#x8BA9;&#x5B83;&#x9075;&#x5FAA; <code>View</code> &#x534F;&#x8BAE;&#x5373;&#x53EF;&#x3002;&#x7136;&#x540E;&#x4F60;&#x7684;&#x7C7B;&#x5C06;&#x81EA;&#x52A8;&#x83B7;&#x5F97;&#x4E00;&#x4E2A; <code>reactor</code> &#x5C5E;&#x6027;&#x3002;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5E94;&#x8BE5;&#x5728; <strong>View</strong> &#x7684;&#x5916;&#x9762;&#x88AB;&#x8BBE;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProfileViewController</span>: <span class="hljs-title">UIViewController</span>, <span class="hljs-title">View</span> </span>{
+  <span class="hljs-keyword">var</span> disposeBag = <span class="hljs-type">DisposeBag</span>()
+}
+
+profileViewController.reactor = <span class="hljs-type">UserViewReactor</span>() <span class="hljs-comment">// &#x6CE8;&#x5165; reactor</span>
+</code></pre>
+<p>&#x5F53; <code>reactor</code> &#x5C5E;&#x6027;&#x88AB;&#x8BBE;&#x7F6E;&#x65F6;&#xFF0C;<code>bind(reactor:)</code> &#x65B9;&#x6CD5;&#x5C31;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7ED1;&#x5B9A;&#x548C;&#x72B6;&#x6001;&#x8F93;&#x51FA;&#x7ED1;&#x5B9A;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">bind</span><span class="hljs-params">(reactor: ProfileViewReactor)</span></span> {
+  <span class="hljs-comment">// action (View -&gt; Reactor)</span>
+  refreshButton.rx.tap.<span class="hljs-built_in">map</span> { <span class="hljs-type">Reactor</span>.<span class="hljs-type">Action</span>.refresh }
+    .bind(to: reactor.action)
+    .disposed(by: <span class="hljs-keyword">self</span>.disposeBag)
+
+  <span class="hljs-comment">// state (Reactor -&gt; View)</span>
+  reactor.state.<span class="hljs-built_in">map</span> { $<span class="hljs-number">0</span>.isFollowing }
+    .bind(to: followButton.rx.isSelected)
+    .disposed(by: <span class="hljs-keyword">self</span>.disposeBag)
+}
+</code></pre>
+<h3 id="reactor"><a name="reactor" class="plugin-anchor" href="#reactor"><i class="fa fa-link" aria-hidden="true"></i></a>Reactor</h3>
+<p><strong>Reactor</strong> &#x662F;&#x4E0E; UI &#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;&#x4E00;&#x5C42;&#xFF0C;&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x3002;<strong>Reactor</strong> &#x6700;&#x91CD;&#x8981;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5C06;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4ECE; <strong>View</strong> &#x4E2D;&#x62BD;&#x79BB;&#x3002;&#x6BCF;&#x4E00;&#x4E2A; <strong>View</strong> &#x90FD;&#x6709;&#x5BF9;&#x5E94;&#x7684; <strong>Reactor</strong> &#x5E76;&#x4E14;&#x5C06;&#x6240;&#x6709;&#x7684;&#x903B;&#x8F91;&#x4EE3;&#x7406;&#x7ED9; <strong>Reactor</strong>&#x3002;<strong>Reactor</strong> &#x4E0D;&#x9700;&#x8981;&#x4F9D;&#x8D56; <strong>View</strong>&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x5F88;&#x5BB9;&#x6613;&#x88AB;&#x6D4B;&#x8BD5;&#x3002;</p>
+<p>&#x9075;&#x5FAA; <code>Reactor</code> &#x534F;&#x8BAE;&#x5373;&#x53EF;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A; <strong>Reactor</strong>&#x3002;&#x8FD9;&#x4E2A;&#x534F;&#x8BAE;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x4E09;&#x4E2A;&#x7C7B;&#x578B;&#xFF1A;<code>Action</code>&#xFF0C;<code>Mutation</code> &#x548C; <code>State</code>&#x3002;&#x5B83;&#x4E5F;&#x9700;&#x8981;&#x4E00;&#x4E2A; <code>initialState</code> &#x5C5E;&#x6027;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProfileViewReactor</span>: <span class="hljs-title">Reactor</span> </span>{
+  <span class="hljs-comment">// &#x4EE3;&#x8868;&#x7528;&#x6237;&#x884C;&#x4E3A;</span>
+  <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Action</span> </span>{
+    <span class="hljs-keyword">case</span> refreshFollowingStatus(<span class="hljs-type">Int</span>)
+    <span class="hljs-keyword">case</span> follow(<span class="hljs-type">Int</span>)
+  }
+
+  <span class="hljs-comment">// &#x4EE3;&#x8868;&#x72B6;&#x6001;&#x53D8;&#x5316;</span>
+  <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Mutation</span> </span>{
+    <span class="hljs-keyword">case</span> setFollowing(<span class="hljs-type">Bool</span>)
+  }
+
+  <span class="hljs-comment">// &#x4EE3;&#x8868;&#x9875;&#x9762;&#x72B6;&#x6001;</span>
+  <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">State</span> </span>{
+    <span class="hljs-keyword">var</span> isFollowing: <span class="hljs-type">Bool</span> = <span class="hljs-literal">false</span>
+  }
+
+  <span class="hljs-keyword">let</span> initialState: <span class="hljs-type">State</span> = <span class="hljs-type">State</span>()
+}
+</code></pre>
+<p><strong>Action</strong> &#x4EE3;&#x8868;&#x7528;&#x6237;&#x884C;&#x4E3A;&#xFF0C;<strong>State</strong> &#x4EE3;&#x8868;&#x9875;&#x9762;&#x72B6;&#x6001;&#x3002;<strong>Mutation</strong> &#x662F; <strong>Action</strong> &#x548C; <strong>State</strong> &#x7684;&#x6865;&#x6881;&#x3002;<strong>Reactor</strong> &#x901A;&#x8FC7;&#x4E24;&#x6B65;&#x5C06;<strong>&#x7528;&#x6237;&#x884C;&#x4E3A;&#x5E8F;&#x5217;</strong>&#x8F6C;&#x6362;&#x4E3A;<strong>&#x9875;&#x9762;&#x72B6;&#x6001;&#x5E8F;&#x5217;</strong>&#xFF1A;<code>mutate()</code> &#x548C; <code>reduce()</code>&#x3002;</p>
+<p><img src="../../assets/Architecture/ReactorKit/Reactor.png" alt=""></p>
+<p><strong>mutate()</strong></p>
+<p><code>mutate()</code> &#x63A5;&#x6536;&#x4E00;&#x4E2A; <strong>Action</strong> &#xFF0C;&#x7136;&#x540E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Observable&lt;Mutation&gt;</code>&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">mutate</span><span class="hljs-params">(action: Action)</span></span> -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Mutation</span>&gt;
+</code></pre>
+<p>&#x6BCF;&#x79CD;&#x72B6;&#x6001;&#x53D8;&#x5316;&#xFF0C;&#x5982;&#xFF0C;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#xFF0C;API &#x8C03;&#x7528;&#x90FD;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5185;&#x6267;&#x884C;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">mutate</span><span class="hljs-params">(action: Action)</span></span> -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Mutation</span>&gt; {
+  <span class="hljs-keyword">switch</span> action {
+  <span class="hljs-keyword">case</span> <span class="hljs-keyword">let</span> .refreshFollowingStatus(userID): <span class="hljs-comment">// receive an action</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-type">UserAPI</span>.isFollowing(userID) <span class="hljs-comment">// create an API stream</span>
+      .<span class="hljs-built_in">map</span> { (isFollowing: <span class="hljs-type">Bool</span>) -&gt; <span class="hljs-type">Mutation</span> <span class="hljs-keyword">in</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-type">Mutation</span>.setFollowing(isFollowing) <span class="hljs-comment">// convert to Mutation stream</span>
+      }
+
+  <span class="hljs-keyword">case</span> <span class="hljs-keyword">let</span> .follow(userID):
+    <span class="hljs-keyword">return</span> <span class="hljs-type">UserAPI</span>.follow()
+      .<span class="hljs-built_in">map</span> { <span class="hljs-number">_</span> -&gt; <span class="hljs-type">Mutation</span> <span class="hljs-keyword">in</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-type">Mutation</span>.setFollowing(<span class="hljs-literal">true</span>)
+      }
+  }
+}
+</code></pre>
+<p><strong>reduce()</strong></p>
+<p><code>reduce()</code> &#x901A;&#x8FC7;&#x65E7;&#x7684; <strong>State</strong> &#x4EE5;&#x53CA; <strong>Mutation</strong> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; <strong>State</strong>&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">reduce</span><span class="hljs-params">(state: State, mutation: Mutation)</span></span> -&gt; <span class="hljs-type">State</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x53D1;&#x653E;&#x662F;&#x4E00;&#x4E2A;&#x7EAF;&#x51FD;&#x6570;&#x3002;&#x5B83;&#x5C06;&#x540C;&#x6B65;&#x7684;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <strong>State</strong>&#x3002;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x5176;&#x4ED6;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">reduce</span><span class="hljs-params">(state: State, mutation: Mutation)</span></span> -&gt; <span class="hljs-type">State</span> {
+  <span class="hljs-keyword">var</span> state = state <span class="hljs-comment">// create a copy of the old state</span>
+  <span class="hljs-keyword">switch</span> mutation {
+  <span class="hljs-keyword">case</span> <span class="hljs-keyword">let</span> .setFollowing(isFollowing):
+    state.isFollowing = isFollowing <span class="hljs-comment">// manipulate the state, creating a new state</span>
+    <span class="hljs-keyword">return</span> state <span class="hljs-comment">// return the new state</span>
+  }
+}
+</code></pre>
+<p><strong>transform()</strong></p>
+<p><code>transform()</code> &#x8F6C;&#x6362;&#x6BCF;&#x4E00;&#x79CD;&#x5E8F;&#x5217;&#x3002;&#x6709;&#x4E09;&#x79CD;&#x8F6C;&#x6362;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">transform</span><span class="hljs-params">(action: Observable&lt;Action&gt;)</span></span> -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Action</span>&gt;
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">transform</span><span class="hljs-params">(mutation: Observable&lt;Mutation&gt;)</span></span> -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Mutation</span>&gt;
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">transform</span><span class="hljs-params">(state: Observable&lt;State&gt;)</span></span> -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">State</span>&gt;
+</code></pre>
+<p>&#x6267;&#x884C;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x6216;&#x8005;&#x7EC4;&#x5408;&#x5176;&#x4ED6;&#x7684;&#x5E8F;&#x5217;&#x3002;&#x4F8B;&#x5982;&#xFF0C;<code>transform(mutation:)</code> &#x6700;&#x9002;&#x5408;&#x7528;&#x6765;&#x7EC4;&#x5408;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x4E8B;&#x4EF6;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A; <strong>Mutation</strong> &#x5E8F;&#x5217;&#x3002;</p>
+<p>&#x5B83;&#x4E5F;&#x53EF;&#x7528;&#x6765;&#x505A;&#x8C03;&#x8BD5;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">transform</span><span class="hljs-params">(action: Observable&lt;Action&gt;)</span></span> -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Action</span>&gt; {
+  <span class="hljs-keyword">return</span> action.debug(<span class="hljs-string">&quot;action&quot;</span>) <span class="hljs-comment">// Use RxSwift&apos;s debug() operator</span>
+}
+</code></pre>
+<h3 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="plugin-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;</h3>
+<p>&#x4E0B;&#x4E00;&#x8282;&#x5C06;&#x7528; <a href="reactorkit/github_search.html">Github Search</a> &#x6765;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x4F7F;&#x7528; <a href="https://github.com/ReactorKit/ReactorKit" target="_blank">ReactorKit</a>&#x3002;</p>
 
                                 
                                 </section>
@@ -1506,12 +1646,12 @@
 
             
                 
-                <a href="rxfeedback.html" class="navigation navigation-prev " aria-label="Previous page: 7.3 RxFeedback">
+                <a href="rxfeedback/github_search.html" class="navigation navigation-prev " aria-label="Previous page: Github Search（示例）">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../why_rxswift_again.html" class="navigation navigation-next " aria-label="Next page: 8. 为什么要继续使用 RxSwift?">
+                <a href="reactorkit/github_search.html" class="navigation navigation-next " aria-label="Next page: Github Search（示例）">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1522,7 +1662,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"7.3 ReactorKit","level":"1.8.3","depth":2,"next":{"title":"8. 为什么要继续使用 RxSwift?","level":"1.9","depth":1,"path":"content/why_rxswift_again.md","ref":"content/why_rxswift_again.md","articles":[]},"previous":{"title":"7.3 RxFeedback","level":"1.8.2","depth":2,"path":"content/architecture/rxfeedback.md","ref":"content/architecture/rxfeedback.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/architecture/reactorkit.md","mtime":"2017-08-11T08:03:53.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-14T08:48:41.211Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7.3 ReactorKit","level":"1.8.3","depth":2,"next":{"title":"Github Search（示例）","level":"1.8.3.1","depth":3,"path":"content/architecture/reactorkit/github_search.md","ref":"content/architecture/reactorkit/github_search.md","articles":[]},"previous":{"title":"Github Search（示例）","level":"1.8.2.1","depth":3,"path":"content/architecture/rxfeedback/github_search.md","ref":"content/architecture/rxfeedback/github_search.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/architecture/reactorkit.md","mtime":"2017-08-15T09:02:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-15T09:02:14.068Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

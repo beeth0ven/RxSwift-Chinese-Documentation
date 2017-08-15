@@ -22,9 +22,121 @@ public static func system<State, Event>(
 
 模拟系统将在被订阅后启动，并且在订阅被释放后停止。
 
-系统状态用 `State` 表示，事件用 `Event` 表示。
+系统状态用 **State** 表示，事件用 **Event** 表示。
 
 ---
+
+### 示例
+
+![](/assets/Architecture/RxFeedback/Counter.gif)
+
+```swift
+Observable.system(
+    initialState: 0,
+    reduce: { (state, event) -> State in
+            switch event {
+            case .increment:
+                return state + 1
+            case .decrement:
+                return state - 1
+            }
+        },
+    scheduler: MainScheduler.instance,
+    feedback:
+        // UI is user feedback
+        UI.bind(self) { me, state -> UI.Bindings<Event> in
+            let subscriptions = [
+                state.map(String.init).bind(to: me.label!.rx.text)
+            ]
+            let events = [
+                me.plus!.rx.tap.map { Event.increment },
+                me.minus!.rx.tap.map { Event.decrement }
+            ]
+            return UI.Bindings(subscriptions: subscriptions, events: events)
+        }
+    )
+```
+
+这是一个简单计数的例子，只是用于演示 [RxFeedback] 架构。
+
+---
+
+### State
+
+系统状态用 **State** 表示：
+
+```swift
+typealias State = Int
+```
+
+* 这里的状态就是计数的数值
+
+---
+
+### Event
+
+事件用 **Event** 表示：
+
+```swift
+enum Event {
+    case increment
+    case decrement
+}
+```
+
+* increment 增加数值事件
+* decrement 减少数值事件
+
+当产生 **Event** 时更新状态：
+
+```swift
+Observable.system(
+    initialState: 0,
+    reduce: { (state, event) -> State in
+            switch event {
+            case .increment:
+                return state + 1
+            case .decrement:
+                return state - 1
+            }
+        },
+    scheduler: MainScheduler.instance,
+    feedback: ...
+    )
+```
+
+* increment 状态数值加一
+* decrement 状态数值减一
+
+---
+
+### Feedback Loop
+
+将**状态**输出到 UI 页面上，或者将 UI **事件**输入到反馈循环里面去:
+
+```swift
+Observable.system(
+    initialState: 0,
+    reduce: { ... },
+    scheduler: MainScheduler.instance,
+    feedback:
+        // UI is user feedback
+        UI.bind(self) { me, state -> UI.Bindings<Event> in
+            let subscriptions = [
+                state.map(String.init).bind(to: me.label!.rx.text)
+            ]
+            let events = [
+                me.plus!.rx.tap.map { Event.increment },
+                me.minus!.rx.tap.map { Event.decrement }
+            ]
+            return UI.Bindings(subscriptions: subscriptions, events: events)
+        }
+    )
+```
+
+* 将状态数值用 `label` 显示出来
+* 将增加按钮的点击，作为增加数值事件传入
+* 将减少按钮的点击，作为减少数值事件传入
 
 ---
 

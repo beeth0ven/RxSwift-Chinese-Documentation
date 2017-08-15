@@ -2,5 +2,5 @@
 * flatMapLatest
 * concatMap
 * withLatestFrom
-* merge
-* using
+* distinctUntilChanged
+* do

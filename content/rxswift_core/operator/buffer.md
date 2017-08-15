@@ -1,6 +1,6 @@
 * flatMap
 * flatMapLatest
 * concatMap
-* observeOn
+* observeOn 
 * subscribeOn
 * withLatestFrom

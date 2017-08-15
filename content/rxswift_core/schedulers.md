@@ -2,7 +2,7 @@
 
 ![](/assets/Schedulers/Scheduler.png)
 
-**Schedulers** 是 Rx 实现多线程的核心模块，它主要用于控制任务在哪个线程或队列运行。
+**Schedulers** 是 **Rx** 实现多线程的核心模块，它主要用于控制任务在哪个线程或队列运行。
 
 如果你曾经使用过 [GCD](https://developer.apple.com/library/content/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationQueues/OperationQueues.html#//apple_ref/doc/uid/TP40008091-CH102-SW1)， 那你对以下代码应该不会陌生：
 
@@ -33,12 +33,12 @@ rxData
 ---------
 
 ### 使用 subscribeOn
-我们用 `subscribeOn` 来决定数据序列的构建函数在哪个 **Scheduler** 上运行。以上例子中，由于获取 `Data` 需要花很长的时间，所以用 `subscribeOn` 切换到 **后台 Scheduler** 来产生 `Data`。
+我们用 [subscribeOn](operator/subscribeOn.md) 来决定数据序列的构建函数在哪个 **Scheduler** 上运行。以上例子中，由于获取 `Data` 需要花很长的时间，所以用 [subscribeOn](operator/subscribeOn.md) 切换到 **后台 Scheduler** 来产生 `Data`。
 
 ### 使用 observeOn
-我们用 `observeOn` 来决定在哪个 **Scheduler** 监听这个数据序列。以上例子中，通过使用 `observeOn` 方法切换到主线程来监听并且处理结果。
+我们用 [observeOn](operator/observeOn.md) 来决定在哪个 **Scheduler** 监听这个数据序列。以上例子中，通过使用 [observeOn](operator/observeOn.md) 方法切换到主线程来监听并且处理结果。
 
-一个比较典型的例子就是，在后台发起网络请求，然后解析数据，最后在主线程刷新页面。你就可以先用 `subscribeOn` 切到后台去发送请求并解析数据，最后用 `observeOn` 切换到主线程更新页面。
+一个比较典型的例子就是，在后台发起网络请求，然后解析数据，最后在主线程刷新页面。你就可以先用 [subscribeOn](operator/subscribeOn.md) 切到后台去发送请求并解析数据，最后用 [observeOn](operator/observeOn.md) 切换到主线程更新页面。
 
 ---------
 

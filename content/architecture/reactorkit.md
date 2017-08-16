@@ -1,6 +1,23 @@
-## ReactorKit
-
 ![](/assets/Architecture/ReactorKit/ReactorKit.png)
+
+<p align="center">
+  <img alt="Swift" src="https://img.shields.io/badge/Swift-3.1-orange.svg">
+  <a href="https://cocoapods.org/pods/ReactorKit" target="_blank">
+    <img alt="CocoaPods" src="http://img.shields.io/cocoapods/v/ReactorKit.svg">
+  </a>
+  <a href="https://github.com/ReactorKit/ReactorKit" target="_blank">
+    <img alt="Platform" src="https://img.shields.io/cocoapods/p/ReactorKit.svg?style=flat">
+  </a>
+  <a href="https://travis-ci.org/ReactorKit/ReactorKit" target="_blank">
+    <img alt="Build Status" src="https://travis-ci.org/ReactorKit/ReactorKit.svg?branch=master">
+  </a>
+  <a href="https://codecov.io/gh/ReactorKit/ReactorKit/" target="_blank">
+    <img alt="Codecov" src="https://img.shields.io/codecov/c/github/ReactorKit/ReactorKit.svg">
+  </a>
+  <a href="http://reactorkit.io/docs/latest/" target="_blank">
+    <img alt="CocoaDocs" src="http://reactorkit.io/docs/latest/badge.svg">
+  </a>
+</p>
 
 ### 作者
 
@@ -11,6 +28,8 @@
 [ReactorKit] 结合了 [Flux] 和[响应式编程]。用户行为和页面状态都是通过序列相互传递。这些序列都是单向的：页面只能发出用户行为，然而反应器（Reactor）只能发出状态。
 
 ![](/assets/Architecture/ReactorKit/BasicConcept.png)
+
+---
 
 ### View
 
@@ -41,6 +60,8 @@ func bind(reactor: ProfileViewReactor) {
     .disposed(by: self.disposeBag)
 }
 ```
+
+---
 
 ### Reactor
 
@@ -142,6 +163,8 @@ func transform(action: Observable<Action>) -> Observable<Action> {
   return action.debug("action") // Use RxSwift's debug() operator
 }
 ```
+
+---
 
 ### 示例
 

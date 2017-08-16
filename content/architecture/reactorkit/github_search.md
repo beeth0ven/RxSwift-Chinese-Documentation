@@ -152,9 +152,11 @@ func reduce(state: State, mutation: Mutation) -> State {
 * appendRepos 添加搜索结果，以及下一页页数
 * setLoadingNextPage 设置是否正在加载下一页
 
+---
+
 ### bind(reactor:)
 
-进行用户输入绑定和状态输出绑定：
+在 **View** 层进行用户输入绑定和状态输出绑定：
 
 ```swift
 func bind(reactor: GitHubSearchViewReactor) {
@@ -200,6 +202,8 @@ func bind(reactor: GitHubSearchViewReactor) {
 * 将用户要求加载下一页行为绑定到用户行为上
 * 将搜索结果输出到列表页上
 * 当用户点击某一条搜索结果是，用 Safari 打开链接
+
+---
 
 ### 整体结构
 

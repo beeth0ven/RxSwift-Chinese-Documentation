@@ -1,4 +1,2 @@
-* flatMap
-* flatMapLatest
-* concatMap
 * withLatestFrom
+* startWith 

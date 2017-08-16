@@ -1,5 +1,7 @@
 ## RxFeedback
 
+[![Travis CI](https://travis-ci.org/kzaher/RxFeedback.svg?branch=master)](https://travis-ci.org/kzaher/RxFeedback) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20-333333.svg) ![pod](https://img.shields.io/cocoapods/v/RxFeedback.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+
 ### 作者
 
 [Krunoslav Zaher](https://github.com/kzaher) 是 [RxFeedback] 的作者。他也是 [RxSwift](https://github.com/ReactiveX/RxSwift) 的**创始人**以及 [ReactiveX 组织](https://github.com/ReactiveX) 的核心成员。他有 16 年以上的编程经验（ VR 引擎，BPM 系统，移动端应用程序，机器人等），最近在研究响应式编程。

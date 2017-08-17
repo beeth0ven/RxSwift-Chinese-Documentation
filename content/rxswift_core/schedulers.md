@@ -33,7 +33,7 @@ rxData
 ---------
 
 ### 使用 subscribeOn
-我们用 [subscribeOn](operator/subscribeOn.md) 来决定数据序列的构建函数在哪个 **Scheduler** 上运行。以上例子中，由于获取 `Data` 需要花很长的时间，所以用 [subscribeOn](operator/subscribeOn.md) 切换到 **后台 Scheduler** 来产生 `Data`。
+我们用 [subscribeOn](operator/subscribeOn.md) 来决定数据序列的构建函数在哪个 **Scheduler** 上运行。以上例子中，由于获取 `Data` 需要花很长的时间，所以用 [subscribeOn](operator/subscribeOn.md) 切换到 **后台 Scheduler** 来获取 `Data`。
 
 ### 使用 observeOn
 我们用 [observeOn](operator/observeOn.md) 来决定在哪个 **Scheduler** 监听这个数据序列。以上例子中，通过使用 [observeOn](operator/observeOn.md) 方法切换到主线程来监听并且处理结果。

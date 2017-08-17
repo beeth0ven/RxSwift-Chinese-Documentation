@@ -10,7 +10,7 @@
 
 你可以下载[这个例子](https://github.com/ReactiveX/RxSwift/tree/master/RxExample/RxExample/Examples/SimpleValidation)并在模拟器上运行，这样可以帮助于你理解整个程序的交互：
 
-  ![1](/assets/SimpleValid/SimpleValidationFull.gif)
+  ![](/assets/SimpleValid/SimpleValidationFull.gif)
 
 ### 这个页面主要由 5 各元素组成：
 

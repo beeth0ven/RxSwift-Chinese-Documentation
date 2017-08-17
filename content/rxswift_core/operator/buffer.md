@@ -1,2 +1,5 @@
-* withLatestFrom
-* startWith 
+* shareReplay
+* timeout
+* skip
+* skipUntil
+* skipWhile

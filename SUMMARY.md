@@ -92,6 +92,7 @@
   * [Calculator - 计算器](content/more_demo/calculator.md)
 * [7. RxSwift 常用架构](content/architecture.md)
   * [7.1 MVVM](content/architecture/mvvm.md)
+    * [Github Signup（示例）](content/architecture/mvvm/github_signup.md)
   * [7.2 RxFeedback](content/architecture/rxfeedback.md)
     * [Github Search（示例）](content/architecture/rxfeedback/github_search.md)
   * [7.3 ReactorKit](content/architecture/reactorkit.md)

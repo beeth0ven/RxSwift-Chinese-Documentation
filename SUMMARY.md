@@ -9,7 +9,6 @@
   * [3.3 数据绑定](content/think_reactive/data_binding.md)
 * [4. RxSwift 的核心组件](content/rxswift_core.md)
   * [4.1 Observable - 可被监听的序列](content/rxswift_core/observable.md)
-    * [Observable](content/rxswift_core/observable/observable.md)
     * [Single](content/rxswift_core/observable/single.md)
     * [Completeable](content/rxswift_core/observable/completeable.md)
     * [Maybe](content/rxswift_core/observable/maybe.md)

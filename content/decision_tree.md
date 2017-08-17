@@ -92,7 +92,7 @@
 * 如果产生错误，就切换到备选 `Observable` ：[catchError](rxswift_core/operator/catchError.md)
 * 如果产生错误，就重试 ：[retry](rxswift_core/operator/retry.md)
 
-**我创建一个 `Disposable` 资源，使它与 `Observable` 具有相同的生命周期：[using](rxswift_core/operator/using.md)**
+**我创建一个 `Disposable` 资源，使它与 `Observable` 具有相同的寿命：[using](rxswift_core/operator/using.md)**
 
 **我创建一个 `Observable`，直到我通知它可以产生元素后，才能产生元素：[publish](rxswift_core/operator/publish.md)**
 * 并且，就算是在产生元素后订阅，也要发出全部元素：[replay](rxswift_core/operator/replay.md)

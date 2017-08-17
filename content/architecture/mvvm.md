@@ -199,7 +199,7 @@ class SimpleValidationViewController : ViewController {
 * passwordValid 用密码是否有效，来控制提示语是否隐藏
 * everythingValid 用两者是否同时有效，来控制按钮是否可点击
 
-当 App 的交互变复杂时，你仍然可以保持**控制器**结构清晰。这样可以大大的提升代码可读性。将来代码维护起来也就更容易许多。
+当 App 的交互变复杂时，你仍然可以保持**控制器**结构清晰。这样可以大大的提升代码可读性。将来代码维护起来也就会容易许多了。
 
 ---
 

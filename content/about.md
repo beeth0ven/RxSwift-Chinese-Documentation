@@ -1,7 +1,7 @@
 # 关于本文档
 
 * 文档作者：[罗杰 (Beeth0ven)](https://github.com/beeth0ven)
-* 作者邮箱：<m13477051442@gmail.com>
+* 作者邮箱：<beeth0vendev@gmail.com>
 * 首发日期：**17 年 9 月 1 日**
 * 更新日期：**17 年 9 月 1 日**
 * 使用工具：[GitBook](https://www.gitbook.com)

@@ -7,7 +7,7 @@
 
 它拓展了[观察者模式](https://zh.wikipedia.org/wiki/观察者模式)。使你能够自由组合多个异步事件，而不需要去关心线程，同步，线程安全，并发数据以及I/O阻塞。
 
-[RxSwift](https://github.com/ReactiveX/RxSwift) 是 [Rx](https://github.com/Reactive-Extensions/Rx.NET) 的 Swift 版本。
+[RxSwift](https://github.com/ReactiveX/RxSwift) 是 [Rx](https://github.com/Reactive-Extensions/Rx.NET) 的 **Swift** 版本。
 
 它尝试将原有的一些概念移植到 iOS/macOS 平台。
 

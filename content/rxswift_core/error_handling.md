@@ -130,7 +130,7 @@ rxData
 
 ### Result
 
-如果我们只是想给用户错误提示，那要如何操作了？
+如果我们只是想给用户错误提示，那要如何操作呢？
 
 以下提供一个最为直接的方案，不过这个方案存在一些问题：
 
@@ -175,7 +175,7 @@ updateUserInfoButton.rx.tap
     .withLatestFrom(rxUserInfo)
     .flatMapLatest { userInfo -> Observable<Result<Void>> in
         return update(userInfo)
-            .map(Result.success)  // 软换成 Result
+            .map(Result.success)  // 转换成 Result
             .catchError { error in Observable.just(Result.failure(error)) }
     }
     .observeOn(MainScheduler.instance)

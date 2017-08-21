@@ -1,11 +1,7 @@
-# 为什么要继续使用 RxSwift?
-
-[RxSwift] 不仅可以帮助你简化代码，它还帮你打开了[响应式编程]的大门。[RxSwift] 有一整套**生态系统**，可以帮助你在 **iOS** 平台实现[响应式编程]。而 [RxSwift] 的大哥 [ReactiveX] 也有一整套**生态系统**，可以帮助你在多个平台实现[响应式编程]。
-
 <img src="/assets/WhyRxSwiftAgain/RxSwiftCommunity.png" width="36" height="36">  RxSwift 生态系统
 ======================================
 
-**RxCocoa** 给 **UI** 提供了 [Rx] 支持，让我们能够使用按钮点击序列，输入框当前文本序列等。不过 **RxCocoa** 也只是 **RxSwift 生态系统** 中的一员。**RxSwift 生态系统**还提供了其他框架的支持：
+**RxCocoa** 给 **UI框架** 提供了 [Rx] 支持，让我们能够使用按钮点击序列，输入框当前文本序列等。不过 **RxCocoa** 也只是 **RxSwift 生态系统** 中的一员。**RxSwift 生态系统**还给其他框架提供了 [Rx] 支持：
 
 * [RxDataSources] - UITableView 和 UICollectionView 数据源
 * [RxGesture] -  页面手势
@@ -21,7 +17,6 @@
 * [RxSwiftExt] - 添加一些有用的操作符
 * **...**
 
-
 ### RxDataSources
 书写 `tabelView` 或 `collectionView` 的数据源是一件非常繁琐的事情，有一大堆的代理方法需要被执行。 [RxDataSources] 可以帮助你简化这一过程。你可以用它来布局多层级的列表页，并且它还可以提供动画支持。
 
@@ -36,7 +31,7 @@ Observable.just([SectionModel(model: "title", items: [1, 2, 3])])
     .disposed(by: disposeBag)
 ```
 
-你可以点击 [RxDataSources] 来了解更多。
+你可以点击 [RxDataSources] 来了解更多信息。
 
 ---
 
@@ -81,7 +76,7 @@ _ = manager.rx.request(.get, stringURL)
     .subscribe { print($0) }
 ```
 
-你可以点击 [RxAlamofire] 来了解更多。
+你可以点击 [RxAlamofire] 来了解更多信息。
 
 ---
 
@@ -124,14 +119,14 @@ Observable.from(messages)
   .subscribe(realm.rx.delete())
 ```
 
-你可以点击 [RxRealm] 来了解更多。
+你可以点击 [RxRealm] 来了解更多信息。
 
 ---
 
 <img src="/assets/WhyRxSwiftAgain/ReactiveX.png" width="36" height="36">  ReactiveX 生态系统
 ======================================
 
-我们之前提到过 [RxSwift] 是 [Rx] 的 **Swift** 版本。而 [ReactiveX]（简写: Rx）是一个跨平台框架。它不仅可以用来写 **iOS** 应用程序，你还可以用它来写 **Android**，**Web 前端**和**后台**。并且每个平台都和 **RxSwift** 一样有一套 [Rx] 生态系统。[Rx] 支持多种编程语言，如：Swift，Java，JS，C#，Scala，Kotlin，Go 等。只要你掌握了其中一门语言，你很容易就能够熟悉其他的语言。
+我们之前提到过 [RxSwift] 是 [Rx] 的 **Swift** 版本。而 [ReactiveX]（简写: Rx）是一个跨平台框架。它不仅可以用来写 **iOS** ，你还可以用它来写 **Android**，**Web 前端**和**后台**。并且每个平台都和 **RxSwift** 一样有一套 [Rx] 生态系统。[Rx] 支持多种编程语言，如：Swift，Java，JS，C#，Scala，Kotlin，Go 等。只要你掌握了其中一门语言，你很容易就能够熟悉其他的语言。
 
 ## Android
 
@@ -213,7 +208,7 @@ disposables.add(everythingValid
 
 [RxJS] 是 **Web 前端** 平台上非常流行的响应式编程框架，它也是 [Rx] 的 **JS** 版本。而且主流的前端框架都提供了 [Rx] 支持，如：[jQuery]，[RxJS-DOM]，[AngularJS]，[RxEmber]等。
 
-下面这个例子和 **GitHub 搜索** 十分相似，只不过他搜索的是维基百科：
+下面这个例子是用 [RxJS] 写的，它和 **GitHub 搜索** 十分相似，只不过他搜索的是维基百科：
 
 ```javascript
 var $input = $('#input'),
@@ -237,13 +232,13 @@ Rx.Observable.fromEvent($input, 'keyup')
 
 当用户输入一个稳定的关键字后，向维基百科请求搜索结果，然后显示出来。
 
-即便你没有学过 Web 前端开发，但是只要你熟悉 [Rx] ，以上代码你也能够看懂。
+即便你没有学过 **Web 前端**开发，但是只要你熟悉 [Rx] ，以上代码你也能够看懂。
 
 ---
 
 # 总结
 
-由于 [Rx] 支持多种后台语言，如：**Java**，**JS**，**Go**。所以你也可以用它来写后台。
+由于 [Rx] 支持多种**后台语言**，如：**Java**，**JS**，**Go**。所以你也可以用它来写后台。
 
 如果你已经能够熟练使用 [RxSwift] ，那么你就已经具有某种“天赋”，这种“天赋”可以帮助你快速上手其他平台。你只需要学习一些和平台相关的知识，就可以写出交互相当复杂的应用程序。因为你的 [Rx] 技巧是可以跨平台复用的。
 

@@ -96,6 +96,6 @@
     * [Github Search（示例）](content/architecture/rxfeedback/github_search.md)
   * [7.3 ReactorKit](content/architecture/reactorkit.md)
     * [Github Search（示例）](content/architecture/reactorkit/github_search.md)
-* [8. 为什么要继续使用 RxSwift?](content/why_rxswift_again.md)
+* [8. RxSwift 生态系统](content/rxswift_ecosystem.md)
 * [9. 学习资源](content/resource.md)
 * [10. 关于本文档](content/about.md)

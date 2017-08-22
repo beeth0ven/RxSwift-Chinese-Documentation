@@ -99,9 +99,9 @@ class SimpleTableViewExampleSectionedViewController
 ![](/assets/MoreDemo/TableViewSectionedViewController/bindings.png)
 
 
-这里 `SectionModel<String, Double>` 中的 `String` 是用来显示 `Section` 的标题。而 `Double` 是用来绑定对应的 `Cell`。假设我们的列表页是用来显示通讯录的，并且通讯录通过首字母来分层。那么应该把数据定义为 `SectionModel<String, Person>`，然后用首字母 `String` 来显示 `Section` 标题，用联系人 `Person` 来显示对应的 `Cell`。
+这里 `SectionModel<String, Double>` 中的 `String` 是用来显示 `Section` 的标题。而 `Double` 是用来绑定对应的 `Cell`。假如我们的列表页是用来显示通讯录的，并且通讯录通过首字母来分组。那么应该把数据定义为 `SectionModel<String, Person>`，然后用首字母 `String` 来显示 `Section` 标题，用联系人 `Person` 来显示对应的 `Cell`。
 
-示例中后面的两个配置函数，主要负责配置 `Cell` 和 `SectionHeader`：
+示例中后面的两个函数，主要负责配置 `Cell` 和 `SectionHeader`：
 
 ```swift
 dataSource.configureCell = { (_, tv, indexPath, element) in
@@ -119,7 +119,7 @@ dataSource.titleForHeaderInSection = { dataSource, sectionIndex in
 
 第二个函数 `titleForHeaderInSection` 是用来配置 `Section` 的标题，而 `dataSource[sectionIndex].model` 就是 `SectionModel<String, Double>` 中的 `String`。
 
-由于 `SectionModel<Section, ItemType>` 是一个范型，所以我们可以用它来定义任意类型的数据源。
+由于 `SectionModel<Section, ItemType>` 是一个范型，所以我们可以用它来定义任意类型的 `Section` 以及 `Item`。
 
 最后:
 

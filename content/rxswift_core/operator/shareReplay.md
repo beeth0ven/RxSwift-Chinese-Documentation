@@ -6,7 +6,5 @@
 * groupBy
 * window
 
-* connect
-* publish
 * refCount
 * replay

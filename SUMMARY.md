@@ -85,7 +85,7 @@
   * [4.6 Schedulers - 调度器](content/rxswift_core/schedulers.md)
   * [4.7 Error Handling - 错误处理](content/rxswift_core/error_handling.md)
 * [5. 如何选择操作符？](content/decision_tree.md)
-* [6. 更多例子](content/more_demo.md)
+* [6. 更多示例](content/more_demo.md)
   * [ImagePicker - 图片选择器](content/more_demo/image_picker.md)
   * [TableViewSectionedViewController - 多层级的列表页](content/more_demo/tableView_sectioned_viewController.md)
   * [Calculator - 计算器](content/more_demo/calculator.md)

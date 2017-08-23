@@ -52,7 +52,7 @@ override func viewDidLoad() {
 cameraButton.rx.tap
     .flatMapLatest { () -> Observable<[String: AnyObject]> ... } // 点击 -> 图片信息
     .map { [String : AnyObject] -> UIImage? ... } // 图片信息 -> 图片
-    .bind(to: imageView.rx.image) // 显示图片
+    .bind(to: imageView.rx.image) // 数据绑定
     .disposed(by: disposeBag)
 ```
 

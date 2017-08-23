@@ -30,10 +30,12 @@
 
 ## 开源项目
 
-* [CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
+* [CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift) - Example of Clean Architecture of iOS app using RxSwift
 
-* [RxTodo](https://github.com/devxoul/RxTodo)
+* [PinPlace](https://github.com/artemkalinovsky/PinPlace) - Routing app. Build with MVVM+RxSwift and ❤️.
 
-* [Drrrible](https://github.com/devxoul/Drrrible)
+* [RxTodo](https://github.com/devxoul/RxTodo) - iOS Todo Application using RxSwift and ReactorKit
 
-* [RxMarbles](https://github.com/RxSwiftCommunity/RxMarbles)
+* [Drrrible](https://github.com/devxoul/Drrrible) - Dribbble for iOS using ReactorKit
+
+* [RxMarbles](https://github.com/RxSwiftCommunity/RxMarbles) - RxMarbles iOS app

@@ -2,6 +2,8 @@
 
 我们先看一下 RxSwift 能够帮助我们做些什么：
 
+---
+
 ## Target Action
 
 传统实现方法：
@@ -27,6 +29,8 @@ button.rx.tap
 ```
 
 你不需要使用 Target Action，这样使得代码逻辑清晰可见。
+
+---
 
 
 ## 代理
@@ -68,6 +72,8 @@ class ViewController: UIViewController {
 
 你不需要书写代理的配置代码，就能获得想要的结果。
 
+---
+
 ## 闭包回调
 
 传统实现方法：
@@ -104,6 +110,8 @@ URLSession.shared.rx.data(request: URLRequest(url: url))
 ```
 
 回调也变得十分简单
+
+---
 
 ## 通知
 
@@ -143,6 +151,8 @@ override func viewDidLoad() {
 ```
 
 你不需要去管理观察者的生命周期，这样你就有更多精力去关注业务逻辑。
+
+---
 
 ## KVO
 
@@ -185,6 +195,8 @@ override func viewDidLoad() {
 ```
 
 这样实现 KVO 的代码更清晰，更简洁并且更准确。
+
+---
 
 ## 多个任务之间有依赖关系
 
@@ -255,6 +267,8 @@ Api.token(username: "beeth0ven", password: "987654321")
 
 这样你无需嵌套太多层，从而使得代码易读，易维护。
 
+---
+
 ## 等待多个并发任务完成后处理结果
 
 例如，需要将两个网络请求合并成一个，
@@ -290,6 +304,8 @@ Observable.zip(
 ```
 
 这样你可用寥寥几行代码来完成相当复杂的异步操作。
+
+---
 
 ### 那么为什么要使用 RxSwift ？
 * 组合 <- Rx 就是组合的代名词

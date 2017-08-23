@@ -1,40 +1,9 @@
+## AsyncSubject
 
+![](/assets/ObservableAndObserver/AsyncSubject.png)
 
-* **Single**
+**AsyncSubject** 将在源 `Observable` 产生完成事件后，发出最后一个元素（仅仅只有最后一个元素），如果源 `Observable` 只有一个完成事件。那 **AsyncSubject** 也只有一个完成事件。
 
-  * 序列要么产生一个元素，要么产生一个错误，二选一
+![](/assets/ObservableAndObserver/AsyncSubject1.png)
 
-* **Completable**
-
-  * 序列要么产生一个完成事件，要么产生一个错误，二选一
-
-* **Maybe**
-
-  * 序列要么产生一个元素，要么产生一个完成事件，要么产生一个错误，三选一
-
-* **Driver**
-
-  * 不会产生错误
-
-  * 观察者一定是在主线程监听
-
-  * 共享状态变化
-
-* **ControlEvent**
-
-  * 不会产生错误
-
-  * 一定在主线程执行绑定（订阅）
-
-  * 观察者一定是在主线程监听
-
-  * 共享状态变化
-
-
-
-
-
-
-  * 无法响应 `error` 事件
-
-  * 确保绑定在主线程完成
+它会对随后的观察者发出最终元素。如果源 `Observable` 因为产生了一个 `error` 事件而中止， **AsyncSubject** 就不会发出任何元素，而是将这个 `error` 事件发送出来。

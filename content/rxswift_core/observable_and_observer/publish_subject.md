@@ -1,40 +1,11 @@
+## PublishSubject
 
+![](/assets/ObservableAndObserver/PublishSubject.png)
 
-* **Single**
+**PublishSubject** 将对观察者发送订阅后产生的元素，而在订阅前发出的元素将不会发送给观察者。如果你希望观察者接收到所有的元素，你可以通过使用 `Observable` 的 `create` 方法来创建 `Observable`，或者使用 [ReplaySubject]。
 
-  * 序列要么产生一个元素，要么产生一个错误，二选一
+![](/assets/ObservableAndObserver/PublishSubject1.png)
 
-* **Completable**
+如果源 `Observable` 因为产生了一个 `error` 事件而中止， **PublishSubject** 就不会发出任何元素，而是将这个 `error` 事件发送出来。
 
-  * 序列要么产生一个完成事件，要么产生一个错误，二选一
-
-* **Maybe**
-
-  * 序列要么产生一个元素，要么产生一个完成事件，要么产生一个错误，三选一
-
-* **Driver**
-
-  * 不会产生错误
-
-  * 观察者一定是在主线程监听
-
-  * 共享状态变化
-
-* **ControlEvent**
-
-  * 不会产生错误
-
-  * 一定在主线程执行绑定（订阅）
-
-  * 观察者一定是在主线程监听
-
-  * 共享状态变化
-
-
-
-
-
-
-  * 无法响应 `error` 事件
-
-  * 确保绑定在主线程完成
+[ReplaySubject]:replay_subject.md

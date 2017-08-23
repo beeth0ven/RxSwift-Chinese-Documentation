@@ -1,5 +1,2 @@
 * shareReplay
 * timeout
-
-* groupBy
-* window

@@ -1270,7 +1270,7 @@
                 <a href="../../more_demo.html">
             
                     
-                    6. 更多例子
+                    6. 更多示例
             
                 </a>
             
@@ -1522,9 +1522,55 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>ImagePicker</p>
-<p>SimpleTableViewExample</p>
-<p>Calculator</p>
+                                <h2 id="anyobserver"><a name="anyobserver" class="plugin-anchor" href="#anyobserver"><i class="fa fa-link" aria-hidden="true"></i></a>AnyObserver</h2>
+<p><strong>AnyObserver</strong> &#x53EF;&#x4EE5;&#x7528;&#x6765;&#x63CF;&#x53D9;&#x4EFB;&#x610F;&#x4E00;&#x79CD;&#x89C2;&#x5BDF;&#x8005;&#x3002;</p>
+<h3 id="&#x4F8B;&#x5982;&#xFF1A;"><a name="&#x4F8B;&#x5982;&#xFF1A;" class="plugin-anchor" href="#&#x4F8B;&#x5982;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F8B;&#x5982;&#xFF1A;</h3>
+<hr>
+<p><strong>&#x6253;&#x5370;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x7ED3;&#x679C;&#xFF1A;</strong></p>
+<pre><code class="lang-swift"><span class="hljs-type">URLSession</span>.shared.rx.data(request: <span class="hljs-type">URLRequest</span>(url: url))
+    .subscribe(onNext: { data <span class="hljs-keyword">in</span>
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Data Task Success with count: <span class="hljs-subst">\(data.<span class="hljs-built_in">count</span>)</span>&quot;</span>)
+    }, onError: { error <span class="hljs-keyword">in</span>
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Data Task Error: <span class="hljs-subst">\(error)</span>&quot;</span>)
+    })
+    .disposed(by: disposeBag)
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> observer: <span class="hljs-type">AnyObserver</span>&lt;<span class="hljs-type">Data</span>&gt; = <span class="hljs-type">AnyObserver</span> { (event) <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">switch</span> event {
+    <span class="hljs-keyword">case</span> .next(<span class="hljs-keyword">let</span> data):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Data Task Success with count: <span class="hljs-subst">\(data.<span class="hljs-built_in">count</span>)</span>&quot;</span>)
+    <span class="hljs-keyword">case</span> .error(<span class="hljs-keyword">let</span> error):
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Data Task Error: <span class="hljs-subst">\(error)</span>&quot;</span>)
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">break</span>
+    }
+}
+
+<span class="hljs-type">URLSession</span>.shared.rx.data(request: <span class="hljs-type">URLRequest</span>(url: url))
+    .subscribe(observer)
+    .disposed(by: disposeBag)
+</code></pre>
+<hr>
+<p><strong>&#x7528;&#x6237;&#x540D;&#x63D0;&#x793A;&#x8BED;&#x662F;&#x5426;&#x9690;&#x85CF;</strong></p>
+<pre><code class="lang-swift">usernameValid
+    .bind(to: usernameValidOutlet.rx.isHidden)
+    .disposed(by: disposeBag)
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> observer: <span class="hljs-type">AnyObserver</span>&lt;<span class="hljs-type">Bool</span>&gt; = <span class="hljs-type">AnyObserver</span> { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] (event) <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">switch</span> event {
+    <span class="hljs-keyword">case</span> .next(<span class="hljs-keyword">let</span> isHidden):
+        <span class="hljs-keyword">self</span>?.usernameValidOutlet.isHidden = isHidden
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">break</span>
+    }
+}
+
+usernameValid
+    .bind(to: observer)
+    .disposed(by: disposeBag)
+</code></pre>
 
                                 
                                 </section>
@@ -1568,7 +1614,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AnyObserver","level":"1.5.2.1","depth":3,"next":{"title":"UIBindingObserver","level":"1.5.2.2","depth":3,"path":"content/rxswift_core/observer/uibinding_observer.md","ref":"content/rxswift_core/observer/uibinding_observer.md","articles":[]},"previous":{"title":"4.2 Observer - 观察者","level":"1.5.2","depth":2,"path":"content/rxswift_core/observer.md","ref":"content/rxswift_core/observer.md","articles":[{"title":"AnyObserver","level":"1.5.2.1","depth":3,"path":"content/rxswift_core/observer/any_observer.md","ref":"content/rxswift_core/observer/any_observer.md","articles":[]},{"title":"UIBindingObserver","level":"1.5.2.2","depth":3,"path":"content/rxswift_core/observer/uibinding_observer.md","ref":"content/rxswift_core/observer/uibinding_observer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observer/any_observer.md","mtime":"2017-08-18T09:14:08.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-22T09:21:15.186Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AnyObserver","level":"1.5.2.1","depth":3,"next":{"title":"UIBindingObserver","level":"1.5.2.2","depth":3,"path":"content/rxswift_core/observer/uibinding_observer.md","ref":"content/rxswift_core/observer/uibinding_observer.md","articles":[]},"previous":{"title":"4.2 Observer - 观察者","level":"1.5.2","depth":2,"path":"content/rxswift_core/observer.md","ref":"content/rxswift_core/observer.md","articles":[{"title":"AnyObserver","level":"1.5.2.1","depth":3,"path":"content/rxswift_core/observer/any_observer.md","ref":"content/rxswift_core/observer/any_observer.md","articles":[]},{"title":"UIBindingObserver","level":"1.5.2.2","depth":3,"path":"content/rxswift_core/observer/uibinding_observer.md","ref":"content/rxswift_core/observer/uibinding_observer.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observer/any_observer.md","mtime":"2017-08-23T09:27:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-23T09:27:39.753Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

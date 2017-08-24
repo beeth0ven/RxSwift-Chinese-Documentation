@@ -1593,11 +1593,9 @@
 </code></pre>
 <p>&#x901A;&#x8FC7; Rx &#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
 <pre><code class="lang-swift"><span class="hljs-type">URLSession</span>.shared.rx.data(request: <span class="hljs-type">URLRequest</span>(url: url))
-    .subscribe(
-        onNext: { data <span class="hljs-keyword">in</span>
+    .subscribe(onNext: { data <span class="hljs-keyword">in</span>
             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Data Task Success with count: <span class="hljs-subst">\(data.<span class="hljs-built_in">count</span>)</span>&quot;</span>)
-        },
-        onError: { error <span class="hljs-keyword">in</span>
+    }, onError: { error <span class="hljs-keyword">in</span>
             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Data Task Error: <span class="hljs-subst">\(error)</span>&quot;</span>)
     })
     .disposed(by: disposeBag)
@@ -1716,12 +1714,10 @@
 </code></pre>
 <pre><code class="lang-swift"><span class="hljs-comment">/// &#x901A;&#x8FC7;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;</span>
 <span class="hljs-type">Api</span>.token(username: <span class="hljs-string">&quot;beeth0ven&quot;</span>, password: <span class="hljs-string">&quot;987654321&quot;</span>)
-    .flatMap(<span class="hljs-type">Api</span>.userInfo)
-    .subscribe(
-        onNext: { userInfo <span class="hljs-keyword">in</span>
+    .flatMapLatest(<span class="hljs-type">Api</span>.userInfo)
+    .subscribe(onNext: { userInfo <span class="hljs-keyword">in</span>
             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x6210;&#x529F;: <span class="hljs-subst">\(userInfo)</span>&quot;</span>)
-        },
-        onError: { error <span class="hljs-keyword">in</span>
+    }, onError: { error <span class="hljs-keyword">in</span>
             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x5931;&#x8D25;: <span class="hljs-subst">\(error)</span>&quot;</span>)
     })
     .disposed(by: disposeBag)
@@ -1745,13 +1741,11 @@
 <span class="hljs-type">Observable</span>.<span class="hljs-built_in">zip</span>(
       <span class="hljs-type">Api</span>.teacher(teacherId: teacherId),
       <span class="hljs-type">Api</span>.teacherComments(teacherId: teacherId)
-    ).subscribe(
-        onNext: { (teacher, comments) <span class="hljs-keyword">in</span>
-            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x8001;&#x5E08;&#x4FE1;&#x606F;&#x6210;&#x529F;: <span class="hljs-subst">\(teacher)</span>&quot;</span>)
-            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x8001;&#x5E08;&#x8BC4;&#x8BBA;&#x6210;&#x529F;: <span class="hljs-subst">\(comments.<span class="hljs-built_in">count</span>)</span> &#x6761;&quot;</span>)
-        },
-        onError: { error <span class="hljs-keyword">in</span>
-            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x8001;&#x5E08;&#x4FE1;&#x606F;&#x6216;&#x8BC4;&#x8BBA;&#x5931;&#x8D25;: <span class="hljs-subst">\(error)</span>&quot;</span>)
+    ).subscribe(onNext: { (teacher, comments) <span class="hljs-keyword">in</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x8001;&#x5E08;&#x4FE1;&#x606F;&#x6210;&#x529F;: <span class="hljs-subst">\(teacher)</span>&quot;</span>)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x8001;&#x5E08;&#x8BC4;&#x8BBA;&#x6210;&#x529F;: <span class="hljs-subst">\(comments.<span class="hljs-built_in">count</span>)</span> &#x6761;&quot;</span>)
+    }, onError: { error <span class="hljs-keyword">in</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x8001;&#x5E08;&#x4FE1;&#x606F;&#x6216;&#x8BC4;&#x8BBA;&#x5931;&#x8D25;: <span class="hljs-subst">\(error)</span>&quot;</span>)
     })
     .disposed(by: disposeBag)
 </code></pre>
@@ -1759,11 +1753,11 @@
 <hr>
 <h3 id="&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-rxswift-&#xFF1F;"><a name="&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-rxswift-&#xFF1F;" class="plugin-anchor" href="#&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-rxswift-&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528; RxSwift &#xFF1F;</h3>
 <ul>
-<li>&#x7EC4;&#x5408; &lt;- Rx &#x5C31;&#x662F;&#x7EC4;&#x5408;&#x7684;&#x4EE3;&#x540D;&#x8BCD;</li>
-<li>&#x590D;&#x7528; &lt;- &#x56E0;&#x4E3A;&#x5B83;&#x6613;&#x7EC4;&#x5408;</li>
-<li>&#x6E05;&#x6670; &lt;- &#x56E0;&#x4E3A;&#x58F0;&#x660E;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x66F4;&#x7684;</li>
-<li>&#x6613;&#x7528; &lt;- &#x56E0;&#x4E3A;&#x5B83;&#x62BD;&#x8C61;&#x7684;&#x4E86;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#xFF0C;&#x4F7F;&#x6211;&#x4EEC;&#x7EDF;&#x4E00;&#x4E86;&#x4EE3;&#x7801;&#x98CE;&#x683C;</li>
-<li>&#x7A33;&#x5B9A; &lt;- &#x56E0;&#x4E3A; Rx &#x662F;&#x5B8C;&#x5168;&#x901A;&#x8FC7;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;</li>
+<li>&#x7EC4;&#x5408; - Rx &#x5C31;&#x662F;&#x7EC4;&#x5408;&#x7684;&#x4EE3;&#x540D;&#x8BCD;</li>
+<li>&#x590D;&#x7528; - &#x56E0;&#x4E3A;&#x5B83;&#x6613;&#x7EC4;&#x5408;</li>
+<li>&#x6E05;&#x6670; - &#x56E0;&#x4E3A;&#x58F0;&#x660E;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x66F4;&#x7684;</li>
+<li>&#x6613;&#x7528; - &#x56E0;&#x4E3A;&#x5B83;&#x62BD;&#x8C61;&#x7684;&#x4E86;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#xFF0C;&#x4F7F;&#x6211;&#x4EEC;&#x7EDF;&#x4E00;&#x4E86;&#x4EE3;&#x7801;&#x98CE;&#x683C;</li>
+<li>&#x7A33;&#x5B9A; - &#x56E0;&#x4E3A; Rx &#x662F;&#x5B8C;&#x5168;&#x901A;&#x8FC7;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;</li>
 </ul>
 
                                 
@@ -1808,7 +1802,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1. 为什么要使用 RxSwift?","level":"1.2","depth":1,"next":{"title":"2. 你好 RxSwift！","level":"1.3","depth":1,"path":"content/first_app.md","ref":"content/first_app.md","articles":[]},"previous":{"title":"RxSwift 中文文档","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/why_rxswift.md","mtime":"2017-08-23T09:27:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-23T09:27:39.753Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1. 为什么要使用 RxSwift?","level":"1.2","depth":1,"next":{"title":"2. 你好 RxSwift！","level":"1.3","depth":1,"path":"content/first_app.md","ref":"content/first_app.md","articles":[]},"previous":{"title":"RxSwift 中文文档","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documention","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/why_rxswift.md","mtime":"2017-08-24T05:31:05.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-24T05:37:47.427Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

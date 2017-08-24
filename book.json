@@ -32,11 +32,11 @@
             "token": "UA-63403975-1"
         },
         "editlink": {
-            "base": "https://github.com/beeth0ven/RxSwift-Chinese-Documention/edit/master",
+            "base": "https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master",
             "label": "编辑页面"
         },
         "github-buttons": {
-            "repo": "beeth0ven/RxSwift-Chinese-Documention",
+            "repo": "beeth0ven/RxSwift-Chinese-Documentation",
             "types": [
                 "star"
             ],

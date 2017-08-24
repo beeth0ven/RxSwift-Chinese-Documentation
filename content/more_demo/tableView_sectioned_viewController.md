@@ -10,10 +10,10 @@
 
 这是一个多层级列表页，它主要需要完成这些需求：
 
-* 每个 `Cell` 显示对应的元素，以及列表的行号
 * 每个 `Section` 显示对应的标题
-* 当 `Cell` 被选中是，显示一个弹框
+* 每个 `Cell` 显示对应的元素以及行号
 * 根据 `Cell` 的 `indexPath` 控制行高
+* 当 `Cell` 被选中时，显示一个弹框
 
 ### 整体结构
 
@@ -141,7 +141,7 @@ func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) 
 }
 ```
 
-这个是用来控制行高的，`tableView.rx.setDelegate(self)...` 将自己设置成 `tableView` 的代理，通过 `heightForHeaderInSection` 方法提供提供行高。
+这个是用来控制行高的，`tableView.rx.setDelegate(self)...` 将自己设置成 `tableView` 的代理，通过 `heightForHeaderInSection` 方法提供行高。
 
 ### 参考
 

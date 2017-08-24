@@ -79,7 +79,7 @@ override func viewDidLoad() {
 }
 ```
 
-这个例子中 `disposeBag` 和 `ViewController` 具有相同的生命周期。当页面被退出时， `ViewController` 就被释放，`disposeBag` 也跟着被释放了，那么这里的 5 次绑定（订阅）也就被取消了。这正是我们所需要的。
+这个例子中 `disposeBag` 和 `ViewController` 具有相同的生命周期。当退出页面时， `ViewController` 就被释放，`disposeBag` 也跟着被释放了，那么这里的 5 次绑定（订阅）也就被取消了。这正是我们所需要的。
 
 ## [takeUntil](operator/takeUntil.md)
 

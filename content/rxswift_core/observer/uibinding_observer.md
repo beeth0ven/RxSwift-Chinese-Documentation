@@ -1,6 +1,6 @@
 ## UIBindingObserver
 
-**UIBindingObserver**  主要用于描叙 **UI** 组件上的观察者。比如，按钮是否可点击，页面是否隐藏，`label` 的当前文本等。它有以下两个特征：
+**UIBindingObserver** 主要用于描叙 **UI** 组件上的观察者。比如，按钮是否可点击，页面是否隐藏，`label` 的当前文本等。它有以下两个特征：
 
 * 不会处理错误事件
 * 确保绑定都是在主线程执行
@@ -40,12 +40,12 @@ usernameValid
     .disposed(by: disposeBag)
 ```
 
-观察者可以只用处理 `next` 事件，并且更新 **UI** 的代码一定会在主线程执行。
+**UIBindingObserver** 可以只处理 `next` 事件，并且保证响应 `next` 事件的代码一定会在主线程执行。
 
 ---
 ### 复用
 
-由于**页面是否隐藏**是一个常用的观察者，所以应该将它添加到所有的 `UIView` 上面去：
+由于**页面是否隐藏**是一个常用的观察者，所以应该让所有的 `UIView` 都提供这种观察者：
 
 ```swift
 extension Reactive where Base: UIView {

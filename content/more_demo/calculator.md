@@ -10,7 +10,7 @@
 
 ### 简介
 
-这里的计算器是用响应式编程写的，而且它还用到了 [RxFeedback] 架构。接下来我们就来介绍如何实现它。
+这里的计算器是用响应式编程写的，而且它还用到了 [RxFeedback] 架构。接下来我们就来介绍一下这个应用程序是如何实现的。
 
 ---
 
@@ -189,9 +189,9 @@ enum CalculatorState {
 }
 ```
 
-* oneOperand 一个操作数，例如：进入页面后，输入 `1` 后的状态
-* oneOperandAndOperator 一个操作数和一个运算符，例如：进入页面后，输入 `1 +` 后的状态
-* twoOperandsAndOperator 两个操作数和一个运算符，例如：进入页面后，输入 `1 + 2` 后的状态
+* oneOperand 一个操作数，例如：进入页面后，输入 `1` 时的状态
+* oneOperandAndOperator 一个操作数和一个运算符，例如：进入页面后，输入 `1 +` 时的状态
+* twoOperandsAndOperator 两个操作数和一个运算符，例如：进入页面后，输入 `1 + 2` 时的状态
 
 **Command:**
 

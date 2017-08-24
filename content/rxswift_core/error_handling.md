@@ -108,7 +108,7 @@ searchBar.rx.text.orEmpty
     .disposed(by: disposeBag)
 ```
 
-我们开头的[那个例子](/introduction.md)就用到了[catchErrorJustReturn](catchError/retry.md)。当错误产生时，就返回一个空数组，于是就会显示一个空列表页。
+我们开头的[Github 搜索](/introduction.md)就用到了[catchErrorJustReturn](catchError/retry.md)。当错误产生时，就返回一个空数组，于是就会显示一个空列表页。
 
 你也可以使用 [catchError](operator/catchError.md)，当错误产生时，将错误事件替换成一个备选序列：
 
@@ -186,6 +186,6 @@ updateUserInfoButton.rx.tap
     .disposed(by: disposeBag)
 ```
 
-这样我们的错误事件被包装成了 `Result.failure(Error)`，就不会终止整个序列。就算网络请求失败，整个订阅依然存在。如果用户再次点击更新按钮，也是能够发起网络请求进行更新操作的。
+这样我们的错误事件被包装成了 `Result.failure(Error)` 元素，就不会终止整个序列。就算网络请求失败，整个订阅依然存在。如果用户再次点击更新按钮，也是能够发起网络请求进行更新操作的。
 
 另外你也可以使用 [materialize](operator/materialize.md) 操作符来进行错误处理。这里就不详细介绍了，如你想了解如何使用 [materialize](operator/materialize.md) 可以参考这篇文章 [How to handle errors in RxSwift](http://adamborek.com/how-to-handle-errors-in-rxswift/)!

@@ -39,7 +39,7 @@ URLSession.shared.rx.data(request: URLRequest(url: url))
 
 ---
 
-**用户名提示语是否隐藏**
+**用户名提示语是否隐藏：**
 
 ```swift
 usernameValid

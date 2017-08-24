@@ -1,6 +1,7 @@
 ## Github Search（示例）
 
-![](/assets/Architecture/RxFeedback/GithubPaginatedSearchFull.gif)
+<img src="/assets/Architecture/RxFeedback/GithubPaginatedSearchFull.gif" width="320px" />
+
 
 这个是例子是我们经常会遇见的**Github 搜索**。它是使用 [RxFeedback](https://github.com/kzaher/RxFeedback) 重构以后的版本，你可以在这里下载[这个例子](https://github.com/kzaher/RxFeedback/blob/master/Examples/GithubPaginatedSearch.swift)。
 

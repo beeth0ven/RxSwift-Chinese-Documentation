@@ -252,7 +252,7 @@ enum Api {
 ```swift
 /// 通过用户名和密码获取用户信息
 Api.token(username: "beeth0ven", password: "987654321")
-    .flatMap(Api.userInfo)
+    .flatMapLatest(Api.userInfo)
     .subscribe(onNext: { userInfo in
             print("获取用户信息成功: \(userInfo)")
     }, onError: { error in
@@ -302,8 +302,8 @@ Observable.zip(
 ---
 
 ### 那么为什么要使用 RxSwift ？
-* 组合 <- Rx 就是组合的代名词
-* 复用 <- 因为它易组合
-* 清晰 <- 因为声明都是不可变更的
-* 易用 <- 因为它抽象的了异步编程，使我们统一了代码风格
-* 稳定 <- 因为 Rx 是完全通过单元测试的
+* 组合 - Rx 就是组合的代名词
+* 复用 - 因为它易组合
+* 清晰 - 因为声明都是不可变更的
+* 易用 - 因为它抽象的了异步编程，使我们统一了代码风格
+* 稳定 - 因为 Rx 是完全通过单元测试的

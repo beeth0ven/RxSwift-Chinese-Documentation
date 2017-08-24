@@ -30,7 +30,7 @@ public static func system<State, Event>(
 
 ### 示例
 
-![](/assets/Architecture/RxFeedback/Counter.gif)
+<img src="/assets/Architecture/RxFeedback/Counter.gif" width="320px" />
 
 ```swift
 Observable.system(

@@ -231,8 +231,10 @@ func showAlert() {
 
 * `shareReplay(1)` 是用来做什么的？
 
-  我们用 `usernameValid` 来控制用户名提示语是否隐藏以及密码输入框是否可用。`shareReplay` 就是让他们共享这一个源，而不是为他们单独创建新的源。这样可以减少不必要的开支。
+  我们用 `usernameValid` 来控制用户名提示语是否隐藏以及密码输入框是否可用。[shareReplay] 就是让他们共享这一个源，而不是为他们单独创建新的源。这样可以减少不必要的开支。
 
 * `disposed(by: disposeBag)` 是用来做什么的？
 
   和我们所熟悉的对象一样，每一个绑定也是有生命周期的。并且这个绑定是可以被清除的。`disposed(by: disposeBag)`就是将绑定的生命周期交给 `disposeBag` 来管理。当 `disposeBag` 被释放的时候，那么里面尚未清除的绑定也就被清除了。这就相当于是在用 [ARC](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID48) 来管理绑定的生命周期。 这个内容会在 [Disposable](rxswift_core/disposable.md) 章节详细介绍。
+
+[shareReplay]:rxswift_core/operator/shareReplay.md

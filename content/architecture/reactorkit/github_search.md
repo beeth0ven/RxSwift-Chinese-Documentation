@@ -1,6 +1,6 @@
 ## Github Search（示例）
 
-![](/assets/Architecture/ReactorKit/GithubPaginatedSearchFull.gif)
+<img src="/assets/Architecture/ReactorKit/GithubPaginatedSearchFull.gif" width="320px" />
 
 我们还是使用**Github 搜索**来演示如何使用 [ReactorKit]。这个例子是使用 [ReactorKit] 重构以后的版本，你可以在这里下载[这个例子](https://github.com/ReactorKit/ReactorKit/tree/master/Examples/GitHubSearch)。
 

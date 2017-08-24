@@ -32,16 +32,13 @@ func generateString() -> Maybe<String> {
 
 ```swift
 generateString()
-    .subscribe(
-       onSuccess: { element in
-           print("Completed with element \(element)")
-       },
-       onError: { error in
-           print("Completed with an error \(error.localizedDescription)")
-       },
-       onCompleted: {
-           print("Completed with no element")
-     })
+    .subscribe(onSuccess: { element in
+        print("Completed with element \(element)")
+    }, onError: { error in
+        print("Completed with an error \(error.localizedDescription)")
+    }, onCompleted: {
+        print("Completed with no element")
+    })
     .disposed(by: disposeBag)
 ```
 

@@ -6,7 +6,7 @@
 
 * **[MVVM](architecture/mvvm.md) - 当今非常流行的 MVVM 架构**
 
-* **[RxFeedback](architecture/rxfeedback.md) - 是由 [RxSwift 创始人（Krunoslav Zaher）] 提供的一个反馈循环架构**
+* **[RxFeedback](architecture/rxfeedback.md) - 由 [RxSwift 创始人（Krunoslav Zaher）] 提供的一个反馈循环架构**
 
 * **[ReactorKit](architecture/reactorkit.md) - 结合了 [Flux] 和[响应式编程]的架构**
 

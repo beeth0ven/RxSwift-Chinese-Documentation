@@ -44,13 +44,11 @@ func getRepo(_ repo: String) -> Single<[String: Any]> {
 
 ```swift
 getRepo("ReactiveX/RxSwift")
-    .subscribe(
-        onSuccess: { json in
-           print("JSON: ", json)
-        },
-        onError: { error in
-           print("Error: ", error)
-     })
+    .subscribe(onSuccess: { json in
+        print("JSON: ", json)
+    }, onError: { error in
+        print("Error: ", error)
+    })
     .disposed(by: disposeBag)
 ```
 

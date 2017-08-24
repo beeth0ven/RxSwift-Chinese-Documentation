@@ -226,6 +226,8 @@ enum CalculatorCommand {
 
 **reduce:**
 
+当命令产生时，将它应用到当前状态上，然后生成新的状态：
+
 ![](/assets/MoreDemo/Calculator/State.png)
 
 ```swift
@@ -263,8 +265,6 @@ extension CalculatorState {
     }
 }
 ```
-
-当命令产生时，将它应用到当前状态上，然后生成新的状态。
 
 * clear 重置当前状态
 * addNumber, addDot, changeSign, percent 只需要更改屏显即可

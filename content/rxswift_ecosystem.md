@@ -17,7 +17,7 @@
 * [RxSwiftExt] - 添加一些有用的操作符
 * **...**
 
-### RxDataSources
+### [RxDataSources]
 书写 `tabelView` 或 `collectionView` 的数据源是一件非常繁琐的事情，有一大堆的代理方法需要被执行。 [RxDataSources] 可以帮助你简化这一过程。你可以用它来布局多层级的列表页，并且它还可以提供动画支持。
 
 ![](/assets/WhyRxSwiftAgain/RxDataSources.gif)
@@ -35,7 +35,7 @@ Observable.just([SectionModel(model: "title", items: [1, 2, 3])])
 
 ---
 
-### RxAlamofire
+### [RxAlamofire]
 
 [Alamofire] 是一个非常流行的网络请求框架。[RxAlamofire] 是用 [RxSwift] 封装的 [Alamofire]。它使得网络请求调用变得更加平滑，处理请求结果变得更简洁，更高效：
 
@@ -80,7 +80,7 @@ _ = manager.rx.request(.get, stringURL)
 
 ---
 
-### RxRealm
+### [RxRealm]
 
 [Realm] 是一个十分前卫的**跨平台**数据库，他想要替换 **Core Data** 和 **SQLite**。[RxRealm] 是用 [RxSwift] 封装的 [Realm]。它使我们可以用 **Rx** 的方式监听数据变化，或者将数据写入数据库。
 

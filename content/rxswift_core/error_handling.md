@@ -17,12 +17,10 @@ let rxJson: Observable<JSON> = ...
 
 rxJson
     .retry(3)
-    .subscribe(
-        onNext: { json in
-            print("取得 JSON 成功: \(json)")
-        },
-        onError: { error in
-            print("取得 JSON 失败: \(error)")
+    .subscribe(onNext: { json in
+        print("取得 JSON 成功: \(json)")
+    }, onError: { error in
+        print("取得 JSON 失败: \(error)")
     })
     .disposed(by: disposeBag)
 ```
@@ -146,12 +144,10 @@ updateUserInfoButton.rx.tap
         return update(userInfo)
     }
     .observeOn(MainScheduler.instance)
-    .subscribe(
-        onNext: {
-            print("用户信息更新成功")
-        },
-        onError: { error in
-            print("用户信息更新失败： \(error.localizedDescription)")
+    .subscribe(onNext: {
+        print("用户信息更新成功")
+    }, onError: { error in
+        print("用户信息更新失败： \(error.localizedDescription)")
     })
     .disposed(by: disposeBag)
 ```

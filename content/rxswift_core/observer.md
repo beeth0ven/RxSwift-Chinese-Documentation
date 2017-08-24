@@ -43,15 +43,12 @@
 ![](/assets/Observer/Observer.png)
 
 ```swift
-tap.subscribe(
-    onNext: { [weak self] in
-        self?.showAlert()
-    },
-    onError: { error in
-        print("发生错误： \(error.localizedDescription)")
-    },
-    onCompleted: {
-        print("任务完成")
+tap.subscribe(onNext: { [weak self] in
+    self?.showAlert()
+}, onError: { error in
+    print("发生错误： \(error.localizedDescription)")
+}, onCompleted: {
+    print("任务完成")
 })
 ```
 

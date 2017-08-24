@@ -101,15 +101,12 @@ let json: Observable<JSON> = Observable.create { (observer) -> Disposable in
 
 ```swift
 json
-    .subscribe(
-        onNext: { json in
-            print("取得 json 成功: \(json)")
-        },
-        onError: { error in
-            print("取得 json 失败 Error: \(error.localizedDescription)")
-        },
-        onCompleted: {
-            print("取得 json 任务成功完成")
+    .subscribe(onNext: { json in
+        print("取得 json 成功: \(json)")
+    }, onError: { error in
+        print("取得 json 失败 Error: \(error.localizedDescription)")
+    }, onCompleted: {
+        print("取得 json 任务成功完成")
     })
     .disposed(by: disposeBag)
 ```

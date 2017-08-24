@@ -33,12 +33,10 @@ func cacheLocally() -> Completable {
 
 ```swift
 cacheLocally()
-    .subscribe(
-       onCompleted: {
-           print("Completed with no error")
-       },
-       onError: { error in
-           print("Completed with an error: \(error.localizedDescription)")
+    .subscribe(onCompleted: {
+        print("Completed with no error")
+    }, onError: { error in
+        print("Completed with an error: \(error.localizedDescription)")
      })
     .disposed(by: disposeBag)
 ```

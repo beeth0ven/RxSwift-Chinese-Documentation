@@ -11,9 +11,9 @@
 ```swift
 URLSession.shared.rx.data(request: URLRequest(url: url))
     .subscribe(onNext: { data in
-            print("Data Task Success with count: \(data.count)")
+        print("Data Task Success with count: \(data.count)")
     }, onError: { error in
-            print("Data Task Error: \(error)")
+        print("Data Task Error: \(error)")
     })
     .disposed(by: disposeBag)
 ```
@@ -63,3 +63,7 @@ usernameValid
     .bind(to: observer)
     .disposed(by: disposeBag)
 ```
+
+下一节将介绍 [UIBindingObserver] 以及 `usernameValidOutlet.rx.isHidden` 的由来。
+
+[UIBindingObserver]:uibinding_observer.md

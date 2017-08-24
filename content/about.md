@@ -16,4 +16,4 @@
   * **（推荐）**在存在问题页面，点击左上方的**编辑页面**按钮，对文档进行修正，最后提交 [Pull Request](https://help.github.com/articles/about-pull-requests/)
   * 前往 [文档库](https://github.com/beeth0ven/RxSwift-Chinese-Documention) 提 [issues](https://github.com/beeth0ven/RxSwift-Chinese-Documention/issues)， 并注明文档哪些地方存在问题
   * 加入到 **RxSwift** QQ 交流群: **424180219**，将问题反馈给作者
-  * 通过邮件将问题反馈给作者，作者邮箱：<m13477051442@gmail.com>
+  * 通过邮件将问题反馈给作者，作者邮箱：<beeth0vendev@gmail.com>

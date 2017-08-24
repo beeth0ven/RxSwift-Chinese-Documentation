@@ -99,11 +99,9 @@ URLSession.shared.dataTask(with: URLRequest(url: url)) {
 
 ```swift
 URLSession.shared.rx.data(request: URLRequest(url: url))
-    .subscribe(
-        onNext: { data in
+    .subscribe(onNext: { data in
             print("Data Task Success with count: \(data.count)")
-        },
-        onError: { error in
+    }, onError: { error in
             print("Data Task Error: \(error)")
     })
     .disposed(by: disposeBag)
@@ -255,11 +253,9 @@ enum Api {
 /// 通过用户名和密码获取用户信息
 Api.token(username: "beeth0ven", password: "987654321")
     .flatMap(Api.userInfo)
-    .subscribe(
-        onNext: { userInfo in
+    .subscribe(onNext: { userInfo in
             print("获取用户信息成功: \(userInfo)")
-        },
-        onError: { error in
+    }, onError: { error in
             print("获取用户信息失败: \(error)")
     })
     .disposed(by: disposeBag)
@@ -292,13 +288,11 @@ enum Api {
 Observable.zip(
       Api.teacher(teacherId: teacherId),
       Api.teacherComments(teacherId: teacherId)
-    ).subscribe(
-        onNext: { (teacher, comments) in
-            print("获取老师信息成功: \(teacher)")
-            print("获取老师评论成功: \(comments.count) 条")
-        },
-        onError: { error in
-            print("获取老师信息或评论失败: \(error)")
+    ).subscribe(onNext: { (teacher, comments) in
+        print("获取老师信息成功: \(teacher)")
+        print("获取老师评论成功: \(comments.count) 条")
+    }, onError: { error in
+        print("获取老师信息或评论失败: \(error)")
     })
     .disposed(by: disposeBag)
 ```

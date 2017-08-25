@@ -28,6 +28,14 @@
 
 * [ViewModel in RxSwift world](https://medium.com/@SergDort/viewmodel-in-rxswift-world-13d39faa2cf5) - MVVM 使用教程
 
+
+* [8 Mistakes to Avoid while Using RxSwift—Part 1](https://www.polidea.com/blog/8-Mistakes-to-Avoid-while-Using-RxSwiftPart-1/) - 使用 RxSwift 应该避免的 8 个错误
+
+* [RxSwift: share vs replay vs shareReplay](https://medium.com/@_achou/rxswift-share-vs-replay-vs-sharereplay-bea99ac42168) - 几个 **share** 操作符的区别
+
+* [Migrate Delegates to BEAUTIFUL Observables](https://medium.com/@maxofeden/rxswift-migrate-delegates-to-beautiful-observables-3e606a863048) - 如何将**代理**转换为**序列**
+
+
 ## 开源项目
 
 * [CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift) - Example of Clean Architecture of iOS app using RxSwift

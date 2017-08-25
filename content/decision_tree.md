@@ -92,7 +92,7 @@
 
 **我想要 `Observable` 发生错误时，优雅的恢复**
 * 如果规定时间内没有产生元素，就切换到备选 `Observable` ：[timeout](rxswift_core/operator/timeout.md)
-* 如果产生错误，将错误替换成某个元素 ：[catchErrorJustReturn](rxswift_core/operator/catchErrorJustReturn.md)
+* 如果产生错误，将错误替换成某个元素 ：[catchErrorJustReturn](rxswift_core/operator/catchError.md)
 * 如果产生错误，就切换到备选 `Observable` ：[catchError](rxswift_core/operator/catchError.md)
 * 如果产生错误，就重试 ：[retry](rxswift_core/operator/retry.md)
 

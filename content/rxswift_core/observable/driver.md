@@ -110,7 +110,7 @@ results
 * 一定在 `MainScheduler` 监听（主线程监听）
 * 共享状态变化
 
-那么要如何确定条件都被满足？通过 Rx 操作符来进行转换。`asDriver(onErrorJustReturn: [])` 相当于一下代码：
+那么要如何确定条件都被满足？通过 Rx 操作符来进行转换。`asDriver(onErrorJustReturn: [])` 相当于以下代码：
 
 ```swift
 let safeSequence = xs

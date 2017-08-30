@@ -10,7 +10,7 @@
 
 * [flatMap](flatMap.md)
 
-###演示 
+### 演示 
 ```swift
 let disposeBag = DisposeBag()
 Observable.of(1, 2, 3)

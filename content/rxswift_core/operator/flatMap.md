@@ -8,21 +8,27 @@
 
 这个操作符是非常有用的，例如，当 `Observable` 的元素本生拥有其他的 `Observable` 时，你可以将所有**子** `Observables` 的元素发送出来。
 
-###演示
+---
+
+### 演示
+
 ```swift
 let disposeBag = DisposeBag()
 let first = BehaviorSubject(value: "👦🏻")
 let second = BehaviorSubject(value: "🅰️")
 let variable = Variable(first)
+
 variable.asObservable()
-        .flatMap({$0})
-        .subscribe(onNext: {print($0)})
+        .flatMap { $0 }
+        .subscribe(onNext: { print($0) })
         .disposed(by: disposeBag)
+
 first.onNext("🐱")
 variable.value = second
 second.onNext("🅱️")
 first.onNext("🐶")
 ```
+
 **输出结果：**
 
 ```swift

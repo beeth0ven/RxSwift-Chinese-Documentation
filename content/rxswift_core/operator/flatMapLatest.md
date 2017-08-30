@@ -5,3 +5,29 @@
 ![](/assets/Operator/Operators/flatMapLatest.png)
 
 **flatMapLatest** 操作符将源 `Observable` 的每一个元素应用一个转换方法，将他们转换成 `Observables`。一旦转换出一个新的 `Observable`，就只发出它的元素，旧的 `Observables` 的元素将被忽略掉。
+
+###演示
+**tips：**与flatMap比较可更清楚理解
+
+```swift
+let disposeBag = DisposeBag()
+let first = BehaviorSubject(value: "👦🏻")
+let second = BehaviorSubject(value: "🅰️")
+let variable = Variable(first)
+variable.asObservable()
+        .flatMapLatest({$0})
+        .subscribe(onNext: {print($0)})
+        .disposed(by: disposeBag)
+first.onNext("🐱")
+variable.value = second
+second.onNext("🅱️")
+first.onNext("🐶")
+```
+**输出结果：**
+
+```swift
+👦🏻
+🐱
+🅰️
+🅱️
+```

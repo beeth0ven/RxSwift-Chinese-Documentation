@@ -9,3 +9,18 @@
 ### 参考
 
 * [flatMap](flatMap.md)
+
+###演示 
+```swift
+let disposeBag = DisposeBag()
+Observable.of(1, 2, 3)
+.map({$0 * 10})
+.subscribe(onNext: {print($0)})
+.disposed(by: disposeBag)
+```
+**输出结果：** 
+```swift 
+10
+20
+30
+```

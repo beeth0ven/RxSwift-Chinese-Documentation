@@ -12,4 +12,4 @@
 
 ## catchErrorJustReturn
 
-**catchErrorJustReturn** 操作符会将`error` 事件替换成其他的一个元素，然后传递给观察者。
+**catchErrorJustReturn** 操作符会将`error` 事件替换成其他的一个元素，然后结束该序列。

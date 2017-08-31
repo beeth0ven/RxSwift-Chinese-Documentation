@@ -6,12 +6,15 @@
 
 ## master
 
-* 给 [withLatestFrom](/content/rxswift_core/operator/withLatestFrom.md) 操作符加入演示代码
-* 给 [zip](/content/rxswift_core/operator/zip.md) 操作符加入演示代码
-* 给 [map](/content/rxswift_core/operator/map.md) 操作符加入演示代码
-* 给 [flatMapLatest](/content/rxswift_core/operator/flatMapLatest.md) 操作符加入演示代码
-* 给 [flatMap](/content/rxswift_core/operator/flatMap.md) 操作符加入演示代码
+* 给 [combineLatest](/content/rxswift_core/operator/combineLatest.md) 操作符加入演示代码
+* 给 [catchError](/content/rxswift_core/operator/catchError.md) 操作符加入演示代码
 * 给 [filter](/content/rxswift_core/operator/filter.md) 操作符加入演示代码
+* 给 [flatMap](/content/rxswift_core/operator/flatMap.md) 操作符加入演示代码
+* 给 [flatMapLatest](/content/rxswift_core/operator/flatMapLatest.md) 操作符加入演示代码
+* 给 [map](/content/rxswift_core/operator/map.md) 操作符加入演示代码
+* 给 [zip](/content/rxswift_core/operator/zip.md) 操作符加入演示代码
+* 给 [withLatestFrom](/content/rxswift_core/operator/withLatestFrom.md) 操作符加入演示代码
+
 
 ## [0.0.1](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/0.0.1)
 

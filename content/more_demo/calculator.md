@@ -499,7 +499,7 @@ private extension String {
 * [map]
 * [scan]
 
-[map]:/content/rxswift_core/operator/map.md
-[merge]:/content/rxswift_core/operator/merge.md
-[scan]:/content/rxswift_core/operator/scan.md
+[map]:/content/decision_tree/map.md
+[merge]:/content/decision_tree/merge.md
+[scan]:/content/decision_tree/scan.md
 [RxFeedback]:/content/architecture/rxfeedback.md

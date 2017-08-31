@@ -6,15 +6,17 @@
 
 ## master
 
-* 给 [combineLatest](/content/rxswift_core/operator/combineLatest.md) 操作符加入演示代码
-* 给 [catchError](/content/rxswift_core/operator/catchError.md) 操作符加入演示代码
-* 给 [filter](/content/rxswift_core/operator/filter.md) 操作符加入演示代码
-* 给 [flatMap](/content/rxswift_core/operator/flatMap.md) 操作符加入演示代码
-* 给 [flatMapLatest](/content/rxswift_core/operator/flatMapLatest.md) 操作符加入演示代码
-* 给 [map](/content/rxswift_core/operator/map.md) 操作符加入演示代码
-* 给 [zip](/content/rxswift_core/operator/zip.md) 操作符加入演示代码
-* 给 [withLatestFrom](/content/rxswift_core/operator/withLatestFrom.md) 操作符加入演示代码
+* 将操作符列表移动到[《如何选择操作符？》](/content/decision_tree.md)章节下，便于查找
+* 给 [combineLatest](/content/decision_tree/combineLatest.md) 操作符加入演示代码
+* 给 [catchError](/content/decision_tree/catchError.md) 操作符加入演示代码
+* 给 [filter](/content/decision_tree/filter.md) 操作符加入演示代码
+* 给 [flatMap](/content/decision_tree/flatMap.md) 操作符加入演示代码
+* 给 [flatMapLatest](/content/decision_tree/flatMapLatest.md) 操作符加入演示代码
+* 给 [map](/content/decision_tree/map.md) 操作符加入演示代码
+* 给 [zip](/content/decision_tree/zip.md) 操作符加入演示代码
+* 给 [withLatestFrom](/content/decision_tree/withLatestFrom.md) 操作符加入演示代码
 
+---
 
 ## [0.0.1](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/0.0.1)
 

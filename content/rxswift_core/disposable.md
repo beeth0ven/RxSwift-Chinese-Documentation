@@ -81,11 +81,11 @@ override func viewDidLoad() {
 
 这个例子中 `disposeBag` 和 `ViewController` 具有相同的生命周期。当退出页面时， `ViewController` 就被释放，`disposeBag` 也跟着被释放了，那么这里的 5 次绑定（订阅）也就被取消了。这正是我们所需要的。
 
-## [takeUntil](operator/takeUntil.md)
+## [takeUntil]
 
 ![](/assets/Disposable/TakeUntil.png)
 
-另外一种实现自动取消订阅的方法就是使用 [takeUntil](operator/takeUntil.md) 操作符，上面那个[输入验证](/content/first_app.md)的演示代码也可以通过使用  [takeUntil](operator/takeUntil.md) 来实现：
+另外一种实现自动取消订阅的方法就是使用 [takeUntil] 操作符，上面那个[输入验证](/content/first_app.md)的演示代码也可以通过使用  [takeUntil] 来实现：
 
 ```swift
 override func viewDidLoad() {
@@ -117,3 +117,5 @@ override func viewDidLoad() {
 ```
 
 这将使得订阅一直持续到控制器的 **dealloc** 事件产生为止。
+
+[takeUntil]:/content/decision_tree/takeUntil.md

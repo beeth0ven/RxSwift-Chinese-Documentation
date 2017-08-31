@@ -131,7 +131,7 @@ override func viewDidLoad() {
 * [map]
 * [take]
 
-[flatMap]:/content/rxswift_core/operator/flatMap.md
-[flatMapLatest]:/content/rxswift_core/operator/flatMapLatest.md
-[map]:/content/rxswift_core/operator/map.md
-[take]:/content/rxswift_core/operator/take.md
+[flatMap]:/content/decision_tree/flatMap.md
+[flatMapLatest]:/content/decision_tree/flatMapLatest.md
+[map]:/content/decision_tree/map.md
+[take]:/content/decision_tree/take.md

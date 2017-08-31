@@ -11,7 +11,11 @@
 [startWith](startWith.md) 和它十分相似。但是[startWith](startWith.md)不是在后面添加元素，而是在前面插入元素。
 
 [merge](merge.md) 和它也是十分相似。[merge](merge.md)并不是将多个 `Observables` 按顺序串联起来，而是将他们合并到一起，不需要 `Observables` 按先后顺序发出元素。
-### 演示 
+
+---
+
+### 演示
+
 ```swift
 let disposeBag = DisposeBag()
 
@@ -37,6 +41,7 @@ subject1.onCompleted()
 
 subject2.onNext("🐭")
 ```
+
 **输出结果：**
 
 ```swift

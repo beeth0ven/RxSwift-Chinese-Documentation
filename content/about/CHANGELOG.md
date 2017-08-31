@@ -6,6 +6,8 @@
 
 ## master
 
+* 给 [concat](/content/decision_tree/concat.md) 操作符加入演示代码
+* 给 [concatMap](/content/decision_tree/concatMap.md) 操作符加入演示代码
 * 将操作符列表移动到[《如何选择操作符？》](/content/decision_tree.md)章节下，便于查找
 * 给 [combineLatest](/content/decision_tree/combineLatest.md) 操作符加入演示代码
 * 给 [catchError](/content/decision_tree/catchError.md) 操作符加入演示代码

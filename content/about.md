@@ -5,10 +5,12 @@
 * 首发日期：**17年9月1日**
 * 更新日期：**17年9月1日**
 * 使用工具：[GitBook](https://www.gitbook.com)
-* 托管方式：[Github Pages](https://pages.github.com)
+* 托管平台：[Github Pages](https://pages.github.com)
 * 文档库地址：https://github.com/beeth0ven/RxSwift-Chinese-Documentation
 * 对应 **RxSwift** 版本：**3.6.1**
 * **RxSwift** 地址：https://github.com/ReactiveX/RxSwift
+
+---
 
 ## 问题反馈
 

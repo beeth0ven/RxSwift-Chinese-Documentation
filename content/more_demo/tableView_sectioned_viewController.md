@@ -152,5 +152,5 @@ func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) 
 
 [RxDataSources]:https://github.com/RxSwiftCommunity/RxDataSources
 [这个例子]:https://github.com/ReactiveX/RxSwift/tree/master/RxExample/RxExample/Examples/SimpleTableViewExampleSectioned
-[just]:/content/rxswift_core/operator/just.md
-[map]:/content/rxswift_core/operator/map.md
+[just]:/content/decision_tree/just.md
+[map]:/content/decision_tree/map.md

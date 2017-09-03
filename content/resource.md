@@ -12,6 +12,7 @@
 
 * [Reactive Programming with RxSwift](https://www.youtube.com/watch?v=uBKofrA8ok0) - RxSwift 图书的核心作者
 
+* [Boxue.io RxSwift Online Course](https://boxueio.com/series/rxswift-101) - 泊学 RxSwift 中文视频教程
 
 ## 博客
 

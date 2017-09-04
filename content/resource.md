@@ -10,7 +10,7 @@
 
 * [RxSwift in Practice](https://www.youtube.com/watch?v=W3zGx4TUaCE&t=401s) - By Raywenderlich
 
-* [Reactive Programming with RxSwift](https://www.youtube.com/watch?v=uBKofrA8ok0) - RxSwift 图书的核心作者
+* [Reactive Programming with RxSwift](https://www.youtube.com/watch?v=uBKofrA8ok0) - By RxSwift 图书的核心作者
 
 * [Boxue.io RxSwift Online Course](https://boxueio.com/series/rxswift-101) - 泊学 RxSwift 中文视频教程
 
@@ -28,7 +28,6 @@
 * [RxSwift by Examples #1 – The basics.](https://www.thedroidsonroids.com/blog/ios/rxswift-by-examples-1-the-basics/) - RxSwift 基础教程
 
 * [ViewModel in RxSwift world](https://medium.com/@SergDort/viewmodel-in-rxswift-world-13d39faa2cf5) - MVVM 使用教程
-
 
 * [8 Mistakes to Avoid while Using RxSwift—Part 1](https://www.polidea.com/blog/8-Mistakes-to-Avoid-while-Using-RxSwiftPart-1/) - 使用 RxSwift 应该避免的 8 个错误
 

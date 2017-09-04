@@ -4,8 +4,11 @@
 
 ---
 
-## master
+## [0.1.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/0.1.0)
 
+#### 17年9月4日
+
+* 加入学习资源[《泊学 RxSwift 中文视频教程》](https://boxueio.com/series/rxswift-101)
 * 给 [concat](/content/decision_tree/concat.md) 操作符加入演示代码
 * 给 [concatMap](/content/decision_tree/concatMap.md) 操作符加入演示代码
 * 将操作符列表移动到[《如何选择操作符？》](/content/decision_tree.md)章节下，便于查找

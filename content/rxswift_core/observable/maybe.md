@@ -28,7 +28,7 @@ func generateString() -> Maybe<String> {
 }
 ```
 
-之后，你可以这样使用 **Completable**：
+之后，你可以这样使用 **Maybe**：
 
 ```swift
 generateString()
@@ -42,4 +42,4 @@ generateString()
     .disposed(by: disposeBag)
 ```
 
-你同样可以对 `Observable` 调用 `.asMaybe()` 方法，将它转换为 **Single**。
+你同样可以对 `Observable` 调用 `.asMaybe()` 方法，将它转换为 **Maybe**。

@@ -4,6 +4,12 @@
 
 ---
 
+## master
+
+* 修复 [Maybe](/content/rxswift_core/observable/maybe.md) 中的[描述问题](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/pull/9/files)
+
+---
+
 ## [0.1.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/0.1.0)
 
 #### 17年9月4日

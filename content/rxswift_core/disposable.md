@@ -118,7 +118,7 @@ override func viewDidLoad() {
 
 这将使得订阅一直持续到控制器的 **dealloc** 事件产生为止。
 
-_注意⚠️：这里配图中所使用的 `Observable` 都是“热” `Observable`，它使我们更容易理解订阅的生命周期。如果你想要了解更多关于 “冷热” `Observable` 之间的区别，可以参考官方文档 [Hot and Cold Observables]。_
+_注意⚠️：这里配图中所使用的 `Observable` 都是**“热”** `Observable`，它可以帮助我们理解订阅的生命周期。如果你想要了解 **“冷热”** `Observable` 之间的区别，可以参考官方文档 [Hot and Cold Observables]。_
 
 [takeUntil]:/content/decision_tree/takeUntil.md
 [Hot and Cold Observables]:https://github.com/ReactiveX/RxSwift/blob/master/Documentation/HotAndColdObservables.md

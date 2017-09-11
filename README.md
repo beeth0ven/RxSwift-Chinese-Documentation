@@ -1,12 +1,14 @@
-## RxSwift 中文文档（非官方）： https://beeth0ven.github.io/RxSwift-Chinese-Documentation/
+# RxSwift 中文文档（非官方）
+
+地址： https://beeth0ven.github.io/RxSwift-Chinese-Documentation/
 
 ## 简介
 
-这是一份 RxSwift 中文文档。目前响应式编程变得越来越流行，我们已经无法阻挡这股热潮。这份文档整合了 RxSwift 文档，RxJS 文档，ReactiveX 文档以及笔者的一些个人观点。目的是为了让大家能够快速上手响应式编程。虽然这份文档主要是介绍 RxSwift，不过使用其他响应式编程框架的开发者也可以从中获益。例如：ReactiveCocoa，RxJava，RxJS等。因为这些框架都有一些共性，例如：响应式的思维方式，操作符的功能及用法等。而这些内容文档里面都有介绍。
+这是一份 [RxSwift] 中文文档。目前响应式编程变得越来越流行，我们已经无法阻挡这股热潮。这份文档整合了 [RxSwift] 文档，[RxJS] 文档，[ReactiveX] 文档以及笔者的一些个人观点。目的是为了让大家能够快速上手响应式编程。虽然这份文档主要是介绍 [RxSwift]，不过使用其他响应式编程框架的开发者也可以从中获益。例如：[ReactiveCocoa]，[RxJava]，[RxJS] 等。因为这些框架都有一些共性，例如：响应式的思维方式，操作符的功能及用法等。而这些内容文档里面都有介绍。
 
-由于这是笔者第一次发布文档，如果文档存在问题，还请谅解。你可通过《关于本文档》页面提供的方式，将问题反馈给笔者。非常欢迎大家给我发合并请求。
+由于这是笔者第一次发布文档，如果文档存在问题，还请谅解。你可通过 [10. 关于本文档] 页面提供的方式，将问题反馈给笔者。非常欢迎大家给我发合并请求。
 
-### 目录
+## 目录
 
 * [RxSwift 中文文档]
 * [1. 为什么要使用 RxSwift?]
@@ -20,9 +22,7 @@
 * [9. 学习资源]
 * [10. 关于本文档]
 
-### 预览
-
----
+## 预览
 
 ![Introduction](assets/README/Introduction.png)
 
@@ -50,3 +50,9 @@
 [8. RxSwift 生态系统]:https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/rxswift_ecosystem.html
 [9. 学习资源]:https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/resource.html
 [10. 关于本文档]:https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/about.html
+
+[RxSwift]:https://github.com/ReactiveX/RxSwift
+[ReactiveX]:http://reactivex.io/
+[RxJava]:https://github.com/ReactiveX/RxJava
+[RxJS]:https://github.com/Reactive-Extensions/RxJS
+[ReactiveCocoa]:https://github.com/ReactiveCocoa/ReactiveCocoa

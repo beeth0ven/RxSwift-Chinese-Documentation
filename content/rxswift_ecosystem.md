@@ -200,7 +200,7 @@ disposables.add(everythingValid
 
 这两段代码的逻辑是一样的，一个是 **iOS（RxSwift）** 版本，另一个是 **Android（RxJava）** 版本。仔细对比以后，你会发现它们的书写方式都是差不多的。
 
-这样一来，你就可以用同一套逻辑来写跨平台应用，而且这个应用是纯原生的。这不仅**节省了开发时间**，而且还**保证了 App 的质量**。
+这样一来，你就可以用同一套逻辑来写跨平台应用，而且这个应用是纯原生的。这不仅**节省了开发时间**，而且还**提升了 App 的质量**。
 
 ---
 
@@ -268,7 +268,6 @@ Rx.Observable.fromEvent($input, 'keyup')
 [RxWebKit]:https://github.com/RxSwiftCommunity/RxWebKit
 [RxEventHub]:https://github.com/RxSwiftCommunity/RxEventHub
 [RxSwiftExt]:https://github.com/RxSwiftCommunity/RxSwiftExt
-
 
 [jQuery]:https://github.com/Reactive-Extensions/RxJS-jQuery
 [RxJS-DOM]:https://github.com/Reactive-Extensions/RxJS-DOM

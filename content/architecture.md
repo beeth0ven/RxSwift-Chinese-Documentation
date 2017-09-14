@@ -4,7 +4,7 @@
 
 [RxSwift] 是一个**响应式编程**的基础框架，它并不会强制要求你使用某种架构。它和多个应用程序架构完美适配，这一章将介绍几个常用的架构：
 
-* **[MVVM](architecture/mvvm.md) - 当今非常流行的 MVVM 架构**
+* **[MVVM](architecture/mvvm.md) - 当今非常流行的 MVVM 设计模式**
 
 * **[RxFeedback](architecture/rxfeedback.md) - 由 [RxSwift 创始人（Krunoslav Zaher）] 提供的一个反馈循环架构**
 

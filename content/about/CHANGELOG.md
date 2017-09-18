@@ -4,7 +4,9 @@
 
 ---
 
-## master
+## [0.1.1](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/0.1.1)
+
+#### 17年9月18日
 
 * 更新 [RxFeedback](/content/architecture/rxfeedback.md) 配图，与官方保持一致
 * 修复 [Maybe](/content/rxswift_core/observable/maybe.md) 中的[描述问题](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/pull/9/files)

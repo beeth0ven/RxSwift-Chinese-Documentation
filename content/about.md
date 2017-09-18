@@ -3,7 +3,7 @@
 * 文档作者：[罗杰 (Beeth0ven)](https://github.com/beeth0ven)
 * 作者邮箱：<beeth0vendev@gmail.com>
 * 首发日期：**17年9月1日**
-* 更新日期：**17年9月1日**
+* 更新日期：**17年9月18日**
 * 使用工具：[GitBook](https://www.gitbook.com)
 * 托管平台：[Github Pages](https://pages.github.com)
 * 文档库地址：https://github.com/beeth0ven/RxSwift-Chinese-Documentation

@@ -7,7 +7,7 @@
   * [3.1 函数式编程](content/think_reactive/funtional_programming.md)
   * [3.2 函数式编程 -> 函数响应式编程](content/think_reactive/functional_reactive_progaramming.md)
   * [3.3 数据绑定](content/think_reactive/data_binding.md)
-* [4. RxSwift 的核心组件](content/rxswift_core.md)
+* [4. RxSwift 核心](content/rxswift_core.md)
   * [4.1 Observable - 可被监听的序列](content/rxswift_core/observable.md)
     * [Single](content/rxswift_core/observable/single.md)
     * [Completeable](content/rxswift_core/observable/completeable.md)

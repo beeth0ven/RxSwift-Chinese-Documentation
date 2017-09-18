@@ -20,20 +20,10 @@
 ------
 ## 文档更新日志
 
-#### 17年9月4日
+#### 17年9月18日
 
-* 加入学习资源[《泊学 RxSwift 中文视频教程》](https://boxueio.com/series/rxswift-101)
-* 给 [concat](/content/decision_tree/concat.md) 操作符加入演示代码
-* 给 [concatMap](/content/decision_tree/concatMap.md) 操作符加入演示代码
-* 将操作符列表移动到[《如何选择操作符？》](/content/decision_tree.md)章节下，便于查找
-* 给 [combineLatest](/content/decision_tree/combineLatest.md) 操作符加入演示代码
-* 给 [catchError](/content/decision_tree/catchError.md) 操作符加入演示代码
-* 给 [filter](/content/decision_tree/filter.md) 操作符加入演示代码
-* 给 [flatMap](/content/decision_tree/flatMap.md) 操作符加入演示代码
-* 给 [flatMapLatest](/content/decision_tree/flatMapLatest.md) 操作符加入演示代码
-* 给 [map](/content/decision_tree/map.md) 操作符加入演示代码
-* 给 [zip](/content/decision_tree/zip.md) 操作符加入演示代码
-* 给 [withLatestFrom](/content/decision_tree/withLatestFrom.md) 操作符加入演示代码
+* 更新 [RxFeedback](/content/architecture/rxfeedback.md) 配图，与官方保持一致
+* 修复 [Maybe](/content/rxswift_core/observable/maybe.md) 中的[描述问题](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/pull/9/files)
 
   **[... 点击查看更多](/content/about/CHANGELOG.md)**
 

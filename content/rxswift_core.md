@@ -1,6 +1,6 @@
-# RxSwift 的核心组件
+# RxSwift 核心
 
-这一章主要介绍 **RxSwift** 的核心组件：
+这一章主要介绍 **RxSwift** 的核心内容：
 
 ![](/assets/RxSwiftCore.png)
 

@@ -16,7 +16,7 @@
     * [ControlEvent](content/rxswift_core/observable/control_event.md)
   * [4.2 Observer - 观察者](content/rxswift_core/observer.md)  
     * [AnyObserver](content/rxswift_core/observer/any_observer.md)
-    * [UIBindingObserver](content/rxswift_core/observer/uibinding_observer.md)
+    * [Binder](content/rxswift_core/observer/binder.md)
   * [4.3 Observable & Observer 既是可被监听的序列也是观察者](content/rxswift_core/observable_and_observer.md)
     * [AsyncSubject](content/rxswift_core/observable_and_observer/async_subject.md)
     * [PublishSubject](content/rxswift_core/observable_and_observer/publish_subject.md)

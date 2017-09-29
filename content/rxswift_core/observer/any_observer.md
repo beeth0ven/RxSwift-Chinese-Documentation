@@ -64,6 +64,6 @@ usernameValid
     .disposed(by: disposeBag)
 ```
 
-下一节将介绍 [UIBindingObserver] 以及 `usernameValidOutlet.rx.isHidden` 的由来。
+下一节将介绍 [Binder] 以及 `usernameValidOutlet.rx.isHidden` 的由来。
 
-[UIBindingObserver]:uibinding_observer.md
+[Binder]:binder.md

@@ -4,6 +4,10 @@
 
 ---
 
+## master
+
+* 使用 [Binder](/content/rxswift_core/observer/binder.md) 替换 **UIBindingObserver**，更简洁实用
+
 ## [0.1.1](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/0.1.1)
 
 #### 17年9月18日

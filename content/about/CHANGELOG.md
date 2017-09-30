@@ -6,6 +6,7 @@
 
 ## master
 
+* 给 [merge](/content/decision_tree/merge.md) 操作符加入演示代码
 * 使用 [Binder](/content/rxswift_core/observer/binder.md) 替换 **UIBindingObserver**，更简洁实用
 
 ## [0.1.1](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/0.1.1)

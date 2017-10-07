@@ -11,7 +11,7 @@
 
 ### 示例
 
-在介绍 [AnyObserver] 时我们举了这样一个例子：
+在介绍 [AnyObserver] 时，我们举了这样一个例子：
 
 ```swift
 let observer: AnyObserver<Bool> = AnyObserver { [weak self] (event) in

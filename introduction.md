@@ -25,7 +25,7 @@
 * 更新 [RxFeedback](/content/architecture/rxfeedback.md) 配图，与官方保持一致
 * 修复 [Maybe](/content/rxswift_core/observable/maybe.md) 中的[描述问题](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/pull/9/files)
 
-  **[... 点击查看更多](/content/about/CHANGELOG.md)**
+  **[... 点击查看更多](CHANGELOG.md)**
 
 ---
 

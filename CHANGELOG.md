@@ -6,6 +6,7 @@
 
 ## master
 
+* 给 [PublishSubject](/content/rxswift_core/observable_and_observer/publish_subject.md) 加入演示代码
 * 给 [distinctUntilChanged](/content/decision_tree/distinctUntilChanged.md) 操作符加入演示代码
 * 给 [scan](/content/decision_tree/scan.md) 操作符加入演示代码
 * 给 [startWith](/content/decision_tree/startWith.md) 操作符加入演示代码

@@ -8,4 +8,38 @@
 
 如果源 `Observable` 因为产生了一个 `error` 事件而中止， **PublishSubject** 就不会发出任何元素，而是将这个 `error` 事件发送出来。
 
+---
+
+### 演示
+
+```swift
+let disposeBag = DisposeBag()
+let subject = PublishSubject<String>()
+
+subject
+  .subscribe { print("Subscription: 1 Event:", $0) }
+  .disposed(by: disposeBag)
+
+subject.onNext("🐶")
+subject.onNext("🐱")
+
+subject
+  .subscribe { print("Subscription: 2 Event:", $0) }
+  .disposed(by: disposeBag)
+
+subject.onNext("🅰️")
+subject.onNext("🅱️")
+```
+
+**输出结果：**
+
+```swift
+Subscription: 1 Event: next(🐶)
+Subscription: 1 Event: next(🐱)
+Subscription: 1 Event: next(🅰️)
+Subscription: 2 Event: next(🅰️)
+Subscription: 1 Event: next(🅱️)
+Subscription: 2 Event: next(🅱️)
+```
+
 [ReplaySubject]:replay_subject.md

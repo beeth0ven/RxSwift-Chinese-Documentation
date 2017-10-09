@@ -346,12 +346,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.2" data-path="observer/uibinding_observer.html">
+        <li class="chapter " data-level="1.5.2.2" data-path="observer/binder.html">
             
-                <a href="observer/uibinding_observer.html">
+                <a href="observer/binder.html">
             
                     
-                    UIBindingObserver
+                    Binder
             
                 </a>
             
@@ -1478,9 +1478,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="../about/CHANGELOG.html">
+        <li class="chapter " data-level="1.11.1" data-path="../../CHANGELOG.html">
             
-                <a href="../about/CHANGELOG.html">
+                <a href="../../CHANGELOG.html">
             
                     
                     10.1 文档更新日志
@@ -1566,7 +1566,7 @@
 </ul>
 <h3 id="&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;"><a name="&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;" class="plugin-anchor" href="#&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;</h3>
 <p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#x4E3B;&#x8981;&#x662F;&#x505A;&#x4EC0;&#x4E48;&#x7684;&#x4E86;&#x3002;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x8981;&#x600E;&#x4E48;&#x521B;&#x5EFA;&#x5B83;&#x4EEC;&#x5462;&#xFF1F;</p>
-<p>&#x548C; <a href="observable.html">Observable</a> &#x4E00;&#x6837;&#xFF0C;&#x6846;&#x67B6;&#x5DF2;&#x7ECF;&#x5E2E;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x597D;&#x4E86;&#x8BB8;&#x591A;&#x5E38;&#x7528;&#x7684;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#x3002;&#x4F8B;&#x5982;&#xFF1A;<code>view</code>&#x662F;&#x5426;&#x9690;&#x85CF;&#xFF0C;<code>button</code>&#x662F;&#x5426;&#x53EF;&#x70B9;&#x51FB;&#xFF0C; <code>label</code>&#x7684;&#x5F53;&#x524D;&#x6587;&#x672C;&#xFF0C;<code>imageView</code>&#x7684;&#x5F53;&#x524D;&#x56FE;&#x7247;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x548C; <a href="observable.html">Observable</a> &#x4E00;&#x6837;&#xFF0C;&#x6846;&#x67B6;&#x5DF2;&#x7ECF;&#x5E2E;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x597D;&#x4E86;&#x8BB8;&#x591A;&#x5E38;&#x7528;&#x7684;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#x3002;&#x4F8B;&#x5982;&#xFF1A;<code>view</code> &#x662F;&#x5426;&#x9690;&#x85CF;&#xFF0C;<code>button</code> &#x662F;&#x5426;&#x53EF;&#x70B9;&#x51FB;&#xFF0C; <code>label</code> &#x7684;&#x5F53;&#x524D;&#x6587;&#x672C;&#xFF0C;<code>imageView</code> &#x7684;&#x5F53;&#x524D;&#x56FE;&#x7247;&#x7B49;&#x7B49;&#x3002;</p>
 <p>&#x53E6;&#x5916;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x81EA;&#x5B9A;&#x4E49;&#x7684;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#x662F;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x521B;&#x5EFA;&#x7684;&#x3002;&#x8FD9;&#x91CC;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;&#x6700;&#x57FA;&#x672C;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5F39;&#x51FA;&#x63D0;&#x793A;&#x6846;&#x7684;&#x7684;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#xFF1A;</p>
 <p><img src="../../assets/Observer/Observer.png" alt=""></p>
 <pre><code class="lang-swift">tap.subscribe(onNext: { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] <span class="hljs-keyword">in</span>
@@ -1578,11 +1578,11 @@
 })
 </code></pre>
 <p>&#x521B;&#x5EFA;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#x6700;&#x76F4;&#x63A5;&#x7684;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#x5728; <code>Observable</code> &#x7684; <code>subscribe</code> &#x65B9;&#x6CD5;&#x540E;&#x9762;&#x63CF;&#x8FF0;&#xFF0C;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5982;&#x4F55;&#x505A;&#x51FA;&#x54CD;&#x5E94;&#x3002;&#x800C;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#x5C31;&#x662F;&#x7531;&#x540E;&#x9762;&#x7684; <code>onNext</code>&#xFF0C;<code>onError</code>&#xFF0C;<code>onCompleted</code>&#x7684;&#x8FD9;&#x4E9B;&#x95ED;&#x5305;&#x6784;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#x3002;</p>
-<p>&#x4EE5;&#x4E0A;&#x662F;&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5F53;&#x7136;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x521B;&#x5EFA;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E00;&#x4E0B; <a href="observer/any_observer.html">AnyObserver</a> &#x548C; <a href="observer/uibinding_observer.html">UIBindingObserver</a>&#x3002;</p>
+<p>&#x4EE5;&#x4E0A;&#x662F;&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x5F53;&#x7136;&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x521B;&#x5EFA;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E00;&#x4E0B; <a href="observer/any_observer.html">AnyObserver</a> &#x548C; <a href="observer/binder.html">Binder</a>&#x3002;</p>
 <h3 id="&#x7279;&#x5F81;&#x89C2;&#x5BDF;&#x8005;"><a name="&#x7279;&#x5F81;&#x89C2;&#x5BDF;&#x8005;" class="plugin-anchor" href="#&#x7279;&#x5F81;&#x89C2;&#x5BDF;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7279;&#x5F81;&#x89C2;&#x5BDF;&#x8005;</h3>
 <p>&#x548C; <a href="observable.html">Observable</a> &#x4E00;&#x6837;&#xFF0C;&#x89C2;&#x5BDF;&#x8005;&#x4E5F;&#x5B58;&#x7279;&#x5F81;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
 <ul>
-<li><a href="observer/uibinding_observer.html">UIBindingObserver</a></li>
+<li><a href="observer/binder.html">Binder</a></li>
 </ul>
 
                                 
@@ -1627,7 +1627,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.2 Observer - 观察者","level":"1.5.2","depth":2,"next":{"title":"AnyObserver","level":"1.5.2.1","depth":3,"path":"content/rxswift_core/observer/any_observer.md","ref":"content/rxswift_core/observer/any_observer.md","articles":[]},"previous":{"title":"ControlEvent","level":"1.5.1.5","depth":3,"path":"content/rxswift_core/observable/control_event.md","ref":"content/rxswift_core/observable/control_event.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observer.md","mtime":"2017-09-04T08:58:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-18T01:58:43.226Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.2 Observer - 观察者","level":"1.5.2","depth":2,"next":{"title":"AnyObserver","level":"1.5.2.1","depth":3,"path":"content/rxswift_core/observer/any_observer.md","ref":"content/rxswift_core/observer/any_observer.md","articles":[]},"previous":{"title":"ControlEvent","level":"1.5.1.5","depth":3,"path":"content/rxswift_core/observable/control_event.md","ref":"content/rxswift_core/observable/control_event.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observer.md","mtime":"2017-10-09T01:08:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-09T01:08:34.231Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

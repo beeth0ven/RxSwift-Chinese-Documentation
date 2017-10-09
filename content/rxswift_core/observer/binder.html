@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>UIBindingObserver · RxSwift 中文文档</title>
+        <title>Binder · RxSwift 中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -346,12 +346,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.2.2" data-path="uibinding_observer.html">
+        <li class="chapter active" data-level="1.5.2.2" data-path="binder.html">
             
-                <a href="uibinding_observer.html">
+                <a href="binder.html">
             
                     
-                    UIBindingObserver
+                    Binder
             
                 </a>
             
@@ -1478,9 +1478,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="../../about/CHANGELOG.html">
+        <li class="chapter " data-level="1.11.1" data-path="../../../CHANGELOG.html">
             
-                <a href="../../about/CHANGELOG.html">
+                <a href="../../../CHANGELOG.html">
             
                     
                     10.1 文档更新日志
@@ -1526,7 +1526,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >UIBindingObserver</a>
+        <a href="../../.." >Binder</a>
     </h1>
 </div>
 
@@ -1541,15 +1541,16 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="uibindingobserver"><a name="uibindingobserver" class="plugin-anchor" href="#uibindingobserver"><i class="fa fa-link" aria-hidden="true"></i></a>UIBindingObserver</h2>
-<p><strong>UIBindingObserver</strong> &#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x63CF;&#x53D9; <strong>UI</strong> &#x7EC4;&#x4EF6;&#x4E0A;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x6309;&#x94AE;&#x662F;&#x5426;&#x53EF;&#x70B9;&#x51FB;&#xFF0C;&#x9875;&#x9762;&#x662F;&#x5426;&#x9690;&#x85CF;&#xFF0C;<code>label</code> &#x7684;&#x5F53;&#x524D;&#x6587;&#x672C;&#x7B49;&#x3002;&#x5B83;&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x7279;&#x5F81;&#xFF1A;</p>
+                                <h2 id="binder"><a name="binder" class="plugin-anchor" href="#binder"><i class="fa fa-link" aria-hidden="true"></i></a>Binder</h2>
+<p><strong>Binder</strong> &#x4E3B;&#x8981;&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x7279;&#x5F81;&#xFF1A;</p>
 <ul>
 <li>&#x4E0D;&#x4F1A;&#x5904;&#x7406;&#x9519;&#x8BEF;&#x4E8B;&#x4EF6;</li>
-<li>&#x786E;&#x4FDD;&#x7ED1;&#x5B9A;&#x90FD;&#x662F;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x6267;&#x884C;</li>
+<li>&#x786E;&#x4FDD;&#x7ED1;&#x5B9A;&#x90FD;&#x662F;&#x5728;&#x7ED9;&#x5B9A; <a href="../schedulers.html">Scheduler</a> &#x4E0A;&#x6267;&#x884C;&#xFF08;&#x9ED8;&#x8BA4; <strong>MainScheduler</strong>&#xFF09;</li>
 </ul>
+<p>&#x4E00;&#x65E6;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#x4E8B;&#x4EF6;&#xFF0C;&#x5728;&#x8C03;&#x8BD5;&#x73AF;&#x5883;&#x4E0B;&#x5C06;&#x6267;&#x884C; <code>fatalError</code>&#xFF0C;&#x5728;&#x53D1;&#x5E03;&#x73AF;&#x5883;&#x4E0B;&#x5C06;&#x6253;&#x5370;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;</p>
 <hr>
 <h3 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="plugin-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;</h3>
-<p>&#x5728;&#x4ECB;&#x7ECD; <a href="any_observer.html">AnyObserver</a> &#x65F6;&#x6211;&#x4EEC;&#x4E3E;&#x4E86;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<p>&#x5728;&#x4ECB;&#x7ECD; <a href="any_observer.html">AnyObserver</a> &#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4E3E;&#x4E86;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
 <pre><code class="lang-swift"><span class="hljs-keyword">let</span> observer: <span class="hljs-type">AnyObserver</span>&lt;<span class="hljs-type">Bool</span>&gt; = <span class="hljs-type">AnyObserver</span> { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] (event) <span class="hljs-keyword">in</span>
     <span class="hljs-keyword">switch</span> event {
     <span class="hljs-keyword">case</span> .next(<span class="hljs-keyword">let</span> isHidden):
@@ -1564,8 +1565,8 @@ usernameValid
     .disposed(by: disposeBag)
 </code></pre>
 <p>&#x7531;&#x4E8E;&#x8FD9;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;&#x662F;&#x4E00;&#x4E2A; <strong>UI &#x89C2;&#x5BDF;&#x8005;</strong>&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x5728;&#x54CD;&#x5E94;&#x4E8B;&#x4EF6;&#x65F6;&#xFF0C;&#x53EA;&#x4F1A;&#x5904;&#x7406; <code>next</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x66F4;&#x65B0; <strong>UI</strong> &#x7684;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x4E0A;&#x6267;&#x884C;&#x3002;</p>
-<p>&#x56E0;&#x6B64;&#x4E00;&#x4E2A;&#x66F4;&#x597D;&#x7684;&#x65B9;&#x6848;&#x5C31;&#x662F;&#x4F7F;&#x7528; <strong>UIBindingObserver</strong>&#xFF1A;</p>
-<pre><code class="lang-swift"><span class="hljs-keyword">let</span> observer: <span class="hljs-type">UIBindingObserver</span>&lt;<span class="hljs-type">UIView</span>, <span class="hljs-type">Bool</span>&gt; = <span class="hljs-type">UIBindingObserver</span>(<span class="hljs-type">UIElement</span>: usernameValidOutlet) { (view, isHidden) <span class="hljs-keyword">in</span>
+<p>&#x56E0;&#x6B64;&#x4E00;&#x4E2A;&#x66F4;&#x597D;&#x7684;&#x65B9;&#x6848;&#x5C31;&#x662F;&#x4F7F;&#x7528; <strong>Binder</strong>&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> observer: <span class="hljs-type">Binder</span>&lt;<span class="hljs-type">Bool</span>&gt; = <span class="hljs-type">Binder</span>(usernameValidOutlet) { (view, isHidden) <span class="hljs-keyword">in</span>
     view.isHidden = isHidden
 }
 
@@ -1573,41 +1574,45 @@ usernameValid
     .bind(to: observer)
     .disposed(by: disposeBag)
 </code></pre>
-<p><strong>UIBindingObserver</strong> &#x53EF;&#x4EE5;&#x53EA;&#x5904;&#x7406; <code>next</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x4FDD;&#x8BC1;&#x54CD;&#x5E94; <code>next</code> &#x4E8B;&#x4EF6;&#x7684;&#x4EE3;&#x7801;&#x4E00;&#x5B9A;&#x4F1A;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x3002;</p>
+<p><strong>Binder</strong> &#x53EF;&#x4EE5;&#x53EA;&#x5904;&#x7406; <code>next</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x4FDD;&#x8BC1;&#x54CD;&#x5E94; <code>next</code> &#x4E8B;&#x4EF6;&#x7684;&#x4EE3;&#x7801;&#x4E00;&#x5B9A;&#x4F1A;&#x5728;&#x7ED9;&#x5B9A; <a href="../schedulers.html">Scheduler</a> &#x4E0A;&#x6267;&#x884C;&#xFF0C;&#x8FD9;&#x91CC;&#x91C7;&#x7528;&#x9ED8;&#x8BA4;&#x7684; <strong>MainScheduler</strong>&#x3002;</p>
 <hr>
 <h3 id="&#x590D;&#x7528;"><a name="&#x590D;&#x7528;" class="plugin-anchor" href="#&#x590D;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x590D;&#x7528;</h3>
 <p>&#x7531;&#x4E8E;<strong>&#x9875;&#x9762;&#x662F;&#x5426;&#x9690;&#x85CF;</strong>&#x662F;&#x4E00;&#x4E2A;&#x5E38;&#x7528;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#xFF0C;&#x6240;&#x4EE5;&#x5E94;&#x8BE5;&#x8BA9;&#x6240;&#x6709;&#x7684; <code>UIView</code> &#x90FD;&#x63D0;&#x4F9B;&#x8FD9;&#x79CD;&#x89C2;&#x5BDF;&#x8005;&#xFF1A;</p>
 <pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">extension</span> <span class="hljs-title">Reactive</span> <span class="hljs-title">where</span> <span class="hljs-title">Base</span>: <span class="hljs-title">UIView</span> </span>{
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> isHidden: <span class="hljs-type">UIBindingObserver</span>&lt;<span class="hljs-type">Base</span>, <span class="hljs-type">Bool</span>&gt; {
-        <span class="hljs-keyword">return</span> <span class="hljs-type">UIBindingObserver</span>(<span class="hljs-type">UIElement</span>: <span class="hljs-keyword">self</span>.base) { view, hidden <span class="hljs-keyword">in</span>
-            view.isHidden = hidden
-        }
-    }
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> isHidden: <span class="hljs-type">Binder</span>&lt;<span class="hljs-type">Bool</span>&gt; {
+      <span class="hljs-keyword">return</span> <span class="hljs-type">Binder</span>(<span class="hljs-keyword">self</span>.base) { view, hidden <span class="hljs-keyword">in</span>
+          view.isHidden = hidden
+      }
+  }
 }
 </code></pre>
 <pre><code class="lang-swift">usernameValid
     .bind(to: usernameValidOutlet.rx.isHidden)
     .disposed(by: disposeBag)
 </code></pre>
-<p>&#x8FD9;&#x6837;&#x4F60;&#x4E0D;&#x5FC5;&#x4E3A;&#x6BCF;&#x4E2A; <strong>UI</strong> &#x63A7;&#x4EF6;&#x5355;&#x72EC;&#x521B;&#x5EFA;&#x89C2;&#x5BDF;&#x8005;&#x3002;&#x8FD9;&#x5C31;&#x662F; <code>usernameValidOutlet.rx.isHidden</code> &#x7684;&#x7531;&#x6765;&#xFF0C;&#x8BB8;&#x591A; <strong>UI &#x89C2;&#x5BDF;&#x8005;</strong> &#x90FD;&#x662F;&#x8FD9;&#x6837;&#x521B;&#x5EFA;&#x7684;&#xFF1A;</p>
-<p><strong>&#x6309;&#x94AE;&#x662F;&#x5426;&#x53EF;&#x70B9;&#x51FB; <code>button.rx.isEnabled</code>&#xFF1A;</strong></p>
+<p>&#x8FD9;&#x6837;&#x4F60;&#x4E0D;&#x5FC5;&#x4E3A;&#x6BCF;&#x4E2A; <strong>UI</strong> &#x63A7;&#x4EF6;&#x5355;&#x72EC;&#x521B;&#x5EFA;&#x8BE5;&#x89C2;&#x5BDF;&#x8005;&#x3002;&#x8FD9;&#x5C31;&#x662F; <code>usernameValidOutlet.rx.isHidden</code> &#x7684;&#x7531;&#x6765;&#xFF0C;&#x8BB8;&#x591A; <strong>UI &#x89C2;&#x5BDF;&#x8005;</strong> &#x90FD;&#x662F;&#x8FD9;&#x6837;&#x521B;&#x5EFA;&#x7684;&#xFF1A;</p>
+<ul>
+<li><p><strong>&#x6309;&#x94AE;&#x662F;&#x5426;&#x53EF;&#x70B9;&#x51FB; <code>button.rx.isEnabled</code>&#xFF1A;</strong></p>
 <pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">extension</span> <span class="hljs-title">Reactive</span> <span class="hljs-title">where</span> <span class="hljs-title">Base</span>: <span class="hljs-title">UIControl</span> </span>{
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> isEnabled: <span class="hljs-type">UIBindingObserver</span>&lt;<span class="hljs-type">Base</span>, <span class="hljs-type">Bool</span>&gt; {
-        <span class="hljs-keyword">return</span> <span class="hljs-type">UIBindingObserver</span>(<span class="hljs-type">UIElement</span>: <span class="hljs-keyword">self</span>.base) { control, value <span class="hljs-keyword">in</span>
-            control.isEnabled = value
-        }
-    }
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> isEnabled: <span class="hljs-type">Binder</span>&lt;<span class="hljs-type">Bool</span>&gt; {
+      <span class="hljs-keyword">return</span> <span class="hljs-type">Binder</span>(<span class="hljs-keyword">self</span>.base) { control, value <span class="hljs-keyword">in</span>
+          control.isEnabled = value
+      }
+  }
 }
 </code></pre>
-<p><strong><code>label</code> &#x7684;&#x5F53;&#x524D;&#x6587;&#x672C; <code>label.rx.text</code>&#xFF1A;</strong></p>
+</li>
+<li><p><strong><code>label</code> &#x7684;&#x5F53;&#x524D;&#x6587;&#x672C; <code>label.rx.text</code>&#xFF1A;</strong></p>
 <pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">extension</span> <span class="hljs-title">Reactive</span> <span class="hljs-title">where</span> <span class="hljs-title">Base</span>: <span class="hljs-title">UILabel</span> </span>{
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> text: <span class="hljs-type">UIBindingObserver</span>&lt;<span class="hljs-type">Base</span>, <span class="hljs-type">String</span>?&gt; {
-        <span class="hljs-keyword">return</span> <span class="hljs-type">UIBindingObserver</span>(<span class="hljs-type">UIElement</span>: <span class="hljs-keyword">self</span>.base) { label, text <span class="hljs-keyword">in</span>
-            label.text = text
-        }
-    }
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> text: <span class="hljs-type">Binder</span>&lt;<span class="hljs-type">String</span>?&gt; {
+      <span class="hljs-keyword">return</span> <span class="hljs-type">Binder</span>(<span class="hljs-keyword">self</span>.base) { label, text <span class="hljs-keyword">in</span>
+          label.text = text
+      }
+  }
 }
 </code></pre>
+</li>
+</ul>
 <p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49;&#x7684; <strong>UI &#x89C2;&#x5BDF;&#x8005;</strong>&#x3002;</p>
 
                                 
@@ -1652,7 +1657,7 @@ usernameValid
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"UIBindingObserver","level":"1.5.2.2","depth":3,"next":{"title":"4.3 Observable & Observer 既是可被监听的序列也是观察者","level":"1.5.3","depth":2,"path":"content/rxswift_core/observable_and_observer.md","ref":"content/rxswift_core/observable_and_observer.md","articles":[{"title":"AsyncSubject","level":"1.5.3.1","depth":3,"path":"content/rxswift_core/observable_and_observer/async_subject.md","ref":"content/rxswift_core/observable_and_observer/async_subject.md","articles":[]},{"title":"PublishSubject","level":"1.5.3.2","depth":3,"path":"content/rxswift_core/observable_and_observer/publish_subject.md","ref":"content/rxswift_core/observable_and_observer/publish_subject.md","articles":[]},{"title":"ReplaySubject","level":"1.5.3.3","depth":3,"path":"content/rxswift_core/observable_and_observer/replay_subject.md","ref":"content/rxswift_core/observable_and_observer/replay_subject.md","articles":[]},{"title":"BehaviorSubject","level":"1.5.3.4","depth":3,"path":"content/rxswift_core/observable_and_observer/behavior_subject.md","ref":"content/rxswift_core/observable_and_observer/behavior_subject.md","articles":[]},{"title":"Variable","level":"1.5.3.5","depth":3,"path":"content/rxswift_core/observable_and_observer/variable.md","ref":"content/rxswift_core/observable_and_observer/variable.md","articles":[]},{"title":"ControlProperty","level":"1.5.3.6","depth":3,"path":"content/rxswift_core/observable_and_observer/control_property.md","ref":"content/rxswift_core/observable_and_observer/control_property.md","articles":[]}]},"previous":{"title":"AnyObserver","level":"1.5.2.1","depth":3,"path":"content/rxswift_core/observer/any_observer.md","ref":"content/rxswift_core/observer/any_observer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observer/uibinding_observer.md","mtime":"2017-09-04T08:58:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-18T01:58:43.226Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Binder","level":"1.5.2.2","depth":3,"next":{"title":"4.3 Observable & Observer 既是可被监听的序列也是观察者","level":"1.5.3","depth":2,"path":"content/rxswift_core/observable_and_observer.md","ref":"content/rxswift_core/observable_and_observer.md","articles":[{"title":"AsyncSubject","level":"1.5.3.1","depth":3,"path":"content/rxswift_core/observable_and_observer/async_subject.md","ref":"content/rxswift_core/observable_and_observer/async_subject.md","articles":[]},{"title":"PublishSubject","level":"1.5.3.2","depth":3,"path":"content/rxswift_core/observable_and_observer/publish_subject.md","ref":"content/rxswift_core/observable_and_observer/publish_subject.md","articles":[]},{"title":"ReplaySubject","level":"1.5.3.3","depth":3,"path":"content/rxswift_core/observable_and_observer/replay_subject.md","ref":"content/rxswift_core/observable_and_observer/replay_subject.md","articles":[]},{"title":"BehaviorSubject","level":"1.5.3.4","depth":3,"path":"content/rxswift_core/observable_and_observer/behavior_subject.md","ref":"content/rxswift_core/observable_and_observer/behavior_subject.md","articles":[]},{"title":"Variable","level":"1.5.3.5","depth":3,"path":"content/rxswift_core/observable_and_observer/variable.md","ref":"content/rxswift_core/observable_and_observer/variable.md","articles":[]},{"title":"ControlProperty","level":"1.5.3.6","depth":3,"path":"content/rxswift_core/observable_and_observer/control_property.md","ref":"content/rxswift_core/observable_and_observer/control_property.md","articles":[]}]},"previous":{"title":"AnyObserver","level":"1.5.2.1","depth":3,"path":"content/rxswift_core/observer/any_observer.md","ref":"content/rxswift_core/observer/any_observer.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observer/binder.md","mtime":"2017-10-09T01:08:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-09T01:08:34.231Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

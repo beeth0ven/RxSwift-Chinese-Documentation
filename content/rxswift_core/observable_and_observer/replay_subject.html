@@ -346,12 +346,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.2" data-path="../observer/uibinding_observer.html">
+        <li class="chapter " data-level="1.5.2.2" data-path="../observer/binder.html">
             
-                <a href="../observer/uibinding_observer.html">
+                <a href="../observer/binder.html">
             
                     
-                    UIBindingObserver
+                    Binder
             
                 </a>
             
@@ -1478,9 +1478,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.11.1" data-path="../../about/CHANGELOG.html">
+        <li class="chapter " data-level="1.11.1" data-path="../../../CHANGELOG.html">
             
-                <a href="../../about/CHANGELOG.html">
+                <a href="../../../CHANGELOG.html">
             
                     
                     10.1 文档更新日志
@@ -1546,6 +1546,34 @@
 <p><strong>ReplaySubject</strong> &#x5C06;&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x5168;&#x90E8;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x65E0;&#x8BBA;&#x89C2;&#x5BDF;&#x8005;&#x662F;&#x4F55;&#x65F6;&#x8FDB;&#x884C;&#x8BA2;&#x9605;&#x7684;&#x3002;</p>
 <p>&#x8FD9;&#x91CC;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x7248;&#x672C;&#x7684; <strong>ReplaySubject</strong>&#xFF0C;&#x6709;&#x7684;&#x53EA;&#x4F1A;&#x5C06;&#x6700;&#x65B0;&#x7684; n &#x4E2A;&#x5143;&#x7D20;&#x53D1;&#x9001;&#x7ED9;&#x89C2;&#x5BDF;&#x8005;&#xFF0C;&#x6709;&#x7684;&#x53EA;&#x4F1A;&#x5C06;&#x9650;&#x5236;&#x65F6;&#x95F4;&#x6BB5;&#x5185;&#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20;&#x53D1;&#x9001;&#x7ED9;&#x89C2;&#x5BDF;&#x8005;&#x3002;</p>
 <p>&#x5982;&#x679C;&#x628A; <strong>ReplaySubject</strong> &#x5F53;&#x4F5C;&#x89C2;&#x5BDF;&#x8005;&#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x6CE8;&#x610F;&#x4E0D;&#x8981;&#x5728;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x8C03;&#x7528; <code>onNext</code>, <code>onError</code> &#x6216; <code>onCompleted</code>&#x3002;&#x8FD9;&#x6837;&#x4F1A;&#x5BFC;&#x81F4;&#x65E0;&#x5E8F;&#x8C03;&#x7528;&#xFF0C;&#x5C06;&#x9020;&#x6210;&#x610F;&#x60F3;&#x4E0D;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<hr>
+<h3 id="&#x6F14;&#x793A;"><a name="&#x6F14;&#x793A;" class="plugin-anchor" href="#&#x6F14;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6F14;&#x793A;</h3>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> disposeBag = <span class="hljs-type">DisposeBag</span>()
+<span class="hljs-keyword">let</span> subject = <span class="hljs-type">ReplaySubject</span>&lt;<span class="hljs-type">String</span>&gt;.create(bufferSize: <span class="hljs-number">1</span>)
+
+subject
+  .subscribe { <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Subscription: 1 Event:&quot;</span>, $<span class="hljs-number">0</span>) }
+  .disposed(by: disposeBag)
+
+subject.onNext(<span class="hljs-string">&quot;&#x1F436;&quot;</span>)
+subject.onNext(<span class="hljs-string">&quot;&#x1F431;&quot;</span>)
+
+subject
+  .subscribe { <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Subscription: 2 Event:&quot;</span>, $<span class="hljs-number">0</span>) }
+  .disposed(by: disposeBag)
+
+subject.onNext(<span class="hljs-string">&quot;&#x1F170;&#xFE0F;&quot;</span>)
+subject.onNext(<span class="hljs-string">&quot;&#x1F171;&#xFE0F;&quot;</span>)
+</code></pre>
+<p><strong>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;</strong></p>
+<pre><code class="lang-swift"><span class="hljs-type">Subscription</span>: <span class="hljs-number">1</span> <span class="hljs-type">Event</span>: next(&#x1F436;)
+<span class="hljs-type">Subscription</span>: <span class="hljs-number">1</span> <span class="hljs-type">Event</span>: next(&#x1F431;)
+<span class="hljs-type">Subscription</span>: <span class="hljs-number">2</span> <span class="hljs-type">Event</span>: next(&#x1F431;)
+<span class="hljs-type">Subscription</span>: <span class="hljs-number">1</span> <span class="hljs-type">Event</span>: next(&#x1F170;&#xFE0F;)
+<span class="hljs-type">Subscription</span>: <span class="hljs-number">2</span> <span class="hljs-type">Event</span>: next(&#x1F170;&#xFE0F;)
+<span class="hljs-type">Subscription</span>: <span class="hljs-number">1</span> <span class="hljs-type">Event</span>: next(&#x1F171;&#xFE0F;)
+<span class="hljs-type">Subscription</span>: <span class="hljs-number">2</span> <span class="hljs-type">Event</span>: next(&#x1F171;&#xFE0F;)
+</code></pre>
 
                                 
                                 </section>
@@ -1589,7 +1617,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ReplaySubject","level":"1.5.3.3","depth":3,"next":{"title":"BehaviorSubject","level":"1.5.3.4","depth":3,"path":"content/rxswift_core/observable_and_observer/behavior_subject.md","ref":"content/rxswift_core/observable_and_observer/behavior_subject.md","articles":[]},"previous":{"title":"PublishSubject","level":"1.5.3.2","depth":3,"path":"content/rxswift_core/observable_and_observer/publish_subject.md","ref":"content/rxswift_core/observable_and_observer/publish_subject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observable_and_observer/replay_subject.md","mtime":"2017-09-04T08:58:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-18T01:58:43.226Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ReplaySubject","level":"1.5.3.3","depth":3,"next":{"title":"BehaviorSubject","level":"1.5.3.4","depth":3,"path":"content/rxswift_core/observable_and_observer/behavior_subject.md","ref":"content/rxswift_core/observable_and_observer/behavior_subject.md","articles":[]},"previous":{"title":"PublishSubject","level":"1.5.3.2","depth":3,"path":"content/rxswift_core/observable_and_observer/publish_subject.md","ref":"content/rxswift_core/observable_and_observer/publish_subject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observable_and_observer/replay_subject.md","mtime":"2017-10-09T01:08:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-09T01:08:34.231Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

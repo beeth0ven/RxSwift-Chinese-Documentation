@@ -4,7 +4,9 @@
 
 ---
 
-## master
+## [0.2.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/0.2.0)
+
+#### 17年10月9日
 
 * 给 [ReplaySubject](/content/rxswift_core/observable_and_observer/replay_subject.md) 加入演示代码
 * 给 [PublishSubject](/content/rxswift_core/observable_and_observer/publish_subject.md) 加入演示代码

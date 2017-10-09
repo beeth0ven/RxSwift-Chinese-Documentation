@@ -20,10 +20,15 @@
 ------
 ## 文档更新日志
 
-#### 17年9月18日
+#### 17年10月9日
 
-* 更新 [RxFeedback](/content/architecture/rxfeedback.md) 配图，与官方保持一致
-* 修复 [Maybe](/content/rxswift_core/observable/maybe.md) 中的[描述问题](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/pull/9/files)
+* 给 [ReplaySubject](/content/rxswift_core/observable_and_observer/replay_subject.md) 加入演示代码
+* 给 [PublishSubject](/content/rxswift_core/observable_and_observer/publish_subject.md) 加入演示代码
+* 给 [distinctUntilChanged](/content/decision_tree/distinctUntilChanged.md) 操作符加入演示代码
+* 给 [scan](/content/decision_tree/scan.md) 操作符加入演示代码
+* 给 [startWith](/content/decision_tree/startWith.md) 操作符加入演示代码
+* 给 [merge](/content/decision_tree/merge.md) 操作符加入演示代码
+* **(RxSwift 4)** 使用 [Binder](/content/rxswift_core/observer/binder.md) 替换 **UIBindingObserver**，更简洁实用
 
   **[... 点击查看更多](CHANGELOG.md)**
 

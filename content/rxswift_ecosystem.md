@@ -140,15 +140,15 @@ Observable.from(messages)
 ...
 let usernameValid = usernameOutlet.rx.text.orEmpty
     .map { $0.characters.count >= minimalUsernameLength }
-    .shareReplay(1)
+    .share(replay: 1)
 
 let passwordValid = passwordOutlet.rx.text.orEmpty
     .map { $0.characters.count >= minimalPasswordLength }
-    .shareReplay(1)
+    .share(replay: 1)
 
 let everythingValid = Observable
     .combineLatest(usernameValid, passwordValid) { $0 && $1 }
-    .shareReplay(1)
+    .share(replay: 1)
 
 usernameValid
     .bind(to: passwordOutlet.rx.isEnabled)
@@ -172,17 +172,17 @@ everythingValid
 
 ```java
 ...
-Observable<Boolean> usernameValid = RxTextView.textChanges(usernameEditText)
+final Observable<Boolean> usernameValid = RxTextView.textChanges(usernameEditText)
         .map(text -> text.length() >= minimalUsernameLength)
-        .compose(Rx.shareReplay(1));
+        .compose(Rx.share(replay: 1));
 
-Observable<Boolean> passwordValid = RxTextView.textChanges(usernameEditText)
+final Observable<Boolean> passwordValid = RxTextView.textChanges(usernameEditText)
         .map(text -> text.length() >= minimalPasswordLength)
-        .compose(Rx.shareReplay(1));
+        .compose(Rx.share(replay: 1));
 
-Observable<Boolean> everythingValid = Observable
+final Observable<Boolean> everythingValid = Observable
         .combineLatest(usernameValid, passwordValid, (isUsernameValid, isPasswordValid) -> isUsernameValid && isPasswordValid)
-        .compose(Rx.shareReplay(1));
+        .compose(Rx.share(replay: 1));
 
 disposables.add(usernameValid
         .subscribe(RxView.enabled(passwordEditText)));

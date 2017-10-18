@@ -4,6 +4,19 @@
 
 ---
 
+## [1.0.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/1.0.0)
+
+#### 17年10月18日（RxSwift 4）
+
+* 加入[文档电子书下载地址](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/download/1.0.0/RxSwiftChineseDocumentation.epub)
+* 去掉学习资源[《如何将代理转换为序列》](https://medium.com/@maxofeden/rxswift-migrate-delegates-to-beautiful-observables-3e606a863048)，因为 RxSwift 4 重构了 **DelegateProxy**  [#1379](https://github.com/ReactiveX/RxSwift/pull/1379)
+* 使用 `share(replay: 1)` 替换 `shareReplay(1)`
+* 给 [RxJava 演示代码](/content/rxswift_ecosystem.md) 中的变量加上 `final` 关键字，声明为常量
+* 示例[多层级的列表页](/content/more_demo/tableView_sectioned_viewController.md)更新到 RxSwift 4，使用新的 RxDataSources 构建方法
+* 文档[首页](introduction.md)更新到 RxSwift 4
+
+---
+
 ## [0.2.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/0.2.0)
 
 #### 17年10月9日

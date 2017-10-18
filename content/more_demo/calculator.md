@@ -82,7 +82,7 @@ class CalculatorViewController: ViewController {
             feedback: { _ in commands }
         )
             .debug("calculator state")
-            .shareReplayLatestWhileConnected()
+            .share(replay: 1)
 
         system.map { $0.screen }
             .bind(to: resultLabel.rx.text)
@@ -151,7 +151,7 @@ let system = Observable.system(
     feedback: { _ in commands }
 )
     .debug("calculator state")
-    .shareReplayLatestWhileConnected()
+    .share(replay: 1)
 ```
 
 由**命令序列**触发，对页面状态进行更新，在用更新后的状态组成一个序列。这就是我们所需要的**状态序列**。接下来我们用这个**状态序列**来控制页面显示：
@@ -342,7 +342,7 @@ class CalculatorViewController: ViewController {
             feedback: { _ in commands }
         )
             .debug("calculator state")
-            .shareReplayLatestWhileConnected()
+            .share(replay: 1)
 
         system.map { $0.screen }
             .bind(to: resultLabel.rx.text)

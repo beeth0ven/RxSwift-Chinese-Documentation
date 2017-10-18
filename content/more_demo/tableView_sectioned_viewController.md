@@ -27,7 +27,16 @@ class SimpleTableViewExampleSectionedViewController
     , UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
 
-    let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Double>>()
+    let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Double>>(
+        configureCell: { (_, tv, indexPath, element) in
+            let cell = tv.dequeueReusableCell(withIdentifier: "Cell")!
+            cell.textLabel?.text = "\(element) @ row \(indexPath.row)"
+            return cell
+        },
+        titleForHeaderInSection: { dataSource, sectionIndex in
+            return dataSource[sectionIndex].model
+        }
+    )
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,15 +61,6 @@ class SimpleTableViewExampleSectionedViewController
                 ])
             ])
 
-        dataSource.configureCell = { (_, tv, indexPath, element) in
-            let cell = tv.dequeueReusableCell(withIdentifier: "Cell")!
-            cell.textLabel?.text = "\(element) @ row \(indexPath.row)"
-            return cell
-        }
-
-        dataSource.titleForHeaderInSection = { dataSource, sectionIndex in
-            return dataSource[sectionIndex].model
-        }
 
         items
             .bind(to: tableView.rx.items(dataSource: dataSource))
@@ -71,8 +71,8 @@ class SimpleTableViewExampleSectionedViewController
             .map { indexPath in
                 return (indexPath, dataSource[indexPath])
             }
-            .subscribe(onNext: { indexPath, model in
-                DefaultWireframe.presentAlert("Tapped `\(model)` @ \(indexPath)")
+            .subscribe(onNext: { pair in
+                DefaultWireframe.presentAlert("Tapped `\(pair.1)` @ \(pair.0)")
             })
             .disposed(by: disposeBag)
 
@@ -92,32 +92,32 @@ class SimpleTableViewExampleSectionedViewController
 }
 ```
 
-我们首先创建一个 `dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, Double>>`，通过使用这个辅助类型，我们就不用执行数据源代理方法，而只需要提供必要的配置函数就可以布局列表页了。
+我们首先创建一个 `dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, Double>>`:
+
+```swift
+let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Double>>(
+    configureCell: { (_, tv, indexPath, element) in
+        let cell = tv.dequeueReusableCell(withIdentifier: "Cell")!
+        cell.textLabel?.text = "\(element) @ row \(indexPath.row)"
+        return cell
+    },
+    titleForHeaderInSection: { dataSource, sectionIndex in
+        return dataSource[sectionIndex].model
+    }
+)
+```
+
+通过使用这个辅助类型，我们就不用执行数据源代理方法，而只需要提供必要的配置函数就可以布局列表页了。
+
+第一个函数 `configureCell` 是用来配置 `Cell` 的显示，而这里的参数 `element` 就是 `SectionModel<String, Double>` 中的 `Double`。
+
+第二个函数 `titleForHeaderInSection` 是用来配置 `Section` 的标题，而 `dataSource[sectionIndex].model` 就是 `SectionModel<String, Double>` 中的 `String`。
 
 然后为列表页订制一个多层级的数据源 `items:  Observable<[SectionModel<String, Double>]>`，用这个数据源来绑定列表页。
 
 ![](/assets/MoreDemo/TableViewSectionedViewController/bindings.png)
 
-
 这里 `SectionModel<String, Double>` 中的 `String` 是用来显示 `Section` 的标题。而 `Double` 是用来绑定对应的 `Cell`。假如我们的列表页是用来显示通讯录的，并且通讯录通过首字母来分组。那么应该把数据定义为 `SectionModel<String, Person>`，然后用首字母 `String` 来显示 `Section` 标题，用联系人 `Person` 来显示对应的 `Cell`。
-
-示例中后面的两个函数，主要负责配置 `Cell` 和 `SectionHeader`：
-
-```swift
-dataSource.configureCell = { (_, tv, indexPath, element) in
-    let cell = tv.dequeueReusableCell(withIdentifier: "Cell")!
-    cell.textLabel?.text = "\(element) @ row \(indexPath.row)"
-    return cell
-}
-
-dataSource.titleForHeaderInSection = { dataSource, sectionIndex in
-    return dataSource[sectionIndex].model
-}
-```
-
-第一个函数 `configureCell` 是用来配置 `Cell` 的显示，而这里的参数 `element` 就是 `SectionModel<String, Double>` 中的 `Double`。
-
-第二个函数 `titleForHeaderInSection` 是用来配置 `Section` 的标题，而 `dataSource[sectionIndex].model` 就是 `SectionModel<String, Double>` 中的 `String`。
 
 由于 `SectionModel<Section, ItemType>` 是一个范型，所以我们可以用它来定义任意类型的 `Section` 以及 `Item`。
 

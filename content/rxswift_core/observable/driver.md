@@ -56,7 +56,7 @@ let results = query.rx.text
             .observeOn(MainScheduler.instance)  // 结果在主线程返回
             .catchErrorJustReturn([])           // 错误被处理了，这样至少不会终止整个序列
     }
-    .shareReplay(1)                             // HTTP 请求是被共享的
+    .share(replay: 1)                             // HTTP 请求是被共享的
 
 results
     .map { "\($0.count)" }
@@ -116,7 +116,7 @@ results
 let safeSequence = xs
   .observeOn(MainScheduler.instance)       // 主线程监听
   .catchErrorJustReturn(onErrorJustReturn) // 无法产生错误
-  .shareReplayLatestWhileConnected()       // 共享状态变化
+  .share(replay: 1, scope: .whileConnected)// 共享状态变化
 return Driver(raw: safeSequence)           // 封装
 ```
 

@@ -33,8 +33,6 @@
 
 * [RxSwift: share vs replay vs shareReplay](https://medium.com/@_achou/rxswift-share-vs-replay-vs-sharereplay-bea99ac42168) - 几个 **share** 操作符的区别
 
-* [Migrate Delegates to BEAUTIFUL Observables](https://medium.com/@maxofeden/rxswift-migrate-delegates-to-beautiful-observables-3e606a863048) - 如何将**代理**转换为**序列**
-
 
 ## 开源项目
 

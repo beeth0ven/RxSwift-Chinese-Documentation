@@ -1,7 +1,7 @@
 <img src="assets/Rx_Logo_M.png" alt="Miss Electric Eel 2016" width="36" height="36"> RxSwift: ReactiveX for Swift
 ======================================
 
-[![Travis CI](https://travis-ci.org/ReactiveX/RxSwift.svg?branch=master)](https://travis-ci.org/ReactiveX/RxSwift) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-333333.svg) ![pod](https://img.shields.io/cocoapods/v/RxSwift.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) [![Chinese Documentation](https://img.shields.io/badge/中文文档-支持-4BC51D.svg)](https://beeth0ven.github.io/RxSwift-Chinese-Documentation/) ![QQ Group](https://img.shields.io/badge/QQ%20交流群-424180219-blue.svg)
+[![Travis CI](https://travis-ci.org/ReactiveX/RxSwift.svg?branch=master)](https://travis-ci.org/ReactiveX/RxSwift) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-333333.svg) ![pod](https://img.shields.io/cocoapods/v/RxSwift.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) ![QQ Group](https://img.shields.io/badge/QQ%20交流群-424180219-blue.svg) [![epub](https://img.shields.io/badge/点击下载-文档电子书-blue.svg)](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/download/1.0.0/RxSwiftChineseDocumentation.epub)
 
 [ReactiveX](http://reactivex.io/)（简写: Rx） 是一个可以帮助我们简化异步编程的框架。
 
@@ -20,15 +20,14 @@
 ------
 ## 文档更新日志
 
-#### 17年10月9日
+#### 17年10月18日（RxSwift 4）
 
-* 给 [ReplaySubject](/content/rxswift_core/observable_and_observer/replay_subject.md) 加入演示代码
-* 给 [PublishSubject](/content/rxswift_core/observable_and_observer/publish_subject.md) 加入演示代码
-* 给 [distinctUntilChanged](/content/decision_tree/distinctUntilChanged.md) 操作符加入演示代码
-* 给 [scan](/content/decision_tree/scan.md) 操作符加入演示代码
-* 给 [startWith](/content/decision_tree/startWith.md) 操作符加入演示代码
-* 给 [merge](/content/decision_tree/merge.md) 操作符加入演示代码
-* **(RxSwift 4)** 使用 [Binder](/content/rxswift_core/observer/binder.md) 替换 **UIBindingObserver**，更简洁实用
+* 加入[文档电子书下载地址](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/download/1.0.0/RxSwiftChineseDocumentation.epub)
+* 去掉学习资源[《如何将代理转换为序列》](https://medium.com/@maxofeden/rxswift-migrate-delegates-to-beautiful-observables-3e606a863048)，因为 RxSwift 4 重构了 **DelegateProxy**  [#1379](https://github.com/ReactiveX/RxSwift/pull/1379)
+* 使用 `share(replay: 1)` 替换 `shareReplay(1)`
+* 给 [RxJava 演示代码](/content/rxswift_ecosystem.md) 中的变量加上 `final` 关键字，声明为常量
+* 示例[多层级的列表页](/content/more_demo/tableView_sectioned_viewController.md)更新到 RxSwift 4，使用新的 RxDataSources 构建方法
+* 文档首页更新到 RxSwift 4
 
   **[... 点击查看更多](CHANGELOG.md)**
 
@@ -69,27 +68,40 @@ searchResults
 
 ------
 
+## 必备条件
+
+* Xcode 9.0
+* Swift 4.0
+* Swift 3.x ([使用 `rxswift-3.0` 分支](https://github.com/ReactiveX/RxSwift/tree/rxswift-3.0))
+* Swift 2.3 ([使用 `rxswift-2.0` 分支](https://github.com/ReactiveX/RxSwift/tree/rxswift-2.0))
+
 ## 安装
 
 安装 **RxSwift** 不需要任何第三方依赖。
 
-## 必备条件
+以下是当前支持的安装方法：
 
-* Xcode 8.0
+### 手动
 
-* Swift 3.0
+打开 Rx.xcworkspace, 选中 `RxExample` 并且点击运行。 此方法将构建所有内容并运行示例应用程序。
 
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
-** **`pod --version`**: **`1.1.1` 已通过测试
+** **`pod --version`**: **`1.3.1` 已通过测试
 
 ```ruby
 # Podfile
 use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
-    pod 'RxSwift',    '~> 3.0'
-    pod 'RxCocoa',    '~> 3.0'
+    pod 'RxSwift',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
+end
+
+# RxTests 和 RxBlocking 将在单元/集成测试中起到重要作用
+target 'YOUR_TESTING_TARGET' do
+    pod 'RxBlocking', '~> 4.0'
+    pod 'RxTest',     '~> 4.0'
 end
 ```
 
@@ -101,12 +113,12 @@ $ pod install
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
-** **`carthage version`**: **`0.18.1` 已通过测试
+** **`carthage version`**: **`0.26.2` 已通过测试
 
 添加到 `Cartfile`
 
 ```
-github "ReactiveX/RxSwift" ~> 3.0
+github "ReactiveX/RxSwift" ~> 4.0
 ```
 
 ```bash
@@ -115,24 +127,34 @@ $ carthage update
 
 ### [Swift Package Manager](https://github.com/apple/swift-package-manager)
 
-**  **`swift build --version`**: **`3.0.0 (swiftpm-19)` 已通过测试
+**  **`swift build --version`**: **`Swift 4.0.0-dev (swiftpm-13126)` 已通过测试
 
 创建`Package.swift` 文件。
 
 ```swift
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
-    name: "RxTestProject",
-    targets: [],
-    dependencies: [
-        .Package(url: "https://github.com/ReactiveX/RxSwift.git", majorVersion: 3)
-    ]
+  name: "RxTestProject",
+  dependencies: [
+    .package(url: "https://github.com/ReactiveX/RxSwift.git", "4.0.0" ..< "5.0.0")
+  ],
+  targets: [
+    .target(name: "RxTestProject", dependencies: ["RxSwift", "RxCocoa"])
+  ]
 )
 ```
 
 ```bash
 $ swift build
+```
+
+如果构建或测试一个模块对 RxTest 存在依赖， 设置 `TEST=1`. ([RxSwift >= 3.4.2](https://github.com/ReactiveX/RxSwift/releases/tag/3.4.2))
+
+```bash
+$ TEST=1 swift test
 ```
 
 ### 使用 submodules 手动集成

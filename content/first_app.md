@@ -50,7 +50,7 @@ class SimpleValidationViewController : ViewController {
       let usernameValid = usernameOutlet.rx.text.orEmpty
           // 用户名 -> 用户名是否有效
           .map { $0.characters.count >= minimalUsernameLength }
-          .shareReplay(1)
+          .share(replay: 1)
 
       ...
 
@@ -84,7 +84,7 @@ class SimpleValidationViewController : ViewController {
       let passwordValid = passwordOutlet.rx.text.orEmpty
           // 密码 -> 密码是否有效
           .map { $0.characters.count >= minimalPasswordLength }
-          .shareReplay(1)
+          .share(replay: 1)
 
       ...
 
@@ -121,7 +121,7 @@ class SimpleValidationViewController : ViewController {
             usernameValid,
             passwordValid
           ) { $0 && $1 } // 取用户名和密码同时有效
-          .shareReplay(1)
+          .share(replay: 1)
 
       ...
 
@@ -180,17 +180,17 @@ override func viewDidLoad() {
 
     let usernameValid = usernameOutlet.rx.text.orEmpty
         .map { $0.characters.count >= minimalUsernameLength }
-        .shareReplay(1)
+        .share(replay: 1)
 
     let passwordValid = passwordOutlet.rx.text.orEmpty
         .map { $0.characters.count >= minimalPasswordLength }
-        .shareReplay(1)
+        .share(replay: 1)
 
     let everythingValid = Observable.combineLatest(
           usernameValid,
           passwordValid
         ) { $0 && $1 }
-        .shareReplay(1)
+        .share(replay: 1)
 
     usernameValid
         .bind(to: passwordOutlet.rx.isEnabled)
@@ -229,7 +229,7 @@ func showAlert() {
 
 ### 更多疑问
 
-* `shareReplay(1)` 是用来做什么的？
+* `share(replay: 1)` 是用来做什么的？
 
   我们用 `usernameValid` 来控制用户名提示语是否隐藏以及密码输入框是否可用。[shareReplay] 就是让他们共享这一个源，而不是为他们单独创建新的源。这样可以减少不必要的开支。
 

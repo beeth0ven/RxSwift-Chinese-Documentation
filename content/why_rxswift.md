@@ -100,9 +100,9 @@ URLSession.shared.dataTask(with: URLRequest(url: url)) {
 ```swift
 URLSession.shared.rx.data(request: URLRequest(url: url))
     .subscribe(onNext: { data in
-            print("Data Task Success with count: \(data.count)")
+        print("Data Task Success with count: \(data.count)")
     }, onError: { error in
-            print("Data Task Error: \(error)")
+        print("Data Task Error: \(error)")
     })
     .disposed(by: disposeBag)
 ```
@@ -254,9 +254,9 @@ enum Api {
 Api.token(username: "beeth0ven", password: "987654321")
     .flatMapLatest(Api.userInfo)
     .subscribe(onNext: { userInfo in
-            print("获取用户信息成功: \(userInfo)")
+        print("获取用户信息成功: \(userInfo)")
     }, onError: { error in
-            print("获取用户信息失败: \(error)")
+        print("获取用户信息失败: \(error)")
     })
     .disposed(by: disposeBag)
 ```

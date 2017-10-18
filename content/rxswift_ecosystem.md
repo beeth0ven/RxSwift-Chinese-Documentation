@@ -174,15 +174,15 @@ everythingValid
 ...
 final Observable<Boolean> usernameValid = RxTextView.textChanges(usernameEditText)
         .map(text -> text.length() >= minimalUsernameLength)
-        .compose(Rx.share(replay: 1));
+        .compose(Rx.shareReplay(1));
 
 final Observable<Boolean> passwordValid = RxTextView.textChanges(usernameEditText)
         .map(text -> text.length() >= minimalPasswordLength)
-        .compose(Rx.share(replay: 1));
+        .compose(Rx.shareReplay(1));
 
 final Observable<Boolean> everythingValid = Observable
         .combineLatest(usernameValid, passwordValid, (isUsernameValid, isPasswordValid) -> isUsernameValid && isPasswordValid)
-        .compose(Rx.share(replay: 1));
+        .compose(Rx.shareReplay(1));
 
 disposables.add(usernameValid
         .subscribe(RxView.enabled(passwordEditText)));

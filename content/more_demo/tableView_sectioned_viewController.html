@@ -1561,7 +1561,16 @@
     , <span class="hljs-title">UITableViewDelegate</span> </span>{
     <span class="hljs-meta">@IBOutlet</span> <span class="hljs-keyword">weak</span> <span class="hljs-keyword">var</span> tableView: <span class="hljs-type">UITableView</span>!
 
-    <span class="hljs-keyword">let</span> dataSource = <span class="hljs-type">RxTableViewSectionedReloadDataSource</span>&lt;<span class="hljs-type">SectionModel</span>&lt;<span class="hljs-type">String</span>, <span class="hljs-type">Double</span>&gt;&gt;()
+    <span class="hljs-keyword">let</span> dataSource = <span class="hljs-type">RxTableViewSectionedReloadDataSource</span>&lt;<span class="hljs-type">SectionModel</span>&lt;<span class="hljs-type">String</span>, <span class="hljs-type">Double</span>&gt;&gt;(
+        configureCell: { (<span class="hljs-number">_</span>, tv, indexPath, element) <span class="hljs-keyword">in</span>
+            <span class="hljs-keyword">let</span> cell = tv.dequeueReusableCell(withIdentifier: <span class="hljs-string">&quot;Cell&quot;</span>)!
+            cell.textLabel?.text = <span class="hljs-string">&quot;<span class="hljs-subst">\(element)</span> @ row <span class="hljs-subst">\(indexPath.row)</span>&quot;</span>
+            <span class="hljs-keyword">return</span> cell
+        },
+        titleForHeaderInSection: { dataSource, sectionIndex <span class="hljs-keyword">in</span>
+            <span class="hljs-keyword">return</span> dataSource[sectionIndex].model
+        }
+    )
 
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
         <span class="hljs-keyword">super</span>.viewDidLoad()
@@ -1586,15 +1595,6 @@
                 ])
             ])
 
-        dataSource.configureCell = { (<span class="hljs-number">_</span>, tv, indexPath, element) <span class="hljs-keyword">in</span>
-            <span class="hljs-keyword">let</span> cell = tv.dequeueReusableCell(withIdentifier: <span class="hljs-string">&quot;Cell&quot;</span>)!
-            cell.textLabel?.text = <span class="hljs-string">&quot;<span class="hljs-subst">\(element)</span> @ row <span class="hljs-subst">\(indexPath.row)</span>&quot;</span>
-            <span class="hljs-keyword">return</span> cell
-        }
-
-        dataSource.titleForHeaderInSection = { dataSource, sectionIndex <span class="hljs-keyword">in</span>
-            <span class="hljs-keyword">return</span> dataSource[sectionIndex].model
-        }
 
         items
             .bind(to: tableView.rx.items(dataSource: dataSource))
@@ -1605,8 +1605,8 @@
             .<span class="hljs-built_in">map</span> { indexPath <span class="hljs-keyword">in</span>
                 <span class="hljs-keyword">return</span> (indexPath, dataSource[indexPath])
             }
-            .subscribe(onNext: { indexPath, model <span class="hljs-keyword">in</span>
-                <span class="hljs-type">DefaultWireframe</span>.presentAlert(<span class="hljs-string">&quot;Tapped `<span class="hljs-subst">\(model)</span>` @ <span class="hljs-subst">\(indexPath)</span>&quot;</span>)
+            .subscribe(onNext: { pair <span class="hljs-keyword">in</span>
+                <span class="hljs-type">DefaultWireframe</span>.presentAlert(<span class="hljs-string">&quot;Tapped `<span class="hljs-subst">\(pair.<span class="hljs-number">1</span>)</span>` @ <span class="hljs-subst">\(pair.<span class="hljs-number">0</span>)</span>&quot;</span>)
             })
             .disposed(by: disposeBag)
 
@@ -1625,23 +1625,24 @@
     }
 }
 </code></pre>
-<p>&#x6211;&#x4EEC;&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>dataSource: RxTableViewSectionedReloadDataSource&lt;SectionModel&lt;String, Double&gt;&gt;</code>&#xFF0C;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x8F85;&#x52A9;&#x7C7B;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x4E0D;&#x7528;&#x6267;&#x884C;&#x6570;&#x636E;&#x6E90;&#x4EE3;&#x7406;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x53EA;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x5FC5;&#x8981;&#x7684;&#x914D;&#x7F6E;&#x51FD;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x5E03;&#x5C40;&#x5217;&#x8868;&#x9875;&#x4E86;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>dataSource: RxTableViewSectionedReloadDataSource&lt;SectionModel&lt;String, Double&gt;&gt;</code>:</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> dataSource = <span class="hljs-type">RxTableViewSectionedReloadDataSource</span>&lt;<span class="hljs-type">SectionModel</span>&lt;<span class="hljs-type">String</span>, <span class="hljs-type">Double</span>&gt;&gt;(
+    configureCell: { (<span class="hljs-number">_</span>, tv, indexPath, element) <span class="hljs-keyword">in</span>
+        <span class="hljs-keyword">let</span> cell = tv.dequeueReusableCell(withIdentifier: <span class="hljs-string">&quot;Cell&quot;</span>)!
+        cell.textLabel?.text = <span class="hljs-string">&quot;<span class="hljs-subst">\(element)</span> @ row <span class="hljs-subst">\(indexPath.row)</span>&quot;</span>
+        <span class="hljs-keyword">return</span> cell
+    },
+    titleForHeaderInSection: { dataSource, sectionIndex <span class="hljs-keyword">in</span>
+        <span class="hljs-keyword">return</span> dataSource[sectionIndex].model
+    }
+)
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x8F85;&#x52A9;&#x7C7B;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x4E0D;&#x7528;&#x6267;&#x884C;&#x6570;&#x636E;&#x6E90;&#x4EE3;&#x7406;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x53EA;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x5FC5;&#x8981;&#x7684;&#x914D;&#x7F6E;&#x51FD;&#x6570;&#x5C31;&#x53EF;&#x4EE5;&#x5E03;&#x5C40;&#x5217;&#x8868;&#x9875;&#x4E86;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570; <code>configureCell</code> &#x662F;&#x7528;&#x6765;&#x914D;&#x7F6E; <code>Cell</code> &#x7684;&#x663E;&#x793A;&#xFF0C;&#x800C;&#x8FD9;&#x91CC;&#x7684;&#x53C2;&#x6570; <code>element</code> &#x5C31;&#x662F; <code>SectionModel&lt;String, Double&gt;</code> &#x4E2D;&#x7684; <code>Double</code>&#x3002;</p>
+<p>&#x7B2C;&#x4E8C;&#x4E2A;&#x51FD;&#x6570; <code>titleForHeaderInSection</code> &#x662F;&#x7528;&#x6765;&#x914D;&#x7F6E; <code>Section</code> &#x7684;&#x6807;&#x9898;&#xFF0C;&#x800C; <code>dataSource[sectionIndex].model</code> &#x5C31;&#x662F; <code>SectionModel&lt;String, Double&gt;</code> &#x4E2D;&#x7684; <code>String</code>&#x3002;</p>
 <p>&#x7136;&#x540E;&#x4E3A;&#x5217;&#x8868;&#x9875;&#x8BA2;&#x5236;&#x4E00;&#x4E2A;&#x591A;&#x5C42;&#x7EA7;&#x7684;&#x6570;&#x636E;&#x6E90; <code>items:  Observable&lt;[SectionModel&lt;String, Double&gt;]&gt;</code>&#xFF0C;&#x7528;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x6E90;&#x6765;&#x7ED1;&#x5B9A;&#x5217;&#x8868;&#x9875;&#x3002;</p>
 <p><img src="../../assets/MoreDemo/TableViewSectionedViewController/bindings.png" alt=""></p>
 <p>&#x8FD9;&#x91CC; <code>SectionModel&lt;String, Double&gt;</code> &#x4E2D;&#x7684; <code>String</code> &#x662F;&#x7528;&#x6765;&#x663E;&#x793A; <code>Section</code> &#x7684;&#x6807;&#x9898;&#x3002;&#x800C; <code>Double</code> &#x662F;&#x7528;&#x6765;&#x7ED1;&#x5B9A;&#x5BF9;&#x5E94;&#x7684; <code>Cell</code>&#x3002;&#x5047;&#x5982;&#x6211;&#x4EEC;&#x7684;&#x5217;&#x8868;&#x9875;&#x662F;&#x7528;&#x6765;&#x663E;&#x793A;&#x901A;&#x8BAF;&#x5F55;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8BAF;&#x5F55;&#x901A;&#x8FC7;&#x9996;&#x5B57;&#x6BCD;&#x6765;&#x5206;&#x7EC4;&#x3002;&#x90A3;&#x4E48;&#x5E94;&#x8BE5;&#x628A;&#x6570;&#x636E;&#x5B9A;&#x4E49;&#x4E3A; <code>SectionModel&lt;String, Person&gt;</code>&#xFF0C;&#x7136;&#x540E;&#x7528;&#x9996;&#x5B57;&#x6BCD; <code>String</code> &#x6765;&#x663E;&#x793A; <code>Section</code> &#x6807;&#x9898;&#xFF0C;&#x7528;&#x8054;&#x7CFB;&#x4EBA; <code>Person</code> &#x6765;&#x663E;&#x793A;&#x5BF9;&#x5E94;&#x7684; <code>Cell</code>&#x3002;</p>
-<p>&#x793A;&#x4F8B;&#x4E2D;&#x540E;&#x9762;&#x7684;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x914D;&#x7F6E; <code>Cell</code> &#x548C; <code>SectionHeader</code>&#xFF1A;</p>
-<pre><code class="lang-swift">dataSource.configureCell = { (<span class="hljs-number">_</span>, tv, indexPath, element) <span class="hljs-keyword">in</span>
-    <span class="hljs-keyword">let</span> cell = tv.dequeueReusableCell(withIdentifier: <span class="hljs-string">&quot;Cell&quot;</span>)!
-    cell.textLabel?.text = <span class="hljs-string">&quot;<span class="hljs-subst">\(element)</span> @ row <span class="hljs-subst">\(indexPath.row)</span>&quot;</span>
-    <span class="hljs-keyword">return</span> cell
-}
-
-dataSource.titleForHeaderInSection = { dataSource, sectionIndex <span class="hljs-keyword">in</span>
-    <span class="hljs-keyword">return</span> dataSource[sectionIndex].model
-}
-</code></pre>
-<p>&#x7B2C;&#x4E00;&#x4E2A;&#x51FD;&#x6570; <code>configureCell</code> &#x662F;&#x7528;&#x6765;&#x914D;&#x7F6E; <code>Cell</code> &#x7684;&#x663E;&#x793A;&#xFF0C;&#x800C;&#x8FD9;&#x91CC;&#x7684;&#x53C2;&#x6570; <code>element</code> &#x5C31;&#x662F; <code>SectionModel&lt;String, Double&gt;</code> &#x4E2D;&#x7684; <code>Double</code>&#x3002;</p>
-<p>&#x7B2C;&#x4E8C;&#x4E2A;&#x51FD;&#x6570; <code>titleForHeaderInSection</code> &#x662F;&#x7528;&#x6765;&#x914D;&#x7F6E; <code>Section</code> &#x7684;&#x6807;&#x9898;&#xFF0C;&#x800C; <code>dataSource[sectionIndex].model</code> &#x5C31;&#x662F; <code>SectionModel&lt;String, Double&gt;</code> &#x4E2D;&#x7684; <code>String</code>&#x3002;</p>
 <p>&#x7531;&#x4E8E; <code>SectionModel&lt;Section, ItemType&gt;</code> &#x662F;&#x4E00;&#x4E2A;&#x8303;&#x578B;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x5B83;&#x6765;&#x5B9A;&#x4E49;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684; <code>Section</code> &#x4EE5;&#x53CA; <code>Item</code>&#x3002;</p>
 <p>&#x6700;&#x540E;:</p>
 <pre><code class="lang-swift"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
@@ -1710,7 +1711,7 @@ dataSource.titleForHeaderInSection = { dataSource, sectionIndex <span class="hlj
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"TableViewSectionedViewController - 多层级的列表页","level":"1.7.2","depth":2,"next":{"title":"Calculator - 计算器","level":"1.7.3","depth":2,"path":"content/more_demo/calculator.md","ref":"content/more_demo/calculator.md","articles":[]},"previous":{"title":"ImagePicker - 图片选择器","level":"1.7.1","depth":2,"path":"content/more_demo/image_picker.md","ref":"content/more_demo/image_picker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/more_demo/tableView_sectioned_viewController.md","mtime":"2017-10-09T01:08:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-09T01:08:34.231Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"TableViewSectionedViewController - 多层级的列表页","level":"1.7.2","depth":2,"next":{"title":"Calculator - 计算器","level":"1.7.3","depth":2,"path":"content/more_demo/calculator.md","ref":"content/more_demo/calculator.md","articles":[]},"previous":{"title":"ImagePicker - 图片选择器","level":"1.7.1","depth":2,"path":"content/more_demo/image_picker.md","ref":"content/more_demo/image_picker.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/more_demo/tableView_sectioned_viewController.md","mtime":"2017-10-18T06:12:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-18T08:11:02.747Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

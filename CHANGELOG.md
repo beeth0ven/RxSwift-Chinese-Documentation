@@ -17,6 +17,12 @@
 
 ---
 
+## Master
+
+* 给 [BehaviorSubject](/content/rxswift_core/observable_and_observer/behavior_subject.md) 加入演示代码
+
+---
+
 ## [0.2.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/0.2.0)
 
 #### 17年10月9日

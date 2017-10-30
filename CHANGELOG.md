@@ -4,6 +4,13 @@
 
 ---
 
+## Master
+
+* 给 [elementAt](/content/decision_tree/elementAt.md) 操作符加入演示代码
+* 给 [BehaviorSubject](/content/rxswift_core/observable_and_observer/behavior_subject.md) 加入演示代码
+
+---
+
 ## [1.0.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/1.0.0)
 
 #### 17年10月18日（RxSwift 4）
@@ -14,12 +21,6 @@
 * 给 [RxJava 演示代码](/content/rxswift_ecosystem.md) 中的变量加上 `final` 关键字，声明为常量
 * 示例[多层级的列表页](/content/more_demo/tableView_sectioned_viewController.md)更新到 RxSwift 4，使用新的 RxDataSources 构建方法
 * 文档[首页](introduction.md)更新到 RxSwift 4
-
----
-
-## Master
-
-* 给 [BehaviorSubject](/content/rxswift_core/observable_and_observer/behavior_subject.md) 加入演示代码
 
 ---
 

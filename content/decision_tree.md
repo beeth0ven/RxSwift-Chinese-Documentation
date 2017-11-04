@@ -77,8 +77,8 @@
 **我想要从一些 `Observables` 中，只取第一个产生元素的 `Observable`：[amb](decision_tree/amb.md)**
 
 **我想评估 `Observable` 的全部元素**
-* 并且对没个元素应用聚合方法，待所有元素都应用聚合方法后，发出结果：[reduce](decision_tree/reduce.md)
-* 并且对没个元素应用聚合方法，每次应用聚合方法后，发出结果：[scan](decision_tree/scan.md)
+* 并且对每个元素应用聚合方法，待所有元素都应用聚合方法后，发出结果：[reduce](decision_tree/reduce.md)
+* 并且对每个元素应用聚合方法，每次应用聚合方法后，发出结果：[scan](decision_tree/scan.md)
 
 **我想把 `Observable` 转换为其他的数据结构：as...**
 

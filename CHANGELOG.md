@@ -6,6 +6,7 @@
 
 ## Master
 
+* 给 [AsyncSubject](/content/rxswift_core/observable_and_observer/async_subject.md) 加入演示代码
 * 给 [take](/content/decision_tree/take.md) 操作符加入演示代码
 * 给 [elementAt](/content/decision_tree/elementAt.md) 操作符加入演示代码
 * 给 [BehaviorSubject](/content/rxswift_core/observable_and_observer/behavior_subject.md) 加入演示代码

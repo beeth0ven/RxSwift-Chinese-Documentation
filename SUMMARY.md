@@ -38,6 +38,7 @@
   * [connect](content/decision_tree/connect.md)
   * [create](content/decision_tree/create.md)
   * [debounce](content/decision_tree/debounce.md)
+  * [debug](content/decision_tree/debug.md)
   * [defer](content/decision_tree/defer.md)
   * [delay](content/decision_tree/delay.md)
   * [delaySubscription](content/decision_tree/delaySubscription.md)

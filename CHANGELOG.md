@@ -6,6 +6,7 @@
 
 ## Master
 
+* 给 [takeWhile](/content/decision_tree/takeWhile.md) 操作符加入演示代码
 * 给 [takeLast](/content/decision_tree/takeLast.md) 操作符加入演示代码
 * 加入 [debug](/content/decision_tree/debug.md) 操作符
 * 给 [AsyncSubject](/content/rxswift_core/observable_and_observer/async_subject.md) 加入演示代码

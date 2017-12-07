@@ -4,8 +4,11 @@
 
 ---
 
-## Master
+## [1.1.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/1.1.0)
 
+#### 17年12月7日
+
+* 纠正错别字
 * 给 [takeUntil](/content/decision_tree/takeUntil.md) 操作符加入演示代码
 * 给 [takeWhile](/content/decision_tree/takeWhile.md) 操作符加入演示代码
 * 给 [takeLast](/content/decision_tree/takeLast.md) 操作符加入演示代码

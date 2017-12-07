@@ -1,7 +1,7 @@
 <img src="assets/Rx_Logo_M.png" alt="Miss Electric Eel 2016" width="36" height="36"> RxSwift: ReactiveX for Swift
 ======================================
 
-[![Travis CI](https://travis-ci.org/ReactiveX/RxSwift.svg?branch=master)](https://travis-ci.org/ReactiveX/RxSwift) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-333333.svg) ![pod](https://img.shields.io/cocoapods/v/RxSwift.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) ![QQ Group](https://img.shields.io/badge/QQ%20交流群-424180219-blue.svg) [![epub](https://img.shields.io/badge/点击下载-文档电子书-blue.svg)](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/download/1.0.0/RxSwiftChineseDocumentation.epub)
+[![Travis CI](https://travis-ci.org/ReactiveX/RxSwift.svg?branch=master)](https://travis-ci.org/ReactiveX/RxSwift) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-333333.svg) ![pod](https://img.shields.io/cocoapods/v/RxSwift.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) ![QQ Group](https://img.shields.io/badge/QQ%20交流群-424180219-blue.svg) [![epub](https://img.shields.io/badge/点击下载-文档电子书-blue.svg)](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/download/1.1.0/RxSwiftChineseDocumentation.epub)
 
 [ReactiveX](http://reactivex.io/)（简写: Rx） 是一个可以帮助我们简化异步编程的框架。
 
@@ -20,14 +20,17 @@
 ------
 ## 文档更新日志
 
-#### 17年10月18日（RxSwift 4）
+#### 17年12月7日
 
-* 加入[文档电子书下载地址](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/download/1.0.0/RxSwiftChineseDocumentation.epub)
-* 去掉学习资源[《如何将代理转换为序列》](https://medium.com/@maxofeden/rxswift-migrate-delegates-to-beautiful-observables-3e606a863048)，因为 RxSwift 4 重构了 **DelegateProxy**  [#1379](https://github.com/ReactiveX/RxSwift/pull/1379)
-* 使用 `share(replay: 1)` 替换 `shareReplay(1)`
-* 给 [RxJava 演示代码](/content/rxswift_ecosystem.md) 中的变量加上 `final` 关键字，声明为常量
-* 示例[多层级的列表页](/content/more_demo/tableView_sectioned_viewController.md)更新到 RxSwift 4，使用新的 RxDataSources 构建方法
-* 文档首页更新到 RxSwift 4
+* 纠正错别字
+* 给 [takeUntil](/content/decision_tree/takeUntil.md) 操作符加入演示代码
+* 给 [takeWhile](/content/decision_tree/takeWhile.md) 操作符加入演示代码
+* 给 [takeLast](/content/decision_tree/takeLast.md) 操作符加入演示代码
+* 加入 [debug](/content/decision_tree/debug.md) 操作符
+* 给 [AsyncSubject](/content/rxswift_core/observable_and_observer/async_subject.md) 加入演示代码
+* 给 [take](/content/decision_tree/take.md) 操作符加入演示代码
+* 给 [elementAt](/content/decision_tree/elementAt.md) 操作符加入演示代码
+* 给 [BehaviorSubject](/content/rxswift_core/observable_and_observer/behavior_subject.md) 加入演示代码
 
   **[... 点击查看更多](CHANGELOG.md)**
 

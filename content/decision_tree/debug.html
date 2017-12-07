@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>filter · RxSwift 中文文档</title>
+        <title>debug · RxSwift 中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -75,10 +75,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="flatMap.html" />
+    <link rel="next" href="defer.html" />
     
     
-    <link rel="prev" href="error.html" />
+    <link rel="prev" href="debounce.html" />
     
 
     
@@ -649,7 +649,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.10" data-path="debug.html">
+        <li class="chapter active" data-level="1.6.10" data-path="debug.html">
             
                 <a href="debug.html">
             
@@ -779,7 +779,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.20" data-path="filter.html">
+        <li class="chapter " data-level="1.6.20" data-path="filter.html">
             
                 <a href="filter.html">
             
@@ -1539,7 +1539,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >filter</a>
+        <a href="../.." >debug</a>
     </h1>
 </div>
 
@@ -1554,23 +1554,30 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="filter"><a name="filter" class="plugin-anchor" href="#filter"><i class="fa fa-link" aria-hidden="true"></i></a>filter</h2>
-<p><strong>&#x4EC5;&#x4EC5;&#x53D1;&#x51FA; <code>Observable</code> &#x4E2D;&#x901A;&#x8FC7;&#x5224;&#x5B9A;&#x7684;&#x5143;&#x7D20;</strong></p>
-<p><img src="../../assets/WhichOperator/Operators/filter.png" alt=""></p>
-<p><strong>filter</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x901A;&#x8FC7;&#x4F60;&#x63D0;&#x4F9B;&#x7684;&#x5224;&#x5B9A;&#x65B9;&#x6CD5;&#x8FC7;&#x6EE4;&#x4E00;&#x4E2A; <code>Observable</code>&#x3002;</p>
+                                <h2 id="debug"><a name="debug" class="plugin-anchor" href="#debug"><i class="fa fa-link" aria-hidden="true"></i></a>debug</h2>
+<p><strong>&#x6253;&#x5370;&#x6240;&#x6709;&#x7684;&#x8BA2;&#x9605;&#xFF0C;&#x4E8B;&#x4EF6;&#x4EE5;&#x53CA;&#x9500;&#x6BC1;&#x4FE1;&#x606F;</strong></p>
 <hr>
 <h3 id="&#x6F14;&#x793A;"><a name="&#x6F14;&#x793A;" class="plugin-anchor" href="#&#x6F14;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6F14;&#x793A;</h3>
 <pre><code class="lang-swift"><span class="hljs-keyword">let</span> disposeBag = <span class="hljs-type">DisposeBag</span>()
 
-<span class="hljs-type">Observable</span>.of(<span class="hljs-number">2</span>, <span class="hljs-number">30</span>, <span class="hljs-number">22</span>, <span class="hljs-number">5</span>, <span class="hljs-number">60</span>, <span class="hljs-number">1</span>)
-          .<span class="hljs-built_in">filter</span> { $<span class="hljs-number">0</span> &gt; <span class="hljs-number">10</span> }
-          .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
-          .disposed(by: disposeBag)
+<span class="hljs-keyword">let</span> sequence = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">String</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onNext(<span class="hljs-string">&quot;&#x1F34E;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F350;&quot;</span>)
+    observer.onCompleted()
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+
+sequence
+    .debug(<span class="hljs-string">&quot;Fruit&quot;</span>)
+    .subscribe()
+    .disposed(by: disposeBag)
 </code></pre>
 <p><strong>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;</strong></p>
-<pre><code class="lang-swift"><span class="hljs-number">30</span>
-<span class="hljs-number">22</span>
-<span class="hljs-number">60</span>
+<pre><code class="lang-swift"><span class="hljs-number">2017</span>-<span class="hljs-number">11</span>-<span class="hljs-number">06</span> <span class="hljs-number">20</span>:<span class="hljs-number">49</span>:<span class="hljs-number">43.187</span>: <span class="hljs-type">Fruit</span> -&gt; subscribed
+<span class="hljs-number">2017</span>-<span class="hljs-number">11</span>-<span class="hljs-number">06</span> <span class="hljs-number">20</span>:<span class="hljs-number">49</span>:<span class="hljs-number">43.188</span>: <span class="hljs-type">Fruit</span> -&gt; <span class="hljs-type">Event</span> next(&#x1F34E;)
+<span class="hljs-number">2017</span>-<span class="hljs-number">11</span>-<span class="hljs-number">06</span> <span class="hljs-number">20</span>:<span class="hljs-number">49</span>:<span class="hljs-number">43.188</span>: <span class="hljs-type">Fruit</span> -&gt; <span class="hljs-type">Event</span> next(&#x1F350;)
+<span class="hljs-number">2017</span>-<span class="hljs-number">11</span>-<span class="hljs-number">06</span> <span class="hljs-number">20</span>:<span class="hljs-number">49</span>:<span class="hljs-number">43.188</span>: <span class="hljs-type">Fruit</span> -&gt; <span class="hljs-type">Event</span> completed
+<span class="hljs-number">2017</span>-<span class="hljs-number">11</span>-<span class="hljs-number">06</span> <span class="hljs-number">20</span>:<span class="hljs-number">49</span>:<span class="hljs-number">43.189</span>: <span class="hljs-type">Fruit</span> -&gt; isDisposed
 </code></pre>
 
                                 
@@ -1599,12 +1606,12 @@
 
             
                 
-                <a href="error.html" class="navigation navigation-prev " aria-label="Previous page: error">
+                <a href="debounce.html" class="navigation navigation-prev " aria-label="Previous page: debounce">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="flatMap.html" class="navigation navigation-next " aria-label="Next page: flatMap">
+                <a href="defer.html" class="navigation navigation-next " aria-label="Next page: defer">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1615,7 +1622,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"filter","level":"1.6.20","depth":2,"next":{"title":"flatMap","level":"1.6.21","depth":2,"path":"content/decision_tree/flatMap.md","ref":"content/decision_tree/flatMap.md","articles":[]},"previous":{"title":"error","level":"1.6.19","depth":2,"path":"content/decision_tree/error.md","ref":"content/decision_tree/error.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/decision_tree/filter.md","mtime":"2017-10-18T08:14:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-07T08:37:41.109Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"debug","level":"1.6.10","depth":2,"next":{"title":"defer","level":"1.6.11","depth":2,"path":"content/decision_tree/defer.md","ref":"content/decision_tree/defer.md","articles":[]},"previous":{"title":"debounce","level":"1.6.9","depth":2,"path":"content/decision_tree/debounce.md","ref":"content/decision_tree/debounce.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/decision_tree/debug.md","mtime":"2017-12-07T08:36:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-07T08:37:41.109Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

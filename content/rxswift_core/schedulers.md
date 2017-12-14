@@ -46,7 +46,7 @@ rxData
 MainScheduler 代表**主线程**。如果你需要执行一些和 UI 相关的任务，就需要切换到该 Scheduler 运行。
 
 ### SerialDispatchQueueScheduler
-SerialDispatchQueueScheduler 抽象了**窜行** `DispatchQueue`。如果你需要执行一些窜行任务，可以切换到这个 Scheduler 运行。
+SerialDispatchQueueScheduler 抽象了**串行** `DispatchQueue`。如果你需要执行一些串行任务，可以切换到这个 Scheduler 运行。
 
 ### ConcurrentDispatchQueueScheduler
 ConcurrentDispatchQueueScheduler 抽象了**并行** `DispatchQueue`。如果你需要执行一些并发任务，可以切换到这个 Scheduler 运行。

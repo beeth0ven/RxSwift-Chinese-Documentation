@@ -1,4 +1,4 @@
-### defer
+### ~~defer~~ RxSwift中不存在
 
 **直到订阅发生，才创建 `Observable`，并且为每位订阅者创建全新的 `Observable`**
 

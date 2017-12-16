@@ -14,7 +14,7 @@
 * 从一个序列拉取元素：[from](decision_tree/from.md)
 * 重复的产生某一个元素：[repeatElement](decision_tree/repeatElement.md)
 * 存在自定义逻辑：[create](decision_tree/create.md)
-* 每次订阅时产生：[defer](decision_tree/defer.md)
+* 每次订阅时产生：[deferred](decision_tree/deferred.md)
 * 每隔一段时间，发出一个元素：[interval](decision_tree/interval.md)
   * 在一段延时后：[timer](decision_tree/timer.md)
 * 一个空序列，只有一个完成事件：[empty](decision_tree/empty.md)

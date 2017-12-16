@@ -10,7 +10,7 @@
 * [4. RxSwift 核心](content/rxswift_core.md)
   * [4.1 Observable - 可被监听的序列](content/rxswift_core/observable.md)
     * [Single](content/rxswift_core/observable/single.md)
-    * [Completeable](content/rxswift_core/observable/completeable.md)
+    * [Completable](content/rxswift_core/observable/completable.md)
     * [Maybe](content/rxswift_core/observable/maybe.md)
     * [Driver](content/rxswift_core/observable/driver.md)
     * [ControlEvent](content/rxswift_core/observable/control_event.md)

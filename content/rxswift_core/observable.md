@@ -138,7 +138,7 @@ public enum Event<Element> {
 我们都知道 **Swift** 是一个强类型语言，而强类型语言相对于弱类型语言的一个优点是更加严谨。我们可以通过类型来判断出，实例有哪些特征。同样的在 **RxSwift** 里面 `Observable` 也存在一些特征序列，这些特征序列可以帮助我们更准确的描述序列。并且它们还可以给我们提供语法糖，让我们能够用更加优雅的方式书写代码，他们分别是：
 
 * [Single](observable/single.md)
-* [Completable](observable/completeable.md)
+* [Completable](observable/completable.md)
 * [Maybe](observable/maybe.md)
 * [Driver](observable/driver.md)
 * [ControlEvent](observable/control_event.md)

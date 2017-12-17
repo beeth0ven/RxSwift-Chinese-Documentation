@@ -4,6 +4,12 @@
 
 ---
 
+## master
+
+* 给 [skip](/content/decision_tree/skip.md) 操作符加入演示代码
+
+---
+
 ## [1.1.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/1.1.0)
 
 #### 17年12月7日

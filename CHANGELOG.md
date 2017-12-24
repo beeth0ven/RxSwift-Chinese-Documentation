@@ -6,6 +6,7 @@
 
 ## master
 
+* 给 [skipWhile](/content/decision_tree/skipWhile.md) 操作符加入演示代码
 * 给 [skip](/content/decision_tree/skip.md) 操作符加入演示代码
 
 ---

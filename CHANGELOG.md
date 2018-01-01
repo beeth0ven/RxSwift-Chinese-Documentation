@@ -6,6 +6,7 @@
 
 ## master
 
+* 给 [publish](/content/decision_tree/publish.md) 操作符加入演示代码
 * 给 [reduce](/content/decision_tree/reduce.md) 操作符加入演示代码
 * 给 [skipUntil](/content/decision_tree/skipUntil.md) 操作符加入演示代码
 * 给 [skipWhile](/content/decision_tree/skipWhile.md) 操作符加入演示代码

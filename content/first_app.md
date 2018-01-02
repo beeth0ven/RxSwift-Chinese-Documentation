@@ -49,7 +49,7 @@ class SimpleValidationViewController : ViewController {
       // 用户名是否有效
       let usernameValid = usernameOutlet.rx.text.orEmpty
           // 用户名 -> 用户名是否有效
-          .map { $0.characters.count >= minimalUsernameLength }
+          .map { $0.count >= minimalUsernameLength }
           .share(replay: 1)
 
       ...
@@ -83,7 +83,7 @@ class SimpleValidationViewController : ViewController {
       // 密码是否有效
       let passwordValid = passwordOutlet.rx.text.orEmpty
           // 密码 -> 密码是否有效
-          .map { $0.characters.count >= minimalPasswordLength }
+          .map { $0.count >= minimalPasswordLength }
           .share(replay: 1)
 
       ...
@@ -179,11 +179,11 @@ override func viewDidLoad() {
     passwordValidOutlet.text = "Password has to be at least \(minimalPasswordLength) characters"
 
     let usernameValid = usernameOutlet.rx.text.orEmpty
-        .map { $0.characters.count >= minimalUsernameLength }
+        .map { $0.count >= minimalUsernameLength }
         .share(replay: 1)
 
     let passwordValid = passwordOutlet.rx.text.orEmpty
-        .map { $0.characters.count >= minimalPasswordLength }
+        .map { $0.count >= minimalPasswordLength }
         .share(replay: 1)
 
     let everythingValid = Observable.combineLatest(

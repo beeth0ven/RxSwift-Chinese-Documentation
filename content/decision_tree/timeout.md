@@ -4,4 +4,4 @@
 
 ![](/assets/WhichOperator/Operators/timeout.png)
 
-**timer** 操作符将使得序列发出一个 `error` 事件，只要 `Observable` 在一段时间内没有产生元素。
+**timeout** 操作符将使得序列发出一个 `error` 事件，只要 `Observable` 在一段时间内没有产生元素。

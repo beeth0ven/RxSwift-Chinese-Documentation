@@ -6,6 +6,7 @@
 
 ## master
 
+* 给 [retry](/content/decision_tree/retry.md) 操作符加入演示代码
 * 给 [replay](/content/decision_tree/replay.md) 操作符加入演示代码
 * 给 [connect](/content/decision_tree/connect.md) 操作符加入演示代码
 * 给 [publish](/content/decision_tree/publish.md) 操作符加入演示代码

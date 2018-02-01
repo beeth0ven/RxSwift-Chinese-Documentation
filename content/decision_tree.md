@@ -36,7 +36,7 @@
   * 每一个元素转换的 `Observable` 按顺序产生元素：[concatMap](decision_tree/concatMap.md)
 * 基于所有遍历过的元素： [scan](decision_tree/scan.md)
 
-**我想要将产生的每一个元素，拖延一段时间后在发出：[delay](decision_tree/delay.md)**
+**我想要将产生的每一个元素，拖延一段时间后再发出：[delay](decision_tree/delay.md)**
 
 **我想要将产生的事件封装成元素发送出来**
 * 将他们封装成 `Event<Element>`：[materialize](decision_tree/materialize.md)

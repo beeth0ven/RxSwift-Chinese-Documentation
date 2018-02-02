@@ -1,6 +1,6 @@
 ## takeUntil
 
-**忽略一部分元素，这些元素是在第二个 `Observable` 产生事件后发出的**
+**忽略掉在第二个 `Observable` 产生事件后发出的那部分元素**
 
 ![](/assets/WhichOperator/Operators/takeUntil.png)
 

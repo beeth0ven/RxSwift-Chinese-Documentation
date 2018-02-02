@@ -4,4 +4,4 @@
 
 ![](/assets/WhichOperator/Operators/replay.png)
 
-**shareReplay** 操作符将使得观察者共享源 `Observable`，并且缓存最新的 **n** 个元素，将这些元素直接发送给新的观察者。
+**shareReplay** 操作符将使得观察者共享原 `Observable`，并且缓存最新的 **n** 个元素，将这些元素直接发送给新的观察者。

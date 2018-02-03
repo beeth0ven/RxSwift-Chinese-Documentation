@@ -8,7 +8,7 @@
 
 ---
 
-### 演示
+### 演示 1
 
 ```swift
 let disposeBag = DisposeBag()
@@ -52,4 +52,55 @@ Error encountered
 🐶
 🐱
 🐭
+```
+
+
+### 演示 2
+
+```swift
+let disposeBag = DisposeBag()
+var count = 1
+
+let sequenceThatErrors = Observable<String>.create { observer in
+    observer.onNext("🍎")
+    observer.onNext("🍐")
+    observer.onNext("🍊")
+
+    if count < 5 {
+        observer.onError(TestError.test)
+        print("Error encountered")
+        count += 1
+    }
+
+    observer.onNext("🐶")
+    observer.onNext("🐱")
+    observer.onNext("🐭")
+    observer.onCompleted()
+
+    return Disposables.create()
+}
+
+sequenceThatErrors
+    .retry(3)
+    .subscribe(onNext: { print($0) })
+    .disposed(by: disposeBag)
+```
+
+**输出结果：**
+
+```swift
+🍎
+🍐
+🍊
+Error encountered
+🍎
+🍐
+🍊
+Error encountered
+🍎
+🍐
+🍊
+Error encountered
+Unhandled error happened: test
+ subscription called from:
 ```

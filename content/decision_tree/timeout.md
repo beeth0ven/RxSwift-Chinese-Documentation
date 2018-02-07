@@ -4,4 +4,4 @@
 
 ![](/assets/WhichOperator/Operators/timeout.png)
 
-**timeout** 操作符将使得 `Observable` 在一段时间内没有产生元素时，发出一个 `error` 事件。
+如果 `Observable` 在一段时间内没有产生元素，**timeout** 操作符将使它发出一个 `error` 事件。

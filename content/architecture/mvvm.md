@@ -207,7 +207,9 @@ class SimpleValidationViewController : ViewController {
 
 下一节将用 [Github Signup] 来演示如何使用 **MVVM**。
 
-_注意⚠️：这里介绍的 **MVVM** 并不是严格意义上的 **MVVM**。但我们通常都管它叫 **MVVM**，而且它配合 **RxSwift** 使用起来非常方便。_
+_注意⚠️：这里介绍的 **MVVM** 并不是严格意义上的 **MVVM**。但我们通常都管它叫 **MVVM**，而且它配合 **RxSwift** 使用起来非常方便。如需了解什么是严格意义上的 **MVVM**，请参考**微软**的 [The MVVM Pattern]。_
 
 [MVC]:https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html
 [Github Signup]:mvvm/github_signup.md
+
+[The MVVM Pattern]:https://msdn.microsoft.com/en-us/library/hh848246.aspx

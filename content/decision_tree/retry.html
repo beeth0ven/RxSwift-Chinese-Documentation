@@ -262,12 +262,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.2" data-path="../rxswift_core/observable/completeable.html">
+        <li class="chapter " data-level="1.5.1.2" data-path="../rxswift_core/observable/completable.html">
             
-                <a href="../rxswift_core/observable/completeable.html">
+                <a href="../rxswift_core/observable/completable.html">
             
                     
-                    Completeable
+                    Completable
             
                 </a>
             
@@ -662,12 +662,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.11" data-path="defer.html">
+        <li class="chapter " data-level="1.6.11" data-path="deferred.html">
             
-                <a href="defer.html">
+                <a href="deferred.html">
             
                     
-                    defer
+                    deferred
             
                 </a>
             
@@ -1558,6 +1558,91 @@
 <p><strong>&#x5982;&#x679C;&#x6E90; <code>Observable</code> &#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x4E8B;&#x4EF6;&#xFF0C;&#x91CD;&#x65B0;&#x5BF9;&#x5B83;&#x8FDB;&#x884C;&#x8BA2;&#x9605;&#xFF0C;&#x5E0C;&#x671B;&#x5B83;&#x4E0D;&#x4F1A;&#x518D;&#x6B21;&#x4EA7;&#x751F;&#x9519;&#x8BEF;</strong></p>
 <p><img src="../../assets/WhichOperator/Operators/retry.png" alt=""></p>
 <p><strong>retry</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x4E0D;&#x4F1A;&#x5C06; <code>error</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x4F20;&#x9012;&#x7ED9;&#x89C2;&#x5BDF;&#x8005;&#xFF0C;&#x7136;&#x800C;&#xFF0C;&#x5B83;&#x4F1A;&#x4ECE;&#x65B0;&#x8BA2;&#x9605;&#x6E90; <code>Observable</code>&#xFF0C;&#x7ED9;&#x8FD9;&#x4E2A; <code>Observable</code> &#x4E00;&#x4E2A;&#x91CD;&#x8BD5;&#x7684;&#x673A;&#x4F1A;&#xFF0C;&#x8BA9;&#x5B83;&#x6709;&#x673A;&#x4F1A;&#x4E0D;&#x4EA7;&#x751F; <code>error</code> &#x4E8B;&#x4EF6;&#x3002;<strong>retry</strong> &#x603B;&#x662F;&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x51FA; <code>next</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x5373;&#x4FBF;&#x6E90;&#x5E8F;&#x5217;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E2A; <code>error</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x6837;&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x91CD;&#x590D;&#x7684;&#x5143;&#x7D20;&#xFF08;&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF09;&#x3002;</p>
+<hr>
+<h3 id="&#x6F14;&#x793A;-1"><a name="&#x6F14;&#x793A;-1" class="plugin-anchor" href="#&#x6F14;&#x793A;-1"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6F14;&#x793A; 1</h3>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> disposeBag = <span class="hljs-type">DisposeBag</span>()
+<span class="hljs-keyword">var</span> <span class="hljs-built_in">count</span> = <span class="hljs-number">1</span>
+
+<span class="hljs-keyword">let</span> sequenceThatErrors = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">String</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onNext(<span class="hljs-string">&quot;&#x1F34E;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F350;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F34A;&quot;</span>)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">count</span> == <span class="hljs-number">1</span> {
+        observer.onError(<span class="hljs-type">TestError</span>.test)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Error encountered&quot;</span>)
+        <span class="hljs-built_in">count</span> += <span class="hljs-number">1</span>
+    }
+
+    observer.onNext(<span class="hljs-string">&quot;&#x1F436;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F431;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F42D;&quot;</span>)
+    observer.onCompleted()
+
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+
+sequenceThatErrors
+    .retry()
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+</code></pre>
+<p><strong>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;</strong></p>
+<pre><code class="lang-swift">&#x1F34E;
+&#x1F350;
+&#x1F34A;
+<span class="hljs-type">Error</span> encountered
+&#x1F34E;
+&#x1F350;
+&#x1F34A;
+&#x1F436;
+&#x1F431;
+&#x1F42D;
+</code></pre>
+<h3 id="&#x6F14;&#x793A;-2"><a name="&#x6F14;&#x793A;-2" class="plugin-anchor" href="#&#x6F14;&#x793A;-2"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6F14;&#x793A; 2</h3>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> disposeBag = <span class="hljs-type">DisposeBag</span>()
+<span class="hljs-keyword">var</span> <span class="hljs-built_in">count</span> = <span class="hljs-number">1</span>
+
+<span class="hljs-keyword">let</span> sequenceThatErrors = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">String</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onNext(<span class="hljs-string">&quot;&#x1F34E;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F350;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F34A;&quot;</span>)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">count</span> &lt; <span class="hljs-number">5</span> {
+        observer.onError(<span class="hljs-type">TestError</span>.test)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Error encountered&quot;</span>)
+        <span class="hljs-built_in">count</span> += <span class="hljs-number">1</span>
+    }
+
+    observer.onNext(<span class="hljs-string">&quot;&#x1F436;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F431;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F42D;&quot;</span>)
+    observer.onCompleted()
+
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+
+sequenceThatErrors
+    .retry(<span class="hljs-number">3</span>)
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+</code></pre>
+<p><strong>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;</strong></p>
+<pre><code class="lang-swift">&#x1F34E;
+&#x1F350;
+&#x1F34A;
+<span class="hljs-type">Error</span> encountered
+&#x1F34E;
+&#x1F350;
+&#x1F34A;
+<span class="hljs-type">Error</span> encountered
+&#x1F34E;
+&#x1F350;
+&#x1F34A;
+<span class="hljs-type">Error</span> encountered
+<span class="hljs-type">Unhandled</span> error happened: test
+ subscription called from:
+</code></pre>
 
                                 
                                 </section>
@@ -1601,7 +1686,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"retry","level":"1.6.38","depth":2,"next":{"title":"sample","level":"1.6.39","depth":2,"path":"content/decision_tree/sample.md","ref":"content/decision_tree/sample.md","articles":[]},"previous":{"title":"replay","level":"1.6.37","depth":2,"path":"content/decision_tree/replay.md","ref":"content/decision_tree/replay.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/decision_tree/retry.md","mtime":"2017-10-18T08:14:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-07T08:37:41.109Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"retry","level":"1.6.38","depth":2,"next":{"title":"sample","level":"1.6.39","depth":2,"path":"content/decision_tree/sample.md","ref":"content/decision_tree/sample.md","articles":[]},"previous":{"title":"replay","level":"1.6.37","depth":2,"path":"content/decision_tree/replay.md","ref":"content/decision_tree/replay.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/decision_tree/retry.md","mtime":"2018-02-03T12:54:46.241Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-15T01:28:52.229Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

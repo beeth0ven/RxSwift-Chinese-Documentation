@@ -262,12 +262,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.2" data-path="../rxswift_core/observable/completeable.html">
+        <li class="chapter " data-level="1.5.1.2" data-path="../rxswift_core/observable/completable.html">
             
-                <a href="../rxswift_core/observable/completeable.html">
+                <a href="../rxswift_core/observable/completable.html">
             
                     
-                    Completeable
+                    Completable
             
                 </a>
             
@@ -662,12 +662,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.11" data-path="defer.html">
+        <li class="chapter " data-level="1.6.11" data-path="deferred.html">
             
-                <a href="defer.html">
+                <a href="deferred.html">
             
                     
-                    defer
+                    deferred
             
                 </a>
             
@@ -1555,7 +1555,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="withlatestfrom"><a name="withlatestfrom" class="plugin-anchor" href="#withlatestfrom"><i class="fa fa-link" aria-hidden="true"></i></a>withLatestFrom</h2>
-<p><strong>&#x5C06;&#x4E24; <code>Observables</code> &#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7EC4;&#x5408;&#x4EE5;&#x6765;&#xFF0C;&#x5F53;&#x7B2C;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5C31;&#x5C06;&#x7EC4;&#x5408;&#x540E;&#x7684;&#x5143;&#x7D20;&#x53D1;&#x9001;&#x51FA;&#x6765;</strong></p>
+<p><strong>&#x5C06;&#x4E24;&#x4E2A; <code>Observables</code> &#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7EC4;&#x5408;&#x8D77;&#x6765;&#xFF0C;&#x5F53;&#x7B2C;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5C31;&#x5C06;&#x7EC4;&#x5408;&#x540E;&#x7684;&#x5143;&#x7D20;&#x53D1;&#x9001;&#x51FA;&#x6765;</strong></p>
 <p><img src="../../assets/WhichOperator/Operators/withLatestFrom.png" alt=""></p>
 <p><strong>withLatestFrom</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x4E24;&#x4E2A; <code>Observables</code> &#x4E2D;&#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7EC4;&#x5408;&#x8D77;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x8FD9;&#x4E2A;&#x7EC4;&#x5408;&#x7684;&#x7ED3;&#x679C;&#x53D1;&#x51FA;&#x6765;&#x3002;&#x5F53;&#x7B2C;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x5C31;&#x7ACB;&#x5373;&#x53D6;&#x51FA;&#x7B2C;&#x4E8C;&#x4E2A; <code>Observable</code> &#x4E2D;&#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x7EC4;&#x5408;&#x51FD;&#x6570;&#x5C06;&#x4E24;&#x4E2A;&#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20;&#x5408;&#x5E76;&#x540E;&#x53D1;&#x9001;&#x51FA;&#x53BB;&#x3002;</p>
 <hr>
@@ -1580,7 +1580,7 @@ firstSubject.onNext(<span class="hljs-string">&quot;&#x1F18E;&quot;</span>)
 <pre><code class="lang-swift"><span class="hljs-number">2</span>
 </code></pre>
 <hr>
-<p>&#x5F53;&#x7B2C;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x5C31;&#x7ACB;&#x5373;&#x53D6;&#x51FA;&#x7B2C;&#x4E8C;&#x4E2A; <code>Observable</code> &#x4E2D;&#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x7B2C;&#x4E00;&#x4E2A; <code>Observable</code> &#x4E2D;&#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20;<code>first</code>&#x548C;&#x7136;&#x540E;&#x628A;&#x7B2C;&#x4E8C;&#x4E2A; <code>Observable</code> &#x4E2D;&#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20;<code>second</code>&#x7EC4;&#x5408;<code>first+second</code>&#x53D1;&#x9001;&#x51FA;&#x53BB;&#x3002;</p>
+<p>&#x5F53;&#x7B2C;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x5C31;&#x7ACB;&#x5373;&#x53D6;&#x51FA;&#x7B2C;&#x4E8C;&#x4E2A; <code>Observable</code> &#x4E2D;&#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5C06;&#x7B2C;&#x4E00;&#x4E2A; <code>Observable</code> &#x4E2D;&#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20; <code>first</code> &#x548C;&#x7B2C;&#x4E8C;&#x4E2A; <code>Observable</code> &#x4E2D;&#x6700;&#x65B0;&#x7684;&#x5143;&#x7D20;<code>second</code>&#x7EC4;&#x5408;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x7EC4;&#x5408;&#x7ED3;&#x679C; <code>first+second</code>&#x53D1;&#x9001;&#x51FA;&#x53BB;&#x3002;</p>
 <pre><code class="lang-swift"><span class="hljs-keyword">let</span> disposeBag = <span class="hljs-type">DisposeBag</span>()
 <span class="hljs-keyword">let</span> firstSubject = <span class="hljs-type">PublishSubject</span>&lt;<span class="hljs-type">String</span>&gt;()
 <span class="hljs-keyword">let</span> secondSubject = <span class="hljs-type">PublishSubject</span>&lt;<span class="hljs-type">String</span>&gt;()
@@ -1645,7 +1645,7 @@ firstSubject.onNext(<span class="hljs-string">&quot;&#x1F18E;&quot;</span>)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"withLatestFrom","level":"1.6.56","depth":2,"next":{"title":"zip","level":"1.6.57","depth":2,"path":"content/decision_tree/zip.md","ref":"content/decision_tree/zip.md","articles":[]},"previous":{"title":"window","level":"1.6.55","depth":2,"path":"content/decision_tree/window.md","ref":"content/decision_tree/window.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/decision_tree/withLatestFrom.md","mtime":"2017-10-18T08:14:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-07T08:37:41.109Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"withLatestFrom","level":"1.6.56","depth":2,"next":{"title":"zip","level":"1.6.57","depth":2,"path":"content/decision_tree/zip.md","ref":"content/decision_tree/zip.md","articles":[]},"previous":{"title":"window","level":"1.6.55","depth":2,"path":"content/decision_tree/window.md","ref":"content/decision_tree/window.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/decision_tree/withLatestFrom.md","mtime":"2018-02-03T12:43:35.671Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-15T01:28:52.229Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>defer · RxSwift 中文文档</title>
+        <title>deferred · RxSwift 中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -262,12 +262,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.2" data-path="../rxswift_core/observable/completeable.html">
+        <li class="chapter " data-level="1.5.1.2" data-path="../rxswift_core/observable/completable.html">
             
-                <a href="../rxswift_core/observable/completeable.html">
+                <a href="../rxswift_core/observable/completable.html">
             
                     
-                    Completeable
+                    Completable
             
                 </a>
             
@@ -662,12 +662,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.11" data-path="defer.html">
+        <li class="chapter active" data-level="1.6.11" data-path="deferred.html">
             
-                <a href="defer.html">
+                <a href="deferred.html">
             
                     
-                    defer
+                    deferred
             
                 </a>
             
@@ -1539,7 +1539,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >defer</a>
+        <a href="../.." >deferred</a>
     </h1>
 </div>
 
@@ -1554,10 +1554,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="defer"><a name="defer" class="plugin-anchor" href="#defer"><i class="fa fa-link" aria-hidden="true"></i></a>defer</h3>
+                                <h3 id="deferred"><a name="deferred" class="plugin-anchor" href="#deferred"><i class="fa fa-link" aria-hidden="true"></i></a>deferred</h3>
 <p><strong>&#x76F4;&#x5230;&#x8BA2;&#x9605;&#x53D1;&#x751F;&#xFF0C;&#x624D;&#x521B;&#x5EFA; <code>Observable</code>&#xFF0C;&#x5E76;&#x4E14;&#x4E3A;&#x6BCF;&#x4F4D;&#x8BA2;&#x9605;&#x8005;&#x521B;&#x5EFA;&#x5168;&#x65B0;&#x7684; <code>Observable</code></strong></p>
-<p><img src="../../assets/WhichOperator/Operators/defer.png" alt=""></p>
-<p><strong>defer</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x7B49;&#x5F85;&#x89C2;&#x5BDF;&#x8005;&#x8BA2;&#x9605;&#x5B83;&#xFF0C;&#x624D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Observable</code>&#xFF0C;&#x5B83;&#x4F1A;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x51FD;&#x6570;&#x4E3A;&#x6BCF;&#x4E00;&#x4F4D;&#x8BA2;&#x9605;&#x8005;&#x521B;&#x5EFA;&#x65B0;&#x7684; <code>Observable</code>&#x3002;&#x770B;&#x4E0A;&#x53BB;&#x6BCF;&#x4F4D;&#x8BA2;&#x9605;&#x8005;&#x90FD;&#x662F;&#x5BF9;&#x540C;&#x4E00;&#x4E2A; <code>Observable</code> &#x4EA7;&#x751F;&#x8BA2;&#x9605;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x5B83;&#x4EEC;&#x90FD;&#x83B7;&#x5F97;&#x4E86;&#x72EC;&#x7ACB;&#x7684;&#x5E8F;&#x5217;&#x3002;</p>
+<p><img src="../../assets/WhichOperator/Operators/deferred.png" alt=""></p>
+<p><strong>deferred</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x7B49;&#x5F85;&#x89C2;&#x5BDF;&#x8005;&#x8BA2;&#x9605;&#x5B83;&#xFF0C;&#x624D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Observable</code>&#xFF0C;&#x5B83;&#x4F1A;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x51FD;&#x6570;&#x4E3A;&#x6BCF;&#x4E00;&#x4F4D;&#x8BA2;&#x9605;&#x8005;&#x521B;&#x5EFA;&#x65B0;&#x7684; <code>Observable</code>&#x3002;&#x770B;&#x4E0A;&#x53BB;&#x6BCF;&#x4F4D;&#x8BA2;&#x9605;&#x8005;&#x90FD;&#x662F;&#x5BF9;&#x540C;&#x4E00;&#x4E2A; <code>Observable</code> &#x4EA7;&#x751F;&#x8BA2;&#x9605;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x5B83;&#x4EEC;&#x90FD;&#x83B7;&#x5F97;&#x4E86;&#x72EC;&#x7ACB;&#x7684;&#x5E8F;&#x5217;&#x3002;</p>
 <p>&#x5728;&#x4E00;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x76F4;&#x5230;&#x8BA2;&#x9605;&#x65F6;&#x624D;&#x521B;&#x5EFA; <code>Observable</code> &#x662F;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x62FF;&#x5230;&#x7684;&#x6570;&#x636E;&#x90FD;&#x662F;&#x6700;&#x65B0;&#x7684;&#x3002;</p>
 
                                 
@@ -1602,7 +1602,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"defer","level":"1.6.11","depth":2,"next":{"title":"delay","level":"1.6.12","depth":2,"path":"content/decision_tree/delay.md","ref":"content/decision_tree/delay.md","articles":[]},"previous":{"title":"debug","level":"1.6.10","depth":2,"path":"content/decision_tree/debug.md","ref":"content/decision_tree/debug.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/decision_tree/defer.md","mtime":"2017-10-18T08:14:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-12-07T08:37:41.109Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"deferred","level":"1.6.11","depth":2,"next":{"title":"delay","level":"1.6.12","depth":2,"path":"content/decision_tree/delay.md","ref":"content/decision_tree/delay.md","articles":[]},"previous":{"title":"debug","level":"1.6.10","depth":2,"path":"content/decision_tree/debug.md","ref":"content/decision_tree/debug.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small"},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/decision_tree/deferred.md","mtime":"2018-01-26T13:37:18.176Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-15T01:28:52.229Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -40,7 +40,16 @@
             "types": [
                 "star"
             ],
-            "size": "small"
+            "size": "small",
+            "buttons": [
+              {
+                "user": "beeth0ven",
+                "repo": "RxSwift-Chinese-Documentation",
+                "type": "star",
+                "size": "small",
+                "count": true
+              }
+            ]
         }
     },
     "variables": {

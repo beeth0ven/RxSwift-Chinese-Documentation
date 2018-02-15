@@ -4,8 +4,9 @@
 
 ---
 
-## master
+## [1.2.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/1.2.0)
 
+* 纠正错别字
 * 给 [retry](/content/decision_tree/retry.md) 操作符加入演示代码
 * 给 [replay](/content/decision_tree/replay.md) 操作符加入演示代码
 * 给 [connect](/content/decision_tree/connect.md) 操作符加入演示代码

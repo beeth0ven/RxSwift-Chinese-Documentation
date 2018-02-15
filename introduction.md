@@ -20,17 +20,17 @@
 ------
 ## 文档更新日志
 
-#### 17年12月7日
+#### 18年2月15日
 
 * 纠正错别字
-* 给 [takeUntil](/content/decision_tree/takeUntil.md) 操作符加入演示代码
-* 给 [takeWhile](/content/decision_tree/takeWhile.md) 操作符加入演示代码
-* 给 [takeLast](/content/decision_tree/takeLast.md) 操作符加入演示代码
-* 加入 [debug](/content/decision_tree/debug.md) 操作符
-* 给 [AsyncSubject](/content/rxswift_core/observable_and_observer/async_subject.md) 加入演示代码
-* 给 [take](/content/decision_tree/take.md) 操作符加入演示代码
-* 给 [elementAt](/content/decision_tree/elementAt.md) 操作符加入演示代码
-* 给 [BehaviorSubject](/content/rxswift_core/observable_and_observer/behavior_subject.md) 加入演示代码
+* 给 [retry](/content/decision_tree/retry.md) 操作符加入演示代码
+* 给 [replay](/content/decision_tree/replay.md) 操作符加入演示代码
+* 给 [connect](/content/decision_tree/connect.md) 操作符加入演示代码
+* 给 [publish](/content/decision_tree/publish.md) 操作符加入演示代码
+* 给 [reduce](/content/decision_tree/reduce.md) 操作符加入演示代码
+* 给 [skipUntil](/content/decision_tree/skipUntil.md) 操作符加入演示代码
+* 给 [skipWhile](/content/decision_tree/skipWhile.md) 操作符加入演示代码
+* 给 [skip](/content/decision_tree/skip.md) 操作符加入演示代码
 
   **[... 点击查看更多](CHANGELOG.md)**
 

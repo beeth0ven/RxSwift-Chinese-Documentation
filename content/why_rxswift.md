@@ -204,7 +204,7 @@ override func viewDidLoad() {
 
 ```swift
 /// 用回调的方式封装接口
-enum Api {
+enum API {
 
     /// 通过用户名密码取得一个 token
     static func token(username: String, password: String,
@@ -220,9 +220,9 @@ enum Api {
 
 ```swift
 /// 通过用户名和密码获取用户信息
-Api.token(username: "beeth0ven", password: "987654321",
+API.token(username: "beeth0ven", password: "987654321",
     success: { token in
-        Api.userInfo(token: token,
+        API.userInfo(token: token,
             success: { userInfo in
                 print("获取用户信息成功: \(userInfo)")
             },
@@ -239,7 +239,7 @@ Api.token(username: "beeth0ven", password: "987654321",
 
 ```swift
 /// 用 Rx 封装接口
-enum Api {
+enum API {
 
     /// 通过用户名密码取得一个 token
     static func token(username: String, password: String) -> Observable<String> { ... }
@@ -251,8 +251,8 @@ enum Api {
 
 ```swift
 /// 通过用户名和密码获取用户信息
-Api.token(username: "beeth0ven", password: "987654321")
-    .flatMapLatest(Api.userInfo)
+API.token(username: "beeth0ven", password: "987654321")
+    .flatMapLatest(API.userInfo)
     .subscribe(onNext: { userInfo in
         print("获取用户信息成功: \(userInfo)")
     }, onError: { error in
@@ -273,7 +273,7 @@ Api.token(username: "beeth0ven", password: "987654321")
 
 ```swift
 /// 用 Rx 封装接口
-enum Api {
+enum API {
 
     /// 取得老师的详细信息
     static func teacher(teacherId: Int) -> Observable<Teacher> { ... }
@@ -286,8 +286,8 @@ enum Api {
 ```swift
 /// 同时取得老师信息和老师评论
 Observable.zip(
-      Api.teacher(teacherId: teacherId),
-      Api.teacherComments(teacherId: teacherId)
+      API.teacher(teacherId: teacherId),
+      API.teacherComments(teacherId: teacherId)
     ).subscribe(onNext: { (teacher, comments) in
         print("获取老师信息成功: \(teacher)")
         print("获取老师评论成功: \(comments.count) 条")

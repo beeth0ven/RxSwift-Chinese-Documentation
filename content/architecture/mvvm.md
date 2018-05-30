@@ -131,7 +131,7 @@ class SimpleValidationViewModel {
 输入：
 
 * username 输入的用户名
-* passwordValid 输入的密码
+* password 输入的密码
 
 输出:
 

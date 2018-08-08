@@ -131,7 +131,7 @@ func mutate(action: Action) -> Observable<Mutation> {
 func reduce(state: State, mutation: Mutation) -> State
 ```
 
-这个发放是一个纯函数。它将同步的返回一个 **State**。不会产生其他的作用。
+这个方法是一个纯函数。它将同步的返回一个 **State**。不会产生其他的作用。
 
 ```swift
 func reduce(state: State, mutation: Mutation) -> State {

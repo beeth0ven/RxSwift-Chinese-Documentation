@@ -4,7 +4,7 @@
 
 * 不会产生 `error` 事件
 * 一定在 `MainScheduler` 监听（主线程监听）
-* 共享状态变化
+* 共享附加作用
 
 这些都是驱动 UI 的序列所具有的特征。
 
@@ -108,7 +108,7 @@ results
 
 * 不会产生 `error` 事件
 * 一定在 `MainScheduler` 监听（主线程监听）
-* 共享状态变化
+* 共享附加作用
 
 那么要如何确定条件都被满足？通过 Rx 操作符来进行转换。`asDriver(onErrorJustReturn: [])` 相当于以下代码：
 
@@ -116,7 +116,7 @@ results
 let safeSequence = xs
   .observeOn(MainScheduler.instance)       // 主线程监听
   .catchErrorJustReturn(onErrorJustReturn) // 无法产生错误
-  .share(replay: 1, scope: .whileConnected)// 共享状态变化
+  .share(replay: 1, scope: .whileConnected)// 共享附加作用
 return Driver(raw: safeSequence)           // 封装
 ```
 

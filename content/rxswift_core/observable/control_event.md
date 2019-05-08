@@ -5,4 +5,4 @@
 * 不会产生 `error` 事件
 * 一定在 `MainScheduler` 订阅（主线程订阅）
 * 一定在 `MainScheduler` 监听（主线程监听）
-* 共享状态变化
+* 共享附加作用

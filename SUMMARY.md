@@ -104,5 +104,5 @@
   * [10.1 文档更新日志](CHANGELOG.md)
 * [食谱](content/recipes.md)
     * [RxRelay](content/recipes/rxrelay.md)
-    * [RxSwift 5 更新内容](content/recipes/whats_new_in_rxswift_5.md)
+    * [RxSwift 5 更新了什么？](content/recipes/whats_new_in_rxswift_5.md)
     * [纯函数和附加作用](content/recipes/pure_function.md)

@@ -42,8 +42,34 @@
 
 ## Variable 最终被弃用了
 
+[Variable] 是早期添加到 RxSwift 的概念，通过 “setting” 和 “getting” 他可以帮助我们，从原先命令式的思维方式，过渡到“响应式的思维方式”。
+
+这种做法被证实是有问题的，许多开发者滥用 [Variable]， 来构建 **重度[命令式]** 系统，而不是 Rx 的 **[声明式]** 系统。这对于新手非常常见，并且让他们无法意识到，这是代码的坏味道。所以在 RxSwift 4.x 中 [Variable] 被轻度弃用，仅仅给出一个运行时警告。
+
+在 RxSwift 5.x 中，他被[官方的正式的弃用了](https://github.com/ReactiveX/RxSwift/pull/1922)，并且在需要时，推荐使用 [BehaviorRelay] 或者 [BehaviorSubject]。
+
+
+### RxSwift 4
+
+![](/assets/Recipes/WhatsNewInRxSwift5/RxSwift4Variable.png)
+
+ ### RxSwift 5
+
+![](/assets/Recipes/WhatsNewInRxSwift5/RxSwift5Variable.png)
 
 ## 补充 `do(on:)` 重载方法
+
+[do] 是一个很棒的操作符，当你想添加一些[附加作用]，如：打印日志。
+
+为了与 RxJava 对齐，RxSwift 现在不仅提供 `do(onNext:)`，而且还[提供 after 重载方法](https://github.com/ReactiveX/RxSwift/pull/1898)，例如：`do(afterNext:)`。`onNext` 代表元素发送了，但**未被转发到下游**。而 `afterNext` 代表元素发送了，并**已经被转发到下游**。
+
+### RxSwift 4
+
+![](/assets/Recipes/WhatsNewInRxSwift5/RxSwift4Do.png)
+
+ ### RxSwift 5
+
+![](/assets/Recipes/WhatsNewInRxSwift5/RxSwift5Do.png)
 
 ## `bind(to:)` 现在支持多个观察者
 
@@ -73,3 +99,14 @@
 [delay]:content/decision_tree/delay.md
 [take]:content/decision_tree/take.md
 
+[Variable]:/content/rxswift_core/observable_and_observer/variable.md
+[命令式编程]:https://zh.wikipedia.org/wiki/%E6%8C%87%E4%BB%A4%E5%BC%8F%E7%B7%A8%E7%A8%8B
+[命令式]:https://zh.wikipedia.org/wiki/%E6%8C%87%E4%BB%A4%E5%BC%8F%E7%B7%A8%E7%A8%8B
+[声明式编程]:https://zh.wikipedia.org/wiki/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B
+[声明式]:https://zh.wikipedia.org/wiki/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B
+[BehaviorRelay]:/content/recipes/rxrelay.md
+[BehaviorSubject]:/content/rxswift_core/observable_and_observer/behavior_subject.md
+
+[do]:/content/decision_tree/do.md
+
+[附加作用]:/content/recipes/pure_function.md

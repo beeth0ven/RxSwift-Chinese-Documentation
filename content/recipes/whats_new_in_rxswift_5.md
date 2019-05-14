@@ -73,9 +73,41 @@
 
 ## `bind(to:)` 现在支持多个观察者
 
+在一些情况下，你不得不将流绑定到多个观察者上。在 RxSwift 4 中，你通常需要重复绑定代码：
+
+![](/assets/Recipes/WhatsNewInRxSwift5/RxSwift4Bind.png)
+
+RxSwift 5 现在支持[绑定多个观察者](https://github.com/ReactiveX/RxSwift/pull/1702)：
+![](/assets/Recipes/WhatsNewInRxSwift5/RxSwift5Bind.png)
+
 ## 新增 `compactMap` 操作符
 
+作为开发者，你通常要处理`可选型`。为了将它拆包，社区有专门的解决办法。例如： [RxSwiftExt](https://github.com/RxSwiftCommunity/RxSwiftExt) 的 `unwrap` 操作符，或者 [RxOptional](https://github.com/RxSwiftCommunity/RxOptional) 的 `filterNil` 操作符。
+
+RxSwift 5 新增了一个新的操作符 `compactMap`，从而对齐了 [Swift 标准库](https://developer.apple.com/documentation/swift/sequence/2950916-compactmap)，将这种功能带入到核心库。
+
+
+### RxSwift 4
+
+![](/assets/Recipes/WhatsNewInRxSwift5/RxSwift4FilterNil.png)
+
+ ### RxSwift 5
+
+![](/assets/Recipes/WhatsNewInRxSwift5/RxSwift5FilterNil.png)
+
 ## `toArray()` 现在返回 `Single<T>`
+
+`toArray()` 操作符将所有的元素以数组的形式发送出去，在流完成时。
+
+自从 RxSwift 诞生以来，这个操作符一直都是返回 `Observable<T>`，但是在特征序列被引入以后，尤其是 [Single]。将返回类型改为 [Single] 会更加合适，这不仅提供了类型安全，并且还保证该操作符只会发出一个元素。
+
+### RxSwift 4
+
+![](/assets/Recipes/WhatsNewInRxSwift5/RxSwift4ToArray.png)
+
+ ### RxSwift 5
+
+![](/assets/Recipes/WhatsNewInRxSwift5/RxSwift5ToArray.png)
 
 ## 更新范型约束名称
 
@@ -110,3 +142,5 @@
 [do]:/content/decision_tree/do.md
 
 [附加作用]:/content/recipes/pure_function.md
+
+[Single]:/content/rxswift_core/observable/single.md

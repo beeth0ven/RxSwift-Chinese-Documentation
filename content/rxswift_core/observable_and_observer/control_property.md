@@ -5,4 +5,6 @@
 * 不会产生 `error` 事件
 * 一定在 `MainScheduler` 订阅（主线程订阅）
 * 一定在 `MainScheduler` 监听（主线程监听）
-* 共享附加作用
+* 共享[附加作用]
+
+[附加作用]:/content/recipes/pure_function.md

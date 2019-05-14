@@ -104,7 +104,7 @@ results
 .asDriver(onErrorJustReturn: [])
 ```
 
-任何可被监听的序列都可以被转换为 `Driver`，只要他满足 3 个条件：
+任何可监听序列都可以被转换为 `Driver`，只要他满足 3 个条件：
 
 * 不会产生 `error` 事件
 * 一定在 `MainScheduler` 监听（主线程监听）

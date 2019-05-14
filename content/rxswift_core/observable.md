@@ -1,4 +1,4 @@
-## Observable - 可被监听的序列
+## Observable - 可监听序列
 
 ![1](/assets/Observable/Obervable.png)
 

@@ -1,55 +1,16 @@
-## Variable
+## Variable （已弃用）
 
-在 **Swift** 中我们经常会用 **var** 关键字来声明变量。**RxSwift** 提供的 **Variable** 实际上是 **var** 的 **Rx** 版本，你可以将它看作是 **RxVar。**
+**Variable** 是早期添加到 RxSwift 的概念，通过 “setting” 和 “getting”， 他可以帮助我们从原先**命令式的思维方式**，过渡到**响应式的思维方式**。
 
-我们来对比一下 **var** 以及 **Variable** 的用法：
+但这只是我们一厢情愿的。许多开发者滥用 **Variable**， 来构建 **重度[命令式]** 系统，而不是 Rx 的 **[声明式]** 系统。这对于新手很常见，并且他们无法意识到，这是代码的坏味道。所以在 RxSwift 4.x 中 **Variable** 被轻度弃用，仅仅给出一个运行时警告。
 
-**使用 var：**
-
-```swift
-// 在 ViewController 中
-var model: Model? = nil {
-    didSet { updateUI(with: model) }
-}
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-
-    model = getModel()
-}
-
-func updateUI(with model: Model?) { ... }
-func getModel() -> Model { ... }
-```
-
-**使用 Variable：**
-
-```swift
-// 在 ViewController 中
-let model: Variable<Model?> = Variable(nil)
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-
-    model.asObservable()
-        .subscribe(onNext: { [weak self] model in
-            self?.updateUI(with: model)
-        })
-        .disposed(by: disposeBag)
-
-    model.value = getModel()
-}
-
-func updateUI(with model: Model?) { ... }
-func getModel() -> Model { ... }
-```
-
-第一种使用 **var** 的方式十分常见，在 `ViewController` 中监听 `Model` 的变化，然后刷新页面。
-
-第二种使用 **Variable** 则是 **RxSwift** 独有的。**Variable** 几乎提供了 **var** 的所有功能。另外，加上一条非常重要的特性，就是可以通过调用 `asObservable()` 方法转换成**序列**。然后你可以对这个**序列**应用[操作符]，来合成其他的**序列**。所以，如果我们声明的变量需要提供 **Rx** 支持，那就选用 **Variable** 这个类型。
-
-### 说明
-**Variable** 封装了一个 [BehaviorSubject](behavior_subject.md)，所以它会持有当前值，并且 **Variable** 会对新的观察者发送当前值。它不会产生 `error` 事件。**Variable** 在 `deinit` 时，会发出一个 `completed` 事件。
+在 RxSwift 5.x 中，他被[官方的正式的弃用了](https://github.com/ReactiveX/RxSwift/pull/1922)，并且在需要时，推荐使用 [BehaviorRelay] 或者 [BehaviorSubject]。
 
 
+[命令式编程]:https://zh.wikipedia.org/wiki/%E6%8C%87%E4%BB%A4%E5%BC%8F%E7%B7%A8%E7%A8%8B
+[命令式]:https://zh.wikipedia.org/wiki/%E6%8C%87%E4%BB%A4%E5%BC%8F%E7%B7%A8%E7%A8%8B
+[声明式编程]:https://zh.wikipedia.org/wiki/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B
+[声明式]:https://zh.wikipedia.org/wiki/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B
+[BehaviorRelay]:/content/recipes/rxrelay.md
+[BehaviorSubject]:/content/rxswift_core/observable_and_observer/behavior_subject.md
 [操作符]:/content/rxswift_core/operator.md

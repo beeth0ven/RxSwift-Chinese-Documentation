@@ -23,7 +23,7 @@
     * [PublishSubject](content/rxswift_core/observable_and_observer/publish_subject.md)
     * [ReplaySubject](content/rxswift_core/observable_and_observer/replay_subject.md)
     * [BehaviorSubject](content/rxswift_core/observable_and_observer/behavior_subject.md)
-    * [Variable](content/rxswift_core/observable_and_observer/variable.md)
+    * [Variable（已弃用）](content/rxswift_core/observable_and_observer/variable.md)
     * [ControlProperty](content/rxswift_core/observable_and_observer/control_property.md)
   * [4.4 Operator - 操作符](content/rxswift_core/operator.md)
   * [4.5 Disposable - 可被清除的资源](content/rxswift_core/disposable.md)

@@ -13,20 +13,38 @@
 ![](/assets/Architecture/RxFeedback/RxFeedback.png)
 
 ```swift
+typealias Feedback<State, Event> = (Observable<State>) -> Observable<Event>
+
 public static func system<State, Event>(
-        initialState: State,
-        reduce: @escaping (State, Event) -> State,
-        feedback: (Observable<State>) -> Observable<Event>...
-    ) -> Observable<State>
+    initialState: State,
+    reduce: @escaping (State, Event) -> State,
+    feedback: Feedback<State, Event>...
+) -> Observable<State>
 ```
 
-模拟一个[反馈循环系统](https://zh.wikipedia.org/wiki/控制理论)。
+## 为什么？
 
-模拟系统将在被订阅后启动，并且在订阅被释放后停止。
+* 直接
+  * 已经发生 -> Event
+  * 即将发生 -> Request
+  * 执行 Request -> Feedback loop
+* [声明式]
+  * 首先系统行为被明确声明出来，然后在调用 subscribe 后开始运作 => 编译时就保证了不会有“未处理状态”
+* 容易调试
+  * 大多数逻辑是 [纯函数]，可以通过 xCode 调试器调试，或者将命令打印出来
+* 适用于任何级别
+  * [整个系统](https://kafka.apache.org/documentation/)
+  * 应用程序（state 被储存在数据库中，CoreData, Firebase, Realm）
+  * view controller (state 被储存在 system 操作符)
+  * 在 feedback loop 中（feedback loop 中 调用另一个 system 操作符）
+* 容易做依赖注入
+* 易测试
+  * Reducer 是 [纯函数]，只需调用他并断言结果即可
+  * 伴随 [附加作用] 的测试 -> TestScheduler
+* 可以处理循环依赖
+* 完全从[附加作用]中分离业务逻辑
+  * 业务逻辑可以在不同平台之间转换
 
-系统状态用 **State** 表示，事件用 **Event** 表示。
-
----
 
 ### 示例
 
@@ -36,32 +54,35 @@ public static func system<State, Event>(
 Observable.system(
     initialState: 0,
     reduce: { (state, event) -> State in
-            switch event {
-            case .increment:
-                return state + 1
-            case .decrement:
-                return state - 1
-            }
-        },
+        switch event {
+        case .increment:
+            return state + 1
+        case .decrement:
+            return state - 1
+        }
+    },
     scheduler: MainScheduler.instance,
     feedback:
         // UI is user feedback
-        UI.bind(self) { me, state -> UI.Bindings<Event> in
+        bind(self) { me, state -> Bindings<Event> in
             let subscriptions = [
-                state.map(String.init).bind(to: me.label!.rx.text)
+                state.map(String.init).bind(to: me.label.rx.text)
             ]
+
             let events = [
-                me.plus!.rx.tap.map { Event.increment },
-                me.minus!.rx.tap.map { Event.decrement }
+                me.plus.rx.tap.map { Event.increment },
+                me.minus.rx.tap.map { Event.decrement }
             ]
-            return UI.Bindings(subscriptions: subscriptions, events: events)
+
+            return Bindings(
+                subscriptions: subscriptions,
+                events: events
+            )
         }
-    )
+)
 ```
 
 这是一个简单计数的例子，只是用于演示 [RxFeedback] 架构。
-
----
 
 ### State
 
@@ -72,8 +93,6 @@ typealias State = Int
 ```
 
 * 这里的状态就是计数的数值
-
----
 
 ### Event
 
@@ -110,8 +129,6 @@ Observable.system(
 * increment 状态数值加一
 * decrement 状态数值减一
 
----
-
 ### Feedback Loop
 
 将**状态**输出到 UI 页面上，或者将 UI **事件**输入到反馈循环里面去:
@@ -123,15 +140,20 @@ Observable.system(
     scheduler: MainScheduler.instance,
     feedback:
         // UI is user feedback
-        UI.bind(self) { me, state -> UI.Bindings<Event> in
+        bind(self) { me, state -> Bindings<Event> in
             let subscriptions = [
-                state.map(String.init).bind(to: me.label!.rx.text)
+                state.map(String.init).bind(to: me.label.rx.text)
             ]
+
             let events = [
-                me.plus!.rx.tap.map { Event.increment },
-                me.minus!.rx.tap.map { Event.decrement }
+                me.plus.rx.tap.map { Event.increment },
+                me.minus.rx.tap.map { Event.decrement }
             ]
-            return UI.Bindings(subscriptions: subscriptions, events: events)
+
+            return Bindings(
+                subscriptions: subscriptions,
+                events: events
+            )
         }
     )
 ```
@@ -140,19 +162,65 @@ Observable.system(
 * 将增加按钮的点击，作为增加数值事件传入
 * 将减少按钮的点击，作为减少数值事件传入
 
----
+## 安装
 
-### 优势
+### [CocoaPods](http://cocoapods.org/)
 
-这就是 [RxFeedback](https://github.com/kzaher/RxFeedback) 架构，它的优势是：
+[CocoaPods](http://cocoapods.org/) 是一个 Cocoa 项目的依赖管理工具。你可以通过以下命令安装他：
 
-* 简单
-* 直接
-* 容易调试
-* 能被应用到任何级别
-* 完美支持依赖注入
-* 支持循环依赖
-* 完全将业务逻辑分离（跨平台）
+```bash
+$ gem install cocoapods
+```
+
+将 RxFeedback 整合到项目中来，你需要在 `Podfile` 中指定他：
+
+```bash
+pod 'RxFeedback', '~> 3.0'
+```
+
+然后运行以下命令：
+
+```bash
+$ pod install
+```
+
+
+### [Carthage](https://github.com/Carthage/Carthage)
+
+[Carthage](https://github.com/Carthage/Carthage) 是一个分散式依赖管理工具，他将构建你的依赖并提供二进制框架。
+
+你可以通过以下 [Homebrew](http://brew.sh/) 命令安装 Carthage：
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+将 RxFeedback 整合到项目中来，你需要在 `Cartfile` 中指定他：
+
+```bash
+github "NoTests/RxFeedback" ~> 3.0
+```
+
+运行 `carthage update` 去构建框架，然后将 `RxFeedback.framework` 拖入到 Xcode 项目中来。由于 `RxFeedback` 对 `RxSwift` 和 `RxCocoa` 有依赖，所以你也需要将 `RxSwift.framework` 和 `RxCocoa.framework` 拖入到 Xcode 项目中来。
+
+### [Swift Package Manager](https://swift.org/package-manager/)
+
+[Swift Package Manager](https://swift.org/package-manager/) 是一个自动分发 Swift 代码的工具，他已经被集成到 Swift 编译器中。
+
+一旦你配置好了 Swift 包，添加 RxFeedback 就非常简单了，你只需要将他添加到文件 `Package.swift` 的 `dependencies` 的值中。
+
+```bash
+dependencies: [
+    .package(url: "https://github.com/NoTests/RxFeedback.swift.git", majorVersion: 1)
+]
+```
+## 与其他架构的区别
+* [Elm] - 非常相似，feedback loop 用作 [附加作用]， 而不是 `Cmd`, 要执行的 [附加作用] 被编码到 state 中，并且通过 feedback loop 完成请求
+* [Redux] - 也很像，不过采用 feedback loops 而不是 middleware
+* [Redux-Observable] - observables 观察状态，与视图和状态之间的 middleware
+* [Cycle.js] - 一言难尽 :)，请咨询 [@andrestaltz](https://twitter.com/andrestaltz)
+* [MVVM] - 将状态和 [附加作用] 分离，而且不需要 View
 
 ### 示例
 
@@ -160,3 +228,13 @@ Observable.system(
 
 [RxFeedback]:https://github.com/kzaher/RxFeedback
 [Github Search]:rxfeedback/github_search.md
+
+[附加作用]:/content/recipes/pure_function.md
+[纯函数]:/content/recipes/pure_function.md
+[声明式]:https://zh.wikipedia.org/wiki/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B
+
+[Elm]:https://guide.elm-lang.org/architecture/
+[Redux]:https://redux.js.org/
+[Redux-Observable]:https://redux-observable.js.org/
+[Cycle.js]:https://cycle.js.org/
+[MVVM]:/content/architecture/mvvm.md

@@ -2,8 +2,6 @@
 
 我们先看一下 RxSwift 能够帮助我们做些什么：
 
----
-
 ## Target Action
 
 传统实现方法：
@@ -29,8 +27,6 @@ button.rx.tap
 ```
 
 你不需要使用 Target Action，这样使得代码逻辑清晰可见。
-
----
 
 
 ## 代理
@@ -72,8 +68,6 @@ class ViewController: UIViewController {
 
 你不需要书写代理的配置代码，就能获得想要的结果。
 
----
-
 ## 闭包回调
 
 传统实现方法：
@@ -108,8 +102,6 @@ URLSession.shared.rx.data(request: URLRequest(url: url))
 ```
 
 回调也变得十分简单
-
----
 
 ## 通知
 
@@ -149,52 +141,6 @@ override func viewDidLoad() {
 ```
 
 你不需要去管理观察者的生命周期，这样你就有更多精力去关注业务逻辑。
-
----
-
-## KVO
-
-传统实现方法：
-
-```swift
-private var observerContext = 0
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-    user.addObserver(self, forKeyPath: #keyPath(User.name), options: [.new, .initial], context: &observerContext)
-}
-
-override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-    if context == &observerContext {
-        let newValue = change?[.newKey] as? String
-        print("do something with newValue")
-    } else {
-        super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-    }
-}
-
-deinit {
-    user.removeObserver(self, forKeyPath: #keyPath(User.name))
-}
-```
-
-通过 Rx 来实现：
-
-```swift
-override func viewDidLoad() {
-    super.viewDidLoad()
-
-    user.rx.observe(String.self, #keyPath(User.name))
-        .subscribe(onNext: { newValue in
-            print("do something with newValue")
-        })
-        .disposed(by: disposeBag)
-}
-```
-
-这样实现 KVO 的代码更清晰，更简洁并且更准确。
-
----
 
 ## 多个任务之间有依赖关系
 
@@ -261,9 +207,7 @@ API.token(username: "beeth0ven", password: "987654321")
     .disposed(by: disposeBag)
 ```
 
-这样你无需嵌套太多层，从而使得代码易读，易维护。
-
----
+这样你可以[避免回调地狱](https://en.wiktionary.org/wiki/callback_hell)，从而使得代码易读，易维护。
 
 ## 等待多个并发任务完成后处理结果
 

@@ -45,4 +45,4 @@ generateString()
 你同样可以对 `Observable` 调用 `.asMaybe()` 方法，将它转换为 **Maybe**。
 
 
-[附加作用]:/content/recipes/pure_function.md
+[附加作用]:/content/recipes/side_effects.md

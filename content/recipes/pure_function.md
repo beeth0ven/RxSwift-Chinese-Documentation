@@ -1,5 +1,5 @@
 
-# 纯函数和附加作用
+# 纯函数
 
 ### 什么是纯函数？
 
@@ -694,7 +694,7 @@ func useStore() {
 * [ReactorKit]
 
 [纯函数]:https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0
-[附加作用]:https://zh.wikipedia.org/wiki/%E5%87%BD%E6%95%B0%E5%89%AF%E4%BD%9C%E7%94%A8
+[附加作用]:/content/recipes/side_effects.md
 [RxFeedback]:https://github.com/NoTests/RxFeedback.swift
 [Redux]:https://redux.js.org/
 [ReactorKit]:https://github.com/ReactorKit/ReactorKit

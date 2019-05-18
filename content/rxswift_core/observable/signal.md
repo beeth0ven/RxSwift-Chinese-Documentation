@@ -76,5 +76,5 @@ event.emit(onNext: newObserver)
 * [map]
 
 [Driver]:/content/rxswift_core/observable/driver.md
-[附加作用]:/content/recipes/pure_function.md
+[附加作用]:/content/recipes/side_effects.md
 [map]:/content/decision_tree/map.md

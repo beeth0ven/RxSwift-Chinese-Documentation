@@ -195,6 +195,6 @@ RxSwift 是范型约束的重度使用者。早些时期，他使用单个字母
 
 [do]:/content/decision_tree/do.md
 
-[附加作用]:/content/recipes/pure_function.md
+[附加作用]:/content/recipes/side_effects.md
 
 [Single]:/content/rxswift_core/observable/single.md

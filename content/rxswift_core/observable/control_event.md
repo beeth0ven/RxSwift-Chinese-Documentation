@@ -7,4 +7,4 @@
 * 一定在 `MainScheduler` 监听（主线程监听）
 * 共享[附加作用]
   
-[附加作用]:/content/recipes/pure_function.md
+[附加作用]:/content/recipes/side_effects.md

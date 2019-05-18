@@ -53,4 +53,4 @@ public enum CompletableEvent {
 * completed - 产生完成事件
 * error - 产生一个错误
 
-[附加作用]:/content/recipes/pure_function.md
+[附加作用]:/content/recipes/side_effects.md

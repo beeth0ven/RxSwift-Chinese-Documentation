@@ -105,4 +105,5 @@
 * [食谱](content/recipes.md)
     * [RxRelay](content/recipes/rxrelay.md)
     * [RxSwift 5 更新了什么？](content/recipes/whats_new_in_rxswift_5.md)
-    * [纯函数和附加作用](content/recipes/pure_function.md)
+    * [纯函数](content/recipes/pure_function.md)
+    * [附加作用](content/recipes/side_effects.md)

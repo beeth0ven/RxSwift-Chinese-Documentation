@@ -229,7 +229,7 @@ dependencies: [
 [RxFeedback]:https://github.com/kzaher/RxFeedback
 [Github Search]:rxfeedback/github_search.md
 
-[附加作用]:/content/recipes/pure_function.md
+[附加作用]:/content/recipes/side_effects.md
 [纯函数]:/content/recipes/pure_function.md
 [声明式]:https://zh.wikipedia.org/wiki/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B
 

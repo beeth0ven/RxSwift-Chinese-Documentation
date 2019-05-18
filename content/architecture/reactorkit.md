@@ -174,4 +174,4 @@ func transform(action: Observable<Action>) -> Observable<Action> {
 [Flux]:https://facebook.github.io/flux/
 [响应式编程]:https://zh.wikipedia.org/wiki/响应式编程
 [Github Search]:reactorkit/github_search.md
-[附加作用]:/content/recipes/pure_function.md
+[附加作用]:/content/recipes/side_effects.md

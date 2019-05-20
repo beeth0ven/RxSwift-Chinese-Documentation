@@ -22,8 +22,8 @@
 
 以上，网络请求，定位和UI是比较常见的[附加作用]。以下也是[附加作用]：
 
-* 读写全局状态
-* 读写数据库
+* 读写全局变量
+* 读写本地数据库
 * 读写文件
 * 使用蓝牙模块
 * 打印输出
@@ -31,7 +31,7 @@
 
 ## App 的 [附加作用]
 
-有[附加作用]并不是什么坏事情。事实上正是因为 App 有了他，才更有价值。我们以几个常见 App 为例：
+有[附加作用]并不是什么坏事情。事实上，正是因为有了他，App 才更有价值。我们以几个常见 App 为例：
 
 ### 饿了么
 
@@ -45,18 +45,18 @@
 
 滴滴是一个叫车 App，他最主要的 [附加作用] 是更新程序本体以外的状态。即：**🏠 -> 🏢（从起点到终点）**。
 
-## RxSwift 中的 [附加作用]
+## [Observable] 中的 [附加作用]
 
-在解释 RxSwift 中的 [附加作用] 之前，我们先要理解一个概念，即： **`Observable` 其实是一个函数**
+在解释 [Observable] 中的 [附加作用] 之前，我们先要理解一个概念，即： **[Observable] 其实是一个函数：**
 
 ```swift
 // 去除了不相关的范型约束，便于理解
 func subscribe(_ observer: Observer) -> Disposable 
 ```
 
-你没有看错！以上 `subscribe` 函数就是 `Observable`。
+你没有看错！以上 `subscribe` 函数就是 [Observable]。
 
-也就是说 `Observable` 的 [附加作用] 指的就是 `subscribe` 函数里面的 [附加作用]。
+换句话说 [Observable] 的 [附加作用], 指的就是 `subscribe` 函数里面的 [附加作用]。
 
 ...
 
@@ -70,7 +70,46 @@ func subscribe(_ observer: Observer) -> Disposable
 
 ... 经过 60 秒后
 
-如果你已经能够理解 **`Observable` 其实是一个函数** 的观点了， 那我们来看以下三段代码：
+### 示例：
+
+之前在介绍 [Observable] 时，举了这样一个例子：
+
+![1](/assets/Observable/JSON.png)
+
+```swift
+typealias JSON = Any
+
+let json: Observable<JSON> = Observable.create { (observer) -> Disposable in
+
+    let task = URLSession.shared.dataTask(with: ...) { data, _, error in
+
+        guard error == nil else {
+            observer.onError(error!)
+            return
+        }
+
+        guard let data = data,
+            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+            else {
+            observer.onError(DataError.cantParseJSON)
+            return
+        }
+
+        observer.onNext(jsonObject)
+        observer.onCompleted()
+    }
+
+    task.resume()
+
+    return Disposables.create { task.cancel() }
+}
+```
+
+这里的闭包 `{ (observer) -> Disposable in ... }` 可以看作是 `subscribe` 函数，这个函数的[附加作用]就是发起网络请求去获取一个 `JSON`。所以 `let json: Observable<JSON>` 的 [附加作用] 也是发起网络请求去获取一个 `JSON`。
+
+现在我们应该能够理解，什么是 [Observable] 的 [附加作用] 了。
+
+<!-- 如果你已经能够理解 **`Observable` 其实是一个函数** 的观点了， 那我们来看以下三段代码：
 
 ### 网络请求
 
@@ -106,66 +145,14 @@ let observable: Observable<String?> = textField.rx.text.asObservable()
 
 1. 发起网络请求，获取老师信息
 2. 启动定位功能，获取当前城市
-3. 获取输入框的文本
-
-### 什么是共享 [附加作用]？
-
-文档中一些特征序列，会有如下特性：
-
-共享 [附加作用]：
- * [Driver](content/rxswift_core/observable/driver.md)
- * [Signal](content/rxswift_core/observable/signal.md)
- * [ControlEvent](content/rxswift_core/observable/control_event.md)
- * ...
-
-不共享 [附加作用]：
- * [Single](content/rxswift_core/observable/single.md)
- * [Completable](content/rxswift_core/observable/completable.md)
- * [Maybe](content/rxswift_core/observable/maybe.md)
- * ...
+3. 获取输入框的文本 -->
 
 
-那什么是**共享 [附加作用]**，什么是**不共享 [附加作用]**？
+## 为什么我喜欢称它为 [附加作用]，而不是 “[副作用]”？
 
-举个例子：
+首先澄清一下，我们这里所介绍的 [附加作用]， 就是大家平时说的 **“[副作用]”**。
 
-```swift
-// 共享附加作用
-...
-let observable: Observable<Teacher> = API.teacher(teacherId: 1)
-let shareSideEffects: Driver<Teacher> = observable.asDriver(onErrorDriveWith: .empty())
-
-let observer0: (Teacher) -> () = ...
-let observer1: (Teacher) -> () = ...
-
-shareSideEffects.drive(onNext: observer0)
-shareSideEffects.drive(onNext: observer1) // 第二次订阅
-```
-
-如果一个序列**共享 [附加作用]**，那在第二次订阅时，不会重新发起网络请求，而是共享第一次网络请求（[附加作用]）。
-
-```swift
-// 不共享附加作用
-...
-let observable: Observable<Teacher> = API.teacher(teacherId: 1)
-let notShareSideEffects: Single<Teacher> = observable.asSingle()
-
-let observer0: (Teacher) -> () = ...
-let observer1: (Teacher) -> () = ...
-
-notShareSideEffects.subscribe(onSuccess: observer0)
-notShareSideEffects.subscribe(onSuccess: observer1) // 第二次订阅
-```
-
-如果一个序列**不共享 [附加作用]**，那在第二次订阅时，会重新发起网络请求，而不是共享第一次网络请求（[附加作用]）。
-
-因此我们需要注意，如果一个网络请求序列，他**不共享 [附加作用]**，那每一次订阅时就会单独发起网络请求。这时最好改用 **共享 [附加作用]** 的序列，或者使用 [share] 操作符。
-
-## 为什么我喜欢称它为 [附加作用]，而不是 ”副作用“？
-
-首先澄清一下，我们这里所介绍的 [附加作用] 就是大家平时说的 **“[副作用]”**。
-
-最近听音乐时，不经意间切到了这一首歌：[《爱的副作用》](https://music.163.com/#/song?id=329433&market=baiduqk)。
+最近听音乐时，不经意间切到了这一首歌：[《爱的副作用》](https://music.163.com/#/song?id=329433&market=baiduqk)（这首歌可能你也听过）。
 
 于是我就很好奇，这个 **“[副作用]”** 到底指的是 **不好的作用**，还是[附加作用] 🤔。从标题上看不出来，后来我看了下歌词：
 ```
@@ -184,9 +171,9 @@ notShareSideEffects.subscribe(onSuccess: observer1) // 第二次订阅
 
 在计算机领域也是一样的，虽然很多时候我们都知道 **“[副作用]”** 指的是 [附加作用]，但是用 **不好的作用** 也解释得通。这样就会产生歧义。
 
-所以，个人觉得如果有一个词，专门表示计算机领域的 **“[副作用]”** 会更好。如：[附加作用]。如此一来，读者不需要做多余的判断，就能解读作者的意图。
+所以，我觉得如果有一个词，专门表示计算机领域的 **“[副作用]”** 会更好。如：[附加作用]。如此一来，读者不需要做多余的判断，就能解读作者的意图。
 
 [副作用]:https://hanyu.baidu.com/zici/s?wd=%E5%89%AF%E4%BD%9C%E7%94%A8&query=%E5%89%AF%E4%BD%9C%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A&srcid=28236&from=kg0&from=kg0
 [附加作用]:https://zh.wikipedia.org/wiki/%E5%87%BD%E6%95%B0%E5%89%AF%E4%BD%9C%E7%94%A8
 
-[share]:/content/decision_tree/shareReplay.md
+[Observable]:content/rxswift_core/observable.md

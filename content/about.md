@@ -1,15 +1,14 @@
 # 关于本文档
 
+* 更新日期：**19年5月21日**
 * 首发日期：**17年9月1日**
-* 对应 **RxSwift** 版本：**4.0.0**
+* 对应 **RxSwift** 版本：**5.0.0**
 * 使用工具：[GitBook](https://www.gitbook.com)
 * 托管平台：[Github Pages](https://pages.github.com)
 * 文档整理人：[罗杰 (Beeth0ven)](https://github.com/beeth0ven)
 * 整理人邮箱：<beeth0vendev@gmail.com>
 * 文档库地址：https://github.com/beeth0ven/RxSwift-Chinese-Documentation
 * **RxSwift** 地址：https://github.com/ReactiveX/RxSwift
-
----
 
 ## 问题反馈
 

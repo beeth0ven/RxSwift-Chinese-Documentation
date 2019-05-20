@@ -1,7 +1,7 @@
 <img src="assets/Rx_Logo_M.png" alt="Miss Electric Eel 2016" width="36" height="36"> RxSwift: ReactiveX for Swift
 ======================================
 
-[![Travis CI](https://travis-ci.org/ReactiveX/RxSwift.svg?branch=master)](https://travis-ci.org/ReactiveX/RxSwift) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-333333.svg) ![pod](https://img.shields.io/cocoapods/v/RxSwift.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) ![QQ Group](https://img.shields.io/badge/QQ%20交流群-871293356-blue.svg) [![epub](https://img.shields.io/badge/点击下载-文档电子书-blue.svg)](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/download/1.1.0/RxSwiftChineseDocumentation.epub)
+[![Travis CI](https://travis-ci.org/ReactiveX/RxSwift.svg?branch=master)](https://travis-ci.org/ReactiveX/RxSwift) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS%20%7C%20Linux-333333.svg) ![pod](https://img.shields.io/cocoapods/v/RxSwift.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager) 
 
 [ReactiveX](http://reactivex.io/)（简写: Rx） 是一个可以帮助我们简化异步编程的框架。
 
@@ -13,27 +13,27 @@
 
 KVO，异步操作 和 流 全部被统一成抽象序列。这就是为什么 Rx 会如此简单，优雅和强大。
 
-------
+## 操作
 
-[RxSwift](https://github.com/ReactiveX/RxSwift) **QQ** 交流群: **871293356**
+加入 [RxSwift](https://github.com/ReactiveX/RxSwift) **QQ** 交流群: **871293356**
 
-------
+[下载文档电子书](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/download/2.0.0/RxSwiftChineseDocumentation.epub)
+
 
 ## 文档更新日志
 
-#### 18年2月15日
+#### 19年5月21日（RxSwift 5）
 
-* 纠正错别字
-* 给 [retry](/content/decision_tree/retry.md) 操作符加入演示代码
-* 给 [replay](/content/decision_tree/replay.md) 操作符加入演示代码
-* 给 [connect](/content/decision_tree/connect.md) 操作符加入演示代码
-* 给 [publish](/content/decision_tree/publish.md) 操作符加入演示代码
-* 给 [reduce](/content/decision_tree/reduce.md) 操作符加入演示代码
-* 给 [skipUntil](/content/decision_tree/skipUntil.md) 操作符加入演示代码
-* 给 [skipWhile](/content/decision_tree/skipWhile.md) 操作符加入演示代码
-* 给 [skip](/content/decision_tree/skip.md) 操作符加入演示代码
+* [RxSwift 5 更新了什么？](content/recipes/whats_new_in_rxswift_5.md)
+* [Signal](content/rxswift_core/observable/signal.md)
+* [RxRelay](content/recipes/rxrelay.md)
+* [纯函数](content/recipes/pure_function.md)
+* [附加作用](content/recipes/side_effects.md)
+* [共享附加作用](content/recipes/share_side_effects.md)
+* 更新文档以适配 RxSwift 5
+* 更新 QQ 群号为：871293356
 
-  **[... 点击查看更多](CHANGELOG.md)**
+  **[查看更多... ](CHANGELOG.md)**
 
 
 ## 示例

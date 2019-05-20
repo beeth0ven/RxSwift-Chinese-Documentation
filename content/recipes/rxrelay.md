@@ -61,10 +61,11 @@ Event: next(🐶)
 Event: next(🐱)
 ```
 
-**BehaviorRelay** 将取代 **Variable**，因为 **Variable** 很容易会引导我们使用[命令式编程]，而不是[声明式编程]。
+**BehaviorRelay** 将取代 **[Variable]**，因为 **[Variable]** 很容易会引导我们使用[命令式编程]，而不是[声明式编程]。
 
 
 [PublishSubject]:/content/rxswift_core/observable_and_observer/publish_subject.md
 [BehaviorSubject]:/content/rxswift_core/observable_and_observer/behavior_subject.md
 [命令式编程]:https://zh.wikipedia.org/wiki/%E6%8C%87%E4%BB%A4%E5%BC%8F%E7%B7%A8%E7%A8%8B
 [声明式编程]:https://zh.wikipedia.org/wiki/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B
+[Variable]:/content/rxswift_core/observable_and_observer/variable.md

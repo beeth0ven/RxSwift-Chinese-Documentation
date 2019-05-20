@@ -107,3 +107,4 @@
     * [RxSwift 5 更新了什么？](content/recipes/whats_new_in_rxswift_5.md)
     * [纯函数](content/recipes/pure_function.md)
     * [附加作用](content/recipes/side_effects.md)
+    * [共享附加作用](content/recipes/share_side_effects.md)

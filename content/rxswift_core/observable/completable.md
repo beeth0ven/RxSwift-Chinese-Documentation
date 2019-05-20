@@ -4,7 +4,7 @@
 
 * 发出零个元素
 * 发出一个 `completed` 事件或者一个 `error` 事件
-* 不会共享[附加作用]
+* 不会[共享附加作用]
 
 **Completable** 适用于那种你只关心任务是否完成，而不需要在意任务返回值的情况。它和 `Observable<Void>` 有点相似。
 
@@ -53,4 +53,4 @@ public enum CompletableEvent {
 * completed - 产生完成事件
 * error - 产生一个错误
 
-[附加作用]:/content/recipes/side_effects.md
+[共享附加作用]:/content/recipes/share_side_effects.md

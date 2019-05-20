@@ -6,7 +6,7 @@
 
 * 不会产生 `error` 事件
 * 一定在 `MainScheduler` 监听（主线程监听）
-* 共享[附加作用]
+* [共享附加作用]
 
 现在，我们来看看以下代码是否合理：
 
@@ -74,7 +74,8 @@ event.emit(onNext: newObserver)
 
 * [Driver]
 * [map]
+* [共享附加作用]
 
 [Driver]:/content/rxswift_core/observable/driver.md
-[附加作用]:/content/recipes/side_effects.md
+[共享附加作用]:/content/recipes/share_side_effects.md
 [map]:/content/decision_tree/map.md

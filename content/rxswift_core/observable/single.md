@@ -3,7 +3,7 @@
 **Single** 是 `Observable` 的另外一个版本。不像 `Observable` 可以发出多个元素，它要么只能发出一个元素，要么产生一个 `error` 事件。
 
 * 发出一个元素，或一个 `error` 事件
-* 不会共享[附加作用]
+* 不会[共享附加作用]
 
 一个比较常见的例子就是执行 HTTP 请求，然后返回一个**应答**或**错误**。不过你也可以用 **Single** 来描述任何只有一个元素的序列。
 
@@ -67,4 +67,4 @@ public enum SingleEvent<Element> {
 你同样可以对 `Observable` 调用 `.asSingle()` 方法，将它转换为 **Single**。
 
 
-[附加作用]:/content/recipes/side_effects.md
+[共享附加作用]:/content/recipes/share_side_effects.md

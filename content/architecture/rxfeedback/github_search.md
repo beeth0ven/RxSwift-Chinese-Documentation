@@ -3,7 +3,7 @@
 <img src="/assets/Architecture/RxFeedback/GithubPaginatedSearchFull.gif" width="320px" />
 
 
-这个是例子是我们经常会遇见的**Github 搜索**。它是使用 [RxFeedback](https://github.com/kzaher/RxFeedback) 重构以后的版本，你可以在这里下载[这个例子](https://github.com/kzaher/RxFeedback/blob/master/Examples/GithubPaginatedSearch.swift)。
+这个例子是我们经常会遇见的**Github 搜索**。它是使用 [RxFeedback](https://github.com/kzaher/RxFeedback) 重构以后的版本，你可以在这里下载[这个例子](https://github.com/kzaher/RxFeedback/blob/master/Examples/GithubPaginatedSearch.swift)。
 
 ### 简介
 
@@ -12,8 +12,6 @@
 * 输入搜索关键字，显示搜索结果
 * 当请求时产生错误，就给出错误提示
 * 当用户滑动列表到底部时，加载下一页
-
----
 
 ### State
 
@@ -125,7 +123,7 @@ extension State {
 
 ![](/assets/Architecture/RxFeedback/FeedbackLoop.png)
 
-**Feedback Loop** 是用来修改状态，IO 和资源管理的。
+**Feedback Loop** 是用来引入[附加作用]的。
 
 例如，你可以将**状态**输出到 UI 页面上，或者将 UI **事件**输入到反馈循环里面去:
 
@@ -169,7 +167,7 @@ override func viewDidLoad() {
 
 ![](/assets/Architecture/RxFeedback/QueriedState.png)
 
-**被请求的状态**是，当某个状**态变**化后，需要将触发一个新的**事件**。
+**被请求的状态**是，用于发出异步请求，以**事件**的形式返回结果。
 
 ```swift
 override func viewDidLoad() {
@@ -338,3 +336,6 @@ class GithubPaginatedSearchViewController: UIViewController {
 ```
 
 这是使用 [RxFeedback](https://github.com/kzaher/RxFeedback) 重构以后的 **Github Search**。你可以对比一下使用 [ReactorKit](/content/architecture/reactorkit.md) 重构以后的 [Github Search](/content/architecture/reactorkit/github_search.md) 两者有许多相似之处。
+
+
+[附加作用]:/content/recipes/side_effects.md

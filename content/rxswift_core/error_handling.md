@@ -160,13 +160,12 @@ updateUserInfoButton.rx.tap
 
 这样实现是非常直接的。但是一旦网络请求操作失败了，序列就会终止。整个订阅将被取消。如果用户再次点击更新按钮，就无法再次发起网络请求进行更新操作了。
 
-为了解决这个问题，我们需要选择合适的方案来进行错误处理。例如使用枚举 **Result**：
+为了解决这个问题，我们需要选择合适的方案来进行错误处理。例如，使用系统自带的枚举 **Result**：
 
 ```swift
-// 自定义一个枚举类型 Result
-public enum Result<T> {
-    case success(T)
-    case failure(Swift.Error)
+public enum Result<Success, Failure> where Failure : Error {
+    case success(Success)
+    case failure(Failure)
 }
 ```
 
@@ -175,7 +174,7 @@ public enum Result<T> {
 ```swift
 updateUserInfoButton.rx.tap
     .withLatestFrom(rxUserInfo)
-    .flatMapLatest { userInfo -> Observable<Result<Void>> in
+    .flatMapLatest { userInfo -> Observable<Result<Void, Error>> in
         return update(userInfo)
             .map(Result.success)  // 转换成 Result
             .catchError { error in Observable.just(Result.failure(error)) }
@@ -192,6 +191,6 @@ updateUserInfoButton.rx.tap
     .disposed(by: disposeBag)
 ```
 
-这样我们的错误事件被包装成了 `Result.failure(Error)` 元素，就不会终止整个序列。就算网络请求失败，整个订阅依然存在。如果用户再次点击更新按钮，也是能够发起网络请求进行更新操作的。
+这样我们的错误事件被包装成了 `Result.failure(Error)` 元素，就不会终止整个序列。即便网络请求失败了，整个订阅依然存在。如果用户再次点击更新按钮，也是能够发起网络请求进行更新操作的。
 
 另外你也可以使用 [materialize](/content/decision_tree/materialize.md) 操作符来进行错误处理。这里就不详细介绍了，如你想了解如何使用 [materialize](/content/decision_tree/materialize.md) 可以参考这篇文章 [How to handle errors in RxSwift](http://adamborek.com/how-to-handle-errors-in-rxswift/)!

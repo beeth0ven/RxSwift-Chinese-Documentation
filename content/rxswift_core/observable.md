@@ -1,4 +1,4 @@
-## Observable - 可被监听的序列
+## Observable - 可监听序列
 
 ![1](/assets/Observable/Obervable.png)
 
@@ -141,6 +141,7 @@ public enum Event<Element> {
 * [Completable](observable/completable.md)
 * [Maybe](observable/maybe.md)
 * [Driver](observable/driver.md)
+* [Signal](observable/signal.md)
 * [ControlEvent](observable/control_event.md)
 
 _ℹ️ 提示：由于**可被观察的序列（Observable）**名字过长，很多时候会增加阅读难度，所以笔者在必要时会将它简写为：**序列**。_

@@ -77,7 +77,7 @@ class ProfileViewReactor: Reactor {
     case follow(Int)
   }
 
-  // 代表状态变化
+  // 代表附加作用
   enum Mutation {
     case setFollowing(Bool)
   }
@@ -103,7 +103,7 @@ class ProfileViewReactor: Reactor {
 func mutate(action: Action) -> Observable<Mutation>
 ```
 
-每种状态变化，如，异步操作，API 调用都是在这个方法内执行。
+每种[附加作用]，如，异步操作，API 调用都是在这个方法内执行。
 
 ```swift
 func mutate(action: Action) -> Observable<Mutation> {
@@ -174,3 +174,4 @@ func transform(action: Observable<Action>) -> Observable<Action> {
 [Flux]:https://facebook.github.io/flux/
 [响应式编程]:https://zh.wikipedia.org/wiki/响应式编程
 [Github Search]:reactorkit/github_search.md
+[附加作用]:/content/recipes/side_effects.md

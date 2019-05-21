@@ -4,7 +4,25 @@
 
 ---
 
+## [2.0.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/2.0.0)
+
+#### 19年5月21日（RxSwift 5）
+
+* [RxSwift 5 更新了什么？](content/recipes/whats_new_in_rxswift_5.md)
+* 引入[食谱章节](content/recipes.md)
+* [Signal](content/rxswift_core/observable/signal.md)
+* [RxRelay](content/recipes/rxrelay.md)
+* [纯函数](content/recipes/pure_function.md)
+* [附加作用](content/recipes/side_effects.md)
+* [共享附加作用](content/recipes/share_side_effects.md)
+* 更新文档以适配 RxSwift 5
+* 更新 QQ 群号为：871293356
+
+---
+
 ## [1.2.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/1.2.0)
+
+#### 18年2月15日
 
 * 纠正错别字
 * 给 [retry](/content/decision_tree/retry.md) 操作符加入演示代码

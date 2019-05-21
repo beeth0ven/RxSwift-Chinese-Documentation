@@ -4,8 +4,6 @@
 
 这是一个图片选择器的演示，你可以在这里下载[这个例子](https://github.com/ReactiveX/RxSwift/tree/master/RxExample/RxExample/Examples/ImagePicker)。
 
----
-
 ### 简介
 
 这个 App 主要有这样几个交互：
@@ -13,8 +11,6 @@
 * 当用点击相机按钮时，让用户拍一张照片，然后显示出来。
 * 当用点击相册按钮时，让用户从相册中选出照片，然后显示出来。
 * 当用点击裁剪按钮时，让用户从相册中选出照片编辑，然后显示出来。
-
----
 
 ### 整体结构
 
@@ -37,7 +33,7 @@ override func viewDidLoad() {
             .take(1)
         }
         .map { info in
-            return info[UIImagePickerControllerOriginalImage] as? UIImage
+            return info[.originalImage] as? UIImage
         }
         .bind(to: imageView.rx.image)
         .disposed(by: disposeBag)
@@ -50,8 +46,8 @@ override func viewDidLoad() {
 
 ```swift
 cameraButton.rx.tap
-    .flatMapLatest { () -> Observable<[String: AnyObject]> ... } // 点击 -> 图片信息
-    .map { [String : AnyObject] -> UIImage? ... } // 图片信息 -> 图片
+    .flatMapLatest { () -> Observable<[InfoKey: AnyObject]> ... } // 点击 -> 图片信息
+    .map { [InfoKey : AnyObject] -> UIImage? ... } // 图片信息 -> 图片
     .bind(to: imageView.rx.image) // 数据绑定
     .disposed(by: disposeBag)
 ```
@@ -98,7 +94,7 @@ override func viewDidLoad() {
             .take(1)
         }
         .map { info in
-            return info[UIImagePickerControllerOriginalImage] as? UIImage
+            return info[.originalImage] as? UIImage
         }
         .bind(to: imageView.rx.image)
         .disposed(by: disposeBag)
@@ -114,7 +110,7 @@ override func viewDidLoad() {
             .take(1)
         }
         .map { info in
-            return info[UIImagePickerControllerEditedImage] as? UIImage
+            return info[.editedImage] as? UIImage
         }
         .bind(to: imageView.rx.image)
         .disposed(by: disposeBag)

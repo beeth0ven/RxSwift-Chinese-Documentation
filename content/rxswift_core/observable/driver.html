@@ -75,7 +75,7 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="control_event.html" />
+    <link rel="next" href="signal.html" />
     
     
     <link rel="prev" href="maybe.html" />
@@ -240,7 +240,7 @@
                 <a href="../observable.html">
             
                     
-                    4.1 Observable - 可被监听的序列
+                    4.1 Observable - 可监听序列
             
                 </a>
             
@@ -301,7 +301,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.5" data-path="control_event.html">
+        <li class="chapter " data-level="1.5.1.5" data-path="signal.html">
+            
+                <a href="signal.html">
+            
+                    
+                    Signal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" data-path="control_event.html">
             
                 <a href="control_event.html">
             
@@ -369,7 +382,7 @@
                 <a href="../observable_and_observer.html">
             
                     
-                    4.3 Observable & Observer 既是可被监听的序列也是观察者
+                    4.3 Observable & Observer 既是可监听序列也是观察者
             
                 </a>
             
@@ -435,7 +448,7 @@
                 <a href="../observable_and_observer/variable.html">
             
                     
-                    Variable
+                    Variable（已弃用）
             
                 </a>
             
@@ -1509,6 +1522,90 @@
             
         </li>
     
+        <li class="chapter " data-level="1.12" data-path="../../recipes.html">
+            
+                <a href="../../recipes.html">
+            
+                    
+                    食谱
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../../recipes/whats_new_in_rxswift_5.html">
+            
+                <a href="../../recipes/whats_new_in_rxswift_5.html">
+            
+                    
+                    RxSwift 5 更新了什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../../recipes/rxrelay.html">
+            
+                <a href="../../recipes/rxrelay.html">
+            
+                    
+                    RxRelay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../../recipes/pure_function.html">
+            
+                <a href="../../recipes/pure_function.html">
+            
+                    
+                    纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../../recipes/side_effects.html">
+            
+                <a href="../../recipes/side_effects.html">
+            
+                    
+                    附加作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../../recipes/share_side_effects.html">
+            
+                <a href="../../recipes/share_side_effects.html">
+            
+                    
+                    共享附加作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -1559,7 +1656,7 @@
 <ul>
 <li>&#x4E0D;&#x4F1A;&#x4EA7;&#x751F; <code>error</code> &#x4E8B;&#x4EF6;</li>
 <li>&#x4E00;&#x5B9A;&#x5728; <code>MainScheduler</code> &#x76D1;&#x542C;&#xFF08;&#x4E3B;&#x7EBF;&#x7A0B;&#x76D1;&#x542C;&#xFF09;</li>
-<li>&#x5171;&#x4EAB;&#x72B6;&#x6001;&#x53D8;&#x5316;</li>
+<li><a href="../../recipes/share_side_effects.html">&#x5171;&#x4EAB;&#x9644;&#x52A0;&#x4F5C;&#x7528;</a></li>
 </ul>
 <p>&#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x9A71;&#x52A8; UI &#x7684;&#x5E8F;&#x5217;&#x6240;&#x5177;&#x6709;&#x7684;&#x7279;&#x5F81;&#x3002;</p>
 <h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-driver-&#xFF1F;"><a name="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-driver-&#xFF1F;" class="plugin-anchor" href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-driver-&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528; Driver &#xFF1F;</h3>
@@ -1642,17 +1739,17 @@ results
 <p>&#x7136;&#x540E;&#x7B2C;&#x4E8C;&#x4E2A;&#x53D8;&#x5316;&#x662F;&#xFF1A;</p>
 <pre><code class="lang-swift">.asDriver(onErrorJustReturn: [])
 </code></pre>
-<p>&#x4EFB;&#x4F55;&#x53EF;&#x88AB;&#x76D1;&#x542C;&#x7684;&#x5E8F;&#x5217;&#x90FD;&#x53EF;&#x4EE5;&#x88AB;&#x8F6C;&#x6362;&#x4E3A; <code>Driver</code>&#xFF0C;&#x53EA;&#x8981;&#x4ED6;&#x6EE1;&#x8DB3; 3 &#x4E2A;&#x6761;&#x4EF6;&#xFF1A;</p>
+<p>&#x4EFB;&#x4F55;&#x53EF;&#x76D1;&#x542C;&#x5E8F;&#x5217;&#x90FD;&#x53EF;&#x4EE5;&#x88AB;&#x8F6C;&#x6362;&#x4E3A; <code>Driver</code>&#xFF0C;&#x53EA;&#x8981;&#x4ED6;&#x6EE1;&#x8DB3; 3 &#x4E2A;&#x6761;&#x4EF6;&#xFF1A;</p>
 <ul>
 <li>&#x4E0D;&#x4F1A;&#x4EA7;&#x751F; <code>error</code> &#x4E8B;&#x4EF6;</li>
 <li>&#x4E00;&#x5B9A;&#x5728; <code>MainScheduler</code> &#x76D1;&#x542C;&#xFF08;&#x4E3B;&#x7EBF;&#x7A0B;&#x76D1;&#x542C;&#xFF09;</li>
-<li>&#x5171;&#x4EAB;&#x72B6;&#x6001;&#x53D8;&#x5316;</li>
+<li><a href="../../recipes/share_side_effects.html">&#x5171;&#x4EAB;&#x9644;&#x52A0;&#x4F5C;&#x7528;</a></li>
 </ul>
 <p>&#x90A3;&#x4E48;&#x8981;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x6761;&#x4EF6;&#x90FD;&#x88AB;&#x6EE1;&#x8DB3;&#xFF1F;&#x901A;&#x8FC7; Rx &#x64CD;&#x4F5C;&#x7B26;&#x6765;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x3002;<code>asDriver(onErrorJustReturn: [])</code> &#x76F8;&#x5F53;&#x4E8E;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
 <pre><code class="lang-swift"><span class="hljs-keyword">let</span> safeSequence = xs
   .observeOn(<span class="hljs-type">MainScheduler</span>.instance)       <span class="hljs-comment">// &#x4E3B;&#x7EBF;&#x7A0B;&#x76D1;&#x542C;</span>
   .catchErrorJustReturn(onErrorJustReturn) <span class="hljs-comment">// &#x65E0;&#x6CD5;&#x4EA7;&#x751F;&#x9519;&#x8BEF;</span>
-  .share(replay: <span class="hljs-number">1</span>, scope: .whileConnected)<span class="hljs-comment">// &#x5171;&#x4EAB;&#x72B6;&#x6001;&#x53D8;&#x5316;</span>
+  .share(replay: <span class="hljs-number">1</span>, scope: .whileConnected)<span class="hljs-comment">// &#x5171;&#x4EAB;&#x9644;&#x52A0;&#x4F5C;&#x7528;</span>
 <span class="hljs-keyword">return</span> <span class="hljs-type">Driver</span>(raw: safeSequence)           <span class="hljs-comment">// &#x5C01;&#x88C5;</span>
 </code></pre>
 <p>&#x6700;&#x540E;&#x4F7F;&#x7528; <code>drive</code> &#x800C;&#x4E0D;&#x662F; <code>bindTo</code></p>
@@ -1689,7 +1786,7 @@ results
                 </a>
                 
                 
-                <a href="control_event.html" class="navigation navigation-next " aria-label="Next page: ControlEvent">
+                <a href="signal.html" class="navigation navigation-next " aria-label="Next page: Signal">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1700,7 +1797,7 @@ results
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Driver","level":"1.5.1.4","depth":3,"next":{"title":"ControlEvent","level":"1.5.1.5","depth":3,"path":"content/rxswift_core/observable/control_event.md","ref":"content/rxswift_core/observable/control_event.md","articles":[]},"previous":{"title":"Maybe","level":"1.5.1.3","depth":3,"path":"content/rxswift_core/observable/maybe.md","ref":"content/rxswift_core/observable/maybe.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small","buttons":[{"user":"beeth0ven","repo":"RxSwift-Chinese-Documentation","type":"star","size":"small","count":true}]},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observable/driver.md","mtime":"2018-02-15T01:41:33.818Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-15T02:19:49.306Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Driver","level":"1.5.1.4","depth":3,"next":{"title":"Signal","level":"1.5.1.5","depth":3,"path":"content/rxswift_core/observable/signal.md","ref":"content/rxswift_core/observable/signal.md","articles":[]},"previous":{"title":"Maybe","level":"1.5.1.3","depth":3,"path":"content/rxswift_core/observable/maybe.md","ref":"content/rxswift_core/observable/maybe.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small","buttons":[{"user":"beeth0ven","repo":"RxSwift-Chinese-Documentation","type":"star","size":"small","count":true}]},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observable/driver.md","mtime":"2019-05-21T02:03:31.510Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-05-21T02:09:33.253Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1743,10 +1840,6 @@ results
     
         
         <script src="../../../gitbook/gitbook-plugin-tonic/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

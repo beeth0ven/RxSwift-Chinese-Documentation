@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Variable · RxSwift 中文文档</title>
+        <title>Variable（已弃用） · RxSwift 中文文档</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -240,7 +240,7 @@
                 <a href="../observable.html">
             
                     
-                    4.1 Observable - 可被监听的序列
+                    4.1 Observable - 可监听序列
             
                 </a>
             
@@ -301,7 +301,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.5" data-path="../observable/control_event.html">
+        <li class="chapter " data-level="1.5.1.5" data-path="../observable/signal.html">
+            
+                <a href="../observable/signal.html">
+            
+                    
+                    Signal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" data-path="../observable/control_event.html">
             
                 <a href="../observable/control_event.html">
             
@@ -369,7 +382,7 @@
                 <a href="../observable_and_observer.html">
             
                     
-                    4.3 Observable & Observer 既是可被监听的序列也是观察者
+                    4.3 Observable & Observer 既是可监听序列也是观察者
             
                 </a>
             
@@ -435,7 +448,7 @@
                 <a href="variable.html">
             
                     
-                    Variable
+                    Variable（已弃用）
             
                 </a>
             
@@ -1509,6 +1522,90 @@
             
         </li>
     
+        <li class="chapter " data-level="1.12" data-path="../../recipes.html">
+            
+                <a href="../../recipes.html">
+            
+                    
+                    食谱
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../../recipes/whats_new_in_rxswift_5.html">
+            
+                <a href="../../recipes/whats_new_in_rxswift_5.html">
+            
+                    
+                    RxSwift 5 更新了什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../../recipes/rxrelay.html">
+            
+                <a href="../../recipes/rxrelay.html">
+            
+                    
+                    RxRelay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../../recipes/pure_function.html">
+            
+                <a href="../../recipes/pure_function.html">
+            
+                    
+                    纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../../recipes/side_effects.html">
+            
+                <a href="../../recipes/side_effects.html">
+            
+                    
+                    附加作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../../recipes/share_side_effects.html">
+            
+                <a href="../../recipes/share_side_effects.html">
+            
+                    
+                    共享附加作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -1539,7 +1636,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >Variable</a>
+        <a href="../../.." >Variable（已弃用）</a>
     </h1>
 </div>
 
@@ -1554,47 +1651,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="variable"><a name="variable" class="plugin-anchor" href="#variable"><i class="fa fa-link" aria-hidden="true"></i></a>Variable</h2>
-<p>&#x5728; <strong>Swift</strong> &#x4E2D;&#x6211;&#x4EEC;&#x7ECF;&#x5E38;&#x4F1A;&#x7528; <strong>var</strong> &#x5173;&#x952E;&#x5B57;&#x6765;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x3002;<strong>RxSwift</strong> &#x63D0;&#x4F9B;&#x7684; <strong>Variable</strong> &#x5B9E;&#x9645;&#x4E0A;&#x662F; <strong>var</strong> &#x7684; <strong>Rx</strong> &#x7248;&#x672C;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x770B;&#x4F5C;&#x662F; <strong>RxVar&#x3002;</strong></p>
-<p>&#x6211;&#x4EEC;&#x6765;&#x5BF9;&#x6BD4;&#x4E00;&#x4E0B; <strong>var</strong> &#x4EE5;&#x53CA; <strong>Variable</strong> &#x7684;&#x7528;&#x6CD5;&#xFF1A;</p>
-<p><strong>&#x4F7F;&#x7528; var&#xFF1A;</strong></p>
-<pre><code class="lang-swift"><span class="hljs-comment">// &#x5728; ViewController &#x4E2D;</span>
-<span class="hljs-keyword">var</span> model: <span class="hljs-type">Model</span>? = <span class="hljs-literal">nil</span> {
-    <span class="hljs-keyword">didSet</span> { updateUI(with: model) }
-}
-
-<span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
-    <span class="hljs-keyword">super</span>.viewDidLoad()
-
-    model = getModel()
-}
-
-<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">updateUI</span><span class="hljs-params">(with model: Model?)</span></span> { ... }
-<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getModel</span><span class="hljs-params">()</span></span> -&gt; <span class="hljs-type">Model</span> { ... }
-</code></pre>
-<p><strong>&#x4F7F;&#x7528; Variable&#xFF1A;</strong></p>
-<pre><code class="lang-swift"><span class="hljs-comment">// &#x5728; ViewController &#x4E2D;</span>
-<span class="hljs-keyword">let</span> model: <span class="hljs-type">Variable</span>&lt;<span class="hljs-type">Model</span>?&gt; = <span class="hljs-type">Variable</span>(<span class="hljs-literal">nil</span>)
-
-<span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
-    <span class="hljs-keyword">super</span>.viewDidLoad()
-
-    model.asObservable()
-        .subscribe(onNext: { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] model <span class="hljs-keyword">in</span>
-            <span class="hljs-keyword">self</span>?.updateUI(with: model)
-        })
-        .disposed(by: disposeBag)
-
-    model.value = getModel()
-}
-
-<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">updateUI</span><span class="hljs-params">(with model: Model?)</span></span> { ... }
-<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getModel</span><span class="hljs-params">()</span></span> -&gt; <span class="hljs-type">Model</span> { ... }
-</code></pre>
-<p>&#x7B2C;&#x4E00;&#x79CD;&#x4F7F;&#x7528; <strong>var</strong> &#x7684;&#x65B9;&#x5F0F;&#x5341;&#x5206;&#x5E38;&#x89C1;&#xFF0C;&#x5728; <code>ViewController</code> &#x4E2D;&#x76D1;&#x542C; <code>Model</code> &#x7684;&#x53D8;&#x5316;&#xFF0C;&#x7136;&#x540E;&#x5237;&#x65B0;&#x9875;&#x9762;&#x3002;</p>
-<p>&#x7B2C;&#x4E8C;&#x79CD;&#x4F7F;&#x7528; <strong>Variable</strong> &#x5219;&#x662F; <strong>RxSwift</strong> &#x72EC;&#x6709;&#x7684;&#x3002;<strong>Variable</strong> &#x51E0;&#x4E4E;&#x63D0;&#x4F9B;&#x4E86; <strong>var</strong> &#x7684;&#x6240;&#x6709;&#x529F;&#x80FD;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x52A0;&#x4E0A;&#x4E00;&#x6761;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x5C31;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528; <code>asObservable()</code> &#x65B9;&#x6CD5;&#x8F6C;&#x6362;&#x6210;<strong>&#x5E8F;&#x5217;</strong>&#x3002;&#x7136;&#x540E;&#x4F60;&#x53EF;&#x4EE5;&#x5BF9;&#x8FD9;&#x4E2A;<strong>&#x5E8F;&#x5217;</strong>&#x5E94;&#x7528;<a href="../operator.html">&#x64CD;&#x4F5C;&#x7B26;</a>&#xFF0C;&#x6765;&#x5408;&#x6210;&#x5176;&#x4ED6;&#x7684;<strong>&#x5E8F;&#x5217;</strong>&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x9700;&#x8981;&#x63D0;&#x4F9B; <strong>Rx</strong> &#x652F;&#x6301;&#xFF0C;&#x90A3;&#x5C31;&#x9009;&#x7528; <strong>Variable</strong> &#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x3002;</p>
-<h3 id="&#x8BF4;&#x660E;"><a name="&#x8BF4;&#x660E;" class="plugin-anchor" href="#&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BF4;&#x660E;</h3>
-<p><strong>Variable</strong> &#x5C01;&#x88C5;&#x4E86;&#x4E00;&#x4E2A; <a href="behavior_subject.html">BehaviorSubject</a>&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4F1A;&#x6301;&#x6709;&#x5F53;&#x524D;&#x503C;&#xFF0C;&#x5E76;&#x4E14; <strong>Variable</strong> &#x4F1A;&#x5BF9;&#x65B0;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x9001;&#x5F53;&#x524D;&#x503C;&#x3002;&#x5B83;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F; <code>error</code> &#x4E8B;&#x4EF6;&#x3002;<strong>Variable</strong> &#x5728; <code>deinit</code> &#x65F6;&#xFF0C;&#x4F1A;&#x53D1;&#x51FA;&#x4E00;&#x4E2A; <code>completed</code> &#x4E8B;&#x4EF6;&#x3002;</p>
+                                <h2 id="variable-&#xFF08;&#x5DF2;&#x5F03;&#x7528;&#xFF09;"><a name="variable-&#xFF08;&#x5DF2;&#x5F03;&#x7528;&#xFF09;" class="plugin-anchor" href="#variable-&#xFF08;&#x5DF2;&#x5F03;&#x7528;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>Variable &#xFF08;&#x5DF2;&#x5F03;&#x7528;&#xFF09;</h2>
+<p><strong>Variable</strong> &#x662F;&#x65E9;&#x671F;&#x6DFB;&#x52A0;&#x5230; RxSwift &#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x901A;&#x8FC7; &#x201C;setting&#x201D; &#x548C; &#x201C;getting&#x201D;&#xFF0C; &#x4ED6;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x4ECE;&#x539F;&#x5148;<strong>&#x547D;&#x4EE4;&#x5F0F;&#x7684;&#x601D;&#x7EF4;&#x65B9;&#x5F0F;</strong>&#xFF0C;&#x8FC7;&#x6E21;&#x5230;<strong>&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x601D;&#x7EF4;&#x65B9;&#x5F0F;</strong>&#x3002;</p>
+<p>&#x4F46;&#x8FD9;&#x53EA;&#x662F;&#x6211;&#x4EEC;&#x4E00;&#x53A2;&#x60C5;&#x613F;&#x7684;&#x60F3;&#x6CD5;&#x3002;&#x8BB8;&#x591A;&#x5F00;&#x53D1;&#x8005;&#x6EE5;&#x7528; <strong>Variable</strong>&#xFF0C;&#x6765;&#x6784;&#x5EFA; <strong>&#x91CD;&#x5EA6;<a href="https://zh.wikipedia.org/wiki/%E6%8C%87%E4%BB%A4%E5%BC%8F%E7%B7%A8%E7%A8%8B" target="_blank">&#x547D;&#x4EE4;&#x5F0F;</a></strong> &#x7CFB;&#x7EDF;&#xFF0C;&#x800C;&#x4E0D;&#x662F; Rx &#x7684; <strong><a href="https://zh.wikipedia.org/wiki/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B" target="_blank">&#x58F0;&#x660E;&#x5F0F;</a></strong> &#x7CFB;&#x7EDF;&#x3002;&#x8FD9;&#x5BF9;&#x4E8E;&#x65B0;&#x624B;&#x5F88;&#x5E38;&#x89C1;&#xFF0C;&#x5E76;&#x4E14;&#x4ED6;&#x4EEC;&#x65E0;&#x6CD5;&#x610F;&#x8BC6;&#x5230;&#xFF0C;&#x8FD9;&#x662F;&#x4EE3;&#x7801;&#x7684;&#x574F;&#x5473;&#x9053;&#x3002;&#x6240;&#x4EE5;&#x5728; RxSwift 4.x &#x4E2D; <strong>Variable</strong> &#x88AB;&#x8F7B;&#x5EA6;&#x5F03;&#x7528;&#xFF0C;&#x4EC5;&#x4EC5;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x8FD0;&#x884C;&#x65F6;&#x8B66;&#x544A;&#x3002;</p>
+<p>&#x5728; RxSwift 5.x &#x4E2D;&#xFF0C;&#x4ED6;&#x88AB;<a href="https://github.com/ReactiveX/RxSwift/pull/1922" target="_blank">&#x5B98;&#x65B9;&#x7684;&#x6B63;&#x5F0F;&#x7684;&#x5F03;&#x7528;&#x4E86;</a>&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x9700;&#x8981;&#x65F6;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528; <a href="../../recipes/rxrelay.html">BehaviorRelay</a> &#x6216;&#x8005; <a href="behavior_subject.html">BehaviorSubject</a>&#x3002;</p>
 
                                 
                                 </section>
@@ -1638,7 +1698,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Variable","level":"1.5.3.5","depth":3,"next":{"title":"ControlProperty","level":"1.5.3.6","depth":3,"path":"content/rxswift_core/observable_and_observer/control_property.md","ref":"content/rxswift_core/observable_and_observer/control_property.md","articles":[]},"previous":{"title":"BehaviorSubject","level":"1.5.3.4","depth":3,"path":"content/rxswift_core/observable_and_observer/behavior_subject.md","ref":"content/rxswift_core/observable_and_observer/behavior_subject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small","buttons":[{"user":"beeth0ven","repo":"RxSwift-Chinese-Documentation","type":"star","size":"small","count":true}]},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observable_and_observer/variable.md","mtime":"2018-02-15T01:41:33.821Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-02-15T02:19:49.306Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Variable（已弃用）","level":"1.5.3.5","depth":3,"next":{"title":"ControlProperty","level":"1.5.3.6","depth":3,"path":"content/rxswift_core/observable_and_observer/control_property.md","ref":"content/rxswift_core/observable_and_observer/control_property.md","articles":[]},"previous":{"title":"BehaviorSubject","level":"1.5.3.4","depth":3,"path":"content/rxswift_core/observable_and_observer/behavior_subject.md","ref":"content/rxswift_core/observable_and_observer/behavior_subject.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small","buttons":[{"user":"beeth0ven","repo":"RxSwift-Chinese-Documentation","type":"star","size":"small","count":true}]},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/rxswift_core/observable_and_observer/variable.md","mtime":"2019-05-21T02:03:31.514Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2019-05-21T02:09:33.253Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1681,10 +1741,6 @@
     
         
         <script src="../../../gitbook/gitbook-plugin-tonic/plugin.js"></script>
-        
-    
-        
-        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

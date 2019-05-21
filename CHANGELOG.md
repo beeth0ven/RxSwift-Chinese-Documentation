@@ -9,6 +9,7 @@
 #### 19年5月21日（RxSwift 5）
 
 * [RxSwift 5 更新了什么？](content/recipes/whats_new_in_rxswift_5.md)
+* 引入[食谱章节](content/recipes.md)
 * [Signal](content/rxswift_core/observable/signal.md)
 * [RxRelay](content/recipes/rxrelay.md)
 * [纯函数](content/recipes/pure_function.md)

@@ -176,4 +176,4 @@ let observable: Observable<String?> = textField.rx.text.asObservable()
 [副作用]:https://hanyu.baidu.com/zici/s?wd=%E5%89%AF%E4%BD%9C%E7%94%A8&query=%E5%89%AF%E4%BD%9C%E7%94%A8%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A&srcid=28236&from=kg0&from=kg0
 [附加作用]:https://zh.wikipedia.org/wiki/%E5%87%BD%E6%95%B0%E5%89%AF%E4%BD%9C%E7%94%A8
 
-[Observable]:content/rxswift_core/observable.md
+[Observable]:../rxswift_core/observable.md

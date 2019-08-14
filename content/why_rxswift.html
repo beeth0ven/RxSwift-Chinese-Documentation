@@ -1,0 +1,1982 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1. 为什么要使用 RxSwift? · RxSwift 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-quiz/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="first_app.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small","buttons":[{"user":"beeth0ven","repo":"RxSwift-Chinese-Documentation","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    RxSwift 中文文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="why_rxswift.html">
+            
+                <a href="why_rxswift.html">
+            
+                    
+                    1. 为什么要使用 RxSwift?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="first_app.html">
+            
+                <a href="first_app.html">
+            
+                    
+                    2. 你好 RxSwift！
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="think_reactive.html">
+            
+                <a href="think_reactive.html">
+            
+                    
+                    3. 函数响应式编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="think_reactive/funtional_programming.html">
+            
+                <a href="think_reactive/funtional_programming.html">
+            
+                    
+                    3.1 函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="think_reactive/functional_reactive_progaramming.html">
+            
+                <a href="think_reactive/functional_reactive_progaramming.html">
+            
+                    
+                    3.2 函数式编程 -> 函数响应式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="think_reactive/data_binding.html">
+            
+                <a href="think_reactive/data_binding.html">
+            
+                    
+                    3.3 数据绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="rxswift_core.html">
+            
+                <a href="rxswift_core.html">
+            
+                    
+                    4. RxSwift 核心
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="rxswift_core/observable.html">
+            
+                <a href="rxswift_core/observable.html">
+            
+                    
+                    4.1 Observable - 可监听序列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="rxswift_core/observable/single.html">
+            
+                <a href="rxswift_core/observable/single.html">
+            
+                    
+                    Single
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="rxswift_core/observable/completable.html">
+            
+                <a href="rxswift_core/observable/completable.html">
+            
+                    
+                    Completable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="rxswift_core/observable/maybe.html">
+            
+                <a href="rxswift_core/observable/maybe.html">
+            
+                    
+                    Maybe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="rxswift_core/observable/driver.html">
+            
+                <a href="rxswift_core/observable/driver.html">
+            
+                    
+                    Driver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" data-path="rxswift_core/observable/signal.html">
+            
+                <a href="rxswift_core/observable/signal.html">
+            
+                    
+                    Signal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" data-path="rxswift_core/observable/control_event.html">
+            
+                <a href="rxswift_core/observable/control_event.html">
+            
+                    
+                    ControlEvent
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="rxswift_core/observer.html">
+            
+                <a href="rxswift_core/observer.html">
+            
+                    
+                    4.2 Observer - 观察者
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="rxswift_core/observer/any_observer.html">
+            
+                <a href="rxswift_core/observer/any_observer.html">
+            
+                    
+                    AnyObserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="rxswift_core/observer/binder.html">
+            
+                <a href="rxswift_core/observer/binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="rxswift_core/observable_and_observer.html">
+            
+                <a href="rxswift_core/observable_and_observer.html">
+            
+                    
+                    4.3 Observable & Observer 既是可监听序列也是观察者
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="rxswift_core/observable_and_observer/async_subject.html">
+            
+                <a href="rxswift_core/observable_and_observer/async_subject.html">
+            
+                    
+                    AsyncSubject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="rxswift_core/observable_and_observer/publish_subject.html">
+            
+                <a href="rxswift_core/observable_and_observer/publish_subject.html">
+            
+                    
+                    PublishSubject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="rxswift_core/observable_and_observer/replay_subject.html">
+            
+                <a href="rxswift_core/observable_and_observer/replay_subject.html">
+            
+                    
+                    ReplaySubject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="rxswift_core/observable_and_observer/behavior_subject.html">
+            
+                <a href="rxswift_core/observable_and_observer/behavior_subject.html">
+            
+                    
+                    BehaviorSubject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="rxswift_core/observable_and_observer/variable.html">
+            
+                <a href="rxswift_core/observable_and_observer/variable.html">
+            
+                    
+                    Variable（已弃用）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.6" data-path="rxswift_core/observable_and_observer/control_property.html">
+            
+                <a href="rxswift_core/observable_and_observer/control_property.html">
+            
+                    
+                    ControlProperty
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="rxswift_core/operator.html">
+            
+                <a href="rxswift_core/operator.html">
+            
+                    
+                    4.4 Operator - 操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="rxswift_core/disposable.html">
+            
+                <a href="rxswift_core/disposable.html">
+            
+                    
+                    4.5 Disposable - 可被清除的资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="rxswift_core/schedulers.html">
+            
+                <a href="rxswift_core/schedulers.html">
+            
+                    
+                    4.6 Schedulers - 调度器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="rxswift_core/error_handling.html">
+            
+                <a href="rxswift_core/error_handling.html">
+            
+                    
+                    4.7 Error Handling - 错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="decision_tree.html">
+            
+                <a href="decision_tree.html">
+            
+                    
+                    5. 如何选择操作符？
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="decision_tree/amb.html">
+            
+                <a href="decision_tree/amb.html">
+            
+                    
+                    amb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="decision_tree/buffer.html">
+            
+                <a href="decision_tree/buffer.html">
+            
+                    
+                    buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="decision_tree/catchError.html">
+            
+                <a href="decision_tree/catchError.html">
+            
+                    
+                    catchError
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="decision_tree/combineLatest.html">
+            
+                <a href="decision_tree/combineLatest.html">
+            
+                    
+                    combineLatest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="decision_tree/concat.html">
+            
+                <a href="decision_tree/concat.html">
+            
+                    
+                    concat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="decision_tree/concatMap.html">
+            
+                <a href="decision_tree/concatMap.html">
+            
+                    
+                    concatMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="decision_tree/connect.html">
+            
+                <a href="decision_tree/connect.html">
+            
+                    
+                    connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="decision_tree/create.html">
+            
+                <a href="decision_tree/create.html">
+            
+                    
+                    create
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="decision_tree/debounce.html">
+            
+                <a href="decision_tree/debounce.html">
+            
+                    
+                    debounce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="decision_tree/debug.html">
+            
+                <a href="decision_tree/debug.html">
+            
+                    
+                    debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="decision_tree/deferred.html">
+            
+                <a href="decision_tree/deferred.html">
+            
+                    
+                    deferred
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="decision_tree/delay.html">
+            
+                <a href="decision_tree/delay.html">
+            
+                    
+                    delay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="decision_tree/delaySubscription.html">
+            
+                <a href="decision_tree/delaySubscription.html">
+            
+                    
+                    delaySubscription
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="decision_tree/dematerialize.html">
+            
+                <a href="decision_tree/dematerialize.html">
+            
+                    
+                    dematerialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="decision_tree/distinctUntilChanged.html">
+            
+                <a href="decision_tree/distinctUntilChanged.html">
+            
+                    
+                    distinctUntilChanged
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="decision_tree/do.html">
+            
+                <a href="decision_tree/do.html">
+            
+                    
+                    do
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="decision_tree/elementAt.html">
+            
+                <a href="decision_tree/elementAt.html">
+            
+                    
+                    elementAt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="decision_tree/empty.html">
+            
+                <a href="decision_tree/empty.html">
+            
+                    
+                    empty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="decision_tree/error.html">
+            
+                <a href="decision_tree/error.html">
+            
+                    
+                    error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="decision_tree/filter.html">
+            
+                <a href="decision_tree/filter.html">
+            
+                    
+                    filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="decision_tree/flatMap.html">
+            
+                <a href="decision_tree/flatMap.html">
+            
+                    
+                    flatMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.22" data-path="decision_tree/flatMapLatest.html">
+            
+                <a href="decision_tree/flatMapLatest.html">
+            
+                    
+                    flatMapLatest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.23" data-path="decision_tree/from.html">
+            
+                <a href="decision_tree/from.html">
+            
+                    
+                    from
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.24" data-path="decision_tree/groupBy.html">
+            
+                <a href="decision_tree/groupBy.html">
+            
+                    
+                    groupBy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.25" data-path="decision_tree/ignoreElements.html">
+            
+                <a href="decision_tree/ignoreElements.html">
+            
+                    
+                    ignoreElements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.26" data-path="decision_tree/interval.html">
+            
+                <a href="decision_tree/interval.html">
+            
+                    
+                    interval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.27" data-path="decision_tree/just.html">
+            
+                <a href="decision_tree/just.html">
+            
+                    
+                    just
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.28" data-path="decision_tree/map.html">
+            
+                <a href="decision_tree/map.html">
+            
+                    
+                    map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.29" data-path="decision_tree/merge.html">
+            
+                <a href="decision_tree/merge.html">
+            
+                    
+                    merge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.30" data-path="decision_tree/materialize.html">
+            
+                <a href="decision_tree/materialize.html">
+            
+                    
+                    materialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.31" data-path="decision_tree/never.html">
+            
+                <a href="decision_tree/never.html">
+            
+                    
+                    never
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.32" data-path="decision_tree/observeOn.html">
+            
+                <a href="decision_tree/observeOn.html">
+            
+                    
+                    observeOn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.33" data-path="decision_tree/publish.html">
+            
+                <a href="decision_tree/publish.html">
+            
+                    
+                    publish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.34" data-path="decision_tree/reduce.html">
+            
+                <a href="decision_tree/reduce.html">
+            
+                    
+                    reduce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.35" data-path="decision_tree/refCount.html">
+            
+                <a href="decision_tree/refCount.html">
+            
+                    
+                    refCount
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.36" data-path="decision_tree/repeatElement.html">
+            
+                <a href="decision_tree/repeatElement.html">
+            
+                    
+                    repeatElement
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.37" data-path="decision_tree/replay.html">
+            
+                <a href="decision_tree/replay.html">
+            
+                    
+                    replay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.38" data-path="decision_tree/retry.html">
+            
+                <a href="decision_tree/retry.html">
+            
+                    
+                    retry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.39" data-path="decision_tree/sample.html">
+            
+                <a href="decision_tree/sample.html">
+            
+                    
+                    sample
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.40" data-path="decision_tree/scan.html">
+            
+                <a href="decision_tree/scan.html">
+            
+                    
+                    scan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.41" data-path="decision_tree/shareReplay.html">
+            
+                <a href="decision_tree/shareReplay.html">
+            
+                    
+                    shareReplay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.42" data-path="decision_tree/single.html">
+            
+                <a href="decision_tree/single.html">
+            
+                    
+                    single
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.43" data-path="decision_tree/skip.html">
+            
+                <a href="decision_tree/skip.html">
+            
+                    
+                    skip
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.44" data-path="decision_tree/skipUntil.html">
+            
+                <a href="decision_tree/skipUntil.html">
+            
+                    
+                    skipUntil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.45" data-path="decision_tree/skipWhile.html">
+            
+                <a href="decision_tree/skipWhile.html">
+            
+                    
+                    skipWhile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.46" data-path="decision_tree/startWith.html">
+            
+                <a href="decision_tree/startWith.html">
+            
+                    
+                    startWith
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.47" data-path="decision_tree/subscribeOn.html">
+            
+                <a href="decision_tree/subscribeOn.html">
+            
+                    
+                    subscribeOn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.48" data-path="decision_tree/take.html">
+            
+                <a href="decision_tree/take.html">
+            
+                    
+                    take
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.49" data-path="decision_tree/takeLast.html">
+            
+                <a href="decision_tree/takeLast.html">
+            
+                    
+                    takeLast
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.50" data-path="decision_tree/takeUntil.html">
+            
+                <a href="decision_tree/takeUntil.html">
+            
+                    
+                    takeUntil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.51" data-path="decision_tree/takeWhile.html">
+            
+                <a href="decision_tree/takeWhile.html">
+            
+                    
+                    takeWhile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.52" data-path="decision_tree/throttle.html">
+            
+                <a href="decision_tree/throttle.html">
+            
+                    
+                    throttle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.53" data-path="decision_tree/timeout.html">
+            
+                <a href="decision_tree/timeout.html">
+            
+                    
+                    timeout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.54" data-path="decision_tree/timer.html">
+            
+                <a href="decision_tree/timer.html">
+            
+                    
+                    timer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.55" data-path="decision_tree/using.html">
+            
+                <a href="decision_tree/using.html">
+            
+                    
+                    using
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.56" data-path="decision_tree/window.html">
+            
+                <a href="decision_tree/window.html">
+            
+                    
+                    window
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.57" data-path="decision_tree/withLatestFrom.html">
+            
+                <a href="decision_tree/withLatestFrom.html">
+            
+                    
+                    withLatestFrom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.58" data-path="decision_tree/zip.html">
+            
+                <a href="decision_tree/zip.html">
+            
+                    
+                    zip
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="more_demo.html">
+            
+                <a href="more_demo.html">
+            
+                    
+                    6. 更多示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="more_demo/image_picker.html">
+            
+                <a href="more_demo/image_picker.html">
+            
+                    
+                    ImagePicker - 图片选择器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="more_demo/tableView_sectioned_viewController.html">
+            
+                <a href="more_demo/tableView_sectioned_viewController.html">
+            
+                    
+                    TableViewSectionedViewController - 多层级的列表页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="more_demo/calculator.html">
+            
+                <a href="more_demo/calculator.html">
+            
+                    
+                    Calculator - 计算器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="architecture.html">
+            
+                <a href="architecture.html">
+            
+                    
+                    7. RxSwift 常用架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="architecture/mvvm.html">
+            
+                <a href="architecture/mvvm.html">
+            
+                    
+                    7.1 MVVM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="architecture/mvvm/github_signup.html">
+            
+                <a href="architecture/mvvm/github_signup.html">
+            
+                    
+                    Github Signup（示例）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="architecture/rxfeedback.html">
+            
+                <a href="architecture/rxfeedback.html">
+            
+                    
+                    7.2 RxFeedback
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="architecture/rxfeedback/github_search.html">
+            
+                <a href="architecture/rxfeedback/github_search.html">
+            
+                    
+                    Github Search（示例）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="architecture/reactorkit.html">
+            
+                <a href="architecture/reactorkit.html">
+            
+                    
+                    7.3 ReactorKit
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="architecture/reactorkit/github_search.html">
+            
+                <a href="architecture/reactorkit/github_search.html">
+            
+                    
+                    Github Search（示例）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="rxswift_ecosystem.html">
+            
+                <a href="rxswift_ecosystem.html">
+            
+                    
+                    8. RxSwift 生态系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="resource.html">
+            
+                <a href="resource.html">
+            
+                    
+                    9. 学习资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    10. 关于本文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../CHANGELOG.html">
+            
+                <a href="../CHANGELOG.html">
+            
+                    
+                    10.1 文档更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="recipes.html">
+            
+                <a href="recipes.html">
+            
+                    
+                    食谱
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="recipes/whats_new_in_rxswift_5.html">
+            
+                <a href="recipes/whats_new_in_rxswift_5.html">
+            
+                    
+                    RxSwift 5 更新了什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="recipes/rxrelay.html">
+            
+                <a href="recipes/rxrelay.html">
+            
+                    
+                    RxRelay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="recipes/pure_function.html">
+            
+                <a href="recipes/pure_function.html">
+            
+                    
+                    纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="recipes/side_effects.html">
+            
+                <a href="recipes/side_effects.html">
+            
+                    
+                    附加作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="recipes/share_side_effects.html">
+            
+                <a href="recipes/share_side_effects.html">
+            
+                    
+                    共享附加作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1. 为什么要使用 RxSwift?</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-rxswift-&#xFF1F;"><a name="&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-rxswift-&#xFF1F;" class="plugin-anchor" href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-rxswift-&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528; RxSwift &#xFF1F;</h1>
+<p>&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E00;&#x4E0B; RxSwift &#x80FD;&#x591F;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x505A;&#x4E9B;&#x4EC0;&#x4E48;&#xFF1A;</p>
+<h2 id="target-action"><a name="target-action" class="plugin-anchor" href="#target-action"><i class="fa fa-link" aria-hidden="true"></i></a>Target Action</h2>
+<p>&#x4F20;&#x7EDF;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-swift">button.addTarget(<span class="hljs-keyword">self</span>, action: #selector(buttonTapped), <span class="hljs-keyword">for</span>: .touchUpInside)
+</code></pre>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">buttonTapped</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;button Tapped&quot;</span>)
+}
+</code></pre>
+<p>&#x901A;&#x8FC7; Rx &#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-swift">button.rx.tap
+    .subscribe(onNext: {
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;button Tapped&quot;</span>)
+    })
+    .disposed(by: disposeBag)
+</code></pre>
+<p>&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528; Target Action&#xFF0C;&#x8FD9;&#x6837;&#x4F7F;&#x5F97;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#x6E05;&#x6670;&#x53EF;&#x89C1;&#x3002;</p>
+<h2 id="&#x4EE3;&#x7406;"><a name="&#x4EE3;&#x7406;" class="plugin-anchor" href="#&#x4EE3;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EE3;&#x7406;</h2>
+<p>&#x4F20;&#x7EDF;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ViewController</span>: <span class="hljs-title">UIViewController</span> </span>{
+    ...
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
+        <span class="hljs-keyword">super</span>.viewDidLoad()
+        scrollView.delegate = <span class="hljs-keyword">self</span>
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">extension</span> <span class="hljs-title">ViewController</span>: <span class="hljs-title">UIScrollViewDelegate</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">scrollViewDidScroll</span><span class="hljs-params">(<span class="hljs-number">_</span> scrollView: UIScrollView)</span></span> {
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;contentOffset: <span class="hljs-subst">\(scrollView.contentOffset)</span>&quot;</span>)
+    }
+}
+</code></pre>
+<p>&#x901A;&#x8FC7; Rx &#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ViewController</span>: <span class="hljs-title">UIViewController</span> </span>{
+    ...
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
+        <span class="hljs-keyword">super</span>.viewDidLoad()
+
+        scrollView.rx.contentOffset
+            .subscribe(onNext: { contentOffset <span class="hljs-keyword">in</span>
+                <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;contentOffset: <span class="hljs-subst">\(contentOffset)</span>&quot;</span>)
+            })
+            .disposed(by: disposeBag)
+    }
+}
+</code></pre>
+<p>&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x4E66;&#x5199;&#x4EE3;&#x7406;&#x7684;&#x914D;&#x7F6E;&#x4EE3;&#x7801;&#xFF0C;&#x5C31;&#x80FD;&#x83B7;&#x5F97;&#x60F3;&#x8981;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<h2 id="&#x95ED;&#x5305;&#x56DE;&#x8C03;"><a name="&#x95ED;&#x5305;&#x56DE;&#x8C03;" class="plugin-anchor" href="#&#x95ED;&#x5305;&#x56DE;&#x8C03;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x95ED;&#x5305;&#x56DE;&#x8C03;</h2>
+<p>&#x4F20;&#x7EDF;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-type">URLSession</span>.shared.dataTask(with: <span class="hljs-type">URLRequest</span>(url: url)) {
+    (data, response, error) <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">guard</span> error == <span class="hljs-literal">nil</span> <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Data Task Error: <span class="hljs-subst">\(error!)</span>&quot;</span>)
+        <span class="hljs-keyword">return</span>
+    }
+
+    <span class="hljs-keyword">guard</span> <span class="hljs-keyword">let</span> data = data <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Data Task Error: unknown&quot;</span>)
+        <span class="hljs-keyword">return</span>
+    }
+
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Data Task Success with count: <span class="hljs-subst">\(data.<span class="hljs-built_in">count</span>)</span>&quot;</span>)
+}.resume()
+</code></pre>
+<p>&#x901A;&#x8FC7; Rx &#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-type">URLSession</span>.shared.rx.data(request: <span class="hljs-type">URLRequest</span>(url: url))
+    .subscribe(onNext: { data <span class="hljs-keyword">in</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Data Task Success with count: <span class="hljs-subst">\(data.<span class="hljs-built_in">count</span>)</span>&quot;</span>)
+    }, onError: { error <span class="hljs-keyword">in</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Data Task Error: <span class="hljs-subst">\(error)</span>&quot;</span>)
+    })
+    .disposed(by: disposeBag)
+</code></pre>
+<p>&#x56DE;&#x8C03;&#x4E5F;&#x53D8;&#x5F97;&#x5341;&#x5206;&#x7B80;&#x5355;</p>
+<h2 id="&#x901A;&#x77E5;"><a name="&#x901A;&#x77E5;" class="plugin-anchor" href="#&#x901A;&#x77E5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x901A;&#x77E5;</h2>
+<p>&#x4F20;&#x7EDF;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">var</span> ntfObserver: <span class="hljs-type">NSObjectProtocol</span>!
+
+<span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">super</span>.viewDidLoad()
+
+    ntfObserver = <span class="hljs-type">NotificationCenter</span>.<span class="hljs-keyword">default</span>.addObserver(
+          forName: .<span class="hljs-type">UIApplicationWillEnterForeground</span>,
+          object: <span class="hljs-literal">nil</span>, queue: <span class="hljs-literal">nil</span>) { (notification) <span class="hljs-keyword">in</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Application Will Enter Foreground&quot;</span>)
+    }
+}
+
+<span class="hljs-keyword">deinit</span> {
+    <span class="hljs-type">NotificationCenter</span>.<span class="hljs-keyword">default</span>.removeObserver(ntfObserver)
+}
+</code></pre>
+<p>&#x901A;&#x8FC7; Rx &#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">viewDidLoad</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">super</span>.viewDidLoad()
+
+    <span class="hljs-type">NotificationCenter</span>.<span class="hljs-keyword">default</span>.rx
+        .notification(.<span class="hljs-type">UIApplicationWillEnterForeground</span>)
+        .subscribe(onNext: { (notification) <span class="hljs-keyword">in</span>
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Application Will Enter Foreground&quot;</span>)
+        })
+        .disposed(by: disposeBag)
+}
+</code></pre>
+<p>&#x4F60;&#x4E0D;&#x9700;&#x8981;&#x53BB;&#x7BA1;&#x7406;&#x89C2;&#x5BDF;&#x8005;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x8FD9;&#x6837;&#x4F60;&#x5C31;&#x6709;&#x66F4;&#x591A;&#x7CBE;&#x529B;&#x53BB;&#x5173;&#x6CE8;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;</p>
+<h2 id="&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;"><a name="&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;" class="plugin-anchor" href="#&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x4E2A;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;</h2>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5148;&#x901A;&#x8FC7;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x53D6;&#x5F97; Token &#x7136;&#x540E;&#x901A;&#x8FC7; Token &#x53D6;&#x5F97;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;</p>
+<p>&#x4F20;&#x7EDF;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-comment">/// &#x7528;&#x56DE;&#x8C03;&#x7684;&#x65B9;&#x5F0F;&#x5C01;&#x88C5;&#x63A5;&#x53E3;</span>
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">API</span> </span>{
+
+    <span class="hljs-comment">/// &#x901A;&#x8FC7;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x53D6;&#x5F97;&#x4E00;&#x4E2A; token</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">token</span><span class="hljs-params">(username: String, password: String,
+        success: <span class="hljs-params">(String)</span></span></span> -&gt; <span class="hljs-type">Void</span>,
+        failure: (<span class="hljs-type">Error</span>) -&gt; <span class="hljs-type">Void</span>) { ... }
+
+    <span class="hljs-comment">/// &#x901A;&#x8FC7; token &#x53D6;&#x5F97;&#x7528;&#x6237;&#x4FE1;&#x606F;</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">userinfo</span><span class="hljs-params">(token: String,
+        success: <span class="hljs-params">(UserInfo)</span></span></span> -&gt; <span class="hljs-type">Void</span>,
+        failure: (<span class="hljs-type">Error</span>) -&gt; <span class="hljs-type">Void</span>) { ... }
+}
+</code></pre>
+<pre><code class="lang-swift"><span class="hljs-comment">/// &#x901A;&#x8FC7;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;</span>
+<span class="hljs-type">API</span>.token(username: <span class="hljs-string">&quot;beeth0ven&quot;</span>, password: <span class="hljs-string">&quot;987654321&quot;</span>,
+    success: { token <span class="hljs-keyword">in</span>
+        <span class="hljs-type">API</span>.userInfo(token: token,
+            success: { userInfo <span class="hljs-keyword">in</span>
+                <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x6210;&#x529F;: <span class="hljs-subst">\(userInfo)</span>&quot;</span>)
+            },
+            failure: { error <span class="hljs-keyword">in</span>
+                <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x5931;&#x8D25;: <span class="hljs-subst">\(error)</span>&quot;</span>)
+        })
+    },
+    failure: { error <span class="hljs-keyword">in</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x5931;&#x8D25;: <span class="hljs-subst">\(error)</span>&quot;</span>)
+})
+</code></pre>
+<p>&#x901A;&#x8FC7; Rx &#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-comment">/// &#x7528; Rx &#x5C01;&#x88C5;&#x63A5;&#x53E3;</span>
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">API</span> </span>{
+
+    <span class="hljs-comment">/// &#x901A;&#x8FC7;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x53D6;&#x5F97;&#x4E00;&#x4E2A; token</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">token</span><span class="hljs-params">(username: String, password: String)</span></span> -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">String</span>&gt; { ... }
+
+    <span class="hljs-comment">/// &#x901A;&#x8FC7; token &#x53D6;&#x5F97;&#x7528;&#x6237;&#x4FE1;&#x606F;</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">userInfo</span><span class="hljs-params">(token: String)</span></span> -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">UserInfo</span>&gt; { ... }
+}
+</code></pre>
+<pre><code class="lang-swift"><span class="hljs-comment">/// &#x901A;&#x8FC7;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;</span>
+<span class="hljs-type">API</span>.token(username: <span class="hljs-string">&quot;beeth0ven&quot;</span>, password: <span class="hljs-string">&quot;987654321&quot;</span>)
+    .flatMapLatest(<span class="hljs-type">API</span>.userInfo)
+    .subscribe(onNext: { userInfo <span class="hljs-keyword">in</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x6210;&#x529F;: <span class="hljs-subst">\(userInfo)</span>&quot;</span>)
+    }, onError: { error <span class="hljs-keyword">in</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x5931;&#x8D25;: <span class="hljs-subst">\(error)</span>&quot;</span>)
+    })
+    .disposed(by: disposeBag)
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x4F60;&#x53EF;&#x4EE5;<a href="https://en.wiktionary.org/wiki/callback_hell" target="_blank">&#x907F;&#x514D;&#x56DE;&#x8C03;&#x5730;&#x72F1;</a>&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x5F97;&#x4EE3;&#x7801;&#x6613;&#x8BFB;&#xFF0C;&#x6613;&#x7EF4;&#x62A4;&#x3002;</p>
+<h2 id="&#x7B49;&#x5F85;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x5904;&#x7406;&#x7ED3;&#x679C;"><a name="&#x7B49;&#x5F85;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x5904;&#x7406;&#x7ED3;&#x679C;" class="plugin-anchor" href="#&#x7B49;&#x5F85;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x5904;&#x7406;&#x7ED3;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B49;&#x5F85;&#x591A;&#x4E2A;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#x5904;&#x7406;&#x7ED3;&#x679C;</h2>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x4E24;&#x4E2A;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#xFF0C;</p>
+<p>&#x901A;&#x8FC7; Rx &#x6765;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-comment">/// &#x7528; Rx &#x5C01;&#x88C5;&#x63A5;&#x53E3;</span>
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">API</span> </span>{
+
+    <span class="hljs-comment">/// &#x53D6;&#x5F97;&#x8001;&#x5E08;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">teacher</span><span class="hljs-params">(teacherId: Int)</span></span> -&gt; <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Teacher</span>&gt; { ... }
+
+    <span class="hljs-comment">/// &#x53D6;&#x5F97;&#x8001;&#x5E08;&#x7684;&#x8BC4;&#x8BBA;</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">teacherComments</span><span class="hljs-params">(teacherId: Int)</span></span> -&gt; <span class="hljs-type">Observable</span>&lt;[<span class="hljs-type">Comment</span>]&gt; { ... }
+}
+</code></pre>
+<pre><code class="lang-swift"><span class="hljs-comment">/// &#x540C;&#x65F6;&#x53D6;&#x5F97;&#x8001;&#x5E08;&#x4FE1;&#x606F;&#x548C;&#x8001;&#x5E08;&#x8BC4;&#x8BBA;</span>
+<span class="hljs-type">Observable</span>.<span class="hljs-built_in">zip</span>(
+      <span class="hljs-type">API</span>.teacher(teacherId: teacherId),
+      <span class="hljs-type">API</span>.teacherComments(teacherId: teacherId)
+    ).subscribe(onNext: { (teacher, comments) <span class="hljs-keyword">in</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x8001;&#x5E08;&#x4FE1;&#x606F;&#x6210;&#x529F;: <span class="hljs-subst">\(teacher)</span>&quot;</span>)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x8001;&#x5E08;&#x8BC4;&#x8BBA;&#x6210;&#x529F;: <span class="hljs-subst">\(comments.<span class="hljs-built_in">count</span>)</span> &#x6761;&quot;</span>)
+    }, onError: { error <span class="hljs-keyword">in</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;&#x83B7;&#x53D6;&#x8001;&#x5E08;&#x4FE1;&#x606F;&#x6216;&#x8BC4;&#x8BBA;&#x5931;&#x8D25;: <span class="hljs-subst">\(error)</span>&quot;</span>)
+    })
+    .disposed(by: disposeBag)
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x4F60;&#x53EF;&#x7528;&#x5BE5;&#x5BE5;&#x51E0;&#x884C;&#x4EE3;&#x7801;&#x6765;&#x5B8C;&#x6210;&#x76F8;&#x5F53;&#x590D;&#x6742;&#x7684;&#x5F02;&#x6B65;&#x64CD;&#x4F5C;&#x3002;</p>
+<hr>
+<h3 id="&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-rxswift-&#xFF1F;"><a name="&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-rxswift-&#xFF1F;" class="plugin-anchor" href="#&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;-rxswift-&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528; RxSwift &#xFF1F;</h3>
+<ul>
+<li>&#x590D;&#x5408; - Rx &#x5C31;&#x662F;&#x590D;&#x5408;&#x7684;&#x4EE3;&#x540D;&#x8BCD;</li>
+<li>&#x590D;&#x7528; - &#x56E0;&#x4E3A;&#x5B83;&#x6613;&#x590D;&#x5408;</li>
+<li>&#x6E05;&#x6670; - &#x56E0;&#x4E3A;&#x58F0;&#x660E;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x66F4;&#x7684;</li>
+<li>&#x6613;&#x7528; - &#x56E0;&#x4E3A;&#x5B83;&#x62BD;&#x8C61;&#x7684;&#x4E86;&#x5F02;&#x6B65;&#x7F16;&#x7A0B;&#xFF0C;&#x4F7F;&#x6211;&#x4EEC;&#x7EDF;&#x4E00;&#x4E86;&#x4EE3;&#x7801;&#x98CE;&#x683C;</li>
+<li>&#x7A33;&#x5B9A; - &#x56E0;&#x4E3A; Rx &#x662F;&#x5B8C;&#x5168;&#x901A;&#x8FC7;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: RxSwift 中文文档">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="first_app.html" class="navigation navigation-next " aria-label="Next page: 2. 你好 RxSwift！">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1. 为什么要使用 RxSwift?","level":"1.2","depth":1,"next":{"title":"2. 你好 RxSwift！","level":"1.3","depth":1,"path":"content/first_app.md","ref":"content/first_app.md","articles":[]},"previous":{"title":"RxSwift 中文文档","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small","buttons":[{"user":"beeth0ven","repo":"RxSwift-Chinese-Documentation","type":"star","size":"small","count":true}]},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/why_rxswift.md","mtime":"2019-08-14T08:02:06.930Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-14T08:10:30.618Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-jsbin/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-quiz/script.js"></script>
+        
+    
+        
+        <script src="https://embed.tonicdev.com"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-tonic/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

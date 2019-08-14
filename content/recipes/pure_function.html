@@ -1,0 +1,2352 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>纯函数 · RxSwift 中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-quiz/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="side_effects.html" />
+    
+    
+    <link rel="prev" href="rxrelay.html" />
+    
+
+    
+    <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small","buttons":[{"user":"beeth0ven","repo":"RxSwift-Chinese-Documentation","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    RxSwift 中文文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../why_rxswift.html">
+            
+                <a href="../why_rxswift.html">
+            
+                    
+                    1. 为什么要使用 RxSwift?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../first_app.html">
+            
+                <a href="../first_app.html">
+            
+                    
+                    2. 你好 RxSwift！
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../think_reactive.html">
+            
+                <a href="../think_reactive.html">
+            
+                    
+                    3. 函数响应式编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../think_reactive/funtional_programming.html">
+            
+                <a href="../think_reactive/funtional_programming.html">
+            
+                    
+                    3.1 函数式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../think_reactive/functional_reactive_progaramming.html">
+            
+                <a href="../think_reactive/functional_reactive_progaramming.html">
+            
+                    
+                    3.2 函数式编程 -> 函数响应式编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../think_reactive/data_binding.html">
+            
+                <a href="../think_reactive/data_binding.html">
+            
+                    
+                    3.3 数据绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../rxswift_core.html">
+            
+                <a href="../rxswift_core.html">
+            
+                    
+                    4. RxSwift 核心
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../rxswift_core/observable.html">
+            
+                <a href="../rxswift_core/observable.html">
+            
+                    
+                    4.1 Observable - 可监听序列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../rxswift_core/observable/single.html">
+            
+                <a href="../rxswift_core/observable/single.html">
+            
+                    
+                    Single
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../rxswift_core/observable/completable.html">
+            
+                <a href="../rxswift_core/observable/completable.html">
+            
+                    
+                    Completable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../rxswift_core/observable/maybe.html">
+            
+                <a href="../rxswift_core/observable/maybe.html">
+            
+                    
+                    Maybe
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../rxswift_core/observable/driver.html">
+            
+                <a href="../rxswift_core/observable/driver.html">
+            
+                    
+                    Driver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" data-path="../rxswift_core/observable/signal.html">
+            
+                <a href="../rxswift_core/observable/signal.html">
+            
+                    
+                    Signal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" data-path="../rxswift_core/observable/control_event.html">
+            
+                <a href="../rxswift_core/observable/control_event.html">
+            
+                    
+                    ControlEvent
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../rxswift_core/observer.html">
+            
+                <a href="../rxswift_core/observer.html">
+            
+                    
+                    4.2 Observer - 观察者
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../rxswift_core/observer/any_observer.html">
+            
+                <a href="../rxswift_core/observer/any_observer.html">
+            
+                    
+                    AnyObserver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../rxswift_core/observer/binder.html">
+            
+                <a href="../rxswift_core/observer/binder.html">
+            
+                    
+                    Binder
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../rxswift_core/observable_and_observer.html">
+            
+                <a href="../rxswift_core/observable_and_observer.html">
+            
+                    
+                    4.3 Observable & Observer 既是可监听序列也是观察者
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../rxswift_core/observable_and_observer/async_subject.html">
+            
+                <a href="../rxswift_core/observable_and_observer/async_subject.html">
+            
+                    
+                    AsyncSubject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="../rxswift_core/observable_and_observer/publish_subject.html">
+            
+                <a href="../rxswift_core/observable_and_observer/publish_subject.html">
+            
+                    
+                    PublishSubject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="../rxswift_core/observable_and_observer/replay_subject.html">
+            
+                <a href="../rxswift_core/observable_and_observer/replay_subject.html">
+            
+                    
+                    ReplaySubject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="../rxswift_core/observable_and_observer/behavior_subject.html">
+            
+                <a href="../rxswift_core/observable_and_observer/behavior_subject.html">
+            
+                    
+                    BehaviorSubject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="../rxswift_core/observable_and_observer/variable.html">
+            
+                <a href="../rxswift_core/observable_and_observer/variable.html">
+            
+                    
+                    Variable（已弃用）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.6" data-path="../rxswift_core/observable_and_observer/control_property.html">
+            
+                <a href="../rxswift_core/observable_and_observer/control_property.html">
+            
+                    
+                    ControlProperty
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../rxswift_core/operator.html">
+            
+                <a href="../rxswift_core/operator.html">
+            
+                    
+                    4.4 Operator - 操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../rxswift_core/disposable.html">
+            
+                <a href="../rxswift_core/disposable.html">
+            
+                    
+                    4.5 Disposable - 可被清除的资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../rxswift_core/schedulers.html">
+            
+                <a href="../rxswift_core/schedulers.html">
+            
+                    
+                    4.6 Schedulers - 调度器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../rxswift_core/error_handling.html">
+            
+                <a href="../rxswift_core/error_handling.html">
+            
+                    
+                    4.7 Error Handling - 错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../decision_tree.html">
+            
+                <a href="../decision_tree.html">
+            
+                    
+                    5. 如何选择操作符？
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../decision_tree/amb.html">
+            
+                <a href="../decision_tree/amb.html">
+            
+                    
+                    amb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../decision_tree/buffer.html">
+            
+                <a href="../decision_tree/buffer.html">
+            
+                    
+                    buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../decision_tree/catchError.html">
+            
+                <a href="../decision_tree/catchError.html">
+            
+                    
+                    catchError
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../decision_tree/combineLatest.html">
+            
+                <a href="../decision_tree/combineLatest.html">
+            
+                    
+                    combineLatest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../decision_tree/concat.html">
+            
+                <a href="../decision_tree/concat.html">
+            
+                    
+                    concat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../decision_tree/concatMap.html">
+            
+                <a href="../decision_tree/concatMap.html">
+            
+                    
+                    concatMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../decision_tree/connect.html">
+            
+                <a href="../decision_tree/connect.html">
+            
+                    
+                    connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../decision_tree/create.html">
+            
+                <a href="../decision_tree/create.html">
+            
+                    
+                    create
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../decision_tree/debounce.html">
+            
+                <a href="../decision_tree/debounce.html">
+            
+                    
+                    debounce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../decision_tree/debug.html">
+            
+                <a href="../decision_tree/debug.html">
+            
+                    
+                    debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../decision_tree/deferred.html">
+            
+                <a href="../decision_tree/deferred.html">
+            
+                    
+                    deferred
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="../decision_tree/delay.html">
+            
+                <a href="../decision_tree/delay.html">
+            
+                    
+                    delay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="../decision_tree/delaySubscription.html">
+            
+                <a href="../decision_tree/delaySubscription.html">
+            
+                    
+                    delaySubscription
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="../decision_tree/dematerialize.html">
+            
+                <a href="../decision_tree/dematerialize.html">
+            
+                    
+                    dematerialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="../decision_tree/distinctUntilChanged.html">
+            
+                <a href="../decision_tree/distinctUntilChanged.html">
+            
+                    
+                    distinctUntilChanged
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="../decision_tree/do.html">
+            
+                <a href="../decision_tree/do.html">
+            
+                    
+                    do
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="../decision_tree/elementAt.html">
+            
+                <a href="../decision_tree/elementAt.html">
+            
+                    
+                    elementAt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="../decision_tree/empty.html">
+            
+                <a href="../decision_tree/empty.html">
+            
+                    
+                    empty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="../decision_tree/error.html">
+            
+                <a href="../decision_tree/error.html">
+            
+                    
+                    error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="../decision_tree/filter.html">
+            
+                <a href="../decision_tree/filter.html">
+            
+                    
+                    filter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="../decision_tree/flatMap.html">
+            
+                <a href="../decision_tree/flatMap.html">
+            
+                    
+                    flatMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.22" data-path="../decision_tree/flatMapLatest.html">
+            
+                <a href="../decision_tree/flatMapLatest.html">
+            
+                    
+                    flatMapLatest
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.23" data-path="../decision_tree/from.html">
+            
+                <a href="../decision_tree/from.html">
+            
+                    
+                    from
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.24" data-path="../decision_tree/groupBy.html">
+            
+                <a href="../decision_tree/groupBy.html">
+            
+                    
+                    groupBy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.25" data-path="../decision_tree/ignoreElements.html">
+            
+                <a href="../decision_tree/ignoreElements.html">
+            
+                    
+                    ignoreElements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.26" data-path="../decision_tree/interval.html">
+            
+                <a href="../decision_tree/interval.html">
+            
+                    
+                    interval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.27" data-path="../decision_tree/just.html">
+            
+                <a href="../decision_tree/just.html">
+            
+                    
+                    just
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.28" data-path="../decision_tree/map.html">
+            
+                <a href="../decision_tree/map.html">
+            
+                    
+                    map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.29" data-path="../decision_tree/merge.html">
+            
+                <a href="../decision_tree/merge.html">
+            
+                    
+                    merge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.30" data-path="../decision_tree/materialize.html">
+            
+                <a href="../decision_tree/materialize.html">
+            
+                    
+                    materialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.31" data-path="../decision_tree/never.html">
+            
+                <a href="../decision_tree/never.html">
+            
+                    
+                    never
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.32" data-path="../decision_tree/observeOn.html">
+            
+                <a href="../decision_tree/observeOn.html">
+            
+                    
+                    observeOn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.33" data-path="../decision_tree/publish.html">
+            
+                <a href="../decision_tree/publish.html">
+            
+                    
+                    publish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.34" data-path="../decision_tree/reduce.html">
+            
+                <a href="../decision_tree/reduce.html">
+            
+                    
+                    reduce
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.35" data-path="../decision_tree/refCount.html">
+            
+                <a href="../decision_tree/refCount.html">
+            
+                    
+                    refCount
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.36" data-path="../decision_tree/repeatElement.html">
+            
+                <a href="../decision_tree/repeatElement.html">
+            
+                    
+                    repeatElement
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.37" data-path="../decision_tree/replay.html">
+            
+                <a href="../decision_tree/replay.html">
+            
+                    
+                    replay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.38" data-path="../decision_tree/retry.html">
+            
+                <a href="../decision_tree/retry.html">
+            
+                    
+                    retry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.39" data-path="../decision_tree/sample.html">
+            
+                <a href="../decision_tree/sample.html">
+            
+                    
+                    sample
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.40" data-path="../decision_tree/scan.html">
+            
+                <a href="../decision_tree/scan.html">
+            
+                    
+                    scan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.41" data-path="../decision_tree/shareReplay.html">
+            
+                <a href="../decision_tree/shareReplay.html">
+            
+                    
+                    shareReplay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.42" data-path="../decision_tree/single.html">
+            
+                <a href="../decision_tree/single.html">
+            
+                    
+                    single
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.43" data-path="../decision_tree/skip.html">
+            
+                <a href="../decision_tree/skip.html">
+            
+                    
+                    skip
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.44" data-path="../decision_tree/skipUntil.html">
+            
+                <a href="../decision_tree/skipUntil.html">
+            
+                    
+                    skipUntil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.45" data-path="../decision_tree/skipWhile.html">
+            
+                <a href="../decision_tree/skipWhile.html">
+            
+                    
+                    skipWhile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.46" data-path="../decision_tree/startWith.html">
+            
+                <a href="../decision_tree/startWith.html">
+            
+                    
+                    startWith
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.47" data-path="../decision_tree/subscribeOn.html">
+            
+                <a href="../decision_tree/subscribeOn.html">
+            
+                    
+                    subscribeOn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.48" data-path="../decision_tree/take.html">
+            
+                <a href="../decision_tree/take.html">
+            
+                    
+                    take
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.49" data-path="../decision_tree/takeLast.html">
+            
+                <a href="../decision_tree/takeLast.html">
+            
+                    
+                    takeLast
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.50" data-path="../decision_tree/takeUntil.html">
+            
+                <a href="../decision_tree/takeUntil.html">
+            
+                    
+                    takeUntil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.51" data-path="../decision_tree/takeWhile.html">
+            
+                <a href="../decision_tree/takeWhile.html">
+            
+                    
+                    takeWhile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.52" data-path="../decision_tree/throttle.html">
+            
+                <a href="../decision_tree/throttle.html">
+            
+                    
+                    throttle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.53" data-path="../decision_tree/timeout.html">
+            
+                <a href="../decision_tree/timeout.html">
+            
+                    
+                    timeout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.54" data-path="../decision_tree/timer.html">
+            
+                <a href="../decision_tree/timer.html">
+            
+                    
+                    timer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.55" data-path="../decision_tree/using.html">
+            
+                <a href="../decision_tree/using.html">
+            
+                    
+                    using
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.56" data-path="../decision_tree/window.html">
+            
+                <a href="../decision_tree/window.html">
+            
+                    
+                    window
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.57" data-path="../decision_tree/withLatestFrom.html">
+            
+                <a href="../decision_tree/withLatestFrom.html">
+            
+                    
+                    withLatestFrom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.58" data-path="../decision_tree/zip.html">
+            
+                <a href="../decision_tree/zip.html">
+            
+                    
+                    zip
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../more_demo.html">
+            
+                <a href="../more_demo.html">
+            
+                    
+                    6. 更多示例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../more_demo/image_picker.html">
+            
+                <a href="../more_demo/image_picker.html">
+            
+                    
+                    ImagePicker - 图片选择器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../more_demo/tableView_sectioned_viewController.html">
+            
+                <a href="../more_demo/tableView_sectioned_viewController.html">
+            
+                    
+                    TableViewSectionedViewController - 多层级的列表页
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../more_demo/calculator.html">
+            
+                <a href="../more_demo/calculator.html">
+            
+                    
+                    Calculator - 计算器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../architecture.html">
+            
+                <a href="../architecture.html">
+            
+                    
+                    7. RxSwift 常用架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../architecture/mvvm.html">
+            
+                <a href="../architecture/mvvm.html">
+            
+                    
+                    7.1 MVVM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="../architecture/mvvm/github_signup.html">
+            
+                <a href="../architecture/mvvm/github_signup.html">
+            
+                    
+                    Github Signup（示例）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../architecture/rxfeedback.html">
+            
+                <a href="../architecture/rxfeedback.html">
+            
+                    
+                    7.2 RxFeedback
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../architecture/rxfeedback/github_search.html">
+            
+                <a href="../architecture/rxfeedback/github_search.html">
+            
+                    
+                    Github Search（示例）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../architecture/reactorkit.html">
+            
+                <a href="../architecture/reactorkit.html">
+            
+                    
+                    7.3 ReactorKit
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../architecture/reactorkit/github_search.html">
+            
+                <a href="../architecture/reactorkit/github_search.html">
+            
+                    
+                    Github Search（示例）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../rxswift_ecosystem.html">
+            
+                <a href="../rxswift_ecosystem.html">
+            
+                    
+                    8. RxSwift 生态系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../resource.html">
+            
+                <a href="../resource.html">
+            
+                    
+                    9. 学习资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../about.html">
+            
+                <a href="../about.html">
+            
+                    
+                    10. 关于本文档
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../../CHANGELOG.html">
+            
+                <a href="../../CHANGELOG.html">
+            
+                    
+                    10.1 文档更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../recipes.html">
+            
+                <a href="../recipes.html">
+            
+                    
+                    食谱
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="whats_new_in_rxswift_5.html">
+            
+                <a href="whats_new_in_rxswift_5.html">
+            
+                    
+                    RxSwift 5 更新了什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="rxrelay.html">
+            
+                <a href="rxrelay.html">
+            
+                    
+                    RxRelay
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12.3" data-path="pure_function.html">
+            
+                <a href="pure_function.html">
+            
+                    
+                    纯函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="side_effects.html">
+            
+                <a href="side_effects.html">
+            
+                    
+                    附加作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="share_side_effects.html">
+            
+                <a href="share_side_effects.html">
+            
+                    
+                    共享附加作用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >纯函数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7EAF;&#x51FD;&#x6570;"><a name="&#x7EAF;&#x51FD;&#x6570;" class="plugin-anchor" href="#&#x7EAF;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EAF;&#x51FD;&#x6570;</h1>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;&#x7EAF;&#x51FD;&#x6570;&#xFF1F;"><a name="&#x4EC0;&#x4E48;&#x662F;&#x7EAF;&#x51FD;&#x6570;&#xFF1F;" class="plugin-anchor" href="#&#x4EC0;&#x4E48;&#x662F;&#x7EAF;&#x51FD;&#x6570;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EC0;&#x4E48;&#x662F;&#x7EAF;&#x51FD;&#x6570;&#xFF1F;</h3>
+<p>&#x5728;&#x51FD;&#x6570;&#x5F0F;&#x7F16;&#x7A0B;&#x91CC;&#x6211;&#x4EEC;&#x4F1A;&#x7ECF;&#x5E38;&#x8C08;&#x5230;&#x8FD9;&#x4E24;&#x4E2A;&#x6982;&#x5FF5;&#x3002;&#x4E00;&#x4E2A;&#x662F; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a>&#x3002;&#x53E6;&#x4E00;&#x4E2A;&#x662F; <a href="side_effects.html">&#x9644;&#x52A0;&#x4F5C;&#x7528;</a>&#xFF08;&#x526F;&#x4F5C;&#x7528;&#xFF09;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C31;&#x7ED3;&#x5408;&#x5B9E;&#x9645;&#x6765;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x548C; <a href="side_effects.html">&#x9644;&#x52A0;&#x4F5C;&#x7528;</a>&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x7ED9;&#x51FA;&#x4E24;&#x4E2A;&#x51FD;&#x6570; <code>increaseA</code> &#x548C; <code>increaseB</code>&#xFF0C;&#x4ED6;&#x4EEC;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x662F; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a>&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x4E0D;&#x662F; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a>&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">var</span> state = <span class="hljs-number">0</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">increaseA</span><span class="hljs-params">()</span></span> {
+    state += <span class="hljs-number">1</span>
+}
+
+increaseA()
+
+<span class="hljs-built_in">print</span>(state) <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A; 1</span>
+</code></pre>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">increaseB</span><span class="hljs-params">(state: Int)</span></span> -&gt; <span class="hljs-type">Int</span> {
+    <span class="hljs-keyword">return</span> state + <span class="hljs-number">1</span>
+}
+
+<span class="hljs-keyword">let</span> state = increaseB(state: <span class="hljs-number">0</span>)
+
+<span class="hljs-built_in">print</span>(state) <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A; 1</span>
+</code></pre>
+<p>&#x4ED6;&#x4EEC;&#x7684;&#x4F5C;&#x7528;&#x5DEE;&#x4E0D;&#x591A;&#xFF0C;&#x4F7F; <code>state + 1</code>&#xFF0C; &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x731C;&#x6D4B;&#x4E00;&#x4E0B; <code>increaseA</code> &#x548C; <code>increaseB</code> &#x54EA;&#x4E00;&#x4E2A;&#x662F; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a>&#xFF1F;</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>... &#x7ECF;&#x8FC7; 10 &#x79D2;&#x540E;</p>
+<p><strong>&#x73B0;&#x5728;&#x516C;&#x5E03;&#x7B54;&#x6848;&#xFF1A;</strong><code>increaseB</code> &#x662F; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a>&#xFF0C;<code>increaseA</code> &#x4E0D;&#x662F; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a></p>
+<p>&#x4E3A;&#x4EC0;&#x4E48; <code>increaseB</code> &#x662F; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a>&#xFF1F;</p>
+<p>&#x56E0;&#x4E3A;&#x4ED6;&#x7279;&#x522B; <strong>&#x7EAF;&#x6D01;</strong>&#xFF1A;&#x9664;&#x4E86;&#x7528;&#x5165;&#x53C2; <code>state</code> &#x8BA1;&#x7B97;&#x8FD4;&#x56DE;&#x503C;&#x4EE5;&#x5916;&#x6CA1;&#x505A;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x7684;&#x4E8B;&#x60C5;&#x3002;</p>
+<p>&#x90A3;&#x4E3A;&#x4EC0;&#x4E48; <code>increaseA</code> &#x4E0D;&#x662F; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a>&#xFF1F;</p>
+<p>&#x56E0;&#x4E3A;&#x4ED6;&#x4FEE;&#x6539;&#x4E86;&#x51FD;&#x6570;&#x672C;&#x4F53;&#x4EE5;&#x5916;&#x7684;&#x503C; <code>state</code>, &#x4ED6;&#x62E5;&#x6709;&#x8FD9;&#x4E2A; <a href="side_effects.html">&#x9644;&#x52A0;&#x4F5C;&#x7528;</a>&#xFF0C;&#x56E0;&#x6B64;&#x4ED6; <strong>&#x5E76;&#x4E0D;&#x7EAF;&#x6D01;</strong> &#x5C31;&#x4E0D;&#x662F; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a>&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x518D;&#x6765;&#x505A;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x6D4B;&#x8BD5;&#xFF0C;&#x7136;&#x540E;&#x731C;&#x6D4B;&#x4ED6;&#x4EEC;&#x80FD;&#x4E0D;&#x80FD;&#x6D4B;&#x8BD5;&#x6210;&#x529F;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">testIncreaseA</span><span class="hljs-params">()</span></span> {
+    increaseA()
+    state == <span class="hljs-number">1</span> <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;?? &#x1F914;</span>
+}
+</code></pre>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">testIncreaseB</span><span class="hljs-params">()</span></span> {
+    <span class="hljs-keyword">let</span> state = increaseB(state: <span class="hljs-number">0</span>)
+    state == <span class="hljs-number">1</span> <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+}
+</code></pre>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>... &#x7ECF;&#x8FC7; 20 &#x79D2;&#x540E;</p>
+<p>&#x55EF;... &#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x80AF;&#x5B9A;&#x7B2C;&#x4E8C;&#x4E2A;&#x6D4B;&#x8BD5; <code>testIncreaseB</code> &#x4F1A;&#x6210;&#x529F;&#x3002;<code>0 + 1</code> &#x80AF;&#x5B9A;&#x7B49;&#x4E8E; <code>1</code>&#x3002;&#x90A3;&#x7B2C;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x5462;&#xFF1F;&#x8FD9;&#x53EF;&#x4E0D;&#x597D;&#x8BF4;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x5E76;&#x4E0D;&#x77E5;&#x9053;  <code>increaseA</code> &#x662F;&#x5728;&#x4EC0;&#x4E48;&#x73AF;&#x5883;&#x4E0B;&#x88AB;&#x8C03;&#x7528;&#x7684;&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x5728;&#x8FD9;&#x4E2A;&#x73AF;&#x5883;&#x4E0B;&#x521D;&#x59CB; <code>state</code> &#x662F;&#x591A;&#x5C11;&#x3002;&#x5982;&#x679C;&#x4ED6;&#x662F; <code>0</code> &#x90A3;&#x6D4B;&#x8BD5;&#x5C31;&#x4F1A;&#x6210;&#x529F;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4ED6;&#x4E0D;&#x662F; <code>0</code> &#x90A3;&#x6D4B;&#x8BD5;&#x5C31;&#x4F1A;&#x5931;&#x8D25;&#x7684;&#x3002;&#x56E0;&#x6B64;&#x5728;&#x4E0D;&#x77E5;&#x9053;&#x6240;&#x5904;&#x73AF;&#x5883;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x5224;&#x65AD;&#x6D4B;&#x8BD5;&#x662F;&#x5426;&#x4F1A;&#x6210;&#x529F;&#x3002;</p>
+<p>&#x7531;&#x4E8E; <code>increaseA</code> &#x5B58;&#x5728;&#x4FEE;&#x6539;&#x5916;&#x90E8; <code>state</code> &#x7684; <a href="side_effects.html">&#x9644;&#x52A0;&#x4F5C;&#x7528;</a> &#x6240;&#x4EE5;&#x4ED6;&#x4E0D;&#x662F; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a>&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#x5982;&#x679C;&#x51FD;&#x6570;&#x6709;&#x4EE5;&#x4E0B;&#x4EFB;&#x610F;&#x4E00;&#x79CD;&#x4F5C;&#x7528;&#xFF0C;&#x4ED6;&#x4E5F;&#x4E0D;&#x662F;&#x7EAF;&#x51FD;&#x6570;&#xFF1A;</p>
+<ul>
+<li>&#x53D1;&#x8D77;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;</li>
+<li>&#x5237;&#x65B0; UI</li>
+<li>&#x8BFB;&#x5199;&#x6570;&#x636E;&#x5E93;</li>
+<li>&#x83B7;&#x53D6;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;</li>
+<li>&#x4F7F;&#x7528;&#x84DD;&#x7259;&#x6A21;&#x5757;</li>
+<li>&#x6253;&#x5370;&#x8F93;&#x51FA;</li>
+<li>...</li>
+</ul>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E9B;&#x4F5C;&#x7528;&#x79F0;&#x4E3A;&#x51FD;&#x6570;&#x7684; <a href="side_effects.html">&#x9644;&#x52A0;&#x4F5C;&#x7528;</a>&#xFF08;&#x526F;&#x4F5C;&#x7528;&#xFF09;&#x3002;</p>
+<p>&#x800C; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x7684;&#x5B9A;&#x4E49;&#x5C31;&#x662F;&#xFF1A; <strong>&#x6CA1;&#x6709; <a href="side_effects.html">&#x9644;&#x52A0;&#x4F5C;&#x7528;</a> &#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x53C2;&#x6570;&#x76F8;&#x540C;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4E5F;&#x4E00;&#x5B9A;&#x76F8;&#x540C;&#x3002;</strong></p>
+<p>&#x56E0;&#x6B64;&#x5728;&#x5DF2;&#x77E5;&#x6267;&#x884C;&#x903B;&#x8F91;&#x65F6;&#xFF0C;<a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x6240;&#x4EA7;&#x751F;&#x7684;&#x7ED3;&#x679C;&#x662F;<strong>&#x53EF;&#x4EE5;&#x88AB;&#x9884;&#x6D4B;&#x7684;</strong>&#x3002;&#x4E00;&#x4E9B;&#x73B0;&#x4EE3;&#x5316;&#x7684;&#x5E93;&#x90FD;&#x5229;&#x7528;&#x4E86;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#x6765;&#x505A;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#xFF0C;&#x5982;&#xFF1A;<a href="https://github.com/NoTests/RxFeedback.swift" target="_blank">RxFeedback</a>&#xFF0C; <a href="https://redux.js.org/" target="_blank">Redux</a>&#xFF0C;<a href="https://github.com/ReactorKit/ReactorKit" target="_blank">ReactorKit</a> &#x7B49;&#x7B49;&#x3002;</p>
+<h3 id="&#x7EAF;&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x72B6;&#x6001;&#x7BA1;&#x7406;"><a name="&#x7EAF;&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x72B6;&#x6001;&#x7BA1;&#x7406;" class="plugin-anchor" href="#&#x7EAF;&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x72B6;&#x6001;&#x7BA1;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EAF;&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x72B6;&#x6001;&#x7BA1;&#x7406;</h3>
+<p>&#x6211;&#x4EEC;&#x7528;&#x4E00;&#x4E2A;&#x8DB3;&#x591F;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x6F14;&#x793A;&#xFF0C;&#x5982;&#x4F55;&#x7528; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x505A;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">typealias</span> <span class="hljs-type">State</span> = <span class="hljs-type">Int</span>
+
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Event</span> </span>{
+    <span class="hljs-keyword">case</span> increase
+    <span class="hljs-keyword">case</span> decrease
+}
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">reduce</span><span class="hljs-params">(<span class="hljs-number">_</span> state: State, event: Event)</span></span> -&gt; <span class="hljs-type">State</span> {
+    <span class="hljs-keyword">switch</span> event {
+    <span class="hljs-keyword">case</span> .increase:
+        <span class="hljs-keyword">return</span> state + <span class="hljs-number">1</span>
+    <span class="hljs-keyword">case</span> .decrease:
+        <span class="hljs-keyword">return</span> state - <span class="hljs-number">1</span>
+    }
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4F3C;&#x4E4E;&#x8FC7;&#x4E8E;&#x7B80;&#x5355;&#xFF0C;&#x4EE5;&#x81F3;&#x4E8E;&#x6211;&#x4EEC;&#x770B;&#x4E0D;&#x51FA;&#x4ED6;&#x6709;&#x4EC0;&#x4E48;&#x7279;&#x522B;&#x7684;&#x3002;&#x597D;&#x5427;&#xFF0C;&#x6211;&#x627F;&#x8BA4;&#x4ED6;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x5411;&#x5927;&#x5BB6;&#x6F14;&#x793A;&#xFF0C;&#x7528; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x505A;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x7684;<strong>&#x57FA;&#x672C;&#x5355;&#x5143;&#x662F;&#x4EC0;&#x4E48;</strong>&#x3002;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5F97;&#x6709;&#x4E2A;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">typealias</span> <span class="hljs-type">State</span> = <span class="hljs-type">Int</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x6709;&#x5404;&#x79CD;&#x4E8B;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Event</span> </span>{
+    <span class="hljs-keyword">case</span> increase
+    <span class="hljs-keyword">case</span> decrease
+}
+</code></pre>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x6709;&#x4E00;&#x4E2A; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x6765;&#x7BA1;&#x7406;&#x6211;&#x4EEC;&#x7684;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">reduce</span><span class="hljs-params">(<span class="hljs-number">_</span> state: State, event: Event)</span></span> -&gt; <span class="hljs-type">State</span> {
+    <span class="hljs-keyword">switch</span> event {
+    <span class="hljs-keyword">case</span> .increase:
+        <span class="hljs-keyword">return</span> state + <span class="hljs-number">1</span>
+    <span class="hljs-keyword">case</span> .decrease:
+        <span class="hljs-keyword">return</span> state - <span class="hljs-number">1</span>
+    }
+}
+</code></pre>
+<p>&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x505A;&#x6D4B;&#x8BD5;&#x4E86;&#xFF0C;&#x5F53; <code>App</code> &#x5904;&#x4E8E;&#x67D0;&#x4E2A;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x53D1;&#x751F;&#x4E86;&#x67D0;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#xFF0C;&#x8FD9;&#x4E2A;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x7684;&#x9884;&#x671F;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">testReduce</span><span class="hljs-params">()</span></span> {
+
+    <span class="hljs-keyword">let</span> state1 = <span class="hljs-built_in">reduce</span>(<span class="hljs-number">0</span>, event: .increase)
+    state1 == <span class="hljs-number">1</span> <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+
+    <span class="hljs-keyword">let</span> state2 = <span class="hljs-built_in">reduce</span>(<span class="hljs-number">10</span>, event: .decrease)
+    state2 == <span class="hljs-number">9</span> <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4E24;&#x4E2A;&#x6D4B;&#x8BD5;&#x90FD;&#x662F;&#x6210;&#x529F;&#x7684;&#x3002;&#x5F53;&#x7136;&#x8FD9;&#x91CC;&#x7684;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x8FC7;&#x4E8E;&#x7B80;&#x5355;&#x3002;&#x800C;&#x771F;&#x5B9E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x72B6;&#x6001;&#x90FD;&#x662F;&#x975E;&#x5E38;&#x590D;&#x6742;&#x7684;&#x3002;&#x5E76;&#x4E14;&#x7A0B;&#x5E8F;&#x7684;&#x884C;&#x4E3A;&#x90FD;&#x662F;&#x5F88;&#x96BE;&#x9884;&#x6D4B;&#x7684;&#x3002;&#x8981;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x611F;&#x8C22; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a>&#xFF0C;&#x8FD8;&#x8BB0;&#x5F97;&#x4ED6;&#x7684;&#x7279;&#x5F81;&#x5417;&#xFF1F;</p>
+<p><strong><a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x5728;&#x53C2;&#x6570;&#x76F8;&#x540C;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4E5F;&#x4E00;&#x5B9A;&#x76F8;&#x540C;&#x3002;</strong></p>
+<p>&#x6211;&#x4EEC;&#x518D;&#x6765;&#x770B;&#x4E0B; <code>reduce</code> &#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">reduce</span><span class="hljs-params">(<span class="hljs-number">_</span> state: State, event: Event)</span></span> -&gt; <span class="hljs-type">State</span> { ... }
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x6709;&#x6CA1;&#x6709;&#x83B7;&#x5F97;&#x4E00;&#x70B9;&#x70B9;&#x7075;&#x611F;...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>... &#x7ECF;&#x8FC7; 60 &#x79D2;&#x540E;</p>
+<p>&#x5E0C;&#x671B;&#x4F60;&#x5DF2;&#x7ECF;&#x83B7;&#x5F97;&#x7B54;&#x6848;&#x4E86;&#x3002;</p>
+<p>&#x5F53;&#x7A0B;&#x5E8F;&#x5904;&#x4E8E;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x53D1;&#x751F;&#x4E86;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x4E8B;&#x4EF6;&#xFF0C;&#x4F1A;&#x4EA7;&#x751F;&#x67D0;&#x4E2A;<strong>&#x552F;&#x4E00;&#x7684;&#x7ED3;&#x679C;</strong>&#x3002;&#x8FD9;&#x4E2A;&#x7ED3;&#x679C;&#x4E0E;<strong>&#x6240;&#x5904;&#x7684;&#x73AF;&#x5883;&#x65E0;&#x5173;</strong>&#xFF0C;&#x4E0D;&#x8BBA;&#x662F;&#x5904;&#x4E8E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x8FD8;&#x662F;&#x5728;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x3002;&#x8FD9;&#x4E2A;&#x7ED3;&#x679C;&#x53EA;&#x548C;<strong>&#x521D;&#x59CB;&#x72B6;&#x6001;</strong>&#x4EE5;&#x53CA;<strong>&#x53D1;&#x751F;&#x7684;&#x4E8B;&#x4EF6;</strong>&#x6709;&#x5173;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x7A0B;&#x5E8F;&#x7684;&#x884C;&#x4E3A;&#x662F;<strong>&#x53EF;&#x4EE5;&#x88AB;&#x9884;&#x6D4B;&#x7684;</strong>&#xFF0C;&#x800C;&#x4E14;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x4E2D;&#x88AB;&#x6A21;&#x62DF;&#x51FA;&#x6765;&#x3002;</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>...</p>
+<p>... &#x7ECF;&#x8FC7; 60 &#x79D2;&#x540E;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x590D;&#x6742;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<h3 id="&#x767B;&#x5F55;&#x72B6;&#x6001;&#x7BA1;&#x7406;"><a name="&#x767B;&#x5F55;&#x72B6;&#x6001;&#x7BA1;&#x7406;" class="plugin-anchor" href="#&#x767B;&#x5F55;&#x72B6;&#x6001;&#x7BA1;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x767B;&#x5F55;&#x72B6;&#x6001;&#x7BA1;&#x7406;</h3>
+<pre><code class="lang-swift"><span class="hljs-keyword">typealias</span> <span class="hljs-type">UserID</span> = <span class="hljs-type">String</span>
+
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">LoginError</span>: <span class="hljs-title">Error</span>, <span class="hljs-title">Equatable</span> </span>{
+    <span class="hljs-keyword">case</span> usernamePasswordMismatch
+    <span class="hljs-keyword">case</span> offline
+}
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">State</span>: <span class="hljs-title">Equatable</span> </span>{
+
+    <span class="hljs-keyword">var</span> username: <span class="hljs-type">String</span>
+    <span class="hljs-keyword">var</span> password: <span class="hljs-type">String</span>
+
+    <span class="hljs-keyword">var</span> loading: <span class="hljs-type">Bool</span>
+    <span class="hljs-keyword">var</span> data: <span class="hljs-type">UserID</span>?
+    <span class="hljs-keyword">var</span> error: <span class="hljs-type">LoginError</span>?
+
+    <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Event</span> </span>{
+        <span class="hljs-keyword">case</span> onUpateUsername(<span class="hljs-type">String</span>)
+        <span class="hljs-keyword">case</span> onUpatePassword(<span class="hljs-type">String</span>)
+        <span class="hljs-keyword">case</span> onTriggerLogin
+        <span class="hljs-keyword">case</span> onLoginSuccess(<span class="hljs-type">UserID</span>)
+        <span class="hljs-keyword">case</span> onLoginError(<span class="hljs-type">LoginError</span>)
+    }
+
+    <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">reduce</span><span class="hljs-params">(<span class="hljs-number">_</span> state: State, event: Event)</span></span> -&gt; <span class="hljs-type">State</span> {
+        <span class="hljs-keyword">var</span> newState = state
+        <span class="hljs-keyword">switch</span> event {
+        <span class="hljs-keyword">case</span> .onUpateUsername(<span class="hljs-keyword">let</span> username):
+            newState.username = username
+        <span class="hljs-keyword">case</span> .onUpatePassword(<span class="hljs-keyword">let</span> password):
+            newState.password = password
+        <span class="hljs-keyword">case</span> .onTriggerLogin:
+            newState.loading = <span class="hljs-literal">true</span>
+            newState.data = <span class="hljs-literal">nil</span>
+            newState.error = <span class="hljs-literal">nil</span>
+        <span class="hljs-keyword">case</span> .onLoginSuccess(<span class="hljs-keyword">let</span> userId):
+            newState.loading = <span class="hljs-literal">false</span>
+            newState.data = userId
+        <span class="hljs-keyword">case</span> .onLoginError(<span class="hljs-keyword">let</span> error):
+            newState.loading = <span class="hljs-literal">false</span>
+            newState.error = error
+        }
+        <span class="hljs-keyword">return</span> newState
+    }
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x91CD;&#x65B0;&#x8D70;&#x4E0B;&#x6D41;&#x7A0B; &#x1F604;&#xFF0C;&#x7528; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x505A;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#xFF1A;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5F97;&#x6709;&#x4E2A;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">State</span>: <span class="hljs-title">Equatable</span> </span>{
+
+    <span class="hljs-keyword">var</span> username: <span class="hljs-type">String</span>    <span class="hljs-comment">// &#x8F93;&#x5165;&#x7684;&#x7528;&#x6237;&#x540D;</span>
+    <span class="hljs-keyword">var</span> password: <span class="hljs-type">String</span>    <span class="hljs-comment">// &#x8F93;&#x5165;&#x7684;&#x5BC6;&#x7801;</span>
+
+    <span class="hljs-keyword">var</span> loading: <span class="hljs-type">Bool</span>       <span class="hljs-comment">// &#x767B;&#x5F55;&#x4E2D;</span>
+    <span class="hljs-keyword">var</span> data: <span class="hljs-type">UserID</span>?       <span class="hljs-comment">// &#x767B;&#x5F55;&#x6210;&#x529F;</span>
+    <span class="hljs-keyword">var</span> error: <span class="hljs-type">LoginError</span>?  <span class="hljs-comment">// &#x767B;&#x5F55;&#x5931;&#x8D25;</span>
+
+    ...
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x6709;&#x5404;&#x79CD;&#x4E8B;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-swift">    <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Event</span> </span>{
+        <span class="hljs-keyword">case</span> onUpateUsername(<span class="hljs-type">String</span>)    <span class="hljs-comment">//  &#x66F4;&#x65B0;&#x7528;&#x6237;&#x540D;</span>
+        <span class="hljs-keyword">case</span> onUpatePassword(<span class="hljs-type">String</span>)    <span class="hljs-comment">//  &#x66F4;&#x65B0;&#x5BC6;&#x7801;</span>
+        <span class="hljs-keyword">case</span> onTriggerLogin             <span class="hljs-comment">//  &#x89E6;&#x53D1;&#x767B;&#x5F55;</span>
+        <span class="hljs-keyword">case</span> onLoginSuccess(<span class="hljs-type">UserID</span>)     <span class="hljs-comment">//  &#x767B;&#x5F55;&#x6210;&#x529F;</span>
+        <span class="hljs-keyword">case</span> onLoginError(<span class="hljs-type">LoginError</span>)   <span class="hljs-comment">//  &#x767B;&#x5F55;&#x5931;&#x8D25;</span>
+    }
+</code></pre>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x6709;&#x4E00;&#x4E2A; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x6765;&#x7BA1;&#x7406;&#x6211;&#x4EEC;&#x7684;&#x72B6;&#x6001;&#xFF1A;</p>
+<pre><code class="lang-swift">    <span class="hljs-keyword">static</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">reduce</span><span class="hljs-params">(<span class="hljs-number">_</span> state: State, event: Event)</span></span> -&gt; <span class="hljs-type">State</span> {
+        <span class="hljs-keyword">var</span> newState = state
+        <span class="hljs-keyword">switch</span> event {
+        <span class="hljs-keyword">case</span> .onUpateUsername(<span class="hljs-keyword">let</span> username):
+            newState.username = username
+        <span class="hljs-keyword">case</span> .onUpatePassword(<span class="hljs-keyword">let</span> password):
+            newState.password = password
+        <span class="hljs-keyword">case</span> .onTriggerLogin:
+            newState.loading = <span class="hljs-literal">true</span>
+            newState.data = <span class="hljs-literal">nil</span>
+            newState.error = <span class="hljs-literal">nil</span>
+        <span class="hljs-keyword">case</span> .onLoginSuccess(<span class="hljs-keyword">let</span> userId):
+            newState.loading = <span class="hljs-literal">false</span>
+            newState.data = userId
+        <span class="hljs-keyword">case</span> .onLoginError(<span class="hljs-keyword">let</span> error):
+            newState.loading = <span class="hljs-literal">false</span>
+            newState.error = error
+        }
+        <span class="hljs-keyword">return</span> newState
+    }
+</code></pre>
+<p>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x6A21;&#x62DF;&#x5404;&#x79CD;&#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x5224;&#x65AD;&#x7ED3;&#x679C;&#x662F;&#x5426;&#x7B26;&#x5408;&#x9884;&#x671F;&#xFF1A;</p>
+<ul>
+<li>&#x66F4;&#x65B0;&#x7528;&#x6237;&#x540D;&#x4E8B;&#x4EF6;</li>
+</ul>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">testOnUpateUsername</span><span class="hljs-params">()</span></span> {
+
+    <span class="hljs-keyword">let</span> state = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;&quot;</span>,
+        password: <span class="hljs-string">&quot;&quot;</span>,
+        loading: <span class="hljs-literal">false</span>,
+        data: <span class="hljs-literal">nil</span>,
+        error: <span class="hljs-literal">nil</span>
+    )
+
+    <span class="hljs-keyword">let</span> newState = <span class="hljs-type">State</span>.<span class="hljs-built_in">reduce</span>(state, event: .onUpateUsername(<span class="hljs-string">&quot;beeth0ven&quot;</span>))
+
+    <span class="hljs-keyword">let</span> expect = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+        password: <span class="hljs-string">&quot;&quot;</span>,
+        loading: <span class="hljs-literal">false</span>,
+        data: <span class="hljs-literal">nil</span>,
+        error: <span class="hljs-literal">nil</span>
+    )
+
+    newState == expect <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+}
+</code></pre>
+<ul>
+<li>&#x66F4;&#x65B0;&#x5BC6;&#x7801;&#x4E8B;&#x4EF6;</li>
+</ul>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">testOnUpatePassword</span><span class="hljs-params">()</span></span> {
+
+    <span class="hljs-keyword">let</span> state = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+        password: <span class="hljs-string">&quot;&quot;</span>,
+        loading: <span class="hljs-literal">false</span>,
+        data: <span class="hljs-literal">nil</span>,
+        error: <span class="hljs-literal">nil</span>
+    )
+
+    <span class="hljs-keyword">let</span> newState = <span class="hljs-type">State</span>.<span class="hljs-built_in">reduce</span>(state, event: .onUpatePassword(<span class="hljs-string">&quot;123456&quot;</span>))
+
+    <span class="hljs-keyword">let</span> expect = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+        password: <span class="hljs-string">&quot;123456&quot;</span>,
+        loading: <span class="hljs-literal">false</span>,
+        data: <span class="hljs-literal">nil</span>,
+        error: <span class="hljs-literal">nil</span>
+    )
+
+    newState == expect <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+}
+</code></pre>
+<ul>
+<li>&#x89E6;&#x53D1;&#x767B;&#x5F55;&#x4E8B;&#x4EF6;</li>
+</ul>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">testOnTriggerLogin</span><span class="hljs-params">()</span></span> {
+
+    <span class="hljs-keyword">let</span> state = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+        password: <span class="hljs-string">&quot;123456&quot;</span>,
+        loading: <span class="hljs-literal">false</span>,
+        data: <span class="hljs-literal">nil</span>,
+        error: <span class="hljs-literal">nil</span>
+    )
+
+    <span class="hljs-keyword">let</span> newState = <span class="hljs-type">State</span>.<span class="hljs-built_in">reduce</span>(state, event: .onTriggerLogin)
+
+    <span class="hljs-keyword">let</span> expect = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+        password: <span class="hljs-string">&quot;123456&quot;</span>,
+        loading: <span class="hljs-literal">true</span>,
+        data: <span class="hljs-literal">nil</span>,
+        error: <span class="hljs-literal">nil</span>
+    )
+
+    newState == expect <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+}
+</code></pre>
+<ul>
+<li>&#x767B;&#x5F55;&#x6210;&#x529F;&#x4E8B;&#x4EF6;</li>
+</ul>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">testOnLoginSuccess</span><span class="hljs-params">()</span></span> {
+
+    <span class="hljs-keyword">let</span> state = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+        password: <span class="hljs-string">&quot;123456&quot;</span>,
+        loading: <span class="hljs-literal">true</span>,
+        data: <span class="hljs-literal">nil</span>,
+        error: <span class="hljs-literal">nil</span>
+    )
+
+    <span class="hljs-keyword">let</span> newState = <span class="hljs-type">State</span>.<span class="hljs-built_in">reduce</span>(state, event: .onLoginSuccess(<span class="hljs-string">&quot;userID007&quot;</span>))
+
+    <span class="hljs-keyword">let</span> expect = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+        password: <span class="hljs-string">&quot;123456&quot;</span>,
+        loading: <span class="hljs-literal">false</span>,
+        data: <span class="hljs-string">&quot;userID007&quot;</span>,
+        error: <span class="hljs-literal">nil</span>
+    )
+
+    newState == expect <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+}
+</code></pre>
+<ul>
+<li>&#x767B;&#x5F55;&#x5931;&#x8D25;&#x4E8B;&#x4EF6;</li>
+</ul>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">testOnLoginError</span><span class="hljs-params">()</span></span> {
+
+    <span class="hljs-keyword">let</span> state = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+        password: <span class="hljs-string">&quot;123456&quot;</span>,
+        loading: <span class="hljs-literal">true</span>,
+        data: <span class="hljs-literal">nil</span>,
+        error: <span class="hljs-literal">nil</span>
+    )
+
+    <span class="hljs-keyword">let</span> newState = <span class="hljs-type">State</span>.<span class="hljs-built_in">reduce</span>(state, event: .onLoginError(.usernamePasswordMismatch))
+
+    <span class="hljs-keyword">let</span> expect = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+        password: <span class="hljs-string">&quot;123456&quot;</span>,
+        loading: <span class="hljs-literal">false</span>,
+        data: <span class="hljs-literal">nil</span>,
+        error: .usernamePasswordMismatch
+    )
+
+    newState == expect <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+}
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8F7B;&#x6613;&#x638C;&#x63A7;&#x7A0B;&#x5E8F;&#x7684;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#xFF0C;&#x4EE5;&#x53CA;&#x5404;&#x79CD;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x7528; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x505A;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x4E86;&#x3002;&#x4E0D;&#x8FC7;&#x5F53;&#x524D;&#x7684;&#x4EE3;&#x7801;&#x5F62;&#x6001;&#xFF0C;&#x79BB;&#x6295;&#x5165;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;&#x8FD8;&#x5B58;&#x5728;&#x597D;&#x51E0;&#x4E2A;&#x8FC7;&#x5EA6;&#x5F62;&#x6001;&#x3002;&#x8FD9;&#x4E9B;&#x8FC7;&#x5EA6;&#x5F62;&#x6001;&#x6709;&#x7684;&#x662F;&#x56F4;&#x7ED5;&#x5982;&#x4F55;&#x5F15;&#x5165; <a href="side_effects.html">&#x9644;&#x52A0;&#x4F5C;&#x7528;</a>&#xFF0C;&#x800C;&#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x5E94;&#x7528;&#x67B6;&#x6784;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4E0A;&#xFF0C;&#x4E0D;&#x540C;&#x5730;&#x67B6;&#x6784;&#x4E5F;&#x63D0;&#x51FA;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x5982;&#xFF1A;<a href="https://github.com/NoTests/RxFeedback.swift" target="_blank">RxFeedback</a> &#x7528; <code>feedbackLoop</code> &#x5F15;&#x5165; <a href="side_effects.html">&#x9644;&#x52A0;&#x4F5C;&#x7528;</a>&#xFF0C;<a href="https://redux.js.org/" target="_blank">Redux</a> &#x7528; <code>middleware</code> &#x5F15;&#x5165; <a href="side_effects.html">&#x9644;&#x52A0;&#x4F5C;&#x7528;</a> &#x7B49;&#x7B49;&#x3002;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x4E00;&#x4E00;&#x4ECB;&#x7ECD;&#x4E86;&#xFF0C;&#x8FD9;&#x4E9B;&#x5E93;&#x7684;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x90FD;&#x4F1A;&#x6709;&#x76F8;&#x5173;&#x8BF4;&#x660E;&#x3002;</p>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x5C06;&#x4EE3;&#x7801;&#x6F14;&#x5316;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5F62;&#x6001;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x9009;&#x62E9;&#x4F7F;&#x7528; <a href="https://redux.js.org/" target="_blank">Redux</a> &#x6D41;&#x6D3E;&#x3002;&#x56E0;&#x4E3A;&#x4E2A;&#x4EBA;&#x7684;&#x89C9;&#x5F97;&#x4ED6;&#x7684;&#x77E5;&#x8BC6;&#x4F9D;&#x8D56;&#x8981;&#x5C11;&#x4E00;&#x4E9B;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x66F4;&#x591A;&#x8BFB;&#x8005;&#x4ECE;&#x4E2D;&#x83B7;&#x76CA;&#x3002;</p>
+<h3 id="&#x4E0B;&#x4E00;&#x6B65;----&#x5F15;&#x5165;-store"><a name="&#x4E0B;&#x4E00;&#x6B65;----&#x5F15;&#x5165;-store" class="plugin-anchor" href="#&#x4E0B;&#x4E00;&#x6B65;----&#x5F15;&#x5165;-store"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0B;&#x4E00;&#x6B65; -- &#x5F15;&#x5165; Store</h3>
+<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Store</span> </span>{
+
+    <span class="hljs-comment">// &#x89C2;&#x5BDF;&#x8005;&#xFF0C;&#x7528;&#x4E8E;&#x54CD;&#x5E94;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A; State? &#x4E3A;&#x65E7;&#x72B6;&#x6001;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A; State &#x4E3A;&#x5F53;&#x524D;&#x72B6;&#x6001;</span>
+    <span class="hljs-keyword">typealias</span> <span class="hljs-type">Observer</span> = (<span class="hljs-type">State</span>?, <span class="hljs-type">State</span>) -&gt; <span class="hljs-type">Void</span>
+
+    <span class="hljs-keyword">private</span>(<span class="hljs-keyword">set</span>) <span class="hljs-keyword">var</span> state: <span class="hljs-type">State</span>  <span class="hljs-comment">// &#x5F53;&#x524D;&#x72B6;&#x6001;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> _observers: [<span class="hljs-type">UUID</span>: <span class="hljs-type">Observer</span>]  <span class="hljs-comment">// &#x6240;&#x6709;&#x7684;&#x89C2;&#x5BDF;&#x8005;</span>
+
+    <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;</span>
+    <span class="hljs-keyword">init</span>(initailState: <span class="hljs-type">State</span>) {
+        <span class="hljs-keyword">self</span>.state = initailState
+        <span class="hljs-keyword">self</span>._observers = [:]
+    }
+
+    <span class="hljs-comment">// &#x53D1;&#x51FA;&#x4E8B;&#x4EF6;</span>
+    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">dispatch</span><span class="hljs-params">(event: State.Event)</span></span> {
+        <span class="hljs-keyword">let</span> oldState = <span class="hljs-keyword">self</span>.state
+        <span class="hljs-keyword">self</span>.state = <span class="hljs-type">State</span>.<span class="hljs-built_in">reduce</span>(<span class="hljs-keyword">self</span>.state, event: event)
+        _publish(oldState: oldState, newState: <span class="hljs-keyword">self</span>.state)
+    }
+
+    <span class="hljs-comment">// &#x8BA2;&#x9605;&#x72B6;&#x6001;&#x66F4;&#x65B0;</span>
+    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">subscribe</span><span class="hljs-params">(observer: @escaping Observer)</span></span> -&gt; <span class="hljs-type">UUID</span> {
+        <span class="hljs-keyword">let</span> subscriptionID = <span class="hljs-type">UUID</span>() <span class="hljs-comment">//  UUID &#x662F;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x8BE5; id &#x53EF;&#x7528;&#x4E8E;&#x53D6;&#x6D88;&#x8BA2;&#x9605;</span>
+        _observers[subscriptionID] = observer
+        observer(<span class="hljs-literal">nil</span>, <span class="hljs-keyword">self</span>.state) <span class="hljs-comment">// &#x8BA2;&#x9605;&#x65F6;&#xFF0C;&#x5C06;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x56DE;&#x653E;&#x7ED9;&#x8BE5;&#x89C2;&#x5BDF;&#x8005;</span>
+        <span class="hljs-keyword">return</span> subscriptionID
+    }
+
+    <span class="hljs-comment">// &#x53D6;&#x6D88;&#x8BA2;&#x9605;</span>
+    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">unsubscribe</span><span class="hljs-params">(<span class="hljs-number">_</span> subscriptionID: UUID)</span></span> {
+        _observers.removeValue(forKey: subscriptionID)
+    }
+
+    <span class="hljs-comment">// &#x79C1;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x77E5;&#x6240;&#x6709;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#xFF0C;&#x72B6;&#x6001;&#x5DF2;&#x7ECF;&#x66F4;&#x65B0;&#x4E86;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">_publish</span><span class="hljs-params">(oldState: State?, newState: State)</span></span> {
+        _observers.values.forEach { observer <span class="hljs-keyword">in</span>
+            observer(oldState, newState)
+        }
+    }
+}
+</code></pre>
+<p>&#x5982;&#x4F55;&#x4F7F;&#x7528; <code>Store</code>:</p>
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">useStore</span><span class="hljs-params">()</span></span> {
+
+    <span class="hljs-keyword">let</span> initailState = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;&quot;</span>,
+        password: <span class="hljs-string">&quot;&quot;</span>,
+        loading: <span class="hljs-literal">false</span>,
+        data: <span class="hljs-literal">nil</span>,
+        error: <span class="hljs-literal">nil</span>
+    )
+
+    <span class="hljs-keyword">let</span> store = <span class="hljs-type">Store</span>(initailState: initailState)
+
+    <span class="hljs-comment">// &#x4EE5;&#x4E0B;&#x53D8;&#x91CF; newStates &#x548C; oldStates &#x7528;&#x4E8E;&#x5F55;&#x5236;&#x72B6;&#x6001;&#x5386;&#x53F2;</span>
+    <span class="hljs-keyword">var</span> newStates: [<span class="hljs-type">State</span>] = []
+    <span class="hljs-keyword">var</span> oldStates: [<span class="hljs-type">State</span>?] = []
+
+    <span class="hljs-keyword">let</span> subscriptionID = store.subscribe { (oldState, newState) <span class="hljs-keyword">in</span>
+        newStates.append(newState)
+        oldStates.append(oldState)
+    }
+
+    <span class="hljs-comment">// &#x6A21;&#x62DF;&#x771F;&#x5B9E;&#x4E8B;&#x4EF6;</span>
+    store.dispatch(event: .onUpateUsername(<span class="hljs-string">&quot;beeth0ven&quot;</span>))
+    store.dispatch(event: .onUpatePassword(<span class="hljs-string">&quot;123456&quot;</span>))
+
+    <span class="hljs-comment">// &#x53D6;&#x6D88;&#x8BA2;&#x9605;</span>
+    store.unsubscribe(subscriptionID)
+
+    <span class="hljs-comment">// &#x63CF;&#x53D9;&#x9884;&#x671F; </span>
+    <span class="hljs-keyword">let</span> expectNewStates = [
+        <span class="hljs-type">State</span>(
+            username: <span class="hljs-string">&quot;&quot;</span>,
+            password: <span class="hljs-string">&quot;&quot;</span>,
+            loading: <span class="hljs-literal">false</span>,
+            data: <span class="hljs-literal">nil</span>,
+            error: <span class="hljs-literal">nil</span>
+        ),
+        <span class="hljs-type">State</span>(
+            username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+            password: <span class="hljs-string">&quot;&quot;</span>,
+            loading: <span class="hljs-literal">false</span>,
+            data: <span class="hljs-literal">nil</span>,
+            error: <span class="hljs-literal">nil</span>
+        ),
+        <span class="hljs-type">State</span>(
+            username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+            password: <span class="hljs-string">&quot;123456&quot;</span>,
+            loading: <span class="hljs-literal">false</span>,
+            data: <span class="hljs-literal">nil</span>,
+            error: <span class="hljs-literal">nil</span>
+        )
+    ]
+
+    <span class="hljs-keyword">let</span> expectOldStates = [
+        <span class="hljs-literal">nil</span>,
+        <span class="hljs-type">State</span>(
+            username: <span class="hljs-string">&quot;&quot;</span>,
+            password: <span class="hljs-string">&quot;&quot;</span>,
+            loading: <span class="hljs-literal">false</span>,
+            data: <span class="hljs-literal">nil</span>,
+            error: <span class="hljs-literal">nil</span>
+        ),
+        <span class="hljs-type">State</span>(
+            username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+            password: <span class="hljs-string">&quot;&quot;</span>,
+            loading: <span class="hljs-literal">false</span>,
+            data: <span class="hljs-literal">nil</span>,
+            error: <span class="hljs-literal">nil</span>
+        )
+    ]
+
+    <span class="hljs-comment">// &#x6BD4;&#x5BF9;&#x7ED3;&#x679C;</span>
+    newStates == expectNewStates <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+    oldStates == expectOldStates <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x662F;&#x5728;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x4E0B;,</p>
+<p>&#x9996;&#x5148;&#x4E0B;&#x521B;&#x5EFA; <code>Store</code>:</p>
+<pre><code class="lang-swift">    <span class="hljs-keyword">let</span> initailState = <span class="hljs-type">State</span>(
+        username: <span class="hljs-string">&quot;&quot;</span>,
+        password: <span class="hljs-string">&quot;&quot;</span>,
+        loading: <span class="hljs-literal">false</span>,
+        data: <span class="hljs-literal">nil</span>,
+        error: <span class="hljs-literal">nil</span>
+    )
+
+    <span class="hljs-keyword">let</span> store = <span class="hljs-type">Store</span>(initailState: initailState)
+</code></pre>
+<p>&#x7136;&#x540E;&#xFF0C;&#x8BA2;&#x9605;&#x7A0B;&#x5E8F;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x8FD9;&#x4E9B;&#x72B6;&#x6001;&#x5F55;&#x5236;&#x4E0B;&#x6765;:</p>
+<pre><code class="lang-swift">    <span class="hljs-keyword">var</span> newStates: [<span class="hljs-type">State</span>] = []
+    <span class="hljs-keyword">var</span> oldStates: [<span class="hljs-type">State</span>?] = []
+
+    <span class="hljs-keyword">let</span> subscriptionID = store.subscribe { (oldState, newState) <span class="hljs-keyword">in</span>
+        newStates.append(newState)
+        oldStates.append(oldState)
+    }
+</code></pre>
+<p>&#x7136;&#x540E;&#xFF0C;&#x6A21;&#x62DF;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x4E8B;&#x4EF6;&#x548C;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x4E8B;&#x4EF6;:</p>
+<pre><code class="lang-swift">    store.dispatch(event: .onUpateUsername(<span class="hljs-string">&quot;beeth0ven&quot;</span>))
+    store.dispatch(event: .onUpatePassword(<span class="hljs-string">&quot;123456&quot;</span>))
+</code></pre>
+<p>&#x7136;&#x540E;&#xFF0C;&#x53D6;&#x6D88;&#x8BA2;&#x9605;:</p>
+<pre><code class="lang-swift">    store.unsubscribe(subscriptionID)
+</code></pre>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6BD4;&#x5BF9;&#x5F55;&#x5236;&#x7684;&#x72B6;&#x6001;&#x662F;&#x5426;&#x7B26;&#x5408;&#x9884;&#x671F;&#xFF1A;</p>
+<pre><code class="lang-swift">    <span class="hljs-keyword">let</span> expectNewStates = [
+        <span class="hljs-type">State</span>(
+            username: <span class="hljs-string">&quot;&quot;</span>,
+            password: <span class="hljs-string">&quot;&quot;</span>,
+            loading: <span class="hljs-literal">false</span>,
+            data: <span class="hljs-literal">nil</span>,
+            error: <span class="hljs-literal">nil</span>
+        ),
+        <span class="hljs-type">State</span>(
+            username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+            password: <span class="hljs-string">&quot;&quot;</span>,
+            loading: <span class="hljs-literal">false</span>,
+            data: <span class="hljs-literal">nil</span>,
+            error: <span class="hljs-literal">nil</span>
+        ),
+        <span class="hljs-type">State</span>(
+            username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+            password: <span class="hljs-string">&quot;123456&quot;</span>,
+            loading: <span class="hljs-literal">false</span>,
+            data: <span class="hljs-literal">nil</span>,
+            error: <span class="hljs-literal">nil</span>
+        )
+    ]
+
+    <span class="hljs-keyword">let</span> expectOldStates = [
+        <span class="hljs-literal">nil</span>,
+        <span class="hljs-type">State</span>(
+            username: <span class="hljs-string">&quot;&quot;</span>,
+            password: <span class="hljs-string">&quot;&quot;</span>,
+            loading: <span class="hljs-literal">false</span>,
+            data: <span class="hljs-literal">nil</span>,
+            error: <span class="hljs-literal">nil</span>
+        ),
+        <span class="hljs-type">State</span>(
+            username: <span class="hljs-string">&quot;beeth0ven&quot;</span>,
+            password: <span class="hljs-string">&quot;&quot;</span>,
+            loading: <span class="hljs-literal">false</span>,
+            data: <span class="hljs-literal">nil</span>,
+            error: <span class="hljs-literal">nil</span>
+        )
+    ]
+
+    newStates == expectNewStates <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+    oldStates == expectOldStates <span class="hljs-comment">// &#x7ED3;&#x679C;&#xFF1A;true &#x1F60E;</span>
+</code></pre>
+<p>&#x8FD9;&#x5C31;&#x662F;&#x5982;&#x4F55;&#x5728;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x91CC;&#x9762;&#x4F7F;&#x7528; <code>Store</code>&#xFF0C;&#x90A3;&#x4E48;&#x5728; <code>App</code> &#x91CC;&#x9762;&#x5982;&#x4F55;&#x4F7F;&#x7528; <code>Store</code> &#x5462;&#x3002; &#x4E00;&#x4E2A; <strong>&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#xFF08;&#x5E76;&#x672A;&#x4F18;&#x5316;&#xFF09;</strong> &#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x5C06; <code>Store</code> &#x6CE8;&#x5165;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x91CC;&#x9762;&#xFF0C;&#x8FD9;&#x91CC;&#x4EE5; <code>ViewController</code> &#x4E3A;&#x4F8B;&#xFF1A;</p>
+<ul>
+<li><code>ViewController</code> &#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>store.subscribe</code> &#x65B9;&#x6CD5;&#x8BA2;&#x9605;&#x7A0B;&#x5E8F;&#x7684;&#x72B6;&#x6001;&#x3002;&#x5F53;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x65F6;&#xFF0C;&#x6BD4;&#x5BF9;&#x65B0;&#x65E7;&#x72B6;&#x6001;&#xFF0C;&#x7136;&#x540E;&#x5237;&#x65B0;<strong>&#x8FC7;&#x65F6;&#x4E86;</strong>&#x7684; UI&#x3002;</li>
+<li>&#x5F53;&#x7528;&#x6237;&#x89E6;&#x53D1;&#x67D0;&#x4E2A;&#x4E8B;&#x4EF6;&#x65F6;&#xFF0C;&#x8C03;&#x7528; <code>store.dispatch</code> &#x65B9;&#x6CD5;&#x5C06;&#x4E8B;&#x4EF6;&#x53D1;&#x51FA;&#x53BB;&#xFF0C;&#x5982;&#xFF1A;&#x5F53;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x767B;&#x5F55;&#x6309;&#x94AE;&#x65F6;&#xFF0C;&#x5C31;&#x8C03;&#x7528; <code>store.dispatch(event: .onTriggerLogin)</code>&#x3002;</li>
+<li>&#x5728; <code>ViewController</code> &#x7684; <code>deinit</code> &#x65B9;&#x6CD5;&#x91CC;&#x9762;&#x6CE8;&#x9500;&#x8BA2;&#x9605; <code>store.unsubscribe(subsriptionID)</code>&#x3002;</li>
+</ul>
+<h2 id="&#x603B;&#x7ED3;"><a name="&#x603B;&#x7ED3;" class="plugin-anchor" href="#&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x603B;&#x7ED3;</h2>
+<p>&#x672C;&#x8282;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4E86; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x548C; <a href="side_effects.html">&#x9644;&#x52A0;&#x4F5C;&#x7528;</a>&#xFF0C;&#x671F;&#x95F4;&#x8FD8;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x7528; <a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a> &#x505A;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x7684;&#x3002;&#x6700;&#x540E;&#x8FD8;&#x6F14;&#x5316;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x6781;&#x7B80;&#x7248;&#x7684; <a href="https://redux.js.org/" target="_blank">Redux</a>&#x3002;&#x5E0C;&#x671B;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x4ECE;&#x4E2D;&#x83B7;&#x76CA;&#xFF01;</p>
+<h3 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="plugin-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h3>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%BA%AF%E5%87%BD%E6%95%B0" target="_blank">&#x7EAF;&#x51FD;&#x6570;</a></li>
+<li><a href="side_effects.html">&#x9644;&#x52A0;&#x4F5C;&#x7528;</a></li>
+<li><a href="https://github.com/NoTests/RxFeedback.swift" target="_blank">RxFeedback</a></li>
+<li><a href="https://redux.js.org/" target="_blank">Redux</a></li>
+<li><a href="https://github.com/ReactorKit/ReactorKit" target="_blank">ReactorKit</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="rxrelay.html" class="navigation navigation-prev " aria-label="Previous page: RxRelay">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="side_effects.html" class="navigation navigation-next " aria-label="Next page: 附加作用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"纯函数","level":"1.12.3","depth":2,"next":{"title":"附加作用","level":"1.12.4","depth":2,"path":"content/recipes/side_effects.md","ref":"content/recipes/side_effects.md","articles":[]},"previous":{"title":"RxRelay","level":"1.12.2","depth":2,"path":"content/recipes/rxrelay.md","ref":"content/recipes/rxrelay.md","articles":[]},"dir":"ltr"},"config":{"plugins":["jsbin","anchors","video","ga","toggle-chapters","editlink","include-codeblock","splitter","github-buttons","chart","todo","quiz","include-highlight","tonic","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"editlink":{"label":"编辑页面","multilingual":false,"base":"https://github.com/beeth0ven/RxSwift-Chinese-Documentation/edit/master"},"livereload":{},"todo":{},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"tonic":{},"include-highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"sans"},"highlight":{},"quiz":{},"github-buttons":{"repo":"beeth0ven/RxSwift-Chinese-Documentation","types":["star"],"size":"small","buttons":[{"user":"beeth0ven","repo":"RxSwift-Chinese-Documentation","type":"star","size":"small","count":true}]},"ga":{"configuration":"auto","token":"UA-63403975-1"},"video":{},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"jsbin":{},"chart":{"type":"c3"},"toggle-chapters":{}},"theme":"theme","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"isPdf":false},"title":"RxSwift 中文文档","language":"zh","gitbook":"*","description":null},"file":{"path":"content/recipes/pure_function.md","mtime":"2019-08-14T08:02:06.924Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-14T08:10:30.618Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-jsbin/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-quiz/script.js"></script>
+        
+    
+        
+        <script src="https://embed.tonicdev.com"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-tonic/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

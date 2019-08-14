@@ -81,6 +81,7 @@
   * [takeLast](content/decision_tree/takeLast.md)
   * [takeUntil](content/decision_tree/takeUntil.md)
   * [takeWhile](content/decision_tree/takeWhile.md)
+  * [throttle](content/decision_tree/throttle.md)
   * [timeout](content/decision_tree/timeout.md)
   * [timer](content/decision_tree/timer.md)
   * [using](content/decision_tree/using.md)

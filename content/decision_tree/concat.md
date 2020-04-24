@@ -35,10 +35,10 @@ subject1.onNext("🍊")
 variable.value = subject2
 
 subject2.onNext("I would be ignored")
-subject2.onNext("🐱")
 
 subject1.onCompleted()
 
+subject2.onNext("🐱")
 subject2.onNext("🐭")
 ```
 

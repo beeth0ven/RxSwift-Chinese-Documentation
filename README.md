@@ -2,6 +2,8 @@
 
 地址： https://beeth0ven.github.io/RxSwift-Chinese-Documentation/
 
+**如果以上地址被墙，可临时访问：http://qekz891ta.bkt.clouddn.com**
+
 ## 简介
 
 这是一份 [RxSwift] 中文文档。如今响应式编程变得越来越流行，我们已经无法阻挡这股热潮。这份文档整合了 [RxSwift] 文档，[RxJS] 文档，[ReactiveX] 文档以及笔者的一些个人观点。目的是为了让大家能够快速上手响应式编程。虽然本文档主要是介绍 [RxSwift]，不过使用其他响应式框架的开发者也可以从中获益，例如：[ReactiveCocoa]，[RxJava]，[RxJS] 等。因为这些框架都有一些共性，例如：响应式的思维方式，操作符的功能及用法等。而这些内容文档里面都有介绍。

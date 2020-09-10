@@ -16,7 +16,7 @@
 let disposeBag = DisposeBag()
 let first = BehaviorSubject(value: "👦🏻")
 let second = BehaviorSubject(value: "🅰️")
-let variable = Variable(first)
+let variable = BehaviorSubject(value: first)
 
 variable.asObservable()
         .flatMap { $0 }
@@ -24,7 +24,7 @@ variable.asObservable()
         .disposed(by: disposeBag)
 
 first.onNext("🐱")
-variable.value = second
+variable.onNext(second)
 second.onNext("🅱️")
 first.onNext("🐶")
 ```

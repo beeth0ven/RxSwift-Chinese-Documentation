@@ -18,7 +18,7 @@ let first = BehaviorSubject(value: "👦🏻")
 let second = BehaviorSubject(value: "🅰️")
 let subject = BehaviorSubject(value: first)
 
-variable.asObservable()
+subject.asObservable()
         .flatMap { $0 }
         .subscribe(onNext: { print($0) })
         .disposed(by: disposeBag)

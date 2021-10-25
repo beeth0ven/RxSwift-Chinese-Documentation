@@ -2,7 +2,7 @@
 
 地址： https://beeth0ven.github.io/RxSwift-Chinese-Documentation/
 
-**如果以上地址被墙，可临时访问：http://qekz891ta.bkt.clouddn.com**
+**如果以上地址被墙，可临时访问：https://rxswift.picroup.com/**
 
 ## 简介
 

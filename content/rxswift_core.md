@@ -17,7 +17,7 @@ let text = usernameOutlet.rx.text.orEmpty.asObservable()
 // Observable<Bool>
 let passwordValid = text
     // Operator
-    .map { $0.characters.count >= minimalUsernameLength }
+    .map { $0.count >= minimalUsernameLength }
 
 // Observer<Bool>
 let observer = passwordValidOutlet.rx.isHidden

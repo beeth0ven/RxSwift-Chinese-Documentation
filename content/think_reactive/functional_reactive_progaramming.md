@@ -32,7 +32,7 @@ taps.subscribe(onNext: { showAlert() })
 
 ```swift
 passwordOutlet.rx.text.orEmpty
-    .map { $0.characters.count >= minimalPasswordLength }
+    .map { $0.count >= minimalPasswordLength }
     .bind(to: passwordValidOutlet.rx.isHidden)
     .disposed(by: disposeBag)
 ```

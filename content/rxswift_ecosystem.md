@@ -139,11 +139,11 @@ Observable.from(messages)
 ```swift
 ...
 let usernameValid = usernameOutlet.rx.text.orEmpty
-    .map { $0.characters.count >= minimalUsernameLength }
+    .map { $0.count >= minimalUsernameLength }
     .share(replay: 1)
 
 let passwordValid = passwordOutlet.rx.text.orEmpty
-    .map { $0.characters.count >= minimalPasswordLength }
+    .map { $0.count >= minimalPasswordLength }
     .share(replay: 1)
 
 let everythingValid = Observable

@@ -52,11 +52,11 @@ class SimpleValidationViewController : ViewController {
         ...
 
         let usernameValid = usernameOutlet.rx.text.orEmpty
-            .map { $0.characters.count >= minimalUsernameLength }
+            .map { $0.count >= minimalUsernameLength }
             .share(replay: 1)
 
         let passwordValid = passwordOutlet.rx.text.orEmpty
-            .map { $0.characters.count >= minimalPasswordLength }
+            .map { $0.count >= minimalPasswordLength }
             .share(replay: 1)
 
         let everythingValid = Observable.combineLatest(
@@ -114,11 +114,11 @@ class SimpleValidationViewModel {
         ) {
 
         usernameValid = username
-            .map { $0.characters.count >= minimalUsernameLength }
+            .map { $0.count >= minimalUsernameLength }
             .share(replay: 1)
 
         passwordValid = password
-            .map { $0.characters.count >= minimalPasswordLength }
+            .map { $0.count >= minimalPasswordLength }
             .share(replay: 1)
 
         everythingValid = Observable.combineLatest(usernameValid, passwordValid) { $0 && $1 }

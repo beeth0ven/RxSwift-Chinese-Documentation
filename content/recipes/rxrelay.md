@@ -36,6 +36,43 @@ Event: next(🐶)
 Event: next(🐱)
 ```
 
+## ReplayRelay
+**ReplayRelay** 就是 [ReplaySubject] 去掉终止事件 `onError` 或 `onCompleted`。
+
+
+### 演示
+
+```swift
+let disposeBag = DisposeBag()
+let relay = ReplayRelay<String>.create(bufferSize: 1)
+
+relay
+  .subscribe { print("Subscription: 1 Event:", $0) }
+  .disposed(by: disposeBag)
+
+relay.accept("🐶")
+relay.accept("🐱")
+
+relay
+  .subscribe { print("Subscription: 2 Event:", $0) }
+  .disposed(by: disposeBag)
+
+relay.accept("🅰️")
+relay.accept("🅱️")
+```
+
+**输出结果：**
+
+```swift
+Subscription: 1 Event: next(🐶)
+Subscription: 1 Event: next(🐱)
+Subscription: 2 Event: next(🐱)
+Subscription: 1 Event: next(🅰️)
+Subscription: 2 Event: next(🅰️)
+Subscription: 1 Event: next(🅱️)
+Subscription: 2 Event: next(🅱️)
+```
+
 ## BehaviorRelay
 **BehaviorRelay** 就是 [BehaviorSubject] 去掉终止事件 `onError` 或 `onCompleted`。
 
@@ -65,6 +102,7 @@ Event: next(🐱)
 
 
 [PublishSubject]:/content/rxswift_core/observable_and_observer/publish_subject.md
+[ReplaySubject]:/content/rxswift_core/observable_and_observer/replay_subject.md
 [BehaviorSubject]:/content/rxswift_core/observable_and_observer/behavior_subject.md
 [命令式编程]:https://zh.wikipedia.org/wiki/%E6%8C%87%E4%BB%A4%E5%BC%8F%E7%B7%A8%E7%A8%8B
 [声明式编程]:https://zh.wikipedia.org/wiki/%E5%AE%A3%E5%91%8A%E5%BC%8F%E7%B7%A8%E7%A8%8B

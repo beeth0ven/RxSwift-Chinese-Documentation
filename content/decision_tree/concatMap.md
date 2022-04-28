@@ -16,9 +16,9 @@ let disposeBag = DisposeBag()
 let subject1 = BehaviorSubject(value: "🍎")
 let subject2 = BehaviorSubject(value: "🐶")
 
-let variable = Variable(subject1)
+let subject = BehaviorSubject(value: subject1)
 
-variable.asObservable()
+subject.asObservable()
         .concatMap { $0 }
         .subscribe { print($0) }
         .disposed(by: disposeBag)
@@ -26,7 +26,7 @@ variable.asObservable()
 subject1.onNext("🍐")
 subject1.onNext("🍊")
 
-variable.value = subject2
+subject.onNext(subject2)
 
 subject2.onNext("I would be ignored")
 subject2.onNext("🐱")

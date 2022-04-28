@@ -16,15 +16,15 @@
 let disposeBag = DisposeBag()
 let first = BehaviorSubject(value: "👦🏻")
 let second = BehaviorSubject(value: "🅰️")
-let variable = Variable(first)
+let subject = BehaviorSubject(value: first)
 
-variable.asObservable()
+subject.asObservable()
         .flatMapLatest { $0 }
         .subscribe(onNext: { print($0) })
         .disposed(by: disposeBag)
 
 first.onNext("🐱")
-variable.value = second
+subject.onNext(second)
 second.onNext("🅱️")
 first.onNext("🐶")
 ```

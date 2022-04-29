@@ -46,16 +46,16 @@ Github 搜索...
 定义搜索结果 ...
 ```swift
 let searchResults = searchBar.rx.text.orEmpty
-    .throttle(0.3, scheduler: MainScheduler.instance)
+    .throttle(.milliseconds(300), scheduler: MainScheduler.instance)
     .distinctUntilChanged()
     .flatMapLatest { query -> Observable<[Repository]> in
         if query.isEmpty {
             return .just([])
         }
         return searchGitHub(query)
-            .catchErrorJustReturn([])
+            .catchAndReturn([])
     }
-    .observeOn(MainScheduler.instance)
+    .observe(on: MainScheduler.instance)
 ```
 
 ... 然后将结果绑定到 tableview 上
@@ -74,10 +74,10 @@ searchResults
 
 ## 必备条件
 
-* Xcode 10.2
-* Swift 5.0
+* Xcode 12.x
+* Swift 5.x
 
-对于 Xcode 10.1 以下版本，请使用 [RxSwift 4.5](https://github.com/ReactiveX/RxSwift/releases/tag/4.5.0)。
+对于 Xcode 11 和以下版本，请使用 [RxSwift 5.x](https://github.com/ReactiveX/RxSwift/releases/tag/5.1.1)。
 
 ## 安装
 
@@ -91,21 +91,19 @@ searchResults
 
 ### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
 
-** **`pod --version`**: **`1.3.1` 已通过测试
-
 ```ruby
 # Podfile
 use_frameworks!
 
 target 'YOUR_TARGET_NAME' do
-    pod 'RxSwift', '~> 5.0'
-    pod 'RxCocoa', '~> 5.0'
+    pod 'RxSwift', '6.5.0'
+    pod 'RxCocoa', '6.5.0'
 end
 
 # RxTests 和 RxBlocking 将在单元/集成测试中起到重要作用
 target 'YOUR_TESTING_TARGET' do
-    pod 'RxBlocking', '~> 5.0'
-    pod 'RxTest', '~> 5.0'
+    pod 'RxBlocking', '6.5.0'
+    pod 'RxTest', '6.5.0'
 end
 ```
 
@@ -115,31 +113,41 @@ end
 $ pod install
 ```
 
-### [Carthage](https://github.com/Carthage/Carthage)
+### XCFrameworks
 
-官方支持 0.33 及以上版本。
+从 [RxSwift] 6 开始，每一次发布都会包括 `*.xcframework` 框架的二进制文件。
+
+我们只用将所需框架的二进制文件拖入 `Targets/{APP}/General` 选项卡下的 **Frameworks, Libraries, and Embedded Content** 区域。
+
+![](assets/XCFrameworks.png)
+
+### [Carthage](https://github.com/Carthage/Carthage)
 
 添加到 `Cartfile`
 
 ```
-github "ReactiveX/RxSwift" ~> 5.0
+github "ReactiveX/RxSwift" "6.5.0"
 ```
 
 ```bash
 $ carthage update
 ```
 
-**[Carthage](https://github.com/Carthage/Carthage) 作为静态库。**
+**[Carthage] 作为静态库。**
 
-如果您希望使用 Carthage 将 [RxSwift] 构建为静态库，在使用 Carthage 构建之前，您可以使用以下脚本手动修改框架类型：
+[Carthage] 会默认将 [RxSwift] 构建成动态库。
+
+如果您希望使用 [Carthage] 将 [RxSwift] 构建为静态库，在使用 Carthage 构建之前，您可以使用以下脚本手动修改框架类型：
 
 ```bash
 carthage update RxSwift --platform iOS --no-build
 sed -i -e 's/MACH_O_TYPE = mh_dylib/MACH_O_TYPE = staticlib/g' Carthage/Checkouts/RxSwift/Rx.xcodeproj/project.pbxproj
-carthage build RxAlamofire --platform iOS
+carthage build RxSwift --platform iOS
 ```
 
 ### [Swift Package Manager](https://github.com/apple/swift-package-manager)
+
+> 注意：在 Swift Package Manager 里面有一个关键的 `cross-dependency` bug，它影响了许多项目包括 [RxSwift]。我们已经在 2020 年早期提交了这个 [bug (SR-12303)](https://bugs.swift.org/browse/SR-12303)，但是目前还没有收到回复。[这里](https://github.com/ReactiveX/RxSwift/issues/2127#issuecomment-717830502)有一个临时的解决方案。
 
 创建`Package.swift` 文件。
 
@@ -151,7 +159,7 @@ import PackageDescription
 let package = Package(
   name: "RxTestProject",
   dependencies: [
-    .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.0.0")
+    .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.5.0"))
   ],
   targets: [
     .target(name: "RxTestProject", dependencies: ["RxSwift", "RxCocoa"])
@@ -178,7 +186,8 @@ $ git submodule add git@github.com:ReactiveX/RxSwift.git
 ```
 
 * 拖拽 `Rx.xcodeproj` 到项目中
-* 前往 `Project > Targets > Build Phases > Link Binary With Libraries`, 点击 `+` 并且选中 `RxSwift-[Platform]` 和 `RxCocoa-[Platform]`
+* 前往 `Project > Targets > Build Phases > Link Binary With Libraries`, 点击 `+` 并且选中 `RxSwift`，`RxCocoa` 和 `RxRelay` 目标。
 
 
 [RxSwift]:https://github.com/ReactiveX/RxSwift
+[Carthage]:https://github.com/Carthage/Carthage

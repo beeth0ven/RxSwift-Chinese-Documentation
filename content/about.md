@@ -1,8 +1,8 @@
 # 关于本文档
 
-* 更新日期：**19年5月21日**
+* 更新日期：**22年5月6日**
 * 首发日期：**17年9月1日**
-* 对应 **RxSwift** 版本：**5.0.0**
+* 对应 **RxSwift** 版本：**6.5.0**
 * 使用工具：[GitBook](https://www.gitbook.com)
 * 托管平台：[Github Pages](https://pages.github.com)
 * 文档整理人：[罗杰 (Beeth0ven)](https://github.com/beeth0ven)

@@ -17,22 +17,17 @@ KVO，异步操作 和 流 全部被统一成抽象序列。这就是为什么 R
 
 加入 [RxSwift](https://github.com/ReactiveX/RxSwift) **QQ** 交流群: **871293356**
 
-[下载文档电子书](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/download/2.0.0/RxSwiftChineseDocumentation.epub)
+[下载文档电子书](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/download/2.1.0/RxSwiftChineseDocumentation.epub)
 
 
 ## 文档更新日志
 
-#### 19年5月21日（RxSwift 5）
+#### 22年5月6日（RxSwift 6）
 
-* [RxSwift 5 更新了什么？](content/recipes/whats_new_in_rxswift_5.md)
-* 引入[食谱章节](content/recipes.md)
-* [Signal](content/rxswift_core/observable/signal.md)
-* [RxRelay](content/recipes/rxrelay.md)
-* [纯函数](content/recipes/pure_function.md)
-* [附加作用](content/recipes/side_effects.md)
-* [共享附加作用](content/recipes/share_side_effects.md)
-* 更新文档以适配 RxSwift 5
-* 更新 QQ 群号为：871293356
+* 更新文档以适配 RxSwift 6
+* 加入 [ReplayRelay](content/recipes/rxrelay.md#replayrelay)
+* 移除已过时的代码, 感谢 [@sheruce](https://github.com/sheruce), [@professordeng](https://github.com/professordeng), [@JPlay](https://github.com/JPlay)
+* 纠正错别字，修改语病, 感谢 [@sheruce](https://github.com/sheruce), [@professordeng](https://github.com/professordeng)
 
   **[查看更多... ](CHANGELOG.md)**
 

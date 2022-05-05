@@ -4,6 +4,17 @@
 
 ---
 
+## [2.1.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/2.1.0)
+
+#### 22年5月6日（RxSwift 6）
+
+* 更新文档以适配 RxSwift 6
+* 加入 [ReplayRelay](content/recipes/rxrelay.md#replayrelay)
+* 移除已过时的代码, 感谢 [@sheruce](https://github.com/sheruce), [@professordeng](https://github.com/professordeng), [@JPlay](https://github.com/JPlay)
+* 纠正错别字，修改语病, 感谢 [@sheruce](https://github.com/sheruce), [@professordeng](https://github.com/professordeng)
+
+---
+
 ## [2.0.0](https://github.com/beeth0ven/RxSwift-Chinese-Documentation/releases/tag/2.0.0)
 
 #### 19年5月21日（RxSwift 5）

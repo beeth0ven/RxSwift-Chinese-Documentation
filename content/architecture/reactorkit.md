@@ -1,6 +1,6 @@
 ![](/assets/Architecture/ReactorKit/ReactorKit.png)
 
-<p align="center">
+<!-- <p align="center">
   <img alt="Swift" src="https://img.shields.io/badge/Swift-3.1-orange.svg">
   <a href="https://cocoapods.org/pods/ReactorKit" target="_blank">
     <img alt="CocoaPods" src="http://img.shields.io/cocoapods/v/ReactorKit.svg">
@@ -17,7 +17,7 @@
   <a href="http://reactorkit.io/docs/latest/" target="_blank">
     <img alt="CocoaDocs" src="http://reactorkit.io/docs/latest/badge.svg">
   </a>
-</p>
+</p> -->
 
 ### 作者
 

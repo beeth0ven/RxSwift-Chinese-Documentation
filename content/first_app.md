@@ -12,7 +12,7 @@
 
   ![](/assets/SimpleValid/SimpleValidationFull.gif)
 
-### 这个页面主要由 5 各元素组成：
+### 这个页面主要由 5 个元素组成：
 
   1. 用户名输入框
   2. 用户名提示语（红色）

@@ -124,8 +124,8 @@ let cahcedData: Observable<Data> = ...  // 之前本地缓存的数据
 
 rxData
     .catchError { _ in cahcedData }
-    .subscribe(onNext: { date in
-        print("获取数据成功: \(date.count)")
+    .subscribe(onNext: { data in
+        print("获取数据成功: \(data.count)")
     })
     .disposed(by: disposeBag)
 ```
